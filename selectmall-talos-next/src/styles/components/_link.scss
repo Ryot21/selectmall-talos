@@ -1,0 +1,407 @@
+// aタグ用のスタイル
+.c-link {
+  &.-nav {// ナビゲーション
+    display: block;
+    width: auto;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &.-contact {// お問い合わせ
+    display: block;
+    width: auto;
+    height: auto;
+    box-shadow: 4px 4px 11px #00000030;
+    transition: all 0.5s;
+    .c-contents {
+      overflow: hidden;
+      .imgBox {
+        transition: all 0.5s;
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+      .c-contents {
+        .imgBox {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  &.-img {// 画像
+    display: block;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    will-change: transform;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    &:hover {
+      transform: scale(1.025);
+      transition-duration: 0.2s;
+    }
+  }
+  &.-text {
+    position: relative;
+    padding-right: 15px;
+    will-change: transform;
+    transition: all 0.3s;
+
+    &::before {
+      content: ">";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      // font-size: 1.2rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+
+      width: 0;
+      height: 2px;
+      background: $site-color03;
+      border-radius: 5px;
+      opacity: 0;
+      will-change: transform;
+      transition: all 0.3s;
+    }
+    &:hover {
+      color: $site-color03;
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  &.-btn {// ボタン風レイアウト
+    display: inline-block;
+    width: auto !important;
+    height: auto !important;
+    text-align: center;
+    color: $main-color--w !important;
+    font-family: $f-gothic01;
+    background: $site-color03;
+    border: 1px solid $site-color03;
+    border-radius: 5px;
+    padding: 10px 20px;
+    overflow: hidden;
+    will-change: transform;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $site-color03 !important;
+      background: $main-color--w;
+      padding: 10px 30px;
+    }
+
+    // ボタン > 丸ボタン
+    &.-maru{
+      border-radius: 30px;
+    }
+
+    // ボタン > 中央揃え
+    &.-center {
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    // ボタン > 色関係
+    &.-red {
+      position: relative;
+      background: linear-gradient(180deg, $main-color--red 50%,$main-color--Dred 100%);
+      border: 1px solid $main-color--Dred;
+      z-index: 0;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $main-color--w;
+        will-change: transform;
+        transition: all 0.3s;
+        z-index: -1;
+        opacity: 0;
+      }
+      &:hover {
+        color: $main-color--red !important;
+        background: $main-color--w;
+        &::after{opacity: 1;}
+      }
+    }
+    &.-gray {
+      color: $main-color--w !important;
+      background: $main-color--Dgray;
+      border: 1px solid $main-color--Dgray;
+      &:hover {
+        color: $main-color--Dgray !important;
+        background: $main-color--w;
+        border: 1px solid $main-color--Dgray;
+      }
+    }
+    &.-blue {
+      position: relative;
+      background: linear-gradient(180deg, $site-color02 50%,$site-color03 100%);
+      border: 1px solid $site-color03;
+      z-index: 0;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $main-color--w;
+        will-change: transform;
+        transition: all 0.3s;
+        z-index: -1;
+        opacity: 0;
+      }
+      &:hover {
+        color: $site-color03 !important;
+        background: $main-color--w;
+        &::after{opacity: 1;}
+      }
+    }
+    &.-orange {
+      position: relative;
+      background: linear-gradient(180deg, $main-color--orange 50%,$main-color--Dorange 100%);
+      border: 1px solid $main-color--Dorange;
+      z-index: 0;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $main-color--w;
+        will-change: transform;
+        transition: all 0.3s;
+        z-index: -1;
+        opacity: 0;
+      }
+      &:hover {
+        color: $main-color--orange !important;
+        background: $main-color--w;
+        &::after{opacity: 1;}
+      }
+    }
+
+    // ボタン > アイコンあり
+    &.-icon {
+
+      // 全アイコン > 共通
+      position: relative;
+      padding: 10px 35px 10px 20px !important;
+      will-change: transform;
+      transition: all 0.3s;
+      &::before {// サイズも共通
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+
+        width: 17px;
+        height: 14.5px;
+        background: $main-color--w;
+      }
+      &:hover {
+        padding: 10px 40px 10px 20px !important;
+        // 色関係
+        &.-red {
+          &::before {background: $main-color--red;}
+        }
+        &.-gray {
+          &::before {background: $main-color--Dgray;}
+        }
+        &.-blue {
+          &::before {background: $site-color03;}
+        }
+        &.-orange {
+          &::before {background: $main-color--orange;}
+        }
+        
+      }
+
+      &.-arrow {// 矢印
+        &::before {clip-path: polygon(0 31%, 63.2% 31%, 63.2% 0, 100% 50%, 63.2% 100%, 63.2% 69%, 0 69%);}
+      }
+      &.-mail{// メール
+        &::before {
+          display: block;
+          height: 16.5px;
+          // メールアイコン
+          // clip-path: path("M0.5,3 H16.5 C16.8,3 17,3 17,3 V13 C17,13 16.8,1 16.5,13 H0.5 C0.2,13 0,13 0,13 V3 C0,3 0.2,3 0.5,3 Z M1.5,3.5 L8.5,8 L15.5,4 H1.5 Z M1,4 V12.5 L7,9 L1,12.5 H16 L16,0 L16,5 L8.5,9.5 L0,4 Z");
+          clip-path: path("M0,3 H17 V13 H0 V3 Z M1,4 L8.5,8.5 L16,4 M1,12 H16");        
+        }
+      }
+    }
+  }
+  &.-header {
+    display: block;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &.-red {
+
+    @include min(768) {
+      transition: .3s all;
+      opacity: 1;
+      span {
+        transition: .3s all;
+        opacity: 1;
+      }
+      &:hover {
+        color: $main-color--red;
+        opacity: 0.5;
+      }
+    }
+  }
+  &.-logo {// ロゴ
+    position: relative;
+    margin-right: 3rem;
+    text-decoration: underline;
+    transition: all 0.3s;
+    &:hover {
+      color: $main-color--orange;
+    }
+    &::after {
+      content: "";
+
+      display: inline-block;
+      width: 1.6rem;
+      height: 1.2rem;
+      margin-left: -2rem;
+      transform: translateY(-50%);
+      translate: calc(100% + 1rem) 70%;
+
+      background-image: url(/images/SVG/link.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &.-check {// お悩み
+    position: relative;
+    display: inline-block;
+    color: $site-color03;
+    word-break: auto-phrase;
+    transition: all 0.3s;
+    &::before{
+      content: "";
+      position: absolute;
+      display: block;
+      mask-image: url("/images/SVG/target-icon.svg");
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      background: $site-color03;
+    }
+    &.s-M{
+      margin-left: 25px;
+      &::before {
+        top: 1px;
+        left: -25px;
+        inset: 1;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &.s-L{
+      margin-left: 40px;
+      &::before {
+        top: 50%;
+        left: -40px;
+        transform: translateY(-50%);
+        inset: 1;
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+  &.-mokuji {// 目次
+    transition: all 0.3s;
+    &:hover {
+      color: $site-color03;
+      opacity: 0.6;
+    }
+  }
+  &.-good {// いいね
+    position: relative;
+    padding-left: max(6rem, 10vw);
+    @include min(768){padding-left: max(6rem, 10vw);}
+    @include min(1000){padding-left: 10rem;}
+    span{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: inline-block;
+      width: clamp(5rem, 8vw, 8rem);
+      height: 100%;
+      padding: 10px 0;
+      color: #fff;
+      border-radius: 5px;
+      background: $site-color03;
+      &::before{// 数字
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -50%);
+        font-size: clamp(1rem, 1.6vw, 1.6rem);
+        font-weight: bold;
+
+      }
+      &.No1{&::before{content: "01";}}
+      &.No2{&::before{content: "02";}}
+      &.No3{&::before{content: "03";}}
+      
+      &::after{// 吹き出し
+        position: absolute;
+        top: calc(50% - 7px);
+        right: -5px;
+        width: 0;
+        height: 0;
+        content: '';
+        border-width: 7px 0 7px 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent $site-color03;
+        z-index: 2;
+        @include min(768) {right: -10px;}
+        @include min(1000) {right: -10px;}
+      }
+      i{// アイコン
+        &::before{
+          content: url("/images/SVG/good-w.svg");
+  
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(50%, -45%);
+  
+          display: inline-block;
+          width: clamp(1.4rem, 1.8vw, 2.2rem);
+          background-size: contain;
+          vertical-align: middle;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

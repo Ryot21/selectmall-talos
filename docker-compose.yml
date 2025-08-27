@@ -1,0 +1,13 @@
+services:
+  next-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./selectmall-talos-next:/src/app
+    environment:
+      - NODE_ENV=development
+    working_dir: /src/app  # 作業ディレクトリを指定
+    command: npm run dev  # npmのdevスクリプトを実行

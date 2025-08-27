@@ -1,0 +1,480 @@
+// コンテンツ
+.c-container {
+  width: 100%;
+  height: auto;
+}
+
+.c-contents {
+  &.-bg {
+    &-color01 {
+      background: $site-color01 !important;
+    }
+    &-color02 {
+      background: $site-color02 !important;
+    }
+    &-color03 {
+      background: $site-color03 !important;
+    }
+    &-color04 {
+      background: $site-color04 !important;
+    }
+    &-color05 {
+      background: $site-color05 !important;
+    }
+    &-color06 {
+      background: $site-color06 !important;
+    }
+    &-color07 {
+      background: $site-color07 !important;
+    }
+    &-white {
+      background: $main-color--w !important;
+    }
+    &-gray {
+      background: $main-color--gray !important;
+    }
+    &-img {
+      &-sc08 {
+        background-image: url(/images/Lp/sc08-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      &-cta {
+        background-image: url(/images/Lp/cta-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    // LP02
+    &-lp02-logo {
+      background: $lp-color05 !important;
+    }
+    &-lp02-sc02 {
+      background: $lp-color09 !important;
+    }
+    &-lp02-sc03 {
+      background: $site-color01 !important;
+    }
+  }
+
+  &--inner {
+    // コンテンツ幅
+    width: 95%;
+    margin: auto;
+    @include max(500) {
+      max-width: 355px;
+    }
+    @include min(500) {
+      width: 85%;
+    }
+    @include min(768) {
+      width: 90%;
+    }
+    @include min(1600) {
+      max-width: 1380px;
+    }
+    @include min(1800) {
+      max-width: 1500px;
+    }
+
+    &.-bg-color01 {
+      background: $site-color01;
+    }
+    &.-bg-color02 {
+      background: $site-color02;
+    }
+    &.-bg-color03 {
+      background: $site-color03;
+    }
+    &.-bg-white {
+      background: $main-color--w;
+    }
+    &.-bg-gray {
+      background: $main-color--gray;
+    }
+    &.-bg-img01 {
+      background-image: url(/images/Lp/sc08-bg.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.-card {
+      padding: 5% 3.5% 5%;
+      border-radius: 10px;
+      border: 1px solid $site-color03;
+      box-shadow: 0px 0px 5px #8080802b;
+      @include min(768) {
+        padding: 5% 2.5% 5%;
+      }
+    }
+
+    // LP02
+    &.-lp-item {
+      width: 75%;
+      max-width: 600px !important;
+    }
+  }
+  &--banner {
+    &.-ver01 {
+      // お客様の声
+      width: 100%;
+      margin: auto;
+      @include min(500) {
+        width: 85%;
+      }
+      @include min(768) {
+        width: 50%;
+      }
+      @include min(1600) {
+        max-width: 768px;
+      }
+    }
+    &.-ver02 {
+      // お役立ち情報
+      width: 100%;
+    }
+  }
+  &--btnArea {
+    &.-center {
+      margin: 0 auto;
+      text-align: center !important;
+    }
+    &.-left {
+      margin-left: 0;
+      margin-right: auto;
+      text-align: start !important;
+    }
+    &.-right {
+      margin-left: auto;
+      margin-right: 0;
+      text-align: end !important;
+    }
+  }
+
+  // 共通設定
+  &.-imgBg {
+    //背景画像
+    position: relative;
+    .c-contentsBox {
+      position: absolute;
+      // 要素の真ん中
+      &.-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+      }
+      &.-latestNews {
+        // 最新のお知らせ
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        // @include min (500){
+        //     top: 65%;
+        //     left: 45.5%;
+        //     width: 70%;
+        // }
+        // @include min(768) {
+        //     top: 60%;
+        //     left: 50%;
+        //     width: 48%;
+        // }
+        // @include min(1000) {
+        //     top: 64%;
+        //     left: 48%;
+        //     width: 45%;
+        // }
+        // @include min(1200) {
+        //     top: 65%;
+        //     left: 49%;
+        //     width: 43%;
+        //     max-width: 510px;
+        // }
+        // @include min(1400) {
+        //     width: 36%;
+        // }
+        // @include min(1500) {
+        //     top: 66%;
+        //     width: 34%;
+        // }
+        // @include min(1600) {
+        //     top: 62%;
+        //     width: 32%;
+        //     max-width: 510px;
+        // }
+        // @include min(1800) {
+        //     width: 28%;
+        //     max-width: 510px;
+        // }
+      }
+    }
+  }
+  &.-logoArea {
+    // 導入実績
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25px;
+      height: 100%;
+      z-index: 1;
+      @include min(768) {
+        width: 100px;
+      }
+    }
+    // 背景 > site-color01用
+    &::before {
+      left: -5px;
+      background: linear-gradient(
+        0.25turn,
+        $site-color01,
+        50%,
+        rgb(245, 251, 255, 0.1)
+      );
+    }
+    // 背景 > site-color01用
+    &::after {
+      right: -5px;
+      background: linear-gradient(
+        0.75turn,
+        $site-color01,
+        50%,
+        rgb(245, 251, 255, 0.1)
+      );
+    }
+  }
+  &.-serviceBox {
+    // マネリペとは
+    position: relative;
+    padding: 12% 5% 25% 5%;
+    border-radius: 10px;
+    @include min(768) {
+      padding: 6% 30% 3% 3%;
+    }
+    &.-item01 {
+      background: $house-color01;
+    }
+    &.-item02 {
+      background: $house-color02;
+    }
+    &.-item03 {
+      background: $house-color03;
+    }
+
+    // タイトル
+    .titleArea {
+      position: absolute;
+      top: 0;
+      left: 3%;
+      transform: translateY(-50%);
+
+      background: $main-color--w;
+      border-radius: 10px;
+      padding: 0.5% 2.5% 0.5% 3.5%;
+      box-shadow: 5px 3px 2px 0px #63636314;
+      @include min(768) {
+        left: 3%;
+        transform: translateY(-50%);
+        padding: 0.5% 2.5% 0.5% 1%;
+      }
+      &::after {
+        content: "サービス";
+        color: $main-color--b;
+        font-size: 1rem;
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        padding-bottom: 2px;
+        @include min(768) {
+          font-size: 1.2rem;
+          top: 5px;
+        }
+      }
+    }
+    // テキスト
+    .textArea {
+      width: 100%;
+      height: auto;
+      padding: 10% 10% 30% 5%;
+      background: $main-color--w;
+      border-radius: 10px;
+      box-shadow: 5px 3px 2px 0px #63636314;
+      @include min(768) {
+        padding: 5% 20% 5% 5%;
+      }
+    }
+    // 画像
+    .picArea {
+      position: absolute;
+      top: 62%;
+      left: 45%;
+      width: 45%;
+      height: auto;
+      border-radius: 10px;
+      // box-shadow: 5px 3px 2px 0px #63636314;
+      // overflow: hidden;
+      @include min(768) {
+        top: 47%;
+        left: 60%;
+        transform: translateY(-50%);
+        width: 35%;
+      }
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &.-LpCta {
+    // LP > CTAエリア
+    position: relative;
+    background: linear-gradient(
+      0deg,
+      rgb(73, 103, 142, 0.5) 0%,
+      rgb(73, 103, 142, 0.1) 50%,
+      rgb(73, 103, 142, 0.3) 100%
+    );
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      width: 150px;
+      height: 30%;
+      background: url("/images/SVG/Lp/GO.svg") no-repeat center center;
+      background-size: contain;
+      opacity: 0.5;
+      z-index: 1;
+      @include min(768) {
+        top: 5%;
+        left: 5%;
+        width: 30%;
+        max-width: 420px;
+        height: 15%;
+        max-height: 170px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 2%;
+      right: 2%;
+      width: 350px;
+      height: 30%;
+      background: url("/images/SVG/Lp/money-repair.svg") no-repeat center center;
+      background-size: contain;
+      opacity: 0.5;
+      z-index: 1;
+      @include min(768) {
+        bottom: 5%;
+        right: 5%;
+        width: 75%;
+        max-width: 1180px;
+        height: 20%;
+        max-height: 170px;
+      }
+    }
+  }
+  &.-Lp02Cta {
+    // LP02 > CTAエリア
+    position: relative;
+    background: radial-gradient(#2460ad, #3fa8dd);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 14%;
+      height: 70%;
+      background: url("/images/Lp/ver02/mv-parts-02.png") no-repeat;
+      background-size: contain;
+      opacity: 0.05;
+      z-index: 1;
+      @include max(768) {
+        top: 50%;
+        left: 0;
+        width: 54%;
+        height: 70%;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 2%;
+      width: 350px;
+      height: 30%;
+      background: url("/images/Lp/ver02/mv-parts-03.png") no-repeat;
+      background-size: contain;
+      opacity: 0.05;
+      z-index: 1;
+      @include max(768) {
+        top: 0;
+        right: 2%;
+        width: 250px;
+        height: 30%;
+      }
+    }
+  }
+
+  // 三角形
+  &.-triangle {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+      height: 5%;
+      background: $main-color--w;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      @include min(500) {
+        width: 20%;
+        height: 10%;
+      }
+    }
+  }
+  // 応援しているイラスト
+  &.-support {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: url("/images/Lp/ouen.png") no-repeat center center;
+      background-size: contain;
+      z-index: 10;
+      @include min(1000) {
+        bottom: -5%;
+
+        width: 180px;
+        height: 180px;
+      }
+      @include min(1400) {
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+      }
+      @include min(1600) {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}

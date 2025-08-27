@@ -1,0 +1,529 @@
+// フレックス
+.c-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  // 【 横_位置 】
+  &.-jc-sb {
+    justify-content: space-between;
+  } // 両端
+  &.-jc-sb_s {
+    @include max(768) {
+      justify-content: space-between;
+    }
+  }
+  &.-jc-cen {
+    justify-content: center;
+  } // 真ん中
+  &.-jc-cen_s {
+    @include max(768) {
+      justify-content: center;
+    }
+  }
+  &.-jc-st {
+    justify-content: start;
+  } // 左寄
+  &.-jc-st_s {
+    @include max(768) {
+      justify-content: start;
+    }
+  }
+  &.-jc-end {
+		justify-content: flex-end;
+  } // 右寄
+  &.-jc-end_s {
+    @include max(768) {
+      justify-content: flex-end;
+    }
+  }
+
+  //【 縦_位置 】
+  &.-h-cen {
+    align-items: center;
+  } // 真ん中
+  &.-h-cen_pc {
+    @include min(768) {
+      align-items: center;
+    }
+  }
+  &.-h-top {
+    align-items: flex-start;
+  } // 上
+  &.-h-top_pc {
+    @include min(768) {
+      align-items: flex-start;
+    }
+  }
+  &.-h-btm {
+    align-items: flex-end;
+  } // 下
+  &.-h-btm_pc {
+    @include min(768) {
+      align-items: flex-end;
+    }
+  }
+
+  // 【 反転 】
+  &.-r {
+    flex-direction: row-reverse !important;
+  }
+  &.-r_s {
+    @include max(768) {
+      flex-direction: row-reverse !important;
+    }
+  }
+  &.-cr {
+    flex-direction: column-reverse !important;
+  }
+  &.-cr_s {
+    @include max(768) {
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .flexItem{
+    &.-border{
+      position: relative;
+      &.-left{
+        @include max(768){
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px dotted $main-color--Dgray;
+          }
+        }
+        @include min(768){
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -15px;
+            height: 100%;
+            border-left: 1px dotted $main-color--Dgray;
+          }
+        }
+      }
+      &.-right{
+        @include max(768){
+          &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            border-bottom: 1px dotted $main-color--Dgray;
+          }
+        }
+        @include min(768){
+          &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -15px;
+            height: 100%;
+            border-left: 1px dotted $main-color--Dgray;
+          }
+        }
+      }
+    }
+  }
+
+  // コンテンツ_カラム（sp:pc 1:2）
+  &.-col1_2 {
+    .flexItem {
+      // li
+      width: 100%;
+      @include min(768) {
+        width: 48.5%;
+      }
+    }
+    &.-pc2_1 {
+      .flexItem {
+        @include min(768) {
+          &:nth-child(1) {
+            width: 35%;
+          }
+          &:nth-child(2) {
+            width: 60%;
+          }
+        }
+      }
+    }
+    &.-pc1_2 {
+      .flexItem {
+        @include min(768) {
+          &:nth-child(1) {
+            width: 60%;
+          }
+          &:nth-child(2) {
+            width: 35%;
+          }
+        }
+      }
+    }
+  }
+  // コンテンツカラム（sp:pc 2:2）
+  &.-col2 {
+    .flexItem {
+      width: 48.5%;
+    } // li
+  }
+  // コンテンツ_カラム（sp:大1小2、pc:3）
+  &.-col2M1_3 {
+    .flexItem {
+      // li
+      width: calc(50% - 1%);
+      @include min(768) {
+        width: calc(100% / 3 - 1%);
+      }
+    }
+    .flexItem_M {
+      @include max(768) {
+        width: 100%;
+      }
+      @include min(768) {
+        width: calc(100% / 3 - 1%);
+      }
+    }
+  }
+  // コンテンツ_カラム（sp:1 pc:大1小2）
+  &.-col1_2M1 {
+    .flexItem {
+      // li
+      width: 100%;
+      @include min(768) {
+        width: 48.5%;
+      }
+    }
+    .flexItem_M {
+      @include max(768) {
+        width: 100%;
+      }
+      @include min(768) {
+        width: 100%;
+      }
+    }
+  }
+  // コンテンツ_カラム（sp:2 pc:3）
+  &.-col2_3 {
+    .flexItem {
+      // li
+      width: 50%;
+      @include min(768) {
+        width: 33.3333%;
+      }
+    }
+  }
+  // コンテンツカラム（sp:pc 2:4）
+  &.-col2_4 {
+    .flexItem {
+      width: calc(50% - 5px);
+      &:nth-child(odd) {margin-right: 5px;}
+      &:nth-child(even) {margin-left: 5px;}
+      @include min(768) {
+        width: calc(25% - 15px);
+        // 一番左
+        &:nth-child(1),
+        &:nth-child(5) {margin-right: 15px;}
+
+        // 真ん中
+        &:nth-child(2),
+        &:nth-child(6) {margin: 0 10px 0 5px;}
+
+        &:nth-child(3),
+        &:nth-child(7) {margin: 0 5px 0 10px;}
+        // 一番右
+        &:nth-child(4),
+        &:nth-child(8) {margin-left: 15px;}
+      }
+    }
+  }
+  // コンテンツ_カラム（sp,pc:1:3）
+  &.-col1_3 {
+    .flexItem {
+      width: 100%;
+      @include max(500){margin: 0 auto;}
+      @include min(768){
+        width: calc(100% / 3 - 20px);
+        // 一番左
+        &:nth-child(1),
+        &:nth-child(4){margin-right: 20px;}
+        // 真ん中
+        &:nth-child(2),
+        &:nth-child(5){margin: 0 10px;}
+        // 一番右
+        &:nth-child(3),
+        &:nth-child(6){margin-left: 20px;}
+      }
+      @include min(1600){
+        width: calc(100% / 3 - 30px);
+        // 一番左
+        &:nth-child(1),
+        &:nth-child(4){margin-right: 30px;}
+        // 真ん中
+        &:nth-child(2),
+        &:nth-child(5){margin: 0 15px;}
+        // 一番右
+        &:nth-child(3),
+        &:nth-child(6){margin-left: 30px;}
+      }
+    }
+  }
+  // コンテンツ_カラム（sp,pc:3）
+  &.-col3 {
+    .flexItem {
+      width: calc(100% / 3 - 10px);
+      @include min(1000){width: calc(100% / 3 - 20px);}
+      @include min(1600){width: calc(100% / 3 - 30px);}
+    }
+  }
+  // コンテンツカラム（sp:pc 4）
+  &.-col4 {
+    .flexItem {
+      width: 23.5%;
+      height: auto;
+    } // li
+  }
+  // コンテンツ_カラム（sp,pc:5）
+  &.-col5 {
+    .flexItem {
+      width: calc(100% / 5 - 10px);
+    }
+  }
+
+  // header > ナビ＋コンタクト
+  &.-nav-contact {
+    height: 100%;
+    .flexItem {
+      &.-pageLink {
+        @include min(500) {
+          width: 68%;
+        }
+      }
+      &.-contact {
+        @include min(500) {
+          width: 27%;
+          height: 100%;
+          background: $main-color--red;
+
+          // border-radius: 0 15px 15px 0;
+          will-change: transform;
+          transition: all 0.5s;
+          &:hover {
+            background: $main-color--orange;
+          }
+        }
+      }
+    }
+  }
+  // cvエリア
+  &.-cvArea {
+    .cvItem {
+      width: 100%;
+      @include min(500) {
+        width: 40%;
+      }
+
+      &:nth-child(2) {
+        a {
+          background: $main-color--red;
+          border: 1px solid $main-color--red;
+          &:hover {
+            color: $main-color--red !important;
+            background: $main-color--w;
+          }
+        }
+      }
+    } // li
+  }
+  // footer関係
+  &.-footer {
+    .flexItem {
+      &.-logoArea,
+      &.-snsArea {
+        @include max(500) {
+          display: contents;
+        }
+        @include max(500) {
+          .logo {
+            order: 1;
+          }
+          .siteMap {
+            order: 3;
+            margin: 0 auto;
+          }
+          .snsBox {
+            order: 2;
+          }
+          .copyright {
+            order: 4;
+          }
+        }
+      }
+
+      &.-logoArea {
+        width: 100%;
+        @include min(500) {
+          width: 65%;
+        }
+        @include min(768) {
+          width: 55%;
+        }
+        .logo {
+          width: 50%;
+          max-width: 200px;
+          @include max(500) {
+            margin: 0 auto;
+          }
+        }
+      }
+      &.-snsArea {
+        width: 100%;
+        @include min(500) {
+          width: 35%;
+        }
+        @include min(768) {
+          width: 45%;
+        }
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+  // Logo関係
+  &.-sns {
+    width: 100%;
+    @include min(768) {
+      width: 40%;
+      margin-right: 0;
+      margin-left: auto;
+    }
+    .flexItem {
+      &.-snsLogoArea {
+        width: 14%;
+        @include min(768) {
+          width: 18%;
+          max-width: 40px;
+        }
+        &.-x {
+          width: 10%;
+          @include min(768) {
+            width: 16%;
+          }
+        }
+      }
+    }
+    &.snsBox {
+      @include max(768) {
+        width: 65%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // カテゴリー関係
+  &.-category {
+    .categoryItem {
+      width: auto;
+      margin-right: 5px;
+    }
+  }
+
+  // 詳細ページ
+  &.-single-lists {
+    .singleItem {
+      border-radius: 8px;
+      &:nth-child(1) {
+        background: $main-color--w;
+        border: 1px solid $site-color03;
+        padding: 5%;
+      }
+      &:nth-child(2) {
+        width: 100%;
+      }
+      // @include min(500) {
+      //     position: sticky;
+      //     top: 40px;
+      //     // overflow: scroll;
+      //     height: fit-content;
+      //     align-self: flex-start;
+      // }
+      @include min(768) {
+        &:nth-child(1) {
+          width: 67%;
+          padding: 3% 2.5%;
+        }
+        &:nth-child(2) {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  // 詳細ページ > 別記事紹介
+  &.-article-lists {
+    .articleItem {
+      width: 48.5%;
+      margin-bottom: 5%;
+    }
+  }
+
+  // LP_フロー
+  &.-flow {
+    .flexItem {
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -36%;
+        transform: translate(-50%, -50%);
+        width: 35px;
+        height: 35px;
+        background: url("/images/Lp/flow-arrow.png") no-repeat center center / contain;
+        z-index: 11;
+        @include min(500){
+          right: -28%;
+        }
+        @include min(768){
+          right: -25%;
+          width: 50px;
+          height: 50px;
+        }
+        @include min(1000){
+          right: -20%;
+          width: 70px;
+          height: 70px;
+        }
+      }
+      &:last-child{// 最後の矢印を表示しない
+        &::after{
+          content: none;
+        }
+      }
+    }
+  }
+  // LP_ラジオボタン
+  &.-radio {
+    .flexItem {
+      width: 100%;
+      @include max(1000){
+        &:nth-child(1) {
+          display: none;
+        }
+      }
+      @include min(1000){
+        &:nth-child(1) {
+          width: 23%;
+        }
+        &:nth-child(2) {
+          width: 77%;
+        }
+      }
+    }
+  }
+}

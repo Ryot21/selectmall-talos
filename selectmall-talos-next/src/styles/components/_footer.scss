@@ -1,0 +1,60 @@
+// フッター
+.c-footer{
+	width: 100vw;
+	height: auto;
+	background: $main-color--b;
+
+	// 背景色
+	&.-bg-color01{background: $site-color01;}
+	&.-bg-color02{background: $site-color02;}
+	&.-bg-color03{background: $site-color03;}
+	&.-bg-white  {background: $main-color--w;}
+	&.-bg-gray   {background: $main-color--gray;}
+
+
+	&-wrapper{// コンテンツ幅
+		width: 90%;
+		height: auto;
+		margin: 0 auto;
+		box-sizing: border-box;
+		transition: padding .3s;
+		@include max(768){
+			display: grid;
+		}
+		@include min(500) {
+			width: 85%;
+			margin: 0 auto;
+		}
+		@include min(768) {width: 90%;}
+		@include min(1600) {max-width: 1380px;}
+		@include min(1800) {max-width: 1500px;}
+
+		.c-fnav{
+			@include max(768){
+				order: 2;
+			}
+		}
+		// フッターのロゴ_LPのみ
+		.logo{
+			&.-lp{
+				width: 75%;
+				margin-left: auto;
+				margin-right: auto;
+				@include max(768){
+					order: 1;
+					width: 45%;
+				}
+				@include min(768){
+					width: 20%;
+				}
+				@include min(1200){max-width: 180px;}
+			}
+		}
+	}
+	&-copyright{// コピーライト_LPのみ
+		width: 100%;
+		padding: 10px 0;
+		margin: 0 auto;
+		background: $main-color--b;
+	}
+}

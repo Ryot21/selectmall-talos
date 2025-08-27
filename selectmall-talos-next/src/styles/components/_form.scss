@@ -1,0 +1,645 @@
+// フォーム内容
+.c-form {
+  width: 100%;
+  border-collapse: collapse;
+
+  // 固定ページ
+  &.-page {
+    .c-form--inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    table {
+      th,
+      td {
+        border-top: 1px solid #d7d7d7;
+        border-bottom: 1px solid #d7d7d7;
+        padding: 20px;
+        @include max(500) {
+          display: block;
+          width: 100%;
+          border: none;
+        }
+      }
+      th {
+        width: 250px;
+        position: relative;
+        text-align: left;
+        padding: 20px 15px;
+        @include min(500) {
+          padding: 15px;
+        }
+        @include max(500) {
+          width: 100%;
+          background-image: linear-gradient(45deg, #e4ebf445, #e4ebf480);
+        }
+      }
+      td {
+        padding: 20px 5px 20px 30px;
+        @include min(500) {
+          padding: 15px;
+        }
+
+        input[type="submit"],
+        input[type="text"],
+        select,
+        textarea,
+        button {
+          box-shadow: none;
+          outline: none;
+          border: none;
+        }
+        input[type="text"],
+        select,
+        textarea {
+          display: block;
+          width: 480px;
+          background: #f8f8f8;
+          font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+          padding: 12px 15px;
+          border: 1px solid #f8f8f8;
+          border-radius: 5px !important;
+          transition: all 0.5s;
+          border-radius: 0;
+          &:focus {
+            background: #e9f5fb;
+            border: 1px solid $main-color--gray;
+          }
+          &::placeholder {
+            color: #ccc;
+          }
+          @include max(500) {
+            &#purpose,
+            &#company,
+            &#name,
+            &#email,
+            &#phone,
+            &#message {
+              width: 100% !important;
+            }
+          }
+          @include min(500) {
+            &#purpose {
+              // 目的
+              width: 65%;
+              max-width: 190px;
+            }
+            &#company {
+              // 会社名
+              width: 75%;
+              max-width: 300px;
+            }
+            &#name {
+              // ご担当者名
+              width: 55%;
+              max-width: 180px;
+            }
+            &#email {
+              // メールアドレス
+              width: 80%;
+              max-width: 400px;
+            }
+            &#phone {
+              // 電話番号
+              width: 45%;
+              max-width: 150px;
+            }
+            &#message {
+              // お問い合わせ内容
+              resize: none;
+              width: 100%;
+              height: 300px;
+            }
+          }
+          &#submit {
+            // ボタン
+            width: 100%;
+            padding: 0;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  // サイドバー
+  &.-sideber {
+    .required {
+      // ＊（必須）
+      span {
+        position: relative;
+        &::after {
+          content: "*";
+          position: absolute;
+          top: -5px;
+          right: -13px;
+          font-size: 1.3rem;
+          color: $main-color--red;
+          padding: 4px 6px 3px;
+        }
+      }
+    }
+    table {
+      th,
+      td {
+        display: block;
+        width: 100%;
+        border: none;
+      }
+      th {
+        width: 100%;
+        background-image: linear-gradient(325deg, #e4ebf445, #e4ebf480);
+        font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+        text-align: left;
+        letter-spacing: 0.2rem;
+        padding: 10px 6px 5px;
+      }
+      td {
+        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+        letter-spacing: 0.1rem;
+        padding: 10px 0 10px 0;
+        input[type="text"],
+        select,
+        textarea {
+          display: block;
+          background: #f8f8f8;
+          font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+          padding: 10px 15px;
+          border: 1px solid #f8f8f8;
+          border-radius: 5px !important;
+          transition: all 0.5s;
+          border-radius: 0;
+          &:focus {
+            background: #e9f5fb;
+            border: 1px solid $main-color--gray;
+          }
+          &::placeholder {
+            color: #ccc;
+          }
+
+          // 共通
+          &#purpose,
+          &#company,
+          &#name,
+          &#email,
+          &#phone,
+          &#message {
+            width: 100% !important;
+          }
+
+          &#message {
+            // お問い合わせ内容
+            resize: none;
+            width: 100%;
+            height: 150px;
+          }
+          &#submit {
+            // ボタン
+            width: 100%;
+            padding: 0;
+            border: none;
+          }
+        }
+        p {
+          padding-left: 5% !important;
+        }
+      }
+    }
+    // 個人情報の取り扱いについて
+    .pITitle {
+      margin-bottom: 3% !important;
+    }
+    .pIText {
+      font-size: 1.2rem;
+      margin-bottom: 3% !important;
+    }
+    .c-form {
+      &--privacyPolicy {
+        width: 100%;
+        height: 200px;
+
+        margin: 0 auto 24px;
+        padding: 5%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+        @include min(500) {
+          padding: 15px 20px;
+        }
+
+        h3 {
+          position: relative;
+          font-size: 1.5rem;
+          margin: 2px 0 10px;
+          padding: 4px 0 6px 24px;
+          border-bottom: 2px solid $main-color--red;
+          font-weight: bold;
+          &::before {
+            content: url(/images/item/form-icon.png);
+            position: absolute;
+            left: 0;
+            top: 6px;
+          }
+        }
+        h4,
+        p,
+        a,
+        span {
+          font-size: clamp(1rem, 1.5vw, 1.2rem);
+          letter-spacing: 0.2rem;
+          line-height: 1.5;
+        }
+        span {
+          display: block;
+        }
+        a {
+          color: $site-color02;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        &__detail {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+  // カード
+  &.-card {
+    .required {
+      // ＊（必須）
+      span {
+        position: relative;
+        &::after {
+          content: "*";
+          position: absolute;
+          top: -5px;
+          right: -13px;
+          color: $main-color--red;
+          padding: 4px 6px 3px;
+        }
+      }
+    }
+    table {
+      th,
+      td {
+        display: block;
+        width: 100%;
+        border: none;
+      }
+      th {
+        width: 100%;
+        background-image: linear-gradient(325deg, #e4ebf445, #e4ebf480);
+        font-size: 1.2rem;
+        text-align: left;
+        letter-spacing: 0.2rem;
+        padding: 10px 6px 5px;
+      }
+      td {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        padding: 10px 0 10px 0;
+        input[type="text"],
+        select,
+        textarea {
+          display: block;
+          background: #f8f8f8;
+          font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+          padding: 10px 15px;
+          border: 1px solid #f8f8f8;
+          border-radius: 5px !important;
+          transition: all 0.5s;
+          border-radius: 0;
+          &:focus {
+            background: #e9f5fb;
+            border: 1px solid $main-color--gray;
+          }
+          &::placeholder {
+            color: #ccc;
+          }
+
+          // 共通
+          &#purpose,
+          &#company,
+          &#name,
+          &#email,
+          &#phone,
+          &#message {
+            width: 100% !important;
+          }
+
+          &#message {
+            // お問い合わせ内容
+            resize: none;
+            width: 100%;
+            height: 150px;
+          }
+          &#submit {
+            // ボタン
+            width: 100%;
+            padding: 0;
+            border: none;
+          }
+        }
+        p {
+          padding-left: 5% !important;
+        }
+      }
+    }
+    .c-form {
+      &--item {
+        position: relative;
+        margin-bottom: 10px !important;
+        @include min(768) {
+          margin-bottom: 10px !important;
+        }
+        @include min(1280) {
+          margin-bottom: 15px !important;
+        }
+        span {
+          position: absolute;
+          inset: 0.7rem auto auto 1rem;
+          color: $main-color--b;
+          font-size: 1.2rem;
+          transition-property: inset, font-size, color, background;
+          transition-duration: 0.2s;
+          transition-timing-function: ease;
+          pointer-events: none;
+          @include min(500) {
+            inset: 1rem auto auto 1rem;
+          }
+        }
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 6px;
+          @include min(500) {
+            padding: 7px 5px;
+          }
+          @include min(1280) {
+            padding: 8px 10px;
+          }
+          &:focus + span,
+          &:not(:placeholder-shown) + span {
+            font-size: 0.8rem;
+            color: $site-color02;
+            background: $main-color--w;
+            inset: -0.5em auto auto 1rem;
+            padding: 0 0.5em;
+          }
+        }
+        &.-radioBtn {
+          label {
+            position: relative;
+            display: block;
+            width: calc(33.333% - 1rem);
+            height: 33px;
+            text-align: center;
+            cursor: pointer;
+
+            background: $main-color--w;
+            border: 1px solid $main-color--b;
+            border-radius: 3px;
+            transition: all .3s;
+            &:nth-child(1){margin-right: 1rem;}
+            &:nth-child(2){margin: 0 .5rem;}
+            &:nth-child(3){margin-left: 1rem;}
+            pre {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              margin: auto;
+              line-height: 1.2;
+
+              font-size: 1.1rem;
+              font-weight: bold;
+              letter-spacing: 0.1rem;
+            }
+            input[type="radio"] {
+              display: none;
+            }
+            // ホバー時
+            &:hover{
+              background: $main-color--gray;
+            }
+            // 選択時
+            &:has(input:checked) {
+              background: $lp-color01;
+              color: #fff;
+              border: 1px solid $site-color03;
+              transform: scale(1.1);
+              z-index: 1;
+            }
+          }
+        }
+      }
+      &--consentText {
+        font-size: .8rem;
+        letter-spacing: 0.2rem;
+        line-height: 1.5;
+      }
+      // 同意
+      &--consent {
+        #error {
+          // エラーテキスト
+          display: none;
+          font-size: 1rem;
+          color: $main-color--red;
+          text-align: center;
+          letter-spacing: 0.2rem;
+          line-height: 1.5;
+        }
+        .policyBox {
+          // ポリシーボックス
+          background: none;
+          padding: 0 0 0 25px;
+          text-align: left;
+          label {
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  // 個人情報の取り扱いについて
+  &--privacyPolicy {
+    width: 100%;
+    height: 300px;
+
+    margin: 0 auto 24px;
+    padding: 5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @include min(500) {
+      padding: 28px 44px 28px 31px;
+    }
+
+    h3 {
+      position: relative;
+      margin: 2px 0 24px;
+      padding: 4px 0 6px 24px;
+      border-bottom: 2px solid $main-color--red;
+
+      font-size: 18px;
+      font-weight: bold;
+      &::before {
+        content: url(/images/item/form-icon.png);
+        position: absolute;
+        left: 0;
+        top: 6px;
+      }
+    }
+    p,
+    span {
+      font-size: clamp(1rem, 1.2vw, 1.5rem);
+      letter-spacing: 0.2rem;
+      line-height: 1.5;
+    }
+    span {
+      display: block;
+    }
+    a {
+      color: $site-color02;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    &__detail {
+      margin-bottom: 3rem;
+      h4 {
+        font-size: clamp(1.6rem, 1.5vw, 2rem);
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  // 同意
+  &--consent {
+    // メディア、LP共通
+    #error {
+      // エラーテキスト
+      display: none;
+      font-size: clamp(1rem, 1.2vw, 1.5rem);
+      color: $main-color--red;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      line-height: 1.5;
+    }
+    .policyBox {
+      // ポリシーボックス
+      font-size: 1rem;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      background-image: linear-gradient(45deg, #e4ebf445, #e4ebf480);
+      padding: 16px 0;
+      margin-bottom: 10px;
+      @include min(500) {
+        margin-bottom: 15px;
+      }
+      &--inner {
+        display: inline-block;
+        width: auto;
+        margin: 0 auto;
+      }
+      input {
+        vertical-align: middle;
+        &[type="checkbox"] {
+          display: none;
+          + label {
+            position: relative;
+            font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+            font-weight: bold;
+            color: $main-color--b;
+            cursor: pointer;
+
+            &::before {
+              // チェックボックス
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: -20px;
+              display: block;
+              width: 10px;
+              height: 10px;
+              background-color: $main-color--w;
+              border: 1px solid $site-color02;
+              border-radius: 2px;
+              transform: translateY(-50%);
+              cursor: pointer;
+              @include min(500) {
+                left: -20px;
+              }
+            }
+            &::after {
+              // チェックボックスのチェックマーク
+              content: "" !important;
+              position: absolute;
+              top: 59%;
+              left: -20px;
+              display: block;
+              width: 8px;
+              height: 4px;
+              border-bottom: 2px solid #df2323;
+              border-left: 2px solid #df2323;
+              transform: rotate(-45deg) translate(50%, -50%);
+              transition: all 0.1s;
+              opacity: 0;
+              @include min(500) {
+                left: -20px;
+              }
+            }
+            &.required {
+              // 必須
+              position: relative;
+              span {
+                &::after {
+                  content: "必須";
+                  position: absolute;
+                  top: 50%;
+                  right: -40px;
+                  transform: translateY(-50%);
+
+                  font-size: 1.1rem;
+                  color: $main-color--w;
+                  background: $main-color--red;
+                  padding: 3px 5px 3px;
+                  border-radius: 3px;
+                  @include min(500) {
+                    right: -45px;
+                    padding: 4px 6px 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &[type="checkbox"]:checked {
+          + label {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    p {
+      // 入力内容をご確認のうえ、次の画面へ進んでください。
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      text-align: center;
+    }
+  }
+
+  // ボタン
+  &--btn {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

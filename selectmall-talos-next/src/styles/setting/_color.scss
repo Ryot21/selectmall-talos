@@ -1,0 +1,73 @@
+// フォントカラー（基本）
+$main-color--b: #3b3b3b;
+$main-color--w: #ffffff;
+$main-color--Lgray: #f8f7f7;
+$main-color--gray: #f6f6f6;
+$main-color--Dgray: #636363;
+$main-color--beige: #f0f0ee;
+$main-color--red: #df2323;
+$main-color--Dred: #af1a1a;
+$main-color--orange: #F58435;
+$main-color--Dorange: #E76911;
+$main-color--yellow: #ffda2a;
+
+$main-color--yes: #ed604f;
+$main-color--no: #668ad1;
+
+// サイト独自のカラー(3色 : 若い数字の方がよりメインカラー)
+$site-color01: rgb(245, 251, 255); // 薄い色
+$site-color02: rgb(25, 66, 153); // 濃い色
+$site-color03: #2d5379;
+$site-color04: #e77c31;
+$site-color05: #2267b8;
+$site-color06: rgba(123, 201, 246, 0.25); // 薄い色
+$site-color07: #DCE6F8;
+
+// LP独自のカラー
+$lp-color01: #7794AE;
+$lp-color02: #D5EDFC;
+$lp-color03: #194299;
+$lp-color04: #F5FBFF;
+$lp-color05: #40ACE0;
+$lp-color06: #2F7EC1;
+$lp-color07: #B4C9E5;
+$lp-color08: #3895D1;
+$lp-color09: #E3EBF2;
+
+$site-color_kome: #dacebc;
+
+$house-color01: #ebe4db;
+$house-color02: #d5e6e1;
+$house-color03: #dcecf0;
+$house-color04: #b6b343;
+
+$site-color01-hover: #5a8190;
+$site-color02-hover: rgb(36, 101, 121);
+$site-color03-hover: #024c63;
+
+$sold-out: #5a8190;
+
+// 背景カラー
+$main-color-bg: #ffffff;
+$contactBtn-color--bg: #90a83d;
+$item-hover--bg: #9e9a9a;
+$item-hover--bg-b: #4d4d4de6;
+
+$gr-blue: linear-gradient(55deg, #2d5379 0%, #5399df 100%);
+
+// ボーダーカラー
+$border-color--b: #333333;
+$item-hover--b: #dfdddd94;
+
+// お問い合わせ
+$contact-item-1: #333333;
+$contact-item-2: #333333a4;
+$contact-item-3: #3333335b;
+$contact-item-4: #33333344;
+
+// ホバー関係
+$nav-hover-bg: #41606a;
+$nav-active-bg: #002a37;
+
+// 設備・仕様のバルーンカラー
+$site-balloon-color: #002a37;

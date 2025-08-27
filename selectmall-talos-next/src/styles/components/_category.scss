@@ -1,0 +1,95 @@
+// 一覧ページ > カテゴリー関係
+.c-category {
+  width: 100%;
+  margin: 0 auto;
+  @include min(500) {
+    width: 85%;
+  }
+
+  &__box,
+  &__lists {
+    // ul
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    @include max(768) {
+      flex-wrap: wrap;
+    }
+  }
+  &__box {
+    width: auto;
+    justify-content: center;
+    .titleArea {
+      background: $site-color03;
+      border: 1px solid $site-color03;
+      border-radius: 30px 0 0 30px;
+      margin-right: 5px;
+      @include max(768) {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        margin: 0;
+      }
+      span {
+        display: block;
+        color: $main-color--w;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 0.2rem;
+        white-space: nowrap;
+        padding: 5px 20px;
+        @include min(768) {
+          font-size: 1.2rem;
+          padding: 11px 15px 11px 20px;
+        }
+      }
+    }
+    .itemArea {
+      width: auto;
+      padding: 6px 20px 6px 10px;
+      background: $main-color--gray;
+      border: 1px solid $site-color03;
+      border-radius: 0 30px 30px 0;
+      @include max(768) {
+        width: 100%;
+        padding: 8px 10px 0;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+  &__lists {
+    justify-content: start;
+  }
+  &__item {
+    // li
+    background: $main-color--w;
+    border: 1px solid $site-color03;
+    margin-right: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    @include max(768) {
+      margin-bottom: 10px;
+    }
+    a {
+      display: block;
+      color: $site-color03;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+      white-space: nowrap;
+      padding: 5px 10px;
+      transition: all 0.5s;
+      &:hover {
+        color: $main-color--w;
+        background: $site-color03;
+      }
+      &.active {
+        font-size: 1.2rem;
+        font-weight: bold;
+        background: $main-color--yellow;
+        padding: 3px 10px;
+        pointer-events: none;
+      }
+    }
+  }
+}

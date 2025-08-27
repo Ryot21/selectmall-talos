@@ -1,0 +1,1359 @@
+// 各ページ > メインビジュアル
+
+.c-mainVisual{
+    // ===================== 共通設定 =====================
+    position: relative;
+    overflow: hidden;
+    &.-bg{// 背景色・背景画像
+        // 背景色
+        &-color01 {background: $site-color01 !important;}
+        &-color02 {background: $site-color02 !important;}
+        &-color03 {background: $site-color03 !important;}
+        &-color04 {background: $site-color04 !important;}
+        &-color05 {background: $site-color05 !important;}
+        &-color06 {background: $site-color06 !important;}
+        &-color07 {background: $site-color07 !important;}
+        &-white {background: $main-color--w !important;}
+        &-gray {background: $main-color--gray !important;}
+
+        // 背景画像
+        &-img{
+            &-sc08 {
+                background-image: url(/images/Lp/sc08-bg.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            &-cta {
+                background-image: url(/images/Lp/cta-bg.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    &--inner {// コンテンツ幅
+        width: 92.5%;
+        margin: auto;
+        @include max(500) {max-width: 375px;}
+        @include min(500) {width: 85%;}
+        @include min(768) {width: 90%;}
+        @include min(1600) {max-width: 1380px;}
+        @include min(1800) {max-width: 1500px;}
+    
+        &.-bg-color01 {background: $site-color01;}
+        &.-bg-color02 {background: $site-color02;}
+        &.-bg-color03 {background: $site-color03;}
+        &.-bg-white {background: $main-color--w;}
+        &.-bg-gray {background: $main-color--gray;}
+        &.-bg-img01 {
+            background-image: url(/images/Lp/sc08-bg.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &.-card {
+            padding: 10% 2.5% 10%;
+            border-radius: 10px;
+            border: 1px solid $site-color03;
+            box-shadow: 0px 0px 5px #8080802b;
+            @include min(768) {padding: 6% 2.5% 5%;}
+        }
+    }
+    .imgBox{// コンテンツ「幅・高さ」を指定する画像
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    &--box{// コンテンツ内のボックス
+        position: absolute;
+        &.-center {// 要素の真ん中
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+        &.-breadcrumb {// パンくず
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: inherit;
+        }
+    }
+
+    // ===================== メディア関係 =====================
+    &.-top {// TOPページ
+        .imgBox {
+            // 高さ
+            // min-height 要素の最小高さ
+            // max-height 要素の最大高さ
+            height: 120vh;
+            max-height: 840px;
+            @include min(400) {
+                height: 90vh;
+                max-height: 840px;
+            }
+            @include min(500) {
+                height: 100vh;
+            }
+            @include min(768) {
+                min-height: 830px;
+                max-height: 1020px;
+            }
+            @include min(1400){max-height: 950px;}
+            @include min(1500){max-height: 950px;}
+            @include min(1600){max-height: 1200px;}
+
+            // 背景
+            &.-dot {// 1.ドット背景
+            background-image: radial-gradient($site-color01 2px, transparent 2px),
+                radial-gradient($site-color01 2px, #ffffff 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            }
+            &.-wave {// 2.波背景
+            background: radial-gradient(
+                    1.5em 6.28571em at 1.95em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    rgba(255, 255, 255, 0.25) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                0 0,
+                radial-gradient(
+                    1.5em 6.28571em at -0.45em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    rgba(255, 255, 255, 0.25) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                1.5em 5.5em,
+                radial-gradient(
+                    2.3em 4.57143em at 2.99em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.3) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                0 0,
+                radial-gradient(
+                    2.3em 4.57143em at -0.69em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.3) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                2.3em 4em,
+                radial-gradient(
+                    3.5em 6.28571em at 4.55em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    rgba(255, 255, 255, 0.25) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                0 0,
+                radial-gradient(
+                    3.5em 6.28571em at -1.05em,
+                    rgba(255, 255, 255, 0) 50%,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    rgba(255, 255, 255, 0.25) 55%,
+                    rgba(255, 255, 255, 0) 55%
+                )
+                3.5em 5.5em,
+                radial-gradient($site-color01, $site-color03);
+            background-color: $site-color01;
+            background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em,
+                3.5em 11em, 3.5em 11em, 100% 100%;
+            background-repeat: repeat;
+            }
+        }
+        .c-mainVisual--box {
+            //アスペクト比
+            &.-pic16_9,
+            &.-pic9_16,
+            &.-pic4_3,
+            &.-pic3_4 {// 共通
+            width: auto;
+            background: gray;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            // ぼかす
+            &.-blur {
+                // tb、pc
+                &-b01 {
+                @include min(500) {
+                    filter: blur(0.5px);
+                    opacity: 0.85;
+                }
+                }
+                &-b02 {
+                @include min(500) {
+                    filter: blur(1px);
+                    opacity: 0.8;
+                }
+                }
+                &-b03 {
+                @include min(500) {
+                    filter: blur(1.5px);
+                    opacity: 0.75;
+                }
+                }
+                &-b04 {
+                @include min(500) {
+                    filter: blur(2px);
+                    opacity: 0.7;
+                }
+                }
+                &-b05 {
+                @include min(500) {
+                    filter: blur(2.5px);
+                    opacity: 0.65;
+                }
+                }
+                // スマホ
+                &-b01s {
+                @include max(500) {
+                    filter: blur(0.5px);
+                    opacity: 0.85;
+                }
+                }
+                &-b02s {
+                @include max(500) {
+                    filter: blur(1px);
+                    opacity: 0.8;
+                }
+                }
+                &-b03s {
+                @include max(500) {
+                    filter: blur(1.5px);
+                    opacity: 0.75;
+                }
+                }
+                &-b04s {
+                @include max(500) {
+                    filter: blur(2px);
+                    opacity: 0.7;
+                }
+                }
+                &-b05s {
+                @include max(500) {
+                    filter: blur(2.5px);
+                    opacity: 0.65;
+                }
+                }
+            }
+            }
+            &.-pic16_9 {
+                img {aspect-ratio: 16 / 9;}
+                &_s {
+                    @include max(500) {img {aspect-ratio: 16 / 9;}}
+                }
+            }
+            &.-pic9_16 {
+                img {aspect-ratio: 9 / 16;}
+                &_s {
+                    @include max(500) {img {aspect-ratio: 9 / 16;}}
+                }
+            }
+            &.-pic4_3 {
+                img {aspect-ratio: 4 / 3;}
+                &_s {
+                    @include max(500) {img {aspect-ratio: 4 / 3;}}
+                }
+            }
+            &.-pic3_4 {
+                img {aspect-ratio: 3 / 4;}
+                &_s {
+                    @include max(500) {img {aspect-ratio: 3 / 4;}}
+                }
+            }
+            // 位置
+            &.-pic-01 {//中央下部
+                top: 63%;
+                left: 74%;
+                transform: translate(-50%, -50%);
+                width: 45%;
+                z-index: 1;
+                @include min(500) {
+                    // tb
+                    top: 72%;
+                    left: 28%;
+                    transform: translate(-50%, -50%);
+                    width: 55%;
+                    z-index: 4;
+                }
+                @include min(768) {
+                    // pc
+                    top: 73%;
+                    left: 44%;
+                    width: 40%;
+                    transform: translate(-50%, -50%);
+                }
+                @include min(1400) {
+                    // 大きめのブラウザ
+                    top: 70%;
+                    left: 40%;
+                    width: 30%;
+                }
+                @include min(1500){
+                    width: 25%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-02 {// 右下
+                top: 25%;
+                left: 5%;
+                width: 75%;
+                z-index: 5;
+                @include min(500) {
+                    top: 65%;
+                    left: 80%;
+                    width: 20%;
+                }
+                @include min(768) {
+                    top:46%;
+                    left: 76%;
+                    width: 23%;
+                }
+                @include min(1400) {
+                    top: 50%;
+                    left: 75%;
+                    width: 25%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-03 {// 中央上
+                top: 20%;
+                left: 58%;
+                width: 30%;
+                z-index: 1;
+                @include min(500) {
+                    top: 20%;
+                    left: 12%;
+                    width: 25%;
+                    z-index: 4;
+                }
+                @include min(768) {
+                    top: 10%;
+                    left: 33%;
+                    width: 15%;
+                }
+                @include min(1400) {
+                    top: 10%;
+                    left: 37%;
+                    width: 10%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-04 {// 左上
+                top: 84%;
+                left: 2%;
+                width: 39%;
+                z-index: 6;
+                @include min(500) {
+                    top: 17%;
+                    left: 8%;
+                    width: 20%;
+                }
+                @include min(768) {
+                    top: 20%;
+                    left: 5%;
+                    width: 25%;
+                }
+                @include min(1400) {
+                    top: 15%;
+                    left: 8%;
+                    width: 22%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-05 {// 左下
+                top: 77%;
+                left: 3%;
+                width: 50%;
+                z-index: 3;
+                @include min(500) {
+                    top: 69%;
+                    left: 78%;
+                    width: 16%;
+                }
+                @include min(768) {
+                    top: 67%;
+                    left: 5%;
+                    width: 16%;
+                }
+                @include min(1600) {
+                    top: 60%;
+                    left: 5%;
+                    width: 12%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-06 {// 右上
+                top: 8%;
+                left: 7%;
+                width: 55%;
+                z-index: 2;
+                @include min(500) {
+                    top: 13%;
+                    left: 43%;
+                    width: 38%;
+                }
+                @include min(768) {
+                    top: 12%;
+                    left: 60%;
+                    width: 17%;
+                }
+                @include min(1400) {
+                    top: 20%;
+                    left: 75%;
+                    width: 15%;
+                }
+                @include min(1500) {
+                    top: 14%;
+                    left: 61%;
+                    width: 15%;
+                    max-width: 450px;
+                }
+            }
+            &.-pic-07 {// 中央下(小)
+                top: 60%;
+                left: -5%;
+                width: 44%;
+                z-index: 1;
+                @include min(400) {
+                    top: 59%;
+                }
+                @include min(500) {
+                    top: 87%;
+                    left: 64%;
+                    width: 23%;
+                }
+                @include min(768) {
+                    top: 80%;
+                    left: 75%;
+                    width: 18%;
+                }
+                @include min(1400) {
+                    top: 78%;
+                    left: 60%;
+                    width: 12%;
+                    max-width: 450px;
+                }
+            }
+
+            // キャッチコピー
+            &.-catchCopy01,
+            &.-catchCopy02 {// 共通
+                width: 25px;
+                transform: translate(-50%, -50%);
+                @include min(500) {width: auto;}
+                .wrapper{
+                    background: $main-color--w;
+                    box-shadow: 3px 6px 5px 0px #00000021;
+                    padding: 2px 0 2px 0;
+                    border-radius: 5px;
+                    @include min(500) {
+                        padding: 10px 5px 10px 5px;
+                    }
+                }
+                p{
+                    margin: 5px auto;
+                    background: $site-color03;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    @include min(500) {
+                        font-size: clamp(2rem, 2.5vw, 5.4rem);
+                        letter-spacing: .4rem;
+                    }
+                    @include min(1600){
+                        font-size: clamp(2rem, 2.5vw, 4.5rem);
+                    }
+                }
+                p,
+                .big,
+                .small{
+                    color: $site-color03;
+                    font-family: $f-gothic01;
+                    font-weight: bold;
+                    writing-mode: vertical-rl;// 縦組
+                    align-items: center;
+                    letter-spacing: .1rem;
+                    @include max(500){
+                        font-size: 1.2rem;
+                        letter-spacing: .2rem;
+                    }
+                }
+                .big {// 漢字（大きめ）
+                    @include min(500) {
+                    font-size: clamp(2rem, 2.5vw, 5.4rem);
+                    letter-spacing: .4rem;
+                    background: linear-gradient(
+                        55deg,
+                        $site-color03 0%,
+                        #5399df 100%
+                    );
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    }
+                    @include min(1600){font-size: clamp(2rem, 2.5vw, 4.5rem);}
+                }
+                .small {// ひらがな（小さめ）
+                    background: $site-color03;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    @include min(500) {
+                    font-size: clamp(1.2rem, 2vw, 2.5rem);
+                    letter-spacing: .2rem;
+                    padding-top: 2px;
+                    }
+                }
+            }
+            &.-catchCopy01 {// 縦組_右
+                top: 21%;
+                left: 91%;
+                z-index: 11;
+                @include min(500) {
+                    top: 29%;
+                    left: 92.5%;
+                }
+                @include min(768) {
+                    top: 37%;
+                    left: 85.5%;
+                }
+                @include min(1000) {
+                    left: 84%;
+                }
+                @include min(1400){
+                    top: 40%;
+                    left: 78%;
+                }
+                @include min(1800) {
+                    top: 45%;
+                    left: 73%;
+                }
+            }
+            &.-catchCopy02 {// 縦組_左
+                top: 22%;
+                left: 83%;
+                z-index: 10;
+                @include min(500) {
+                    top: 33%;
+                    left: 85.5%;
+                }
+                @include min(768) {
+                    top: 39%;
+                    left: 79.5%;
+                }
+                @include min(1400){
+                    top: 43%;
+                    left: 73.5%;
+                }
+                @include min(1600) {
+                    top: 48%;
+                }
+                @include min(1800) {
+                    left: 69%;
+                }
+            }
+
+            // 注釈
+            &.-comments01 {// タイトル_中央
+                position: absolute;
+                top: 47%;
+                left: 5%;
+                transform: translate(1%, -50%);
+                z-index: 11;
+                @include min(500) {
+                    top: 50%;
+                    left: 23%;
+                    transform: translate(-18%, -50%);
+                }
+                @include min(768) {
+                    top: 53%;
+                    // top: 43%;
+                    left: 35%;
+                    transform: translate(-18%, -50%);
+                }
+                @include min(1000) {
+                    top: 50%;
+                    // top: 46.5%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                // ピックアップ
+                .pickup {
+                    position: relative;
+                    display: inline-block;
+                    color: $site-color03;
+                    font-size: clamp(1rem, 2vw, 1.4rem);
+                    font-weight: bold;
+                    text-align: start;
+                    letter-spacing: .1rem;
+                    margin-bottom: 2rem;
+                    @include max(1000) {
+                    line-height: 2;
+                    }
+                    &::before,
+                    &::after {
+                    content: "";
+                    position: absolute;
+                    top: auto;
+                    bottom: -1rem;
+                    height: 1px;
+                    background: $site-color03;
+                    }
+                    &::before {
+                    left: 0;
+                    width: 30px;
+                    @include min(768) {
+                        width: 62px;
+                    }
+                    }
+                    &::after {
+                    left: auto;
+                    right: 0;
+                    width: 87%;
+                    @include min(768) {
+                        width: 80%;
+                    }
+                    }
+                    span {
+                    display: inline-block;
+                    color: $site-color03;
+                    font-size: clamp(1rem, 2vw, 1.4rem);
+                    font-weight: bold;
+                    background: $main-color--w;
+                    padding: 0.5rem 0.5rem;
+                    margin-right: .5rem;
+                    border-radius: 5px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -1.6rem;
+                        left: 28px;
+                        width: 25px;
+                        height: 1px;
+                        background: $site-color03;
+                        transform: rotate(30deg);
+                        @include min(768) {
+                        left: 60px;
+                        }
+                    }
+                    }
+                }
+                // タイトル
+                .title {
+                    margin-bottom: 2rem;
+                    p,
+                    span {
+                    font-size: 3.5rem;
+                    font-weight: bold;
+                    text-align: start;
+                    letter-spacing: 0.2rem;
+                    line-height: 1.5;
+                    @include min(768) {
+                        font-size: clamp(4rem, 5.5vw, 6rem);
+                    }
+                    }
+                    span {
+                        background: linear-gradient(55deg,$site-color03 0%,#5399df 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        filter: drop-shadow(1px 1px 1px $main-color--gray);
+                    }
+                }
+                .text {
+                    position: relative;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                    text-align: start;
+                    letter-spacing: 0.2rem;
+                    line-height: 1.75;
+                    padding-left: 1rem;
+                    @include min(500){
+                    font-size: clamp(1.5rem, 1.5vw, 2rem);
+                    }
+                    &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 2px;
+                    height: 65%;
+                    background: $site-color03;
+                    border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+    &.-single {//下層ページ
+        background: white;
+        border-bottom: 1px solid $site-color03;
+        .imgBox {
+            width: 100lvw;
+            height: 20vh;
+            max-height: 190px !important;
+            background: linear-gradient(
+                220deg,
+                rgba(235, 249, 255, 0.367),
+                rgb(110 133 166 / 36%)
+            );
+            overflow: hidden;
+    
+            @include min(500) {
+                height: 20vh;
+                min-height: 340px !important;
+                max-height: 340px !important;
+            }
+            @include min(768) {height: 30vh;}
+            @include min(1200) {height: 35vh;}
+            @include min(1400) {height: 40vh;}
+
+            &.-rotate {// 回転
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    top: -50%;
+                    left: -50%;
+                    z-index: 1;
+                    background: repeating-linear-gradient(
+                        transparent,
+                        transparent 50px,
+                        rgba(255, 255, 255, 0.1) 50px,
+                        rgba(255, 255, 255, 0.1) 51px
+                    );
+                    animation: animate 20s linear infinite;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    top: -50%;
+                    left: -50%;
+                    z-index: 2;
+                    background: repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 50px,
+                        rgba(255, 255, 255, 0.1) 50px,
+                        rgba(255, 255, 255, 0.1) 51px
+                    );
+                    animation: animate 20s linear infinite;
+                }
+            }
+            &.-slide {// スライド
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 150%;
+                    height: 150%;
+                    top: -25%;
+                    left: -25%;
+                    z-index: 1;
+                    background: repeating-linear-gradient(
+                        -45deg,
+                        transparent 0,
+                        transparent 2px,
+                        rgba(255, 255, 255, 0.1) 2px,
+                        rgba(255, 255, 255, 0.1) 4px
+                    );
+                    animation: slide 20s linear infinite;
+                }
+            }
+            &.-svg {// svg
+                .slash_position {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    stroke: #666;
+        
+                    svg {
+                        width: 100%;
+                        height: 100%;
+        
+                        .line-group {
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                        }
+        
+                        // ブレイクポイントごとの位置調整
+                        @include max(500) {
+                        #Lblue {transform: translateX(-20%);}
+                        #blue {transform: translateX(10%);}
+                        #Dblue {transform: translateX(-10%);}
+                        }
+                        @include min(500) {
+                        #Lblue {transform: translateX(-10%);}
+                        #blue {transform: translateX(5%);}
+                        #Dblue {transform: translateX(-5%);}
+                        }
+                        @include min(768) {
+                        #Lblue {transform: translateX(0);}
+                        #blue {transform: translateX(0);}
+                        #Dblue {transform: translateX(0);}
+                        }
+        
+                        // 既存のスタイル
+                        #Dblue {
+                        fill: none;
+                        opacity: 0.15;
+                        stroke: $site-color03;
+                        stroke-width: 5;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 800;
+                        stroke-dashoffset: 800;
+                        animation: slash_line 10s ease-in-out infinite;
+                        animation-direction: reverse;
+                        }
+        
+                        #gray {
+                        fill: none;
+                        opacity: 0.15;
+                        stroke: $site-color03;
+                        stroke-width: 1;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 800;
+                        stroke-dashoffset: 800;
+                        animation: slash_line 5s ease-in-out infinite;
+                        animation-direction: reverse;
+                        }
+        
+                        #Lblue {
+                        fill: none;
+                        stroke: #5182aa12;
+                        stroke-width: 20;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 90;
+                        stroke-dashoffset: 800;
+                        }
+        
+                        @keyframes draw {
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                        }
+        
+                        @keyframes show {
+                        0% {
+                            opacity: 0;
+                        }
+                        70% {
+                            opacity: 0;
+                        }
+                        80% {
+                            opacity: 0.2;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                        }
+        
+                        // 斜め線のアニメーション
+                        @keyframes slash_line {
+                        90% {
+                            stroke-dashoffset: 0;
+                        }
+                        100% {
+                            stroke-dashoffset: -800;
+                        }
+                        }
+                    }
+                }
+            }
+            &.-company {// 会社
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: url(/images/bg/company-bg.png) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+        }
+        .c-mainVisual--box {
+            &.-title {// h1_タイトル
+                top: 62%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include min(500) {top: 62%;}
+                @include min(768) {top: 58%;}
+            }
+        }
+    }
+
+    // ===================== LP関係 =====================
+    &.-LP {// LP ベース設定
+        position: relative;
+        overflow: hidden;
+    }
+    &.-LP01 {
+        background: #d5edfc;
+        .imgBox {
+            height: 150vh;
+            max-height: 1080px !important;
+            @include min(400){
+                height: 120vh;
+            }
+            @include min(500) {
+                max-height: 820px !important;
+            }
+            @include min(768) {
+                max-height: 800px !important;
+            }
+            @include min(1000) {
+                max-height: 870px !important;
+            }
+            @include min(1200) {
+                max-height: 960px !important;
+            }
+        }
+        .c-contentsBox {
+            // 注釈
+            &.-comments01 {// 縦文
+                position: absolute;
+                top: 8%;
+                z-index: 11;
+                @include max(500){
+                    left: 7%;
+                }
+                @include min(400){
+                    top: 7%;
+                }
+                @include min(500) {
+                    top: 110px;
+                    left: 8%;
+                }
+                @include min(1000){
+                    top: 120px;
+                }
+    
+                // ピックアップ
+                .pickup {
+                position: relative;
+                display: inline-block;
+                color: $site-color03;
+                font-size: .9rem;
+                font-weight: bold;
+                text-align: start;
+                letter-spacing: .1rem;
+                line-height: 2;
+                margin-bottom: 2rem;
+                @include min(1000) {
+                    font-size: clamp(1rem, 1.5vw, 1.4rem);
+                }
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: auto;
+                    bottom: -1rem;
+                    height: 1px;
+                    background: $site-color03;
+                }
+                &::before {
+                    left: 0;
+                    width: 30px;
+                    @include min(768) {
+                    width: 62px;
+                    }
+                }
+                &::after {
+                    left: auto;
+                    right: 0;
+                    width: 87%;
+                    @include min(768) {
+                    width: 80%;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    color: $site-color03;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    background: $main-color--w;
+                    padding: 0.5rem 0.5rem;
+                    margin-right: .5rem;
+                    border-radius: 5px;
+                    @include min(1000) {
+                    font-size: clamp(1rem, 1.5vw, 1.4rem);
+                    }
+                    &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -1.6rem;
+                    left: 28px;
+                    width: 25px;
+                    height: 1px;
+                    background: $site-color03;
+                    transform: rotate(30deg);
+                    @include min(768) {
+                        left: 60px;
+                    }
+                    }
+                }
+                }
+                // タイトル
+                .title {
+                margin-bottom: 2rem;
+                p,
+                span {
+                    font-size: 3.5rem;
+                    font-weight: bold;
+                    text-align: start;
+                    letter-spacing: 0.2rem;
+                    line-height: 1.5;
+                    @include min(768) {
+                    font-size: clamp(4rem, 4.2vw, 6rem);
+                    }
+                }
+                span {
+                    background: linear-gradient(
+                    55deg,
+                    $site-color03 0%,
+                    #5399df 100%
+                    );
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    filter: drop-shadow(1px 1px 1px $main-color--gray);
+                }
+                }
+                .text {
+                position: relative;
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: start;
+                letter-spacing: 0.2rem;
+                line-height: 1.75;
+                padding-left: 1rem;
+                @include min(1000){
+                    font-size: clamp(1.5rem, 1.5vw, 2rem);
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 2px;
+                    height: 65%;
+                    background: $site-color03;
+                    border-radius: 5px;
+                }
+                }
+            }
+            // コンタクト
+            &.-cta {
+                position: absolute;
+                top: 58%;    
+                width: 85%;
+                z-index: 11;
+                @include max(500){
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                @include min(500) {
+                    top: 42%;
+                    left: 5%;
+                    max-width: 370px;
+                }
+                @include min(768) {
+                    top: 42%;
+                    left: 8%;
+                    width: 55%;
+                    max-width: 350px;
+                }
+                @include min(1000) {
+                    top: 45%;
+                    width: 40%;
+                    max-width: 450px;
+                }
+            }
+            // 英字
+            &.-en {
+                position: absolute;
+                top: 43%;
+                right: 10px;
+                width: 85%;
+                z-index: 1;
+                @include min(500) {
+                top: 160px;
+                right: 2%;
+                width: 41%;
+                }
+                @include min(768) {
+                top: 140px;
+                right: 2%;
+                width: 50%;
+                }
+                @include min(1000) {
+                top: 125px;
+                right: 1%;
+                width: 45%;
+                }
+                @include min(1200) {
+                top: 130px;
+                right: 8%;
+                width: 50%;
+                max-width: 900px;
+                }
+                @include min(1600) {
+                right: 2%;
+                }
+            }
+            // 風景
+            &.-landscape {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 120%;
+                z-index: 1;
+                @include min(768) {
+                top: auto;
+                bottom: -20px;
+                left: auto;
+                right: 0;
+                width: 85%;
+                max-width: 1500px;
+                }
+            }
+            // 男性
+            &.-man {
+                width: 25%;
+                position: absolute;
+                bottom: 40%;
+                left: 55%;
+                transform: translateX(-50%);
+                // opacity: .9;
+                z-index: 6;
+                @include min(500) {
+                width: 18%;
+                left: 69%;
+                bottom: 0;
+                }
+                @include min(768) {
+                    width: 30%;
+                    left: 58%;
+                }
+                @include min(1000) {
+                width: 300px;
+                left: 55%;
+                }
+                @include min(1200) {
+                width: 350px;
+                left: 55%;
+                }
+                @include min(1400) {
+                width: 380px;
+                left: 58%;
+                }
+                @include min(1600) {
+                width: 380px;
+                left: 55%;
+                }
+            }
+            // 女性
+            &.-woman {
+                width: 32%;
+                position: absolute;
+                bottom: 40%;
+                left: 80%;
+                transform: translateX(-50%);
+                // opacity: .9;
+                z-index: 5;
+                @include min(500) {
+                width: 23%;
+                left: 88%;
+                bottom: 0;
+                }
+                @include min(768) {
+                    width: 37%;
+                    left: 84%;
+                }
+                @include min(1000) {
+                width: 400px;
+                left: 80%;
+                }
+                @include min(1200) {
+                width: 450px;
+                left: 84%;
+                }
+                @include min(1400) {
+                width: 500px;
+                left: 82%;
+                }
+                @include min(1600) {
+                width: 500px;
+                left: 78%;
+                }
+                @include min(1600) {
+                width: 500px;
+                left: 75%;
+                }
+            }
+            // サービス内容
+            &.-service {
+                position: absolute;
+                top: 26%;
+                left: 0;
+                width: 85%;
+                z-index: 7;
+                @include max(500){
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                @include min(768){
+                    top: 80.5%;
+                    right: 5%;
+                    transform: translateY(-50%);
+                    left: auto;
+                    width: auto;
+                }
+                @include min(1200){
+                    top: 77%;
+                    right: 15%;
+                }
+            }
+        }
+    }
+    &.-LP02 {
+        background: $lp-color04;
+        .imgBox {
+            margin-top: 60px;
+            width: auto;
+            height: auto;
+            max-width: none !important;
+            max-height: none !important;
+
+            @include max(500) {
+                max-height: 1080px !important;
+            }
+            @include min(768) {
+                min-height: 620px !important;
+            }
+            @include min(1800) {
+                max-height: 960px !important;
+            }
+            @include min(2000) {
+                max-height: 960px !important;
+            }
+        }
+        .c-contentsBox {
+
+            &.-comments01 {
+                width: 95%;
+                max-width: 1150px;
+                position: absolute;
+                top: 29%;
+                left: 50%;
+                transform: translate(-50%, -45%);
+                z-index: 5;
+                @include min(768) {
+                    width: 60%;
+                    top: 57%;
+                    left: 31.5%;
+                }
+                @include min(1000) {
+                    width: 60%;
+                    top: 53%;
+                    left: 33.5%;
+                }
+                @include min(1200) {
+                    width: 60%;
+                    top: 52%;
+                    left: 34.5%;
+                }
+                @include min(1400) {
+                    top: 50%;
+                    left: 34.5%;
+                }
+                @include min(1600) {
+                    left: 37.5%;
+                }
+                @include min(1800) {
+                    width: 55%;
+                    left: 36.5%;
+                }
+                @include min(2000) {
+                    left: 39.5%;
+                }
+                @include min(2300) {
+                    left: 43.5%;
+                }
+            }
+            &.-arrow {
+                position: absolute;
+                top: 37%;
+                left: -90px;
+                width: 100%;
+                z-index: 1;
+                @include min(768) {
+                    top: 15%;
+                    left: 0;
+                }
+            }
+
+            &.-cta {
+                width: 90%;
+                max-width: 420px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 7;
+
+                @include min(768) {
+                    width: 35%;
+                    top: 17.5%;
+                    left: 77%;
+                }
+                @include min(1000) {
+                    width: 30%;
+                    top: 16.5%;
+                    left: 80%;
+                }
+                @include min(1400) {
+                    left: 78%;
+                }
+                @include min(1800){
+                    top: 27.5%;
+                    left: 75%;
+                }
+                @include min(2000){
+                    width: 20%;
+                    // top: 40.5%;
+                    left: 75%;
+                }
+                @include min(2500){
+                    // top: 45.5%;
+                    left: 73%;
+                }
+                @include min(2800){
+                    left: 70%;
+                }
+                @include min(2900) {
+                    // top: 45.5%;
+                    left: 68%;
+                }
+            }
+        }
+    }
+}

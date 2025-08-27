@@ -1,0 +1,37 @@
+// 会社概要ページ
+.p-company {
+    &__body {
+    }
+    &__list {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: #ADB9C8 1px solid;
+        @include min(768){
+            padding: 22px 0;
+        }
+        &:first-child{
+            padding-top: 0;
+        }
+        dt,dd{
+            font-size: 1rem;
+            font-family: $f-gothic01;
+            line-height: 1.5;
+            letter-spacing: 0.1em;
+            @include min(768){
+                font-size: 1.4rem;
+                line-height: 2;
+                letter-spacing: 0.2em;
+                margin: auto;
+            }
+        }
+        dt{
+            width: 80px;
+            font-weight: bold;
+            @include min(768){width: 200px;}
+        }
+        dd{
+            width: calc(100% - 80px);
+            @include min(768){width: calc(100% - 200px);}
+        }
+    }
+}

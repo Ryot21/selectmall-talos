@@ -1,0 +1,550 @@
+
+.c-contents{
+    &--title{// メディア > コンテンツ > メインタイトル
+        position: relative;
+        font-size: 2rem !important;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        line-height: 1.5;
+        padding: 0 1px;
+        @include min(500){
+            font-size: clamp(2rem, 2vw, 4.75rem) !important;
+        }
+        @include min(1800){
+            font-size: max(3rem, 35px) !important;
+        }
+        &::before {
+            position: absolute;
+            top: -5px;
+            font-size: 1rem;
+            letter-spacing: .3rem;
+        }
+
+        // コンテンツタイトル > 位置指定
+        &.-center{
+            text-align: center;
+            &::before{// 英字
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &.-left{
+            text-align: left;
+            padding-left: 15px;
+            @include min(1600){
+                padding-left: 20px;
+            }
+            &::before{// 英字
+                left: 15px;
+                transform: translate(0, -50%);
+                @include min(1600){
+                    left: 20px;
+                }
+            }
+            &::after{// ボーダーライン
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateX(-50%);
+                width: 2px;
+                height: calc(100% + 10px);
+                background: $site-color03;
+                border-radius: 10px;
+                @include min(1600){
+                    width: 3px;
+                }
+            }
+        }
+        &.-right{
+            text-align: right;
+            padding-right: 15px;
+            @include min(1600){
+                padding-right: 20px;
+            }
+            &::before{// 英字
+                right: 0;
+                transform: translate(0, -50%);
+                @include min(1600){
+                    right: 20px;
+                }
+            }
+            &::after{// ボーダーライン
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transform: translate(0, -50%);
+                width: 2px;
+                height: calc(100% + 10px);
+                background: $site-color03;
+                border-radius: 10px;
+                @include min(1600){
+                    width: 3px;
+                }
+            }
+        }
+        // コンテンツタイトル > ボーダーライン
+        &.-b-btm{
+            &::after{// 基本設定
+                content: "";
+                display: block;
+                position: relative;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                max-width: 1100px;
+                height: 0;
+                background: $main-color--w;
+                border-bottom: 3px dotted $site-color03;
+                @include min(768){
+                    bottom: -10px;
+                }
+            }
+            // 色指定
+            &.-c01{&::after{background: $site-color01 !important;}}
+            &.-c02{&::after{background: $site-color02 !important;}}
+            &.-c03{&::after{background: $site-color03 !important;}}
+            &.-c04{&::after{background: $site-color04 !important;}}
+    
+            &.-left{ // テキストが左寄せの場合
+                &::after{
+                    left: 0;
+                    transform: translateX(0);
+                }
+            }
+        } 
+        // コンテンツタイトル > カナ表記
+        .-kana {
+            font-size: 2.5rem;
+            @include min(500){font-size: clamp(2.2rem, 2vw, 4.5rem);}
+            @include min(1800){font-size: max(3.2rem, 37px) !important;}
+        }
+        span{
+            font-size: clamp(1.8rem, 1.5vw, 2.8rem);
+            font-weight: bold;
+        }
+
+        // コンテンツタイトル > 英語表記 > カラー設定
+        &.-en-color01{&::before{color: $site-color01;}}
+        &.-en-color02{&::before{color: $site-color02;}}
+        &.-en-color03{&::before{color: $site-color03;}}
+        &.-en-color04{&::before{color: $site-color04;}}
+
+        // コンテンツタイトル > 英語表記
+        &.-interview   {&::before{content: "User Interview"; white-space: nowrap;}}// インタビュー
+        &.-information {&::before{content: "Information"; white-space: nowrap;}}//お役立ち情報
+        &.-news        {&::before{content: "News"; white-space: nowrap;}}//お役立ち情報
+        &.-maneripe    {&::before{content: "Maneripe"; white-space: nowrap;}}//お役立ち情報
+        &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
+        &.-contact02   {&::before{content: "Request For Information"; white-space: nowrap;}}//資料ダウンロード
+        &.-point       {&::before{content: "POINT"; white-space: nowrap;}}//特徴
+
+        // 画像
+        .imgBox{
+            width: 40%;
+            margin: 0 auto;
+            @include min(500){
+                width: 20%;
+                min-width: 160px;
+                max-width: 220px;
+            }
+        }
+        span{font-size: clamp(1.2rem, 1.5vw, 1.6rem);}
+    }
+    &--description{// メディア > コンテンツ > 説明テキスト
+        text-align: center;
+        letter-spacing: .2rem;
+        line-height: 2;
+    }
+}
+
+// 各ページ > ファーストビュー内のタイトル
+.c-page-title{
+    display: inline-block;
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include min(500){top: 59%;}
+
+    &::before{
+        position: absolute;
+        bottom: -55%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $site-color03;
+        font-size: 1rem;
+        letter-spacing: .3rem;
+        white-space: nowrap;
+        @include min(500){
+            bottom: -55%;
+        }
+
+    }
+    &.-service    {&::before{content: "- FEATURE -";}}
+    &.-interview  {&::before{content: "- USER INTERVIEW -";}}
+    &.-information{&::before{content: "- INFORMATION -";}}
+    &.-news       {&::before{content: "- NEWS -";}}
+    &.-maneripe   {&::before{content: "- MANERIPE INFORMATION -";}}
+    &.-member     {&::before{content: "- MEMBER -";}}
+    &.-contact    {&::before{content: "- CONTACT -";}}
+    &.-contact02  {&::before{content: "- REQUEST FOR INFORMATION -"; white-space: nowrap;}}
+    &.-notFound   {&::before{content: "- 404 NOT FOUND -"; white-space: nowrap;}}//エラーページ
+    // 固定ページ
+    &.-company    {&::before{content: "- COMPANY -"; white-space: nowrap;}}// 会社概要
+    &.-rules      {&::before{content: "-TERMS OF RULES -"; white-space: nowrap;}}// 利用規約
+    &.-privacyPolicy{&::before{content: "- PRIVACY POLICY -"; white-space: nowrap;}}// プライバシーポリシー
+    &.-solicitationPolicy{&::before{content: "- SOLICITATION POLICY -"; white-space: nowrap;}}// 勧誘方針
+}
+
+// 各ページ > 注目タイトル
+.c-page-atTitle {
+    color: $main-color--b;
+    font-size: clamp(20px, 2.5vw, 48px);
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    span {
+        font-size: clamp(1.4rem, 2vw, 2.8rem);
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+
+        &.at{
+            font-size: clamp(20px, 2.5vw, 48px);
+            padding-right: 1px;
+            letter-spacing: 0.1rem;
+            // グラデーション
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(1px 1px 1px $main-color--gray);
+            @include min(768){
+                padding-right: 4px;
+            }
+            &.-blue{
+                background: linear-gradient(55deg,$site-color03 0%,#5399df 100%);
+                background-clip: text;
+                letter-spacing: 0.2rem;
+            } 
+            &.-purple{
+                background: linear-gradient(55deg,#5b40df 0%,#9120aa 100%);
+                background-clip: text;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+// サービスページ > サービス内容内のタイトル
+.c-service--title{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border-bottom: 2px dotted $site-color03;
+        @include min(768){width: 30px;}
+    }
+}
+
+// 投稿アイテム内のタイトル
+.c-post--title{
+    font-size: clamp(2.2rem, 2vw, 2.5rem);
+    font-weight: bold;
+    text-align: center;
+    padding: 0 1px;
+}
+
+// サイドバー > タイトル
+.c-sideber--title{// s-L相当
+    position: relative;
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    font-weight: bold;
+    letter-spacing: .2rem;
+    text-align: center;
+    padding: 0 1px;
+    &::before{
+        position: absolute;
+        top: -40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
+        letter-spacing: .3rem;
+    }
+    // コンテンツタイトル > ボーダーライン
+    &.-b-btm{
+        &::after{// 基本設定
+            content: "";
+            display: block;
+            position: relative;
+            bottom: -10px;
+            left: 49.5%;
+            transform: translateX(-50%);
+            width: 30px;
+            max-width: 1100px;
+            height: 0;
+            background: #ffffff;
+            border-bottom: 2px dotted rgb(110, 133, 166);
+        }
+        // 色指定
+        &.-c01{&::after{background: $site-color01 !important;}}
+        &.-c02{&::after{background: $site-color02 !important;}}
+        &.-c03{&::after{background: $site-color03 !important;}}
+        &.-c04{&::after{background: $site-color04 !important;}}
+    }
+
+    // コンテンツタイトル > 英語表記 > カラー設定
+    &.-en-color01{&::before{color: $site-color01;}}
+    &.-en-color02{&::before{color: $site-color02;}}
+    &.-en-color03{&::before{color: $site-color03;}}
+    &.-en-color04{&::before{color: $site-color04;}}
+
+    // コンテンツタイトル > 英語表記
+    &.-interview{&::before{content: "User Interview"; white-space: nowrap;}}// インタビュー
+    &.-news     {&::before{content: "Information"; white-space: nowrap;}}   //お役立ち情報
+    &.-contact  {&::before{content: "Contact"; white-space: nowrap;}}       //お役立ち情報
+    &.-point    {&::before{content: "POINT"; white-space: nowrap;}}         //お役立ち情報
+
+    // 画像
+    .imgBox{
+        width: 40%;
+        margin: 0 auto;
+        @include min(500){
+            width: 20%;
+            min-width: 160px;
+            max-width: 220px;
+        }
+    }
+}
+
+// タイトル > 万歳
+.c-banzai--title{
+    text-align: center;
+    margin: 0 auto;
+
+    span{
+        position: relative;
+        display: inline-block;
+        color: $site-color03;
+        font-size: clamp(1.4rem, 2vw, 2.8rem);
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        padding: 0 1px;
+
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 1px;
+            height: 18px;
+            background: $site-color03;
+            border-radius: 10px;
+            @include min(768){
+                height: 25px;
+            }
+            @include min(1200){
+                height: 35px;
+            }
+        }
+        &::before{
+            left: -15px;
+            transform: rotate(325deg);
+            @include min(768){
+                left: -25px;
+            }
+            @include min(1200){
+                left: -30px;
+            }
+        }
+        &::after{
+            right: -10px;
+            transform: rotate(35deg);
+            @include min(768){
+                right: -18px;
+            }
+            @include min(1200){
+                right: -20px;
+            }
+        }
+    }
+
+}
+
+// LP > コンテンツ > セクション内
+.c-contents{
+    &--LpMainTitle{
+        position: relative;
+        font-size: 2rem !important;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 1px;
+        @include min(500){font-size: clamp(2rem, 2vw, 4.75rem) !important;}
+        @include min(1800){font-size: max(3rem, 35px) !important;}
+        &::before{
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            letter-spacing: .3rem;
+        }
+        // コンテンツタイトル > ボーダーライン
+        &.-b-btm{
+            &::after{// 基本設定
+                content: "";
+                display: block;
+                position: relative;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                max-width: 1100px;
+                height: 0;
+                background: $main-color--w;
+                border-bottom: 3px dotted $site-color03;
+                @include min(768){
+                    bottom: -10px;
+                }
+            }
+            // 色指定
+            &.-c01{&::after{background: $site-color01 !important;}}
+            &.-c02{&::after{background: $site-color02 !important;}}
+            &.-c03{&::after{background: $site-color03 !important;}}
+            &.-c04{&::after{background: $site-color04 !important;}}
+    
+            &.-left{ // テキストが左寄せの場合
+                &::after{
+                    left: 0;
+                    transform: translateX(0);
+                }
+            }
+        } 
+        .-kana {
+            font-size: 2.5rem;
+            @include min(500){font-size: clamp(2.2rem, 2vw, 4.5rem);}
+            @include min(1800){font-size: max(3.2rem, 37px) !important;}
+        }
+        span{font-size: clamp(1.8rem, 1.5vw, 2.8rem);}
+    }
+    &--LpTitle{// コンテンツ > セクション > タイトル
+        font-size: 1.8rem;
+        letter-spacing: .2rem;
+        line-height: 1.7;
+        @include min(500){
+            font-size: clamp(1.6rem, 1.7vw, 2.4rem);
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    }
+    &--LpCtaTitle{// コンテンツ > CTA
+        position: relative;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 1px;
+        @include min(500){font-size: clamp(2rem, 2vw, 4rem);}
+        &::before{
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            letter-spacing: .3rem;
+        }
+        // コンテンツタイトル > ボーダーライン
+        &.-b-btm{
+            &::after{// 基本設定
+                content: "";
+                display: block;
+                position: relative;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40px;
+                max-width: 1100px;
+                height: 0;
+                background: $main-color--w;
+                border-bottom: 3px dotted $site-color03;
+                @include min(768){
+                    bottom: -10px;
+                }
+            }
+            // 色指定
+            &.-c01{&::after{background: $site-color01 !important;}}
+            &.-c02{&::after{background: $site-color02 !important;}}
+            &.-c03{&::after{background: $site-color03 !important;}}
+            &.-c04{&::after{background: $site-color04 !important;}}
+    
+            &.-left{ // テキストが左寄せの場合
+                &::after{
+                    left: 0;
+                    transform: translateX(0);
+                }
+            }
+        }
+    
+        // コンテンツタイトル > 英語表記 > カラー設定
+        &.-en-color01{&::before{color: $site-color01;}}
+        &.-en-color02{&::before{color: $site-color02;}}
+        &.-en-color03{&::before{color: $site-color03;}}
+        &.-en-color04{&::before{color: $site-color04;}}
+
+        &.-white{
+            color: $main-color--w !important;
+            &.-b-btm{
+                &::after{
+                    background: $main-color--w !important;
+                    border-bottom: 3px dotted $main-color--w;
+                }
+            }
+        }
+    }
+    &--LpListTitle{// コンテンツ > セクション > リストタイトル
+        position: relative;
+        color: $main-color--w;
+        font-size: 1.6rem;
+        font-weight: bold;
+        letter-spacing: .2rem;
+        line-height: 1.5;
+        padding: 10px 15px 10px 5.5rem;
+        @include min(1000){
+            padding: 10px 15px 10px 6rem;
+            font-size: clamp(1.6rem, 1.7vw, 2.2rem);
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        @include min(1200){padding: 10px 15px 10px 7rem}
+        @include min(1200){padding: 10px 15px 10px 7.5rem;}
+        &::before{
+            position: absolute;
+            top: 50%;
+            left: 1.5rem;
+            transform: translate(0, -50%);
+            font-size: clamp(2.8rem, 2.5vw, 4rem);
+            font-weight: bold;
+            letter-spacing: -.1rem;
+        }
+        &.-t01{
+            background: $site-color02;
+            &::before{content: "01";}
+        }
+        &.-t02{
+            background: $lp-color06;
+            &::before{content: "02";}
+        }
+        &.-t03{
+            background: $lp-color08;
+            &::before{content: "03";}
+        }
+    }
+}

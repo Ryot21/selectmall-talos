@@ -1,0 +1,877 @@
+// カードレイアウト
+
+.c-card {
+  // 共通
+  background: $main-color--w;
+  border: 1px solid $site-color03;
+  border-radius: 10px;
+  overflow: hidden;
+  &--inner {
+    padding: 10px;
+  }
+  &--title {
+    font-size: clamp(1.6rem, 1.6vw, 2rem);
+    color: $site-color03;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    white-space: nowrap;
+    &.-point{// ここがポイント
+      position: relative;
+
+      font-size: clamp(1.4rem, 1.6vw, 2rem);
+      padding: 1.2rem 2rem 1.2rem 9rem;
+      // background: $site-color01;
+      border-bottom: 2px solid $site-color03;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      @include min(768){
+        padding: 2rem 2rem 2rem 130px;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        top: -150%;
+        left: -120px;
+        width: 200px;
+        height: 300%;
+        transform: rotate(25deg);
+        background: $site-color03;
+        @include min(768){left: -80px;}
+      }
+      span{
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+        padding-left: 16px;
+        font-size: clamp(1rem, 1.6vw, 1.6rem);
+        // font-weight: bold;
+        color: $main-color--w;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &.-t01 {// 投稿者
+    background: $main-color--w;
+    border: 4px double $site-color03;
+    .c-card-lists {
+      //ul
+      padding: 3% 5% 5%;
+
+      @include min(500){
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3% 5%;  
+      }
+      .c-card-item {
+        //li
+
+        &:nth-child(1) {
+          // プロフィール画像
+          width: 100%;
+          // max-width: 150px;
+          // margin: 0 auto;
+          @include min(500){
+            width: 30%;
+          }
+        }
+        &:nth-child(2) {
+          // 詳細情報
+          width: 100%;
+          @include min(500) {
+            width: 63%;
+          }
+          @include min(1000) {
+            width: 72%;
+          }
+        }
+        // 画像
+        .imgBox {
+          width: 60%;
+          margin: 0 auto;
+          background: #f6f6f6;
+          border-radius: 50%;
+          overflow: hidden;
+          @include min(500) {
+            width: 85%;
+          }
+        }
+        // テキスト関係
+        .postman {
+          // 導入企業タグ
+          display: inline-block;
+          width: auto;
+          font-size: 1rem;
+          font-weight: bold;
+          color: $main-color--w;
+          background: $site-color03;
+          padding: 1% 2%;
+          border-radius: 3px;
+          letter-spacing: 0.1rem;
+
+        }
+        .name {
+          // 企業名
+          color: $site-color03;
+          font-size: 1.8rem;
+          font-weight: bold;
+          letter-spacing: 0.2rem;
+          line-height: 1.5;
+        }
+        .address{
+          // 所在
+          // color: $site-color03;
+          // font-weight: bold;
+        }
+        .description{
+          // 説明
+        }
+        .jobTitle {
+          font-size: 1rem;
+          letter-spacing: 0.2rem;
+          @include min(500) {
+            padding-left: 5px;
+          }
+        }
+        p {
+          font-size: 1.2rem;
+          letter-spacing: 0.2rem;
+
+          // 改行オプション
+          // display: -webkit-box;
+          // text-overflow: ellipsis;
+          // -webkit-box-orient: vertical;
+          // -webkit-line-clamp: 3;
+          // line-clamp: 3;
+          // overflow: hidden;
+
+
+        }
+      }
+    }
+  }
+  &.-t02 {// 内部リンク > 合わせて読みたい
+    position: relative;
+    top: 0;
+    border: 1px solid $site-color03;
+    overflow: visible;
+    transition: all 0.3s;
+    margin-bottom: 5%;
+    &::after {
+      content: "合わせて読みたい";
+      position: absolute;
+      top: 0;
+      left: 2.5%;
+      transform: translateY(-50%);
+
+      padding: 1% 2.5%;
+      font-weight: bold;
+      color: $main-color--w;
+      letter-spacing: 0.2rem;
+      background: $site-color03;
+      border: 1px solid $site-color03;
+      border-radius: 30px;
+      transition: all 0.3s;
+    }
+    &:hover {
+      top: 0.5rem;
+      background: $main-color--Lgray;
+      border: 1px solid $site-color02;
+      &::after {
+        color: $site-color03;
+        background: $main-color--w;
+        padding: 1% 3%;
+      }
+    }
+    a {
+      display: block;
+      will-change: transform;
+      transition: all 0.3s;
+    }
+    .c-card-lists {
+      //ul
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4% 3%;
+      transition: all 0.3s;
+      @include min(500) {
+        align-items: flex-start;
+      }
+
+      .c-card-item {
+        //li
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(2) {
+          width: 58%;
+        }
+        @include min(500) {
+          &:nth-child(1) {
+            width: 29%;
+          }
+          &:nth-child(2) {
+            width: 69%;
+          }
+        }
+        // 画像
+        .c-thumbnail {
+          border-radius: 3px;
+          &--mark {
+            width: 75%;
+          }
+        }
+        // テキスト
+        .postman {
+          display: inline-block;
+          width: auto;
+          font-weight: bold;
+          color: $main-color--w;
+          background: $main-color--Dgray;
+          padding: 2% 3%;
+          margin-bottom: 3%;
+          border-radius: 3px;
+          letter-spacing: 0.1rem;
+        }
+
+        h5 {
+          font-size: clamp(1.4rem, 1.5vw, 2rem);
+          font-weight: bold;
+          letter-spacing: 0.1rem;
+          line-height: 1.2;
+          padding: 5px 0 2px !important;
+          // 1行以降省略
+          display: -webkit-box;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+
+          @include min(500) {
+            padding: 5px 0 8px !important;
+            // -webkit-line-clamp: 1;
+          }
+        }
+      }
+      .c-card--intro {
+        // ３行以降省略
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+        p,
+        span,
+        a,
+        li {
+          font-size: clamp(1rem, 1.5vw, 1.4rem);
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          line-height: 1.5;
+          letter-spacing: 0.2rem;
+        }
+      }
+    }
+  }
+  &.-t03 {// 目次
+    width: 100%;
+    background: $main-color--w;
+    border: 1px solid $site-color03;
+    border-radius: 5px;
+
+    h2 {
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      color: $main-color--w;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.2rem;
+      background: $site-color03;
+      padding: 2.5px 0;
+      z-index: 1;
+      @include min(500) {
+        border: 1px solid $site-color03;
+      }
+    }
+    .c-card-lists {
+      //ul
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3% 3% 4% 3%;
+      transition: all 0.3s;
+      @include min(500) {
+        align-items: flex-start;
+        padding: 10px 10px 15px 10px;
+      }
+
+      // 共通
+      &.-h2-lists,
+      &.-h3-lists,
+      &.-h4-lists,
+      &.-h5-lists,
+      &.-h6-lists {
+        .c-card-item {
+            width: 100% !important;
+            background: inherit;
+            margin-bottom: 5px;
+            will-change: transform;
+            transition: all 0.3s;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                // 2行以降省略
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+                overflow: hidden;
+            }
+
+            // 記事の位置を取得し、ユーザー視点での位置を取得
+            &.-active {
+                background: $main-color--gray;
+            }
+        }
+      }
+
+      // h2タグ
+      &.-h2-lists {
+        .c-card-item {
+          position: relative;
+          padding: 7.5px 0 7.5px 20px;
+          &::before {
+            position: absolute;
+            top: 4px;
+            left: 2.5px;
+
+            display: block;
+            font-size: clamp(1.4rem, 1.5vw, 1.4rem);
+            // font-family: "gothic-font02";
+            letter-spacing: 0.1rem;
+          }
+          &:nth-child(1) {
+            &::before {
+              content: "1.";
+            }
+          }
+          &:nth-child(2) {
+            &::before {
+              content: "2.";
+            }
+          }
+          &:nth-child(3) {
+            &::before {
+              content: "3.";
+            }
+          }
+          &:nth-child(4) {
+            &::before {
+              content: "4.";
+            }
+          }
+          &:nth-child(5) {
+            &::before {
+              content: "5.";
+            }
+          }
+          &:nth-child(6) {
+            &::before {
+              content: "6.";
+            }
+          }
+          &:nth-child(7) {
+            &::before {
+              content: "7.";
+            }
+          }
+
+          a,
+          a::before {
+            font-size: clamp(1.4rem, 1.5vw, 1.4rem);
+            // font-family: "gothic-font02";
+            font-weight: normal;
+            line-height: 1;
+            // letter-spacing: 0.1rem;
+          }
+          a {
+            padding-left: 0;
+            margin-bottom: 5px;
+            &::before {
+              position: absolute;
+              top: 10px;
+              left: 0px;
+              &:nth-child(1) {
+                &::before {
+                  content: "1.";
+                }
+              }
+              &:nth-child(2) {
+                &::before {
+                  content: "2.";
+                }
+              }
+              &:nth-child(3) {
+                &::before {
+                  content: "3.";
+                }
+              }
+              &:nth-child(4) {
+                &::before {
+                  content: "4.";
+                }
+              }
+              &:nth-child(5) {
+                &::before {
+                  content: "5.";
+                }
+              }
+              &:nth-child(6) {
+                &::before {
+                  content: "6.";
+                }
+              }
+              &:nth-child(7) {
+                &::before {
+                  content: "7.";
+                }
+              }
+            }
+          }
+        }
+      }
+      // h3タグ
+      &.-h3-lists {
+        position: relative;
+        padding: 0 0 10px 0;
+        margin-bottom: 2.5px;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 95%;
+          height: 1px;
+          border-bottom: 1px dotted $site-color03;
+        }
+        .c-card-item {
+          position: relative;
+          padding: 0;
+          margin: 7px 0 3px 0;
+          a {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            padding: 0;
+          }
+          &::before {
+            content: "" !important;
+            position: absolute;
+            top: 1px;
+            left: -10px;
+
+            display: block;
+            width: 1px;
+            height: 80%;
+            background: $main-color--Dgray;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+  &.-t04 {// お悩み
+    position: relative;
+    padding: 30px 10px 20px 10px;
+    border: 1px solid $site-color03;
+    border-radius: 5px;
+    overflow: visible;
+    @include min(500) {
+      padding: 30px 20px 20px 0;
+    }
+    &::before {
+      content: "この記事で解決できるお悩みは...";
+      position: absolute;
+      top: 0;
+      left: 5%;
+      transform: translateY(-65%);
+      padding: 1.5% 3%;
+      font-size: clamp(1.6rem, 1.6vw, 2rem);
+      color: $main-color--w;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+      white-space: nowrap;
+      background: $site-color03;
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .c-card-lists {
+      //ul
+      @include min(500) {
+        padding-left: 10px;
+      }
+      @include min(1000) {
+        padding-left: 15px;
+      }
+      .c-card-item {
+        width: 100% !important;
+        margin: 0 0 10px 0;
+        text-align: left;
+        &:last-child {
+          margin: 0;
+        }
+        a {
+          // 2行以降省略
+          display: -webkit-box;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  &.-t05 {// LP_お問い合わせなどに使用
+    width: 100%;
+    background: $lp-color03;
+    border: 2px solid $lp-color03;
+    border-radius: 15px;
+    .c-card--inner {
+      background: white;
+      padding: 15px;
+      @include min(768) {padding: 10px;}
+      @include min(1280) {padding: 20px;}
+    }
+    .c-card--label{
+      margin-bottom: 15px;
+    }
+    .c-form{
+      &.-card{
+        .c-form--item{
+          @include max(500){
+            margin-bottom: 12px !important;
+          }
+          @include min(768){
+            margin-bottom: 10px !important;
+          }
+          @include min(1200){
+            margin-bottom: 15px !important;
+          }
+        }
+      }
+    }
+  }
+  &.-t06 {// LP_ここがポイント！！で使用
+    position: relative;
+    background: $main-color--w;
+    border: 3px solid $site-color03;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: visible;
+    @include min(500){display: none;}
+    @include min(900){display: block;}
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+    }
+    .c-card {
+      &--inner {
+        @include min(768){
+          padding: 2rem 5rem 2rem 2rem;
+        }
+      }
+      &-item {
+        margin-bottom: 1rem;
+        @include min(768){
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &.-lp {// LP用
+    text-align: center;
+    &.-lp01 {// セクション01
+      position: relative;
+      height: 150px;
+      @include min(500) {
+        height: 200px;
+      }
+      p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::after{
+        content: url("/images/Lp/tarari-mark.png");
+        position: absolute;
+        top: 0;
+        left: 15px;
+        width: 10%;
+      }
+    }
+    &.-lp02 {// セクション02
+      position: relative;
+      height: 150px;
+      overflow: inherit;
+      @include min(500) {
+        height: 200px;
+      }
+      p{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $main-color--w;
+      }
+      .imgBox{
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        width: 85%;
+        transform: translate(-50%, -50%);
+        @include min(500){
+          width: 90%;
+        }
+        @include min(768){
+          width: 75%;
+        }
+        @include min(1000){
+          top: 80%;
+          width: 75%;
+        }
+        @include min(1400){
+          top: 95%;
+        }
+      }
+    }
+    &.-lp03 {
+      .c-card--inner {
+        padding: 30px 10px 40px;
+        @include min(768){padding: 15% 5%;}
+        @include min(1000){padding: 5%;}
+      }
+    }
+    &.-lp04 {
+      .c-card--inner {
+        padding: 20px 20px;
+        @include min(768){padding: 5% 4%;}
+        @include min(1000){padding: 3% 3%;}
+      }
+    }
+
+    &.-No{
+      position: relative;
+      overflow: visible;
+      &::before{
+        content: "";
+        position: absolute;
+        top: -25px;
+        right: 5px;
+        width: 45px;
+        height: 45px;
+        background: url("/images/Lp/card-hukidashi.png") no-repeat center center / cover;
+      }
+      &::after{
+        content: "";
+        display: block;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: .2rem;
+        position: absolute;
+        top: -15px;
+        right: 3px;
+        width: 45px;
+      }
+      &.-No01{&::after{content: "01";}}
+      &.-No02{&::after{content: "02";}}
+      &.-No03{&::after{content: "03";}}
+      .c-card--inner {
+        padding: 20px;
+      }
+    }
+    &.-Profile{
+      position: relative;
+      overflow: visible;
+      &::before{// 画像
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        background: url("/images/Lp/ishibashi-20241219.png") no-repeat center center / cover;
+        border: 2px solid $site-color03;
+        border-radius: 50%;
+        @include min(500){
+          bottom: 10px;
+          right: 20px;
+          width: 100px;
+          height: 100px;  
+        }
+      }
+      &::after{// 名前
+        content: "株式会社インプレーム 石橋";
+        position: absolute;
+        bottom: 10px;
+        right: 120px;
+        color: $main-color--b;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: .2rem;
+        @include min(500){
+          bottom: 10px;
+          right: 130px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &.-lp05 {
+      .c-card--inner {
+        padding: 20px 15px;
+        @include min(768){padding: 25px 15px;}
+      }
+    }
+  }
+  &.-lp_02{// LP02
+    &.-sc02{
+      border: none;
+      border-radius: 15px;
+      .c-card--inner{
+        padding: 25px 15px;
+        @include min(768){padding: 35px 15px;}
+      }
+    }
+    &.-sc07{
+      position: relative;
+      height: 150px;
+      background: $site-color01;
+      overflow: inherit;
+      @include min(500) {
+        height: 200px;
+      }
+      p{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .imgBox{
+        position: absolute;
+        left: 50%;
+        width: 85%;
+        transform: translate(-50%, -50%);
+      }
+      &.-item01{
+        .imgBox{
+          position: absolute;
+          top: 70%;
+          @include min(500){
+            width: 90%;
+          }
+          @include min(768){
+            width: 75%;
+          }
+          @include min(1000){
+            top: 80%;
+            width: 75%;
+          }
+          @include min(1200){
+            top: 90%;
+          }
+          @include min(1400){
+            top: 95%;
+          }
+          @include min(1600){
+            top: 90%;
+          }
+        }
+      }
+      &.-item02{
+        .imgBox{
+          position: absolute;
+          top: 63%;
+          @include min(500){
+            width: 90%;
+          }
+          @include min(768){
+            width: 75%;
+          }
+          @include min(1000){
+            top: 70%;
+            width: 75%;
+          }
+          @include min(1200){
+            top: 75%;
+          }
+          @include min(1400){
+            top: 80%;
+          }
+          @include min(1600){
+            top: 75%;
+          }
+        }
+      }
+      &.-item03{
+        .imgBox{
+          position: absolute;
+          top: 50%;
+          @include min(500){
+            width: 60%;
+          }
+        }
+      }
+    }
+    &.-sc09{
+      background: $site-color01;
+      border: 2px solid $site-color03;
+    }
+  }
+}
+
+// 目次 > アクティブ状態
+.c-card-lists {
+  &.-h2-lists {
+    > .c-card-item {
+      &.-active {
+        &::before {
+          color: $site-color03;
+          font-weight: bold !important;
+        }
+        > .c-link {
+          color: $site-color03;
+          font-weight: bold !important;
+        }
+      }
+    }
+  }
+
+  &.-h3-lists {
+    > .c-card-item {
+      &.-active {
+        > .c-link {
+          color: $site-color03;
+          font-weight: bold !important;
+        }
+      }
+    }
+  }
+}

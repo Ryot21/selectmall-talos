@@ -1,0 +1,20 @@
+// 全ページ
+
+body{
+	position: relative;
+	animation: fadeAnime 3s forwards;
+	@include min(768){animation: fadeAnime 2s forwards;}
+	main{
+		width: 100%;
+		// overflow-y: scroll;
+		// overflow-x: hidden;
+	}
+}
+
+// 1. TOPページ
+.p-top{
+	position: relative;
+	background: $site-color01;
+	animation: fadeAnime 2s forwards;
+
+}

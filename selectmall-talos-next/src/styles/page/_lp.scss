@@ -1,0 +1,107 @@
+// ランニングページ
+.p-lp{
+    .c-contents{
+        &--inner {// コンテンツ幅
+            width: 90%;
+            margin: auto;
+            @include min(500) {width: 85%;}
+            @include min(768) {width: 90%;}
+            @include min(1400) {max-width: 1180px;}
+
+            &.-bg-color01 {background: $site-color01;}
+            &.-bg-color02 {background: $site-color02;}
+            &.-bg-color03 {background: $site-color03;}
+            &.-bg-white {background: $main-color--w;}
+            &.-bg-gray {background: $main-color--gray;}
+        
+            &.-card {
+                padding: 10% 2.5% 10%;
+                border-radius: 10px;
+                border: 1px solid $site-color03;
+                box-shadow: 0px 0px 5px #8080802b;
+                @include min(768) {
+                    padding: 6% 2.5% 5%;
+                }
+            }
+        }
+        .-logoArea{
+            &::before{
+                background: linear-gradient(0.25turn, $main-color--w, 75%, rgba(0, 0, 0, 0));
+            }
+            &::after{
+                background: linear-gradient(0.75turn, $main-color--w, 75%, rgba(0, 0, 0, 0));
+            }
+        }
+    }
+
+    // ↓ ハイライト機能
+    .-marker{// マーカー
+        display: inline;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1),;
+        background: linear-gradient(transparent 60%, #fff7b3 60%);
+        padding: 2px 0;
+        font-weight: bold;
+        &.-o{background: linear-gradient(transparent 60%, #edac2b7c 60%);}
+        &.-y{background: linear-gradient(transparent 60%, #faeaa57a 60%);}
+        &.-b{background: linear-gradient(transparent 60%, #34bde76d 60%);}
+    }
+    .-slash{// スラッシュ
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before,
+    &::after{
+        content: "";
+        width: 25px;
+        height: 1px;
+        background-color: #000;
+        margin: 0px 4px 4px;
+    }
+    &::before{transform: rotate(45deg);}
+    &::after{transform: rotate(-45deg);}
+    }
+    .-first{// 1文字目のみ大文字
+        &::first-letter {
+            color: $main-color--red;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    }
+
+    // 画像
+    .imgBox{
+        &.w20{
+            max-width: 150px;
+        }
+        &.w30{
+            min-width: 250px;
+        }
+    }
+
+    // フロー
+    .-lp-flow{
+        .flexItem{
+            position: relative;
+            img{
+                box-shadow: 0px 0px 5px #8080802b;
+            }
+            z-index: 2;
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 10%;
+                transform: translateY(100%);
+                width: 3px;
+                height: 40%;
+                background: $lp-color07;
+                opacity: .5;
+                z-index: 1;
+                @include max(768){
+                    height: 10%;
+                }
+            }
+        }
+    }
+}

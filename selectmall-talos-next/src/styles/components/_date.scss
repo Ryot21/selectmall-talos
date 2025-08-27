@@ -1,0 +1,28 @@
+// 日付関係
+.c-date{
+    &__lists{// ul
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    &__item{ // li
+        width: auto;
+        &:nth-child(1){
+            margin-right: 5px;
+        }
+    }
+}
+
+.time{
+    line-height: .5;
+    img{
+        display: inline-block;
+        width: auto !important;
+        height: auto !important;
+        vertical-align: -2px;
+        padding-right: 5px;
+        @include min(500){
+            vertical-align: -.5px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.p-static{
+    h3{
+        position: relative;
+        margin: 2px 0 24px;
+        padding: 4px 0 6px 24px;
+        border-bottom: 2px solid $main-color--red;
+
+        font-size: 18px;
+        font-weight: bold;
+        &::before{
+            content: url(/images/item/form-icon.png);
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+    }
+    p,span{
+        font-size: clamp(1rem, 1.2vw, 1.5rem);
+        letter-spacing: .2rem;
+        line-height: 1.5;
+    }
+    span{display: block;}
+    a{
+        color: $site-color02;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    &__detail{
+        margin-bottom: 3rem;
+        h4{
+            font-size: clamp(1.6rem, 1.5vw, 2rem);
+            font-weight: bold;
+            letter-spacing: .2rem;
+            margin-bottom: 1rem;
+        }
+
+    }
+}

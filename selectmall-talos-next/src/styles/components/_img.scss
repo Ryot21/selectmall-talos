@@ -1,0 +1,52 @@
+
+.c-img{
+    border-radius: 10px;
+    overflow: hidden;
+    &.-logo{
+        display: inline-block;
+        width: 30%;
+        max-width: 130px !important;
+        border-radius: auto;
+        filter: drop-shadow(4px 4px 0 $main-color--w);    
+    }
+    &.-borderBox{
+        &.-double{
+            border: 4px double $site-color03;
+            @include min(500){
+                border: 7px double $site-color03;
+            }
+        }
+        &.-solid{
+            border: 3px solid $site-color03;
+            @include min(500){
+                border: 3px solid $site-color03;
+            }
+        }
+    }
+    &.-radius{
+        &.-right{
+            filter: drop-shadow(10px 10px 0 $main-color--w);    
+        }
+        &.-left{
+            filter: drop-shadow(-10px 10px 0 $main-color--w);    
+        }
+        &.-sh{
+            box-shadow: 0 0 5px 0px $main-color--b;
+        }
+        &.-p01{
+            border-radius: 18% 42% 20% 80%/48% 49% 51% 52%;
+        }
+        &.-p02{
+            border-radius: 30% 70% 70% 30% / 57% 36% 64% 43%;
+        }
+        &.-p03{
+            border-radius: 66% 34% 20% 80% / 57% 36% 64% 43%;
+        }
+        &.-p04{
+            border-radius: 79% 21% 20% 80% / 82% 75% 25% 18%;
+        }
+        &.-p05{
+            border-radius: 48% 82% 40% 80%/48% 42% 58% 52%;
+        }
+    }
+}

@@ -1,0 +1,952 @@
+// ナビゲーション（nav）
+
+// Headerナビゲーション
+.c-hnav {
+  // ナビゲーションリスト
+  // 「マネリペとは」、「ご利用者の声」、「お役立ち情報」
+  &-lists {
+    // ulタグ
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: right;
+    align-items: center;
+    .hnavItem {
+      // liタグ
+      width: auto;
+      margin-left: 15px;
+      @include min(1000) {
+        // margin-left: 30px;
+        margin-left: 15px;
+      }
+      a {
+        display: inline-block;
+        white-space: nowrap;
+        span {
+          position: relative;
+          display: block;
+          &::before {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: $main-color--w;
+            border-radius: 5px;
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            will-change: transform;
+            transition: all 0.5s;
+          }
+          &:hover {
+            color: $site-color03;
+            &::before {
+              width: 90%;
+              background: $site-color03;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  // ドロップダウンメニュー
+  &--dropdown {
+    position: fixed;
+    top: 101%;
+    left: 50%;
+    width: 100vw;
+    height: auto;
+    background: $main-color--w;
+    border-top: 1px solid $main-color--gray;
+    border-bottom: 1px solid $main-color--gray;
+    padding: 30px 0;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    will-change: transform;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    // チェック時 > 表示
+    &.-checked {
+      pointer-events: auto;
+      opacity: 1;
+    }
+    &--inner {
+      width: 50%;
+      align-items: center;
+      z-index: 1;
+      @include min(500) {
+        width: 85%;
+        margin: 0 auto;
+      }
+      @include min(768) {width: 90%;}
+      @include min(1600) {max-width: 1380px;}
+      @include min(1800) {max-width: 1500px;}
+    }
+    // ドロップダウン > タイトル
+    &--title {
+      position: relative;
+      color: $site-color03;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: .2rem;
+      margin-bottom: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 30px;
+        border-bottom: 2px solid $site-color03;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
+        width: 10px;
+        border-bottom: 2px dotted $site-color03;
+      }
+    }
+    // ドロップダウン > テキスト
+    &--text {
+      font-size: clamp(1.2rem, 1.2vw, 1.4rem);
+      letter-spacing: .1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+  }
+
+  // ドロップダウンリスト
+  &--archiveLists {
+    // ulタグ
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    .archiveItem {
+      // liタグ
+      display: inline-block;
+      width: auto;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      a {
+      }
+    }
+  }
+
+  // 共通 > フォント関係
+  &--link,
+  &--btn {
+    span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: .1rem;
+      white-space: nowrap;
+      @include min(768) {
+        font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+        letter-spacing: .2rem;
+      }
+    }
+  }
+  // aタグ + hover　の場合
+  &--link {
+    position: relative;
+    &::before {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: $main-color--w;
+      border-radius: 5px;
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      will-change: transform;
+      transition: all 0.5s;
+    }
+    &:hover,
+    &.-active {
+      // アクティブ時 + hover時
+      color: $site-color03;
+      &::before {
+        width: 100%;
+        background: $site-color03;
+        opacity: 1;
+      }
+    }
+    &.-triangle {
+      // 三角形アイコン
+      padding: 8px 15px 8px 0;
+      &::before {
+        bottom: 4px;
+      }
+      &::after {
+        content: "";
+        width: 10px;
+        height: 7px;
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        transform: translateY(-50%) rotate(0deg); // 下向き
+        background: $main-color--b;
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
+        will-change: transform;
+        transition: all 0.5s;
+      }
+      &:hover,
+      &.-active {
+        &::after {
+          background: $site-color03;
+          transform: translateY(-50%) rotate(180deg); // 上向き
+        }
+      }
+    }
+
+    // LPに使用
+    &.-white {
+      &::before {
+        background: $site-color02;
+      }
+      &:hover,
+      &.-active {
+        color: $main-color--w;
+        &::before {
+          background: $main-color--w;
+        }
+      }
+    }
+  }
+  // buttonタグ + hover
+  &--btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+    // ボタンの下線
+    span {
+      &::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        background: $main-color--w;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        will-change: transform;
+        transition: all 0.5s;
+        @include min(768) {
+          bottom: 5%;
+        }
+      }
+    }
+    // ホバー
+    &:hover {
+      span {
+        color: $site-color02;
+      }
+    }
+    // アクティブ時
+    &.-active {
+      span {
+        color: $site-color03;
+        text-shadow: 2px 2px 0 $main-color--gray;
+      }
+    }
+    // チェック時
+    &.-checked {
+      span {
+        color: $site-color03;
+        &::before {
+          width: 100%;
+          background: $site-color03;
+          opacity: 1;
+        }
+      }
+    }
+
+    // 三角形アイコン
+    &.-triangle {
+      padding: 8px 15px 8px 0;
+      &::after {
+        content: "";
+        width: 10px;
+        height: 7px;
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        transform: translateY(-50%) rotate(0deg); // 下向き
+        background: $main-color--b;
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
+        will-change: transform;
+        transition: all 0.5s;
+      }
+      // ホバー
+      &:hover {
+        &::after {
+          background: $site-color02;
+        }
+      }
+      // アクティブ時
+      &.-active {
+        &::after {
+          width: 12px;
+          height: 8px;
+          background: $site-color03;
+        }
+      }
+      // チェック時
+      &.-checked {
+        color: $site-color02;
+        &::after {
+          background: $site-color02;
+          transform: translateY(-50%) rotate(180deg); // 上向き
+        }
+      }
+    }
+  }
+
+  // オーバーレイ
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    transition: opacity 0.3s ease;
+  }
+}
+.c-navAreaBox {
+  width: 100%;
+  // will-change: transform;
+  transition: all 0.5s;
+  overflow: visible;
+
+  .c-navlists {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    .navItem {
+      &.-pageLink {
+        // ページ内リンク
+        @include min(500) {
+          width: 49%;
+        }
+        @include min(1000) {
+          max-width: 360px;
+        }
+      }
+
+    }
+  }
+}
+
+// ハンバーガーメニュー
+.c-hb-nav {
+  position: fixed;
+  top: 0.5%;
+  left: 85%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 9999;
+  @include min(500) {
+    left: 87%;
+  }
+
+  &__cheakbox {
+    display: none;
+    &:checked ~ .c-hb-nav__close {
+      width: 100%;
+      height: 100%;
+      background: $main-color--b;
+      opacity: 0.5;
+    }
+    &:checked ~ .c-hb-nav__content {
+      transform: translateX(0%);
+      box-shadow: -5px 0px 11px rgba(0, 0, 0, 0.15);
+      .hbNavItem {
+        animation-name: fadeRightAnime;
+        animation-fill-mode: forwards;
+
+        &:nth-child(1) {
+          animation-duration: 0.5s;
+        }
+        &:nth-child(2) {
+          animation-duration: 0.5s;
+          animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          animation-duration: 0.5s;
+          animation-delay: 0.2s;
+        }
+        &:nth-child(4) {
+          animation-duration: 0.5s;
+          animation-delay: 0.3s;
+        }
+        &:nth-child(5) {
+          animation-duration: 0.5s;
+          animation-delay: 0.4s;
+        }
+        &:nth-child(6) {
+          animation-duration: 0.5s;
+          animation-delay: 0.5s;
+        }
+        &:nth-child(7) {
+          animation-duration: 0.5s;
+          animation-delay: 0.6s;
+        }
+        &:nth-child(8) {
+          animation-duration: 0.5s;
+          animation-delay: 0.7s;
+        }
+        &:nth-child(8) {
+          animation-duration: 0.5s;
+          animation-delay: 0.8s;
+        }
+        &:nth-child(8) {
+          animation-duration: 0.5s;
+          animation-delay: 0.9s;
+        }
+      }
+    }
+    &:checked ~ .c-hb-nav__button {
+      span {
+        color: $main-color--w !important;
+        text-shadow: none;
+        padding-top: 5px;
+        &::before,
+        &::after {
+          background: $main-color--w !important;
+          box-shadow: none;
+        }
+
+        &::before {
+          top: 2.5px;
+          left: 41%;
+          width: 25px;
+          height: 3px;
+          transform: rotate(38deg) translate(-50%, -50%);
+        }
+        &::after {
+          top: -15.32px;
+          left: 46%;
+          width: 25px;
+          height: 3px;
+          transform: rotate(-38deg) translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  &__button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    cursor: pointer;
+    z-index: 9999;
+    @include min(768) {
+      width: 100%;
+    }
+
+    span {
+      position: relative;
+      top: 59%;
+      display: block;
+      color: $site-color03 !important;
+      text-shadow: 1px 1px 0 $main-color--w;
+      width: 100%;
+      padding-top: 1px;
+      transition: all 0.1s;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 50px;
+        border-radius: 3px;
+        background: $main-color--w;
+        border: 1px solid $site-color03;
+        // box-shadow: 1px 1px 1px $main-color--w;
+        cursor: pointer;
+        will-change: transform;
+        transition: all 0.1s;
+        @include min(768) {
+          width: 100%;
+        }
+      }
+      &::before {
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+      }
+      &::after {
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+      }
+    }
+    p {
+      position: absolute;
+      bottom: -72%;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: drop-shadow(0px 0px 0.5px $main-color--w);
+      @include min(768) {
+        bottom: -100%;
+        filter: drop-shadow(0px 0px 2px $main-color--w);
+      }
+    }
+  }
+  &__close {
+    display: block;
+
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+    z-index: 99;
+  }
+  &__content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    /* ハンバーガーメニュー内の幅 */
+    width: 100%;
+    // width: 90%;
+    height: 100%;
+    // padding: 15% 10% 0 10%;
+    background: $site-color03;
+    /* 滑らかに表示 */
+    transition: 0.2s ease-in-out;
+    transform: translateX(100%);
+    z-index: 9998;
+    &::before {
+      content: "© 2016-2025 株式会社インプレーム All rights reserved.";
+      position: absolute;
+      bottom: 20%;
+      right: -38%;
+      color: $main-color--w;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transform: rotate(270deg);
+    }
+  }
+  &__lists {
+    padding: 15% 5% 0;
+    .hbNavItem {
+      margin-bottom: 20px;
+      will-change: transform;
+      transition: 0.5s all;
+      opacity: 0;
+      &.-center{
+        text-align: center;
+      }
+      a,
+      label {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s all;
+        &::before{
+          color: $main-color--w;
+        }
+        span {
+          color: $main-color--w;
+          transition: 0.5s all;
+        }
+        &.-active {
+          &::before{
+            color: $main-color--yellow;
+            font-size: 1.4rem;
+          }
+          span {
+            color: $main-color--yellow !important;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .hbNavCategoryItem {
+      a,
+      label {
+        display: block;
+        color: $main-color--w;
+        position: relative;
+        transition: 0.5s all;
+        span {
+          color: $main-color--w;
+          transition: 0.5s all;
+        }
+        &.-active {
+          span {
+            color: $main-color--yellow !important;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  &__contactArea {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100px;
+    margin: auto;
+    border: 1px solid $main-color--b;
+    @include min(768) {
+      top: 47%;
+      height: 105px;
+    }
+    @include min(1400) {
+      height: 110px;
+    }
+    .c-hb-nav__top {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      transition: 0.5s all;
+      &:hover {
+        background: $site-color02;
+        span {
+          color: $main-color--w;
+        }
+      }
+    }
+    .c-hb-nav__bottom {
+      display: block;
+      grid-column: 1/3;
+      grid-row: 2/3;
+      transition: 0.5s all;
+      &:hover {
+        background: $site-color01;
+        span {
+          color: $main-color--w;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 1px;
+      width: 98%;
+      background: $main-color--b;
+    }
+    // SOLD OUT時に使用する
+    &.-grayOutItem {
+      pointer-events: none;
+    }
+  }
+  // &__logo {
+    // position: absolute;
+    // bottom: 0%;
+    // left: 73%;
+    // transform: translateX(-50%);
+    // width: 30%;
+  // }
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 11%;
+  }
+  // テキスト
+  &__text {
+    color: $main-color--w;
+    font-size: 1.2rem;
+    font-family: $f-gothic01;
+    text-align: left;
+    letter-spacing: .2rem;
+    line-height: 2;
+    padding-left: 10px;
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background: $main-color--w;
+      border-radius: 5px;
+    }
+  }
+
+  // ドロップダウンメニュー
+  &--dropdown {
+    display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+
+    &.-active {
+      display: block;
+    }
+  }
+
+  // ドロップダウンリスト
+  &--archiveLists {
+    .hbNavCategoryItem {
+      margin-bottom: 10px;
+      a {
+        position: relative;
+        display: block;
+        &::before {
+          content: "";
+          width: 0;
+          height: 1px;
+          background: $main-color--w;
+          border-radius: 5px;
+          position: absolute;
+          bottom: -2px;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          will-change: transform;
+          transition: all 0.5s;
+        }
+        &:hover {
+          color: $main-color--yellow;
+          &::before {
+            width: 90%;
+            background: $main-color--yellow;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  // ボタン
+  &--btn {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    color: $main-color--b;
+
+    &.-triangle {
+      padding: 8px 15px 8px 0;
+      &::after {
+        content: "";
+        width: 10px;
+        height: 7px;
+        position: absolute;
+        top: 50%;
+        right: 2%;
+        transform: translateY(-50%) rotate(0deg); // 下向き
+        background: $main-color--b;
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
+        will-change: transform;
+        transition: all 0.5s;
+      }
+      &:hover,
+      &.-active {
+        color: $site-color03;
+        &::after {
+          background: $site-color03;
+          transform: translateY(-50%) rotate(180deg); // 上向き
+        }
+      }
+    }
+  }
+
+  // LP用ナビゲーション > カラー変更
+  &.-LP{
+    .c-hb-nav{
+      &__logo {
+        position: absolute;
+        top: 1.25%;
+        left: 5%;
+        width: 140px;
+      }
+      &__content{
+        width: 100%;
+        background: $main-color--w;
+        &::before{
+          display: none;
+        }
+        &:checked ~ .c-hb-nav__button {
+          span {
+            color: $main-color--w !important;
+          }
+        }
+      }
+      &__button{
+        span{
+          color: $site-color03 !important;
+          &::before,
+          &::after{
+            background: $main-color--w;
+          }
+        }
+      }
+      &__lists{
+        margin-top: 30%;
+        .hbNavItem{
+          a,
+          label{
+            &::before{
+              color: $site-color03;
+            }
+            span{
+              color: $site-color03;
+            }
+          }
+        }
+      }
+      &__text{
+        color: $site-color03;
+        &::before{
+          background: $site-color03;
+        }
+      }
+      &__contact{
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+
+        .contactItem{
+          margin-bottom: 20px;
+          will-change: transform;
+          transition: 0.5s all;
+          // opacity: 0;
+        }
+      }
+    }
+    .hbNavItem{
+      a,
+      label{
+        span{
+          color: $main-color--w;
+        }
+      }
+    } 
+    .hbNavCategoryItem{
+      a,
+      label{
+        span{
+          color: $main-color--w;
+        }
+      }
+    }
+  }
+}
+
+// フッターナビゲーション
+.c-fnav {
+  // ナビゲーション関係
+  .navItem {
+    width: auto;
+    margin: 0 15px 2px 0;
+    @include min(768) {
+      margin: 0 5px 5px 0;
+    }
+  }
+  &--link {
+    position: relative;
+    &::before {
+      content: "";
+      width: 0;
+      height: 1px;
+      background: $main-color--w;
+      border-radius: 5px;
+
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      will-change: transform;
+      transition: all 0.5s;
+    }
+    &:hover {
+      color: $main-color--yellow !important;
+      &::before {
+        width: 90%;
+        background: $main-color--yellow;
+        opacity: 1;
+      }
+    }
+  }
+  // LP用フッターナビゲーション
+  &--lists__lp {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    @include min(768) {
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .LpnavItem {
+      position: relative;
+      width: 100%;
+      margin: 0 10px 10px;
+      @include min(768) {
+        width: auto;
+        margin: 0 30px;
+        &:nth-child(1) {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 1px;
+            height: 100%;
+            background: $main-color--w;
+            border-radius: 5px;
+            @include min(768) {
+              left: -30px;
+            }
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -10px;
+          width: 1px;
+          height: 100%;
+          background: $main-color--w;
+          border-radius: 5px;
+          @include min(768) {
+            right: -30px;
+          }
+        }
+      }
+    }
+  }
+}

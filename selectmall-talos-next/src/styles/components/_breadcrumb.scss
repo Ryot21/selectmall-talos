@@ -1,0 +1,52 @@
+// パンくず
+.c-breadcrumb {
+	position: absolute;
+	// bottom: 2.5%;
+	z-index: 10;
+
+	&__lists {
+	//ul
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding-left: 0;
+	@include max(768) {
+		justify-content: flex-end;
+	}
+	}
+	&__item {
+	//li
+	position: relative;
+	display: inline-block;
+	padding-right: 25px;
+	&::before {
+		content: "<";
+		position: absolute;
+		top: 40%;
+		right: 10px;
+		transform: translateY(-50%);
+		color: $main-color--b;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	&:last-child {
+		padding-right: 0;
+		span {
+			font-weight: bold;
+			color: $site-color02;
+		}
+		&::before {
+			display: none;
+		}
+	}
+	}
+	&__link {
+	// a
+	font-weight: bold;
+	white-space: nowrap;
+	transition: all 0.5s;
+	&:hover {
+	color: $site-color03;
+	}
+	}
+}

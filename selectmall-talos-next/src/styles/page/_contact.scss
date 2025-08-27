@@ -1,0 +1,98 @@
+// お問い合わせページ関係
+
+.p-contact{
+	position: relative;
+	width: 100%;
+	height: 100dvb;
+	background: $site-color01;
+	animation: fadeAnime 3s forwards;
+	@include min(768){
+		animation: fadeAnime 2s forwards;
+	}
+
+	.c-contact{
+		&--step{
+			position: relative;
+			width: 75%;
+			max-width: 400px;
+			margin: 0 auto;
+			&::before,
+			&::after{
+				content: "";
+				position: absolute;
+				top: 49%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 73%;
+				height: 1px;
+				background: $main-color--b;
+			}
+
+			.step-ttl{
+				.flexItem{
+					position: relative;
+					&::before{
+						content: "";
+						position: absolute;
+						bottom: -55%;
+						left: 50%;
+						transform: translateX(-50%);
+						width: 8px;
+						height: 8px;
+						background: $main-color--b;
+						border-radius: 50%;
+						z-index: 1;
+
+						@include max(500){
+							bottom: -67%;
+						}
+					}
+					&.-active{
+						p {color: $site-color03;}
+						&::before {background: $site-color03;}
+					}
+				}
+			}
+			.step-des{
+				.flexItem{
+					position: relative;
+					&.-active{p {color: $site-color03;}}
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+	.c-select{
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		&::after {
+			content: '';
+			position: absolute;
+			right: 15px;
+			width: 10px;
+			height: 7px;
+			background: #535353;
+			clip-path: polygon(0 0, 100% 0, 50% 100%);
+			pointer-events: none;
+		}
+		select {
+			appearance: none;
+			min-width: 138px;
+			height: 2.8rem;
+			padding: 0.4rem 0.8rem;
+			border: 1px solid #636363;
+			border-radius: 3px;
+			background: $main-color--w;
+			cursor: pointer;
+		}
+	}
+
+	dd{margin-left: 0;}
+
+}
