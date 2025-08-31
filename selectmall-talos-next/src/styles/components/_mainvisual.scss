@@ -74,13 +74,6 @@
             width: 100%;
             height: 100%;
         }
-        &.-breadcrumb {// パンくず
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: inherit;
-        }
     }
 
     // ===================== LP関係 =====================
@@ -91,7 +84,7 @@
     &.-LP01 {
         background: $lp-color04;
         .imgBox {
-            margin-top: 60px;
+            // margin-top: 60px;
             width: auto;
             height: auto;
             max-width: none !important;
@@ -103,57 +96,140 @@
             @include min(768) {
                 min-height: 620px !important;
             }
-            @include min(1800) {
-                max-height: 960px !important;
-            }
             @include min(2000) {
                 max-height: 960px !important;
             }
         }
         .c-contentsBox {
 
-            &.-comments01 {
-                width: 95%;
+            &.-tkeg {
+                width: 38%;
                 max-width: 1150px;
                 position: absolute;
-                top: 29%;
+                top: 58%;
                 left: 50%;
+                transform: translateX(-50%);
+                z-index: 4;
+                @include min(768) {
+                    width: 30.4%;
+                    top: 35%;
+                    left: 50%;
+                }
+                @include min(1000) {
+                    width: 30.4%;
+                    top: 39%;
+                    left: 50%;
+                }
+                @include min(1200) {
+                    width: 30.4%;
+                    max-width: 400px;
+
+                    top: 39%;
+                    left: 50%;
+                }
+                @include min(1400) {
+                    top: 44%;
+                }
+                @include min(2000) {
+                    top: 45%;
+                }
+            }
+            &.-bjet {
+                width: 20%;
+                max-width: 1150px;
+                position: absolute;
+                top: 69%;
+                left: 15%;
+                transform: translate(-50%, -45%);
+                z-index: 6;
+                @include min(768) {
+                    width: 10%;
+                    top: 66%;
+                    left: 28.5%;
+                }
+                @include min(1000) {
+                    width: 10%;
+                    top: 74%;
+                    left: 28.5%;
+                }
+                @include min(1200) {
+                    width: 10%;
+                    max-width: 170px;
+                    top: 70%;
+                    left: 28.5%;
+                }
+                @include min(1600) {
+                    top: 65%;
+                }
+                @include min(1800) {
+                    top: 70%;
+                    left: 33.5%;
+                }
+            }
+            &.-topper {
+                width: 17%;
+                max-width: 1150px;
+                position: absolute;
+                top: 68.5%;
+                left: 85%;
                 transform: translate(-50%, -45%);
                 z-index: 5;
                 @include min(768) {
-                    width: 60%;
-                    top: 57%;
-                    left: 31.5%;
+                    width: 9%;
+                    top: 65%;
+                    left: 72.5%;
                 }
                 @include min(1000) {
-                    width: 60%;
-                    top: 53%;
-                    left: 33.5%;
+                    width: 9%;
+                    top: 72%;
+                    left: 72.5%;
                 }
                 @include min(1200) {
-                    width: 60%;
-                    top: 52%;
-                    left: 34.5%;
+                    width: 9%;
+                    max-width: 160px;
+                    top: 68%;
+                    left: 72.5%;
                 }
-                @include min(1400) {
-                    top: 50%;
-                    left: 34.5%;
-                }
+
                 @include min(1600) {
-                    left: 37.5%;
+                    top: 64%;
                 }
                 @include min(1800) {
-                    width: 55%;
-                    left: 36.5%;
-                }
-                @include min(2000) {
-                    left: 39.5%;
-                }
-                @include min(2300) {
-                    left: 43.5%;
+                    top: 68.5%;
+                    left: 67%;
                 }
             }
-            &.-arrow {
+            &.-talos {
+                position: absolute;
+                top: 15%;
+                left: 50%;
+                transform: translateX(-50%);
+
+                width: 23%;
+                z-index: 1;
+                @include min(768) {
+                    top: 15%;
+                    width: 13%;
+                }
+                @include min(1000){
+                    top: 20%;
+                    max-width: 180px;
+                }
+            }
+            &.-text {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+                @include min(768) {
+                    top: 24%;
+                }
+                @include min(1000){
+                    top: 29%;
+                }
+            }
+            &.-title {
                 position: absolute;
                 top: 37%;
                 left: -90px;
@@ -161,10 +237,99 @@
                 z-index: 1;
                 @include min(768) {
                     top: 15%;
-                    left: 0;
+                    left: 50%;
+                }
+            }
+            &.-subTitle {
+                position: absolute;
+                top: 37%;
+                width: 20px;
+                z-index: 1;
+                @include max(768){
+                    transform:rotate(4deg) !important;
+                }
+                @include min(768) {
+                    top: 15%;
+                    width: 30px;
+                }
+                @include min(1200){
+                    width: 42px;
+                }
+                &.-sub01{
+                    position: absolute;
+                    top: 22%;
+                    right: 57px;
+                    z-index: 1;
+                    @include min(768) {
+                        top: 15%;
+                        right: 5%;
+                    }
+                }
+                &.-sub02{
+                    position: absolute;
+                    top: 30%;
+                    right: 100px;
+                    z-index: 1;
+                    @include min(768) {
+                        top: 15%;
+                        left: auto;
+                        right: 10.5%;
+                    }
+                }
+                &.-sub03{
+                    position: absolute;
+                    top: 28%;
+                    right: 150px;
+                    z-index: 1;
+                    @include min(768) {
+                        top: 15%;
+                        left: auto;
+                        right: 16%;
+                    }
+                }
+            }
+            &.-coment {
+                position: absolute;
+                top: 47%;
+                left: 5px;
+                width: 40%;
+                z-index: 8;
+                @include min(768) {
+                    top: 23.5%;
+                    left: 10%;
+                    width: 26%;
+                }
+                @include min(1000){
+                    top: 17.5%;
+                    left: 10%;
+                    width: 20%;
+                    max-width: 330px;
                 }
             }
 
+            &.-icon {
+                position: absolute;
+                &.-icon01 {
+                    top: 25%;
+                    left: 0;
+                    width: 75px;
+                    @include min(768){
+                        top: 12%;
+                        width: 100px;
+                    }
+                }
+                &.-icon02 {
+                    top: 50%;
+                    left: 88%;
+                    width: 35px;
+                    @include min(768){
+                        top: auto;
+                        bottom: 5%;
+                        left: 90%;
+                        width: 80px;
+                    }
+                }
+            }
             &.-cta {
                 width: 90%;
                 max-width: 420px;
