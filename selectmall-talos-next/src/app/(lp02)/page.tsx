@@ -55,16 +55,8 @@ export default function Home() {
       <div id="stickyDisplayTrigger">
         <LpMainVisual />
       </div>
-      <div className="c-contents -bg-white">
-        {/* SC01 導入企業ロゴ */}
-        <div className="c-contents -bg-lp02-logo">
-          <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -c01 pdt1 pdt2s pdb1 pdb2s">
-              \ 様々な業界の企業に<br className="sp"/>ご利用いただいています！ /
-            </h2>
-          </div>
-        </div>
-        {/* <LogoContents /> */}
+      <div className="c-contents ">
+
 
         <div className="c-contents -bg-lp02-sc03 pdt5 pdt10s pdb5 pdb10s">
           <div className="c-contents--inner">
@@ -94,7 +86,7 @@ export default function Home() {
           </div>
         </div>
         {/* SC02 導入効果 */}
-        <div id="sc02" className="c-contents -bg-lp02-sc03 pdb7 pdb15s">
+        <div id="sc02" className="c-contents pdb7 pdb15s">
           <div className="c-contents--inner">
             <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
               マネリペの導入効果
@@ -135,7 +127,7 @@ export default function Home() {
         {/* SC03 簡単な説明 */}
         <div
           id="sc03"
-          className="c-contents -bg-lp02-sc02 pdt7 pdt15s pdb7 pdb15s"
+          className="c-contents  pdt7 pdt15s pdb7 pdb15s"
         >
           <div className="c-contents--inner">
             <div className="c-card -lp_02 -sc02">
@@ -202,7 +194,7 @@ export default function Home() {
         {/* SC04 マネリペで出来ること */}
         <div
           id="sc04"
-          className={"c-contents -bg-white pdt7 pdt15s pdb5 pdb5s"}
+          className={"c-contents pdt7 pdt15s pdb5 pdb5s"}
         >
           <div className="c-contents--inner">
             <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">

@@ -42,9 +42,9 @@ export default function PageTypeWrapper({
     } else if (pathname.startsWith("/contact")) {
       pageType = "contact";
     } else if (pathname === "/") {
-      pageType = "top";
-    } else if (pathname.startsWith("/lp")) {
       pageType = "lp";
+    // } else if (pathname.startsWith("/lp")) {
+    //   pageType = "lp";
     }
 
     // React 19の改善されたハイドレーション対策として
