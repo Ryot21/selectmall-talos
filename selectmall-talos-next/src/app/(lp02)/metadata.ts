@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://money-repair.jp/lp02"),
+  metadataBase: new URL("https://selectmall-talos.jp/"),
   title: {
-    template: "%s | 役立つ金融知識をお届けします。",
-    default: "マネリペ | 役立つ金融知識をお届けします。",
+    template: "%s | TALOS - タロスケグ",
+    default: "セレクトモール | TALOS - タロスケグ",
   },
   description:
-    "金融は分野によって知識が偏りがちなので、金融知識という知的財産を身につけ、自分たちで適切な判断ができるようにすることが必要だと感じます。金融リテラシーを上げることにより「将来に向けたお金の不安を解決する」サービスです。",
+    "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "マネリペ",
-    title: "マネリペ | 役立つ金融知識をお届けします。",
+    siteName: "セレクトモール",
+    title: "セレクトモール | TALOS - タロスケグ",
     description:
-      "金融は分野によって知識が偏りがちなので、金融知識という知的財産を身につけ、自分たちで適切な判断ができるようにすることが必要だと感じます。金融リテラシーを上げることにより「将来に向けたお金の不安を解決する」サービスです。",
+      "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイKEGでブルワリー様の負担軽減をサポートします。",
     images: ["/images/sns/ogp_1200_630.jpg"],
   },
   alternates: {
-    canonical: "https://money-repair.jp/lp02",
+    canonical: "https://selectmall-talos.jp/",
   },
 };
