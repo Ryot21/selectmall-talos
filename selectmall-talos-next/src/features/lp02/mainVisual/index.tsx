@@ -98,29 +98,32 @@ export default function LpMainVisual() {
                     <h2 className="s-M -white -center -ls-2">ビールを新たなステージへ</h2>
                 </div>
                 {/* ================= 縦組 ================= */}
-                <div className={"c-contentsBox -subTitle -sub01 a-fadeRightUp -tm15 -sp1"}>
-                    <Image
-                        src="/images/SVG/sub01.svg"
-                        alt="使い切りケグの新定番"
-                        width={42}
-                        height={489}
-                    />
-                </div>
-                <div className={"c-contentsBox -subTitle -sub02 a-fadeRightUp -tm15 -sp1"}>
-                    <Image
-                        src="/images/SVG/_sub02.svg"
-                        alt="使い切りケグの新定番"
-                        width={42}
-                        height={235}
-                    />
-                </div>
-                <div className={"c-contentsBox -subTitle -sub03 a-fadeRightUp -tm15 -sp1"}>
-                    <Image
-                        src="/images/SVG/sub03.svg"
-                        alt="次世代のビールケグ"
-                        width={42}
-                        height={439}
-                    />
+                <div className="c-mainVisual -tateArea">
+                    <div className="imgBox"></div>
+                    <div className={"c-contentsBox -tate -tate01 a-fadeRightUp -tm15 -sp1"}>
+                        <Image
+                            src="/images/SVG/sub01.svg"
+                            alt="使い切りケグの新定番"
+                            width={42}
+                            height={489}
+                        />
+                    </div>
+                    <div className={"c-contentsBox -tate -tate02 a-fadeRightUp -tm15 -sp1"}>
+                        <Image
+                            src="/images/SVG/_sub02.svg"
+                            alt="使い切りケグの新定番"
+                            width={42}
+                            height={235}
+                        />
+                    </div>
+                    <div className={"c-contentsBox -tate -tate03 a-fadeRightUp -tm15 -sp1"}>
+                        <Image
+                            src="/images/SVG/sub03.svg"
+                            alt="次世代のビールケグ"
+                            width={42}
+                            height={439}
+                        />
+                    </div>
                 </div>
                 {/* ================= アイコン ================= */}
                 <div className={"c-contentsBox -icon -icon01 a-fadeRightUp -tm15 -sp1"}>

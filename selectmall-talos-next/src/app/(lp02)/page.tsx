@@ -56,140 +56,59 @@ export default function Home() {
         <LpMainVisual />
       </div>
       <div className="c-contents ">
-
-
-        <div className="c-contents -bg-lp02-sc03 pdt5 pdt10s pdb5 pdb10s">
-          <div className="c-contents--inner">
-            <p className="s-ML -s14 -b -blue -ls-2 -lh-3 -lh-1_5_s -center">
-              なぜ今、
-              <br className="sp" />
-              福利厚生に&quot;
-              <span className="s-ML -s18 -b -blue -marker">金融教育</span>
-              &quot;が必要なのか？
-              <br />
-              <br className="sp" />
-              物価高や税負担で、
-              <br className="sp" />
-              社員の可処分所得は減少傾向。
-              <br />
-              <br className="sp" />
-              生活不安が転職を招き、
-              <br className="sp" />
-              <span className="s-ML -s18 -b -blue -marker">採用・定着</span>
-              が企業の課題になっています。
-              <br />
-              <br className="sp" />↓<br className="sp" />
-              給与を変えずに手元を増やす福利厚生が
-              <br className="sp" />
-              注目されています。
-            </p>
-          </div>
-        </div>
-        {/* SC02 導入効果 */}
-        <div id="sc02" className="c-contents pdb7 pdb15s">
-          <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
-              マネリペの導入効果
-            </h2>
-            <ul className="c-flex -col1_3 -h-top -jc-sb mgb2 mgb5s">
-              <li className="flexItem pdr5s pdl5s mgb5s">
-                <Image
-                  src="/images/Lp/ver02/sc03-item01.png"
-                  alt="早期就職率-5%ダウンを実現"
-                  width={320}
-                  height={320}
-                />
-              </li>
-              <li className="flexItem pdr5s pdl5s mgb5s">
-                <Image
-                  src="/images/Lp/ver02/sc03-item02.png"
-                  alt="社員利用率40%以上アップ"
-                  width={320}
-                  height={320}
-                />
-              </li>
-              <li className="flexItem pdr5s pdl5s ">
-                <Image
-                  src="/images/Lp/ver02/sc03-item03.png"
-                  alt="可処分所得平均26万円アップ"
-                  width={320}
-                  height={320}
-                />
-              </li>
-            </ul>
-            <p className="s-SS -s10 -blue -right -ls-2 -lh-1_5 -ws-n">
-              ※1.マネリペ顧客調査2025年度
-              <br />
-              ※2.マネリペ500名のユーザーを対象とした調査に基づく
-            </p>
-          </div>
-        </div>
-        {/* SC03 簡単な説明 */}
-        <div
-          id="sc03"
-          className="c-contents  pdt7 pdt15s pdb7 pdb15s"
-        >
+        {/* SC01 商品紹介 */}
+        <div id="sc01" className="c-contents  pdt7 pdt15s pdb7 pdb15s">
           <div className="c-contents--inner">
             <div className="c-card -lp_02 -sc02">
               <div className="c-card--inner">
-                {/* <p className="s-ML -s14 -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -center mgb1 mgb4s">
-                  <span className="s-ML -b -blue">マネリペ</span>
-                  は離職率を下げて
-                  <br className="sp" />
-                  エンゲージメントを高め、
-                  <br />
-                  <br className="sp" />
-                  <span className="s-L -s18 -b -blue -marker pdr1 pdr0s">
-                    金融リテラシー向上をサポートする
-                  </span>
-                  <br className="sp" />
-                  福利厚生です。
-                </p>
-                <p className="s-ML -s14 -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -center">
-                  &quot;中小・ベンチャー・
-                  <br className="sp" />
-                  中堅企業でも実績多数&quot;
-                </p> */}
-                <p className="s-ML -s14 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -center mgb2 mgb4s">
-                  導入企業で、
-                  <br className="sp" />
-                  こんな成果が出ています。
-                </p>
-                <p className="-center mgb3 mgb4s">
-                  ✔️
-                  <span className="s-L -s18 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -marker pdl1 pdl1s">
-                    離職率を平均15%改善
-                  </span>
-                  <br />
-                  ✔️
-                  <span className="s-L -s18 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -marker pdl1 pdl1s">
-                    社内エンゲージメント向上
-                  </span>
-                  <br />
-                  ✔️
-                  <span className="s-L -s18 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -marker pdl1 pdl1s">
-                    金融リテラシーの底上げ
-                  </span>
-                </p>
-                <p className="s-ML -s14 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -center mgb1 mgb4s">
-                  &quot;中小・ベンチャー・
-                  <br className="sp" />
-                  中堅企業でも実績多数&quot;
-                </p>
-                <p className="s-ML -s14 -b -blue -ls-2 -lh-2 -lh-1_5_s -ws-n -center mgb1 mgb4s">
-                  可処分所得を増やすことで、
-                  <br className="sp" />
-                  社員も企業も成長する環境づくりを
-                  <br className="sp" />
-                  サポートします。
-                </p>
-                <p className="s-SS -right -blue -ls-2 pdr5 pdr5s">
-                  ※業種によります
-                </p>
+                <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
+                  ワンウェイケグ
+                </h2>
+
+                <ul className="c-flex -col1_2 -pc2_1 -jc-sb">
+                  <li className="flexItem">
+                    <div className="imgBox">
+                      <Image
+                        src="/images/keg/T-Keg_20L30L.png"
+                        alt="T-KEG（2層ケグ）"
+                        width={1644}
+                        height={1154}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
+                      T-KEG<span className="s-S">（2層ケグ）</span>
+                    </h3>
+                    <p className="s-M -b -left -ls-2 -lh-1_5 mgb2 mgb2s">
+                    次世代使い捨てビールケグ - 革新的な多層フレキシブルバッグシステム
+                    </p>
+                    <p className="s-M -ls-2 -lh-1_5 mgb2 mgb2s">
+                      【主な特徴】<br/>
+                      外装とインナーバッグの隙間に空気を注入する事でビールに酸素が触れることなく押し出し可能。
+                      空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。ET素材でリサイクル可能。
+                    </p>
+                    <p className="s-M -ls-2 -lh-1_5">
+                      本体材質：PET、
+                      ハンドル材質：PP、
+                      容量：20L,30L、
+                      高さ：600mm、
+                      重量：1.3kg±0.1
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+        <div id="sc01" className="c-contents pdt7 pdt15s pdb7 pdb15s">
+          <div className="c-contents--inner">
+            <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
+              ワンウェイケグ
+            </h2>
+          </div>
+        </div>
+
 
         {/* SC04 マネリペで出来ること */}
         <div
