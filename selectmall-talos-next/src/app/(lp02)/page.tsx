@@ -64,10 +64,10 @@ export default function Home() {
                 <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
                   ワンウェイケグ
                 </h2>
-
-                <ul className="c-flex -col1_2 -pc2_1 -jc-sb">
-                  <li className="flexItem">
-                    <div className="imgBox">
+                {/* T-KEGの紹介 */}
+                <ul className="c-flex -col1_2 -pc2_1 -jc-sb mgb10 mgb10s">
+                  <li className="flexItem mgb5s">
+                    <div className="imgBox w75s">
                       <Image
                         src="/images/keg/T-Keg_20L30L.png"
                         alt="T-KEG（2層ケグ）"
@@ -80,20 +80,112 @@ export default function Home() {
                     <h3 className="c-contents--LpTitle mgb2 mgb2s">
                       T-KEG<span className="s-S">（2層ケグ）</span>
                     </h3>
-                    <p className="s-M -b -left -ls-2 -lh-1_5 mgb2 mgb2s">
-                    次世代使い捨てビールケグ - 革新的な多層フレキシブルバッグシステム
+                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                      次世代使い捨てビールケグ -
+                      革新的な多層フレキシブルバッグシステム
                     </p>
-                    <p className="s-M -ls-2 -lh-1_5 mgb2 mgb2s">
-                      【主な特徴】<br/>
+                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                      【主な特徴】
+                      <br />
                       外装とインナーバッグの隙間に空気を注入する事でビールに酸素が触れることなく押し出し可能。
                       空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。ET素材でリサイクル可能。
                     </p>
-                    <p className="s-M -ls-2 -lh-1_5">
-                      本体材質：PET、
-                      ハンドル材質：PP、
-                      容量：20L,30L、
-                      高さ：600mm、
-                      重量：1.3kg±0.1
+                    <p className="s-S -ls-2 -lh-1_5">
+                      【製品スペック】
+                      <br />
+                      材質 ： PET（本体）、PP（ハンドル）
+                      <br />
+                      容量 ： 20L、30L
+                      <br />
+                      高さ ： 600mm
+                      <br />
+                      重量 ： 1.3kg±0.1
+                      <br />
+                      最大使用圧力 ： 3bar（0.3Mpa）
+                      <br />
+                      最大耐圧 ： 7bar（0.7Mpa）
+                    </p>
+                  </li>
+                </ul>
+                {/* BREWJETの紹介 */}
+                <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb mgb10 mgb10s">
+                  <li className="flexItem mgb5s">
+                    <div className="imgBox">
+                      <Image
+                        src="/images/keg/BrewJet-descript.png"
+                        alt="BREWJETの説明"
+                        width={1644}
+                        height={1154}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
+                      BREWJET<span className="s-S">（革新的ビールディスペンシングシステム）</span>
+                    </h3>
+                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                      パッケージング容器とディスペンサーが一体化した次世代ビールサーバー
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                      【主な特徴】
+                      <br />
+                      BrewJetは特別な消費シーンに最適化されており、パーティー、アウトドアイベント、バーベキュー、キャンプなど、従来のビールサーバーでは対応困難な場所でも、プロ品質のドラフトビール体験を実現します。ポータブル設計により、どこでも新鮮で美味しいビールをお楽しみいただけます
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5">
+                      【製品スペック】
+                      <br />
+                      材質 ： PET（本体）、PP（ハンドル）
+                      <br />
+                      容量 ： 5L
+                      <br />
+                      高さ ： ???mm
+                      <br />
+                      重量 ： 0.5kg±0.1
+                      <br />
+                      最大使用圧力 ： 3bar（0.3Mpa）
+                      <br />
+                      最大耐圧 ： 7bar（0.7Mpa）
+                    </p>
+                  </li>
+                </ul>
+                {/* TOPPERの紹介 */}
+                <ul className="c-flex -col1_2 -pc2_1 -jc-sb mgb10 mgb10s">
+                  <li className="flexItem mgb5s">
+                    <div className="imgBox">
+                      <Image
+                        src="/images/keg/TOPPER-descript.png"
+                        alt="TOPPERの説明"
+                        width={1644}
+                        height={1154}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
+                      TOPPER<span className="s-S">（ポータブルビールディスペンシングシステム）</span>
+                    </h3>
+                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                      コンパクト設計で持ち運び自由な革新的ビアーシステム
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                      【主な特徴】
+                      <br />
+                      従来のビアサーバーの概念を覆す軽量・コンパクト設計により、家庭でのエンターテイメントから商業用途まで幅広く対応。アウトドアイベント、バーベキュー、キャンプ、パーティー、レストラン、カフェ、バーなど、あらゆる場面でプロフェッショナルなビール体験を実現します。
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5">
+                      【製品スペック】
+                      <br />
+                      材質 ： PET（本体）、PP（ハンドル）
+                      <br />
+                      容量 ： 3L
+                      <br />
+                      高さ ： ???mm
+                      <br />
+                      重量 ： 0.25kg±0.05
+                      <br />
+                      最大使用圧力 ： 4bar（0.4Mpa）
+                      <br />
+                      最大耐圧 ： 4bar（0.4Mpa）
                     </p>
                   </li>
                 </ul>
@@ -109,12 +201,8 @@ export default function Home() {
           </div>
         </div>
 
-
         {/* SC04 マネリペで出来ること */}
-        <div
-          id="sc04"
-          className={"c-contents pdt7 pdt15s pdb5 pdb5s"}
-        >
+        <div id="sc04" className={"c-contents pdt7 pdt15s pdb5 pdb5s"}>
           <div className="c-contents--inner">
             <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
               マネリペで出来ること
