@@ -64,6 +64,43 @@ export default function Home() {
                 <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
                   ワンウェイケグ
                 </h2>
+                {/* 単層ケグの紹介 */}
+                <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb mgb10 mgb10s">
+                  <li className="flexItem mgb5s">
+                    <div className="imgBox">
+                      <Image
+                        src="/images/keg/tansou-descript.png"
+                        alt="単層ケグの説明"
+                        width={1644}
+                        height={1154}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
+                      単層ワンウェイケグ<span className="s-S">（S/A/G/Tタイプ規格対応）</span>
+                    </h3>
+                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                      ステンレスケグの革新的代替ソリューション
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                      【主な特徴】
+                      <br />
+                      従来のステンレスケグに比べて軽量で取り扱いやすく、返却不要のワンウェイシステムにより、配送コストの削減と効率化を実現します。日本の飲食業界に革新をもたらす次世代ビールケグシステムです。
+                    </p>
+                    <p className="s-S -ls-2 -lh-1_5">
+                      【製品スペック】
+                      <br />
+                      材質 ： PET（本体）、PP（ハンドル）
+                      <br />
+                      容量 ： 10L、15L、20L
+                      <br />
+                      高さ ： 370mm、480mm、600mm
+                      <br />
+                      最大使用圧力 ： 4bar（0.4Mpa）
+                    </p>
+                  </li>
+                </ul>
                 {/* T-KEGの紹介 */}
                 <ul className="c-flex -col1_2 -pc2_1 -jc-sb mgb10 mgb10s">
                   <li className="flexItem mgb5s">
@@ -78,7 +115,7 @@ export default function Home() {
                   </li>
                   <li className="flexItem">
                     <h3 className="c-contents--LpTitle mgb2 mgb2s">
-                      T-KEG<span className="s-S">（2層ケグ）</span>
+                      T-KEG<span className="s-S">（2層ケグ - S/A/G/Tタイプ規格対応）</span>
                     </h3>
                     <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                       次世代使い捨てビールケグ -
