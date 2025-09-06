@@ -154,6 +154,7 @@
   // aタグ + hover　の場合
   &--link {
     position: relative;
+    color: $lp-color01;
     &::before {
       content: "";
       width: 0;
@@ -171,10 +172,10 @@
     &:hover,
     &.-active {
       // アクティブ時 + hover時
-      color: $site-color03;
+      color: $lp-color02;
       &::before {
         width: 100%;
-        background: $site-color03;
+        background: $lp-color02;
         opacity: 1;
       }
     }
@@ -816,18 +817,18 @@
           a,
           label{
             &::before{
-              color: $site-color03;
+              color: $lp-color01;
             }
             span{
-              color: $site-color03;
+              color: $lp-color02;
             }
           }
         }
       }
       &__text{
-        color: $site-color03;
+        color: $site-color01;
         &::before{
-          background: $site-color03;
+          background: $site-color02;
         }
       }
       &__contact{

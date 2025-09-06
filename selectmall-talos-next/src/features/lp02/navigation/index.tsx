@@ -32,48 +32,48 @@ export default function LpNavigation() {
         {/* ロゴ */}
         <div className={"c-hb-nav__logo"}>
           <Link
-            href="/lp02#top"
+            href="/#top"
             className={"c-link -img"}
             onClick={handleLinkClick}
           >
             <Image
-              src="/images/logo/mp/money-repair-logo_b.svg"
-              alt="福利厚生で金融教育するならマネリペ"
-              width={200}
-              height={50}
+              src="/images/logo/selectmall-logo.svg"
+              alt="セレクトモール"
+              width={210}
+              height={60}
               priority
             />
           </Link>
         </div>
         {/* ナビゲーション */}
         <ul className={"c-hb-nav__lists"}>
+          {/* Talosについて */}
+          <li className={"hbNavItem -center"}>
+            <Link href="/#sc01" onClick={handleLinkClick}>
+              <span className={"s-ML -s18 -b -ls-2 pdr5"}>Talosについて</span>
+            </Link>
+          </li>
           {/* 商品紹介 */}
           <li className={"hbNavItem -center"}>
-            <Link href="/lp02#sc01" onClick={handleLinkClick}>
+            <Link href="/#sc02" onClick={handleLinkClick}>
               <span className={"s-ML -s18 -b -ls-2 pdr5"}>商品紹介</span>
             </Link>
           </li>
-          {/* 選ばれる理由 */}
+          {/* 特徴 */}
           <li className={"hbNavItem -center"}>
-            <Link href="/lp02#sc02" onClick={handleLinkClick}>
-              <span className={"s-ML -s18 -b -ls-2 pdr5"}>選ばれる理由</span>
+            <Link href="/#sc03" onClick={handleLinkClick}>
+              <span className={"s-ML -s18 -b -ls-2 pdr5"}>特徴</span>
             </Link>
           </li>
-          {/* 会社概要 */}
-          <li className={"hbNavItem -center"}>
-            <Link href="/lp02#sc03" onClick={handleLinkClick}>
-              <span className={"s-ML -s18 -b -ls-2 pdr5"}>会社概要</span>
-            </Link>
-          </li>
-          {/* 申し込みから導入までの流れ */}
+          {/* 申し込みから導入までの流れ
           <li className={"hbNavItem -center"}>
             <Link href="/lp02#sc10" onClick={handleLinkClick}>
               <span className={"s-ML -s18 -b -ls-2 pdr5"}>導入までの流れ</span>
             </Link>
-          </li>
+          </li> */}
           {/* よくある質問 */}
           <li className={"hbNavItem -center"}>
-            <Link href="/lp02#Q&A" onClick={handleLinkClick}>
+            <Link href="/#Q&A" onClick={handleLinkClick}>
               <span className={"s-ML -s18 -b -ls-2 pdr5"}>よくある質問</span>
             </Link>
           </li>
@@ -82,12 +82,12 @@ export default function LpNavigation() {
         <ul className={"c-hb-nav__contact"}>
           <li className={"contactItem"}>
             <Link
-              href="/lp02#cta"
+              href="/#cta"
               className={"c-link -img"}
               onClick={handleLinkClick}
             >
               <Image
-                src="/images/SVG/Lp/ver02/download.svg"
+                src="/images/SVG/Lp/download.svg"
                 alt="資料ダウンロード"
                 width={334}
                 height={40}
@@ -96,12 +96,12 @@ export default function LpNavigation() {
           </li>
           <li className={"contactItem"}>
             <Link
-              href="/lp02#cta"
+              href="/#cta"
               className={"c-link -img"}
               onClick={handleLinkClick}
             >
               <Image
-                src="/images/SVG/Lp/ver02/contact.svg"
+                src="/images/SVG/Lp/contact.svg"
                 alt="お問い合わせ"
                 width={334}
                 height={40}

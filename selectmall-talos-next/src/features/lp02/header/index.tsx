@@ -36,31 +36,31 @@ export default function LpHeader() {
                   <li className={"navItem -pageLink"}>
                     <nav className={"c-hnav"}>
                       <ul className={"c-hnav-lists"}>
-                        {/* #sc01 - 商品紹介 */}
+                        {/* #sc01 - Talosについて */}
                         <li className={"hnavItem"}>
                           <Link
                             href="#sc01"
                             className={`c-hnav--link s-M -s13 -b -ls-1 -ws-n`}
                           >
-                            商品紹介
+                            Talosについて
                           </Link>
                         </li>
-                        {/* #sc02 - 選ばれる理由 */}
+                        {/* #sc02 - 商品紹介 */}
                         <li className={"hnavItem"}>
                           <Link
                             href="#sc02"
                             className={`c-hnav--link s-M -s13 -b -ls-1 -ws-n`}
                           >
-                            選ばれる理由
+                            商品紹介
                           </Link>
                         </li>
-                        {/* #sc03 - 会社概要 */}
+                        {/* #sc03 - 商品特徴 */}
                         <li className={"hnavItem"}>
                           <Link
                             href="#sc03"
                             className={`c-hnav--link s-M -b -s13 -ls-1 -ws-n`}
                           >
-                            会社概要
+                            商品特徴
                           </Link>
                         </li>
                         {/* #sc04 - よくある質問 */}
@@ -82,7 +82,7 @@ export default function LpHeader() {
                   </li>
                   {/* 資料ダウンロード */}
                   <li className={"navItem"}>
-                    <Iconbutton href="/lp02#cta" customClass="cvBtn -navy02">
+                    <Iconbutton href="/lp02#cta" customClass="cvBtn -orange">
                       <span className="pc">資料ダウンロード</span>
                       <Image
                         src="/images/SVG/download.svg"
@@ -95,14 +95,14 @@ export default function LpHeader() {
                   </li>
                   {/* お問い合わせはこちら */}
                   <li className={"navItem"}>
-                    <Iconbutton href="/lp02#cta" customClass="cvBtn -lightBlue">
-                      <span className="pc s-M -s13 -b -ls-1">
+                    <Iconbutton href="/lp02#cta" customClass="cvBtn -lpColor01">
+                      <span className="pc">
                         お問い合わせはこちら
                       </span>
                       <Image
-                        src="/images/SVG/mail-blue.svg"
+                        src="/images/SVG/mail-white.svg"
                         className="svgIcon mgb1"
-                        alt="資料ダウンロード"
+                        alt="お問い合わせ"
                         width={18}
                         height={18}
                       />

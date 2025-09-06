@@ -96,26 +96,26 @@ button {
       color: $main-color--w;
     }
   }
-  &.-navy02 {
+  &.-lpColor01 {
     background: $lp-color01;
     border: 1px solid $lp-color01;
     &:hover {
-      background: $lp-color06;
-      border: 1px solid $lp-color03;
+      background: $lp-color02;
+      border: 1px solid $lp-color01;
     }
     span {
       color: $main-color--w;
     }
   }
-  &.-lightBlue {
-    background: $lp-color02;
-    border: 1px solid $lp-color02;
+  &.-lpColor02 {
+    background: $lp-color03;
+    border: 1px solid $lp-color01;
     &:hover {
-      background: $site-color07;
-      border: 1px solid $lp-color03;
+      background: $lp-color02;
+      border: 1px solid $lp-color01;
     }
     span {
-      color: $lp-color03;
+      color: $lp-color01;
     }
   }
 }
