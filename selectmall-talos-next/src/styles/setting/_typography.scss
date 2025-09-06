@@ -57,7 +57,6 @@ select,
 button,
 th,
 td {
-  color: $main-color--b;
   font-family: $f-gothic01;
   font-weight: $f-n;
   font-style: normal;
@@ -94,16 +93,19 @@ td {
     &::after {
       content: "";
       position: absolute;
-      bottom: -1px;
+      bottom: 5px;
       left: 50%;
       transform: translateX(-50%);
-      height: 1px;
+      height: 10px;
       width: 95%;
       z-index: -1;
     }
     &.-y {&::after {background: $main-color--yellow;}}
     &.-o {&::after {background: $main-color--orange;}}
-    &.-color03 {&::after {background: $site-color03;}}
+    &.-color01 {&::after {background: $item-color01;}}
+    &.-color02 {&::after {background: $item-color02;}}
+    &.-color03 {&::after {background: $item-color03;}}
+    &.-color04 {&::after {background: $item-color04;}}
   }
 
   // ----- 位置関係 -----
@@ -156,7 +158,8 @@ td {
 
   // 影
   &.-shadow {
-    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.637)) !important;
+    text-shadow: 1px 1px 1px white;
+    // filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.637)) !important;
   }
 
   // 折り返し禁止
@@ -215,25 +218,33 @@ td {
 
   &.-c01 {
     color: $site-color01 !important;
+    span {color: $site-color01 !important;}
   }
   &.-c02 {
     color: $site-color02 !important;
+    span {color: $site-color02 !important;}
   }
   &.-c03 {
     color: $site-color03 !important;
+    span {color: $site-color03 !important;}
   }
   &.-c04 {
     color: $site-color04 !important;
+    span {color: $site-color04 !important;}
   }
   // LP独自のカラー
   &.-lp_c01 {
     color: $lp-color01 !important;
+    span {color: $lp-color01 !important;}
   }
   &.-lp_c02 {
     color: $lp-color02 !important;
+    span {color: $lp-color02 !important;}
+
   }
   &.-lp_c03 {
     color: $lp-color03 !important;
+    span {color: $lp-color03 !important;}
   }
 
 

@@ -1,22 +1,84 @@
 // LP > コンテンツ > セクション内
 .c-contents{
-    &--LpMainTitle{
+    &--LpContentsTitle {// コンテンツ > タイトル
         position: relative;
         font-size: 2rem !important;
         font-weight: bold;
         letter-spacing: .2rem;
         line-height: 1.5;
-        text-align: center;
         padding: 0 1px;
         @include min(500){font-size: clamp(2rem, 2vw, 4.75rem) !important;}
         @include min(1800){font-size: max(3rem, 35px) !important;}
-        &::before{
+        &::before {
             position: absolute;
-            top: -10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: -5px;
             font-size: 1rem;
             letter-spacing: .3rem;
+        }
+
+        // コンテンツタイトル > 位置指定
+        &.-center{
+            text-align: center;
+            &::before{// 英字
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &.-left{
+            text-align: left;
+            padding-left: 15px;
+            @include min(1600){
+                padding-left: 20px;
+            }
+            &::before{// 英字
+                left: 15px;
+                transform: translate(0, -50%);
+                @include min(1600){
+                    left: 20px;
+                }
+            }
+            &::after{// ボーダーライン
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateX(-50%);
+                width: 2px;
+                height: calc(100% + 10px);
+                background: $site-color03;
+                border-radius: 10px;
+                @include min(1600){
+                    width: 3px;
+                }
+            }
+        }
+        &.-right{
+            text-align: right;
+            padding-right: 15px;
+            @include min(1600){
+                padding-right: 20px;
+            }
+            &::before{// 英字
+                right: 0;
+                transform: translate(0, -50%);
+                @include min(1600){
+                    right: 20px;
+                }
+            }
+            &::after{// ボーダーライン
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transform: translate(0, -50%);
+                width: 2px;
+                height: calc(100% + 10px);
+                background: $site-color03;
+                border-radius: 10px;
+                @include min(1600){
+                    width: 3px;
+                }
+            }
         }
         // コンテンツタイトル > ボーダーライン
         &.-b-btm{
@@ -27,21 +89,24 @@
                 bottom: -10px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 40px;
+                width: 20px;
                 max-width: 1100px;
                 height: 0;
-                background: $main-color--w;
                 border-bottom: 3px dotted $site-color03;
                 @include min(768){
                     bottom: -10px;
                 }
             }
             // 色指定
-            &.-c01{&::after{background: $site-color01 !important;}}
-            &.-c02{&::after{background: $site-color02 !important;}}
-            &.-c03{&::after{background: $site-color03 !important;}}
-            &.-c04{&::after{background: $site-color04 !important;}}
-    
+            &.-c01   {&::after{border-bottom: 3px dotted $site-color01 !important;}}
+            &.-c02   {&::after{border-bottom: 3px dotted $site-color02 !important;}}
+            &.-c03   {&::after{border-bottom: 3px dotted $site-color03 !important;}}
+            &.-c04   {&::after{border-bottom: 3px dotted $site-color04 !important;}}
+            &.-lp_c01{&::after{border-bottom: 3px dotted $lp-color01 !important;}}
+            &.-lp_c02{&::after{border-bottom: 3px dotted $lp-color02 !important;}}
+            &.-lp_c03{&::after{border-bottom: 3px dotted $lp-color03 !important;}}
+
+            
             &.-left{ // テキストが左寄せの場合
                 &::after{
                     left: 0;
@@ -49,19 +114,35 @@
                 }
             }
         } 
+        // コンテンツタイトル > カナ表記
         .-kana {
             font-size: 2.5rem;
             @include min(500){font-size: clamp(2.2rem, 2vw, 4.5rem);}
             @include min(1800){font-size: max(3.2rem, 37px) !important;}
         }
-        span{font-size: clamp(1.8rem, 1.5vw, 2.8rem);}
+        span{
+            font-size: clamp(1.8rem, 1.5vw, 2.8rem);
+            font-weight: bold;
+        }
+
+        // コンテンツタイトル > 英語表記
+        &.-about   {&::before{content: "ABOUT TALOS KEG"; white-space: nowrap;}}// Talosケグとは
+        &.-product {&::before{content: "PRODUCT INTRODUCTION"; white-space: nowrap;}}// 商品紹介
+        &.-features{&::before{content: "Features of Talos"; white-space: nowrap;}}// 商品紹介
+        
+        
+        // &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
+        // &.-contact02   {&::before{content: "Request For Information"; white-space: nowrap;}}//資料ダウンロード
+        // &.-point       {&::before{content: "POINT"; white-space: nowrap;}}//特徴
+
     }
-    &--LpTitle{// コンテンツ > セクション > タイトル
+
+    &--ItemTitle{// コンテンツ > セクション > タイトル
         font-size: 1.8rem;
         letter-spacing: .2rem;
         line-height: 1.7;
         @include min(500){
-            font-size: clamp(1.6rem, 1.7vw, 3rem);
+            font-size: clamp(1.8rem, 2vw, 4rem);
             font-weight: bold;
             line-height: 1.5;
         }
@@ -168,6 +249,16 @@
             background: $lp-color08;
             &::before{content: "03";}
         }
+    }
+
+    // コンテンツ内のテキスト
+    &--LpText {
+        letter-spacing: .1rem;
+        line-height: 2;
+
+        &.-center{text-align: center;}
+        &.-left  {text-align: left;}
+        &.-right {text-align: right;}
     }
 }
 

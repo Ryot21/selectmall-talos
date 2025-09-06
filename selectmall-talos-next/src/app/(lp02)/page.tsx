@@ -6,6 +6,8 @@ import React from "react";
 import LpMainVisual from "@/features/lp02/mainVisual";
 import ScrollContainer from "@/features/lp02/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
+import LogoMark from "@/components/lottie/LogoMark";
+
 import Lp02Cta from "@/features/lp02/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
 
@@ -56,187 +58,213 @@ export default function Home() {
         <LpMainVisual />
       </div>
       <div className="c-contents ">
-        {/* SC01 商品紹介 */}
-        <div id="sc01" className="c-contents  pdt7 pdt15s pdb7 pdb15s">
+        {/* SC01 T-KEGとは */}
+        <div id="sc01" className="c-contents pdt7 pdt15s">
           <div className="c-contents--inner">
-            <div className="c-card -lp_02 -sc02">
+            {/* Talosロゴ */}
+            {/* <div className="mgb5 mgb10s">
+              <LogoMark />
+            </div> */}
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s">
+              T-KEG<span>とは</span>
+            </h2>
+            <p className="c-contents--LpText -center -lp_c02">
+              Talos社は1997年に創業し、2003年に樽ビール分配の専門分野に本格参入。<br/>
+              ビール分配システムの設計、研究開発、製造、販売、サービスを一体化した高新技術企業です。<br/>
+              現在、液体食品包装設計と分配システム研究開発能力を兼ね備えた総合サービス提供企業として、<br/>
+              ビールサーバー、分配器、ビールタップシリーズを90以上の国に輸出しています。
+            </p>
+          </div>
+        </div>
+        {/* SC02 商品紹介 */}
+        <div id="sc02" className="c-contents pdt7 pdt15s">
+          <div className="c-contents--inner">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s">
+              商品紹介
+            </h2>
+            {/* 単層ケグの紹介 */}
+            <div className="c-card -lp -sc01 mgb5 mgb10s">
               <div className="c-card--inner">
-                <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
-                  ワンウェイケグ
-                </h2>
-                {/* 単層ケグの紹介 */}
-                <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb mgb10 mgb10s">
-                  <li className="flexItem mgb5s">
-                    <div className="imgBox">
-                      <Image
-                        src="/images/keg/tansou-descript.png"
-                        alt="単層ケグの説明"
-                        width={1644}
-                        height={1154}
-                      />
-                    </div>
-                  </li>
-                  <li className="flexItem">
-                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
-                      単層ワンウェイケグ<span className="s-S">（S/A/G/Tタイプ規格対応）</span>
-                    </h3>
-                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                      ステンレスケグの革新的代替ソリューション
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
-                      【主な特徴】
-                      <br />
-                      従来のステンレスケグに比べて軽量で取り扱いやすく、返却不要のワンウェイシステムにより、配送コストの削減と効率化を実現します。日本の飲食業界に革新をもたらす次世代ビールケグシステムです。
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5">
-                      【製品スペック】
-                      <br />
-                      材質 ： PET（本体）、PP（ハンドル）
-                      <br />
-                      容量 ： 10L、15L、20L
-                      <br />
-                      高さ ： 370mm、480mm、600mm
-                      <br />
-                      最大使用圧力 ： 4bar（0.4Mpa）
-                    </p>
-                  </li>
-                </ul>
-                {/* T-KEGの紹介 */}
-                <ul className="c-flex -col1_2 -pc2_1 -jc-sb mgb10 mgb10s">
-                  <li className="flexItem mgb5s">
-                    <div className="imgBox w75s">
-                      <Image
-                        src="/images/keg/T-Keg_20L30L.png"
-                        alt="T-KEG（2層ケグ）"
-                        width={1644}
-                        height={1154}
-                      />
-                    </div>
-                  </li>
-                  <li className="flexItem">
-                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
-                      T-KEG<span className="s-S">（2層ケグ - S/A/G/Tタイプ規格対応）</span>
-                    </h3>
-                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                      次世代使い捨てビールケグ -
-                      革新的な多層フレキシブルバッグシステム
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
-                      【主な特徴】
-                      <br />
-                      外装とインナーバッグの隙間に空気を注入する事でビールに酸素が触れることなく押し出し可能。
-                      空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。ET素材でリサイクル可能。
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5">
-                      【製品スペック】
-                      <br />
-                      材質 ： PET（本体）、PP（ハンドル）
-                      <br />
-                      容量 ： 20L、30L
-                      <br />
-                      高さ ： 600mm
-                      <br />
-                      重量 ： 1.3kg±0.1
-                      <br />
-                      最大使用圧力 ： 3bar（0.3Mpa）
-                      <br />
-                      最大耐圧 ： 7bar（0.7Mpa）
-                    </p>
-                  </li>
-                </ul>
-                {/* BREWJETの紹介 */}
-                <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb mgb10 mgb10s">
-                  <li className="flexItem mgb5s">
-                    <div className="imgBox">
-                      <Image
-                        src="/images/keg/BrewJet-descript.png"
-                        alt="BREWJETの説明"
-                        width={1644}
-                        height={1154}
-                      />
-                    </div>
-                  </li>
-                  <li className="flexItem">
-                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
-                      BREWJET<span className="s-S">（革新的ビールディスペンシングシステム）</span>
-                    </h3>
-                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                      パッケージング容器とディスペンサーが一体化した次世代ビールサーバー
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
-                      【主な特徴】
-                      <br />
-                      BrewJetは特別な消費シーンに最適化されており、パーティー、アウトドアイベント、バーベキュー、キャンプなど、従来のビールサーバーでは対応困難な場所でも、プロ品質のドラフトビール体験を実現します。ポータブル設計により、どこでも新鮮で美味しいビールをお楽しみいただけます
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5">
-                      【製品スペック】
-                      <br />
-                      材質 ： PET（本体）、PP（ハンドル）
-                      <br />
-                      容量 ： 5L
-                      <br />
-                      高さ ： ???mm
-                      <br />
-                      重量 ： 0.5kg±0.1
-                      <br />
-                      最大使用圧力 ： 3bar（0.3Mpa）
-                      <br />
-                      最大耐圧 ： 7bar（0.7Mpa）
-                    </p>
-                  </li>
-                </ul>
-                {/* TOPPERの紹介 */}
-                <ul className="c-flex -col1_2 -pc2_1 -jc-sb mgb10 mgb10s">
-                  <li className="flexItem mgb5s">
-                    <div className="imgBox">
-                      <Image
-                        src="/images/keg/TOPPER-descript.png"
-                        alt="TOPPERの説明"
-                        width={1644}
-                        height={1154}
-                      />
-                    </div>
-                  </li>
-                  <li className="flexItem">
-                    <h3 className="c-contents--LpTitle mgb2 mgb2s">
-                      TOPPER<span className="s-S">（ポータブルビールディスペンシングシステム）</span>
-                    </h3>
-                    <p className="s-S -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                      コンパクト設計で持ち運び自由な革新的ビアーシステム
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
-                      【主な特徴】
-                      <br />
-                      従来のビアサーバーの概念を覆す軽量・コンパクト設計により、家庭でのエンターテイメントから商業用途まで幅広く対応。アウトドアイベント、バーベキュー、キャンプ、パーティー、レストラン、カフェ、バーなど、あらゆる場面でプロフェッショナルなビール体験を実現します。
-                    </p>
-                    <p className="s-S -ls-2 -lh-1_5">
-                      【製品スペック】
-                      <br />
-                      材質 ： PET（本体）、PP（ハンドル）
-                      <br />
-                      容量 ： 3L
-                      <br />
-                      高さ ： ???mm
-                      <br />
-                      重量 ： 0.25kg±0.05
-                      <br />
-                      最大使用圧力 ： 4bar（0.4Mpa）
-                      <br />
-                      最大耐圧 ： 4bar（0.4Mpa）
-                    </p>
-                  </li>
-                </ul>
+                <div className="c-contents -itemBox">
+                  <div className="imgBox">
+                    <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb -h-cen">
+                      <li className="flexItem mgb5s">
+                        <div className="c-img -sh">
+                          <Image
+                            src="/images/keg/tansou-descript.png"
+                            alt="単層ケグの説明"
+                            width={1644}
+                            height={1154}
+                          />
+                        </div>
+                      </li>
+                      <li className="flexItem">
+                        <h3 className="c-contents--ItemTitle mgb2 mgb2s">
+                          <span className="-lp_c01 -b -shadow">単層ワンウェイケグ</span>
+                          <span className="s-S -lp_c02 -b">（S/A/G/Tタイプ規格対応）</span>
+                        </h3>
+                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          ステンレスケグの革新的代替ソリューション
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <span className="-lp_c01 -b">【主な特徴】</span><br />
+                          <span className="-lp_c02">従来のステンレスケグに比べて軽量で取り扱いやすく、返却不要のワンウェイシステムにより、配送コストの削減と効率化を実現します。日本の飲食業界に革新をもたらす次世代ビールケグシステムです。</span>
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5">
+                          <span className="-lp_c01 -b">【製品スペック】</span><br />
+                          <span className="-lp_c02">
+                            材質 ： PET（本体）、PP（ハンドル）<br />
+                            容量 ： 10L、15L、20L<br />
+                            高さ ： 370mm、480mm、600mm<br />
+                            最大使用圧力 ： 4bar（0.4Mpa）
+                          </span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* T-KEGの紹介 */}
+            <div className="c-card -lp -sc01 mgb5 mgb10s">
+              <div className="c-card--inner">
+                <div className="c-contents -itemBox">
+                  <div className="imgBox">
+                    <ul className="c-flex -col1_2 -pc2_1 -jc-sb -h-cen">
+                      <li className="flexItem mgb5s">
+                        <div className="c-img -sh w75s">
+                          <Image
+                            src="/images/keg/T-Keg_20L30L.png"
+                            alt="T-KEG（2層ケグ）"
+                            width={1644}
+                            height={1154}
+                          />
+                        </div>
+                      </li>
+                      <li className="flexItem">
+                        <h3 className="c-contents--ItemTitle mgb2 mgb2s">
+                          <span className="-lp_c01 -b -shadow">T-KEG</span>
+                          <span className="s-S -lp_c02 -b">（2層ケグ - S/A/G/Tタイプ規格対応）</span>
+                        </h3>
+                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          次世代使い捨てビールケグ -
+                          革新的な多層フレキシブルバッグシステム
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <span className="-lp_c01 -b">【主な特徴】</span><br />
+                          <span className="-lp_c02">外装とインナーバッグの隙間に空気を注入する事でビールに酸素が触れることなく押し出し可能。
+                          空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。ET素材でリサイクル可能。</span>
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5">
+                          <span className="-lp_c01 -b">【製品スペック】</span><br />
+                          <span className="-lp_c02">
+                            材質 ： PET（本体）、PP（ハンドル）<br />
+                            容量 ： 20L、30L<br />
+                            高さ ： 600mm<br />
+                            重量 ： 1.3kg±0.1<br />
+                            最大使用圧力 ： 3bar（0.3Mpa）<br />
+                            最大耐圧 ： 7bar（0.7Mpa）
+                          </span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* BREWJETの紹介 */}
+            <div className="c-card -lp -sc01 mgb5 mgb10s">
+              <div className="c-card--inner">
+                <div className="c-contents -itemBox">
+                  <div className="imgBox">
+                    <ul className="c-flex -col1_2 -pc2_1 -r -jc-sb -h-cen">
+                      <li className="flexItem mgb5s">
+                        <div className="c-img -sh">
+                          <Image
+                            src="/images/keg/BrewJet-descript.png"
+                            alt="BREWJETの説明"
+                            width={1644}
+                            height={1154}
+                          />
+                        </div>
+                      </li>
+                      <li className="flexItem">
+                        <h3 className="c-contents--ItemTitle mgb2 mgb2s">
+                          <span className="-lp_c01 -b -shadow">BREWJET</span>
+                          <span className="s-S -lp_c02 -b">（革新的ビールディスペンシングシステム）</span>
+                        </h3>
+                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          ケグとディスペンサーが一体化した次世代ビールサーバー
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <span className="-lp_c01 -b">【主な特徴】</span><br />
+                          <span className="-lp_c02">BrewJetは特別な消費シーンに最適化されており、パーティー、アウトドアイベント、バーベキュー、キャンプなど、従来のビールサーバーでは対応困難な場所でも、プロ品質のドラフトビール体験を実現します。ポータブル設計により、どこでも新鮮で美味しいビールをお楽しみいただけます。</span>
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5">
+                          <span className="-lp_c01 -b">【製品スペック】</span><br />
+                          <span className="-lp_c02">
+                            材質 ： PET（本体）、PP（ハンドル）<br />
+                            容量 ： 5L<br />
+                            高さ ： ???mm<br />
+                            重量 ： 0.5kg±0.1<br />
+                            最大使用圧力 ： 3bar（0.3Mpa）<br />
+                            最大耐圧 ： 7bar（0.7Mpa）
+                          </span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* TOPPERの紹介 */}
+            <div className="c-card -lp -sc01 mgb10 mgb10s">
+              <div className="c-card--inner">
+                <div className="c-contents -itemBox">
+                  <div className="imgBox">
+                    <ul className="c-flex -col1_2 -pc2_1 -jc-sb -h-cen">
+                      <li className="flexItem mgb5s">
+                        <div className="c-img -sh">
+                          <Image
+                            src="/images/keg/TOPPER-descript.png"
+                            alt="TOPPERの説明"
+                            width={1644}
+                            height={1154}
+                          />
+                        </div>
+                      </li>
+                      <li className="flexItem">
+                        <h3 className="c-contents--ItemTitle mgb2 mgb2s">
+                          <span className="-lp_c01 -b -shadow">TOPPER</span>
+                          <span className="s-S -lp_c02 -b">（ポータブルディスペンシングシステム）</span>
+                        </h3>
+                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          コンパクト設計で持ち運び自由
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <span className="-lp_c01 -b">【主な特徴】</span><br />
+                          <span className="-lp_c02">従来のビアサーバーの概念を覆す軽量・コンパクト設計により、家庭でのエンターテイメントから商業用途まで幅広く対応。アウトドアイベント、バーベキュー、キャンプ、パーティー、レストラン、カフェ、バーなど、あらゆる場面でプロフェッショナルなビール体験を実現します。</span>
+                        </p>
+                        <p className="s-S -ls-2 -lh-1_5">
+                          <span className="-lp_c01 -b">【製品スペック】</span><br />
+                          <span className="-lp_c02">
+                            材質 ： PET（本体）、PP（ハンドル）<br />
+                            容量 ： 3L<br />
+                            高さ ： ???mm<br />
+                            重量 ： 0.25kg±0.05<br />
+                            最大使用圧力 ： 4bar（0.4Mpa）<br />
+                            最大耐圧 ： 4bar（0.4Mpa）
+                          </span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="sc01" className="c-contents pdt7 pdt15s pdb7 pdb15s">
-          <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 pdt1 pdt2s mgb7 mgb10s">
-              ワンウェイケグ
-            </h2>
-          </div>
-        </div>
+
 
         {/* SC04 マネリペで出来ること */}
         <div id="sc04" className={"c-contents pdt7 pdt15s pdb5 pdb5s"}>

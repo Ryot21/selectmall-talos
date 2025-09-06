@@ -7,7 +7,11 @@
         width: 30%;
         max-width: 130px !important;
         border-radius: auto;
-        filter: drop-shadow(4px 4px 0 $main-color--w);    
+        filter: drop-shadow(4px 4px 0 $main-color--w);
+        &.-center {
+            display: block;
+            margin: 0 auto;
+        }  
     }
     &.-borderBox{
         &.-double{
@@ -30,9 +34,6 @@
         &.-left{
             filter: drop-shadow(-10px 10px 0 $main-color--w);    
         }
-        &.-sh{
-            box-shadow: 0 0 5px 0px $main-color--b;
-        }
         &.-p01{
             border-radius: 18% 42% 20% 80%/48% 49% 51% 52%;
         }
@@ -48,5 +49,8 @@
         &.-p05{
             border-radius: 48% 82% 40% 80%/48% 42% 58% 52%;
         }
+    }
+    &.-sh{
+        filter: drop-shadow(10px 10px 1px $main-color--gray);
     }
 }

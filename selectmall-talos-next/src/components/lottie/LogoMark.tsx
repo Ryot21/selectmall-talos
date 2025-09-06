@@ -1,17 +1,16 @@
 "use client";
 
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Image from "next/image";
+// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LogoMark() {
   return (
-    <div>
-      <DotLottieReact
-        src="/json/mr-logo-mark.json"
-        // loop
-        autoplay
-        className="lottie--logo"
-        id="lottie-scroll-trigger"
-        speed={0.3}
+    <div className="c-img -logo -sh -center">
+      <Image
+          src="/images/logo/talos_b.svg"
+          alt="Talos社"
+          width={153.63}
+          height={53.38}
       />
     </div>
   );

@@ -60,4 +60,14 @@ table{
             }
         }
     }
+
+    &.-lp{
+        th{
+            background: $site-color03;
+            color: $main-color--w;
+        }
+        td{
+            background: $main-color--w;
+        }
+    }
 }
