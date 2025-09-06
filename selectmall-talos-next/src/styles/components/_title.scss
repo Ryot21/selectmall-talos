@@ -129,6 +129,7 @@
         &.-about   {&::before{content: "ABOUT TALOS KEG"; white-space: nowrap;}}// Talosケグとは
         &.-product {&::before{content: "PRODUCT INTRODUCTION"; white-space: nowrap;}}// 商品紹介
         &.-features{&::before{content: "Features of Talos"; white-space: nowrap;}}// 商品紹介
+        &.-what    {&::before{content: "What SelectMall Can Do"; white-space: nowrap;}}// 商品紹介
         
         
         // &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
@@ -238,15 +239,16 @@
             letter-spacing: -.1rem;
         }
         &.-t01{
-            background: $site-color02;
+            background: $lp-color01;
             &::before{content: "01";}
         }
         &.-t02{
-            background: $lp-color06;
+            background: $lp-color02;
             &::before{content: "02";}
         }
         &.-t03{
-            background: $lp-color08;
+            color: $lp-color01;
+            background: $lp-color03;
             &::before{content: "03";}
         }
     }

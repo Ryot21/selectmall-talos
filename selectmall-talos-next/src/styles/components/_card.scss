@@ -57,12 +57,15 @@
     }
   }
   &--text {
-    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    font-size: 1rem;
     color: $lp-color02;
-    font-weight: bold;
     letter-spacing: 0.2rem;
     line-height: 1.5;
     text-align: left;
+    @include min(768){
+      font-size: clamp(1rem, 1.5vw, 1.4rem);
+      line-height: 2;
+    }
   }
 
   &.-t01 {// 投稿者

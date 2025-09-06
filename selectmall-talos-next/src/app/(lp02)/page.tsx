@@ -368,19 +368,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* SC04 マネリペで出来ること */}
-        <div id="sc04" className={"c-contents pdt7 pdt15s pdb5 pdb5s"}>
+        {/* SC04 セレクトモールで出来ること */}
+        <div id="sc04" className={"c-contents pdt7 pdt15s"}>
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
-              マネリペで出来ること
-              <br />
-              固定費を上げずに&quot;可処分所得&quot;を
-              <br className="sp" />
-              増やす新しい福利厚生
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s">
+              セレクトモール<span>で</span>出来<span>ること</span>
             </h2>
             <div className="mgb10 mgb10s">
-              {/* 1. 金融勉強会 */}
-              <div className=" c-contents -bg-color01 pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
+              {/* 1. お客様に合わせたケグのご提案 */}
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -394,18 +390,16 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t01 mgb1 mgb3s">
-                      社内で「金融勉強会」を開催
-                      <br />
-                      公式LINEにて情報発信サービスも提供
+                      お客様に合わせたワンウェイケグをご提案！
                     </h3>
-                    <p className="s-M -blue -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
-                      従業員様からのニーズに基づき、関心の高いテーマで金融勉強会を実施いたします。また、公式LINEを通じて、マーケットの動向や日々の生活に役立つ時事情報などを定期的に配信。必要な情報をタイムリーにお届けし、従業員様の金融リテラシー向上をサポートいたします。
+                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      お客様のブランドイメージや販売戦略に最適なビールケグをご提案。数量、容量、ラベルデザインを細かくカスタマイズし、コスト削減と品質向上を同時に実現します。
                     </p>
                   </li>
                 </ul>
               </div>
-              {/* 2. 個別相談 */}
-              <div className=" c-contents -bg-color01 pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
+              {/* 2. Eコマース */}
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -419,19 +413,17 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t02 mgb1 mgb3s">
-                      個別相談も可能！
-                      <br />
-                      専属金融相談窓口の設置
+                      現在開発中の越境ECモールに出品できる！！<br />
+                      丹精こめたビールの広告としてもお使い下さい
                     </h3>
-                    <p className="s-M -blue -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
-                      弊社専属のファイナンシャルプランナーが最低1人御社専属の担当となり、LINEやお電話で気軽に相談ができます。従業員様の2親等までのご親族様まで、無料で相談が可能です。
-                      （ご相談は基本24時間365日対応しています。）
+                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      開発中の越境ECプラットフォームで、あなたのクラフトビールを世界中に発信！！革新的なパッケージングが商品の魅力を最大限に引き出し、海外市場での認知度向上と売上拡大をサポートします。
                     </p>
                   </li>
                 </ul>
               </div>
-              {/* 3. 金融勉強会 */}
-              <div className=" c-contents -bg-color01 pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s">
+              {/* 3. イベント企画 */}
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -445,12 +437,11 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t03 mgb1 mgb3s">
-                      家計管理も可能！
-                      <br />
-                      資産管理システムの提供
+                      続々イベント企画中！<br />
+                      地方クラフトさんにフォーカスしたイベントを開催！
                     </h3>
-                    <p className="s-M -blue -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
-                      従業員様向けに、通常月額3,000円～5,000円の本格的なライフプランシミュレーションシステムを無料でご提供。収支の可視化で無駄を削減し、キャッシュフローを改善。将来のライフイベント費用や老後資金の不足額を明確にし、資産形成を強力にサポートします。
+                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      全国各地のクラフトビール醸造家様を少しでも知っていただけるように交流イベントを企画中！地域の特色を活かした商品展示会や試飲会を通じて、新たなビジネスチャンスの創出と業界ネットワークの拡大をお手伝いします。
                     </p>
                   </li>
                 </ul>
