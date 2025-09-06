@@ -1,4 +1,4 @@
-// import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
@@ -83,7 +83,7 @@ export default function Home() {
               商品紹介
             </h2>
             {/* 単層ケグの紹介 */}
-            <div className="c-card -lp -sc01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -126,7 +126,7 @@ export default function Home() {
               </div>
             </div>
             {/* T-KEGの紹介 */}
-            <div className="c-card -lp -sc01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -173,7 +173,7 @@ export default function Home() {
               </div>
             </div>
             {/* BREWJETの紹介 */}
-            <div className="c-card -lp -sc01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
             </div>
             {/* TOPPERの紹介 */}
-            <div className="c-card -lp -sc01 mgb10 mgb10s">
+            <div className="c-card -lp -p01">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -264,7 +264,109 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        {/* SC03 商品の特徴 */}
+        <div id="sc03" className="c-contents pdt7 pdt15s">
+          <div className="c-contents--inner">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s">
+              商品特徴
+            </h2>
+            <div className="c-contents">
+              <ul className="c-flex -col1_3">
+                {/* とても軽量 */}
+                <li className="flexItem mgb5 mgb5s">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">とても軽量！！</h3>
+                    <p className="c-card--text">ケグ重量はなんと1.3kgで樽交換もとても楽ちん！！輸送コストの削減も可能。</p>
+                  </div>
+                </li>
+                {/* 特別な設備は不要 */}
+                <li className="flexItem mgb5 mgb5s">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">特別な設備は不要！！</h3>
+                    <p className="c-card--text">既存のディスペンスヘッドをそのまま使用できます。（S/A/T/Gタイプに対応可能）</p>
+                  </div>
+                </li>
+                {/* そのまま */}
+                <li className="flexItem mgb5 mgb5s">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">そのまま使える！！</h3>
+                    <p className="c-card--text">届いたらすぐ充填できるので、作業時間を大幅に短縮可能！！</p>
+                  </div>
+                </li>
+                {/* 海外輸出の最適解！！ */}
+                <li className="flexItem mgb5s">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">海外輸出の最適解！！</h3>
+                    <p className="c-card--text">
+                      従来のステンレスケグと比較して輸送距離に制限がなく、回収やメンテナンスが不要！！</p>
+                  </div>
+                </li>
+                {/* 廃棄が簡単 */}
+                <li className="flexItem mgb5s">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">廃棄が簡単！！</h3>
+                    <p className="c-card--text">主要なパーツは簡単に分解できます。使用後は踏みつぶして圧縮します。(<Link className="b-text -c01" href="">処分方法はコチラ</Link>) ※処理方法は自治体により異なります</p>
+                  </div>
+                </li>
+                {/* 持ち運びが便利 */}
+                <li className="flexItem">
+                  <div className="c-card -lp -p02">
+                    <div className="c-img -thumbnail mgb5 mgb5s">
+                      <Image
+                        src="/images/pic/480-320.png"
+                        alt=""
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                    <h3 className="c-card--title mgb5 mgb5s">持ち運びが便利！！</h3>
+                    <p className="c-card--text">頑丈なハンドルが付いているので持ち運びしやすい。</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* SC04 マネリペで出来ること */}
         <div id="sc04" className={"c-contents pdt7 pdt15s pdb5 pdb5s"}>

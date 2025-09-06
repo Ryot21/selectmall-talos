@@ -53,4 +53,8 @@
     &.-sh{
         filter: drop-shadow(10px 10px 1px $main-color--gray);
     }
+
+    &.-thumbnail {
+        border-radius: 10px 10px 0 0;
+    }
 }

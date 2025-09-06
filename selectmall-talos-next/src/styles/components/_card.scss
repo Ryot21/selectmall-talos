@@ -8,13 +8,16 @@
   overflow: hidden;
   &--inner {
     padding: 10px;
+    @include min(768){
+      padding: 10px 15px;
+    }
   }
   &--title {
     font-size: clamp(1.6rem, 1.6vw, 2rem);
-    color: $site-color03;
+    color: $lp-color01;
     font-weight: bold;
     letter-spacing: 0.2rem;
-    white-space: nowrap;
+    text-align: center;
     &.-point{// ここがポイント
       position: relative;
 
@@ -52,6 +55,14 @@
         line-height: 1.2;
       }
     }
+  }
+  &--text {
+    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    color: $lp-color02;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    line-height: 1.5;
+    text-align: left;
   }
 
   &.-t01 {// 投稿者
@@ -604,7 +615,7 @@
   }
 
   &.-lp{// LP02
-    &.-sc01{
+    &.-p01{
       border: none;
       box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.241);
       border-radius: 15px;
@@ -613,6 +624,12 @@
         @include min(768){padding: 35px 35px;}
       }
     }
+    &.-p02{
+      background: none;
+      border: none;
+      border-radius: 15px;
+    }
+
     &.-sc07{
       position: relative;
       height: 150px;

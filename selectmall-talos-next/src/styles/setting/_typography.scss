@@ -93,19 +93,37 @@ td {
     &::after {
       content: "";
       position: absolute;
-      bottom: 5px;
+      bottom: 1px;
       left: 50%;
       transform: translateX(-50%);
-      height: 10px;
+      height: 1px;
       width: 95%;
       z-index: -1;
     }
-    &.-y {&::after {background: $main-color--yellow;}}
-    &.-o {&::after {background: $main-color--orange;}}
-    &.-color01 {&::after {background: $item-color01;}}
-    &.-color02 {&::after {background: $item-color02;}}
-    &.-color03 {&::after {background: $item-color03;}}
-    &.-color04 {&::after {background: $item-color04;}}
+    &.-y   {
+      color: $lp-color01 !important;
+      &::after {background: $main-color--yellow;}
+    }
+    &.-o   {
+      color: $lp-color01 !important;
+      &::after {background: $main-color--orange;}
+    }
+    &.-c01 {
+      color: $lp-color01 !important;
+      &::after {background: $lp-color01;}
+    }
+    &.-c02 {
+      color: $lp-color01 !important;
+      &::after {background: $lp-color02;}
+    }
+    &.-c03 {
+      color: $lp-color01 !important;
+      &::after {background: $lp-color03;}
+    }
+    &.-c04 {
+      color: $lp-color01 !important;
+      &::after {background: $lp-color04;}
+    }
   }
 
   // ----- 位置関係 -----
