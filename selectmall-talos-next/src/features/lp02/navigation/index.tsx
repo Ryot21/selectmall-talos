@@ -22,7 +22,7 @@ export default function LpNavigation() {
         onChange={(e) => setIsOpen(e.target.checked)}
       />
       <label className={"c-hb-nav__button"} htmlFor="c-hb-nav__checkbox">
-        <span className={"s-SS -b -center -white"}>MENU</span>
+        <span className={"s-SS -b -center -lp_c01"}>MENU</span>
       </label>
       <label
         className={"c-hb-nav__cheakbox c-hb-nav__close"}
@@ -37,7 +37,7 @@ export default function LpNavigation() {
             onClick={handleLinkClick}
           >
             <Image
-              src="/images/logo/selectmall-logo.svg"
+              src="/images/logo/selectmall-logo_old.svg"
               alt="セレクトモール"
               width={210}
               height={60}
@@ -62,15 +62,9 @@ export default function LpNavigation() {
           {/* 特徴 */}
           <li className={"hbNavItem -center"}>
             <Link href="/#sc03" onClick={handleLinkClick}>
-              <span className={"s-ML -s18 -b -ls-2 pdr5"}>特徴</span>
+              <span className={"s-ML -s18 -b -ls-2 pdr5"}>ワンウェイケグの特徴</span>
             </Link>
           </li>
-          {/* 申し込みから導入までの流れ
-          <li className={"hbNavItem -center"}>
-            <Link href="/lp02#sc10" onClick={handleLinkClick}>
-              <span className={"s-ML -s18 -b -ls-2 pdr5"}>導入までの流れ</span>
-            </Link>
-          </li> */}
           {/* よくある質問 */}
           <li className={"hbNavItem -center"}>
             <Link href="/#Q&A" onClick={handleLinkClick}>

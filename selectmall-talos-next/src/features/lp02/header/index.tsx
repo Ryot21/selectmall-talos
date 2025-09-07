@@ -54,19 +54,19 @@ export default function LpHeader() {
                             商品紹介
                           </Link>
                         </li>
-                        {/* #sc03 - 商品特徴 */}
+                        {/* #sc03 - ワンウェイケグの特徴 */}
                         <li className={"hnavItem"}>
                           <Link
                             href="#sc03"
                             className={`c-hnav--link s-M -b -s13 -ls-1 -ws-n`}
                           >
-                            商品特徴
+                            ワンウェイケグの特徴
                           </Link>
                         </li>
                         {/* #sc04 - よくある質問 */}
                         <li className={"hnavItem"}>
                           <Link
-                            href="#sc04"
+                            href="/#Q&A"
                             className={`c-hnav--link s-M -s13 -b -ls-1 -ws-n`}
                           >
                             よくある質問

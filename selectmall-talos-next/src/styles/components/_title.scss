@@ -126,11 +126,13 @@
         }
 
         // コンテンツタイトル > 英語表記
-        &.-about   {&::before{content: "ABOUT TALOS KEG"; white-space: nowrap;}}// Talosケグとは
-        &.-product {&::before{content: "PRODUCT INTRODUCTION"; white-space: nowrap;}}// 商品紹介
-        &.-features{&::before{content: "Features of Talos"; white-space: nowrap;}}// 商品紹介
+        &.-about   {&::before{content: "About TALOS KEG"; white-space: nowrap;}}// Talosケグとは
+        &.-product {&::before{content: "Product Introduction"; white-space: nowrap;}}// 商品紹介
+        &.-features{&::before{content: "Features Of Talos"; white-space: nowrap;}}// 商品紹介
         &.-what    {&::before{content: "What SelectMall Can Do"; white-space: nowrap;}}// 商品紹介
-        
+        &.-QA      {&::before{content: "Q&A"; white-space: nowrap;}}// 商品紹介
+        &.-other   {&::before{content: "Comparison With Others"; white-space: nowrap;}}// 商品紹介
+
         
         // &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
         // &.-contact02   {&::before{content: "Request For Information"; white-space: nowrap;}}//資料ダウンロード

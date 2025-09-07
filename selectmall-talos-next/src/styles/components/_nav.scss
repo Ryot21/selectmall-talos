@@ -355,7 +355,7 @@
 // ハンバーガーメニュー
 .c-hb-nav {
   position: fixed;
-  top: 0.5%;
+  top: 0;
   left: 85%;
   width: 50px;
   height: 50px;
@@ -423,12 +423,12 @@
     }
     &:checked ~ .c-hb-nav__button {
       span {
-        color: $main-color--w !important;
+        // color: $main-color--w !important;
         text-shadow: none;
         padding-top: 5px;
         &::before,
         &::after {
-          background: $main-color--w !important;
+          // background: $main-color--w !important;
           box-shadow: none;
         }
 
@@ -465,7 +465,7 @@
       position: relative;
       top: 59%;
       display: block;
-      color: $site-color03 !important;
+      color: $lp-color01 !important;
       text-shadow: 1px 1px 0 $main-color--w;
       width: 100%;
       padding-top: 1px;
@@ -479,9 +479,8 @@
         height: 2px;
         width: 50px;
         border-radius: 3px;
-        background: $main-color--w;
-        border: 1px solid $site-color03;
-        // box-shadow: 1px 1px 1px $main-color--w;
+        background: $lp-color01 !important;
+        border: 1px solid $lp-color01;
         cursor: pointer;
         will-change: transform;
         transition: all 0.1s;
@@ -664,13 +663,7 @@
       pointer-events: none;
     }
   }
-  // &__logo {
-    // position: absolute;
-    // bottom: 0%;
-    // left: 73%;
-    // transform: translateX(-50%);
-    // width: 30%;
-  // }
+ 
   &__icon {
     position: absolute;
     bottom: 0;
@@ -786,7 +779,7 @@
     .c-hb-nav{
       &__logo {
         position: absolute;
-        top: 1.25%;
+        top: 2%;
         left: 5%;
         width: 140px;
       }
@@ -804,7 +797,7 @@
       }
       &__button{
         span{
-          color: $site-color03 !important;
+          color: $lp-color01 !important;
           &::before,
           &::after{
             background: $main-color--w;
@@ -826,9 +819,9 @@
         }
       }
       &__text{
-        color: $site-color01;
+        color: $lp-color01;
         &::before{
-          background: $site-color02;
+          background: $lp-color02;
         }
       }
       &__contact{
