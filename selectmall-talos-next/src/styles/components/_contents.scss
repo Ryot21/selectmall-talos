@@ -390,7 +390,7 @@
   &.-Lp02Cta {
     // LP02 > CTAエリア
     position: relative;
-    background: radial-gradient(#2460ad, #3fa8dd);
+    background: radial-gradient($lp-color01, $lp-color02);
     &::before {
       content: "";
       position: absolute;
