@@ -21,26 +21,26 @@ import type { AccordionItem } from "@/types/accordion";
 const faqItems: AccordionItem[] = [
   {
     id: "01",
-    question: "お問い合わせや相談時に金額が発生しますか？",
+    question: "従来のステンレスケグと比べてコストメリットはありますか？",
     answer:
-      "お問い合わせや相談までは無料ですので、お気軽にお問い合わせください！",
+      "はい、大幅なコスト削減が可能です。太空桶は回収・清掃・メンテナンスが不要で、CO2ガスボンベや減圧弁も必要ありません。初期投資が抑えられる上、運用コストも従来の約60%削減できます。また、破損・紛失リスクもないため、長期的に見て非常に経済的です。",
   },
   {
     id: "02",
-    question: "調査に使われた個人情報はどのように取り扱われますか？",
-    answer: "プライバシーポリシーに遵守して管理していますのでご安心ください。",
+    question: "品質保持期間はどのくらいですか？輸送距離に制限はありますか？",
+    answer: "内蔵無菌アルミホイル膜袋により、従来のケグより長期保存が可能です。密閉性が高く、ビールの風味を損なわずに保存できます。また、軽量で破損リスクが低いため、国内・海外問わずどこへでも輸送可能です。離島や遠隔地への配送も問題ありません。",
   },
   {
     id: "03",
-    question: "しつこい営業の電話はありますか？",
+    question: "小規模なクラフトビール醸造所でも導入できますか？",
     answer:
-      "執拗な勧誘は一切行いません。お客様のご要望にあわせてご案内しております。",
+      "もちろん可能です！むしろ小規模醸造所様にこそおすすめです。従来のケグのような大きな初期投資や在庫管理が不要で、必要な分だけ発注できます。10L、15L、20Lから幅広く対応可能で、イベント販売や直売所での販売にも最適。資金負担を抑えながら販路拡大が実現できます。",
   },
   {
     id: "04",
-    question: "初心者なのでちょっとした事でも優しく教えて欲しいです。",
+    question: "使い方は複雑ですか？特別な設備は必要ですか？",
     answer:
-      "もちろん大丈夫です！弊社専属のファイナンシャルプランナーがどんな些細な事でもお答えします。",
+      "特別なサーバー設備や工具は一切不要。すでにお持ちのディスペンスヘッドに合わせたカプラータイプのワンウェイケグをご用意します。",
   },
   {
     id: "05",
@@ -367,7 +367,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         {/* SC04 セレクトモールで出来ること */}
         <div id="sc04" className={"c-contents pdt7 pdt15s"}>
           <div className="c-contents--inner">
@@ -382,7 +381,7 @@ export default function Home() {
                     <div className="imgBox">
                       <Image
                         src="/images/Lp/ver02/sc04-item01.png"
-                        alt="金融勉強会の様子"
+                        alt="お客様とのお打ち合わせの様子"
                         width={480}
                         height={320}
                       />
@@ -405,7 +404,7 @@ export default function Home() {
                     <div className="imgBox">
                       <Image
                         src="/images/Lp/ver02/sc04-item02.png"
-                        alt="個別相談の絵"
+                        alt="サイトに訪れたユーザーがネットショッピングしている様子"
                         width={480}
                         height={320}
                       />
@@ -429,7 +428,7 @@ export default function Home() {
                     <div className="imgBox">
                       <Image
                         src="/images/Lp/ver02/sc04-item03.png"
-                        alt="システム"
+                        alt="イベント開催している様子"
                         width={480}
                         height={320}
                       />
@@ -449,79 +448,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* SC05 事例 */}
-        <div
-          id="sc05"
-          className={"c-contents -bg-color01 pdt7 pdt15s pdb5 pdb5s"}
-        >
+        {/* SC05 他者との比較 */}
+        <div id="sc05" className={"c-contents -bg-color01 pdt7 pdt15s pdb5 pdb5s"}>
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
-              実際にマネリペをご利用いただき
-              <br />
-              &quot;可処分所得&quot;が増加した事例
-            </h2>
-            <p className="s-ML -s12 -blue -center -ls-2 -lh-2 mgb7 mgb10s">
-              過去5年分の自己申告（年末調整や確定申告）をプロの目線で確認し、
-              <br className="tb-pc" />
-              本来は使えていた税制優遇や控除を最大限に活用。
-              <br className="tb-pc" />
-              年間1,500人以上の相談を受けて、
-              <br className="sp" />
-              60%以上の方が
-              <span className="s-L -s12 -b -blue -marker">年平均30万円</span>
-              以上損しています！
-            </p>
-            <div className="c-contents -bg-color01 pdt2 pdt5s pdr2 pdr5s pdl2 pdl5s">
-              <div className="c-contents--inner -lp-item mgb5 mgb5s">
-                <Image
-                  src="/images/Lp/ver02/sc05-item01.png"
-                  alt="BeforeAfter"
-                  className="tb-pc"
-                  width={551}
-                  height={284}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc05-item01s.png"
-                  alt="BeforeAfter"
-                  className="sp"
-                  width={248}
-                  height={631}
-                />
-              </div>
-              <div className="mgb1 mgb1s">
-                <Image
-                  src="/images/Lp/ver02/sc05-item02.png"
-                  alt="過去5年間で26万円税金の適正化"
-                  className="tb-pc"
-                  width={1564}
-                  height={664}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc05-item02s.png"
-                  alt="過去5年間で26万円税金の適正化"
-                  className="sp"
-                  width={291}
-                  height={520}
-                />
-              </div>
-              <p className="s-Ss -s10 -blue -center -ls-2 -lh-1_5">
-                ※マネリペのサービスは「ASTELLA Partners
-                会計事務所」に監修していただいております。
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* SC06 比較 */}
-        <div
-          id="sc06"
-          className={"c-contents -bg-color01 pdt7 pdt15s pdb5 pdb5s"}
-        >
-          <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
-              従来型の福利厚生サービスとの比較
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s">
+              他社<span>との</span>比較
             </h2>
             <p className="s-ML -b -blue -left -ls-2 mgb2 mgb5s">
-              1.マネリペの「旧来型運用」vs「現在の運用」の比較
+              1.セレクトモールの「旧商社」vs「提案型商社」の比較
             </p>
             <div className="c-contents mgb10 mgb10s">
               <Image
@@ -952,8 +886,8 @@ export default function Home() {
         {/* Q&A */}
         <div id="Q&A" className={"c-contents pdt7 pdt20s pdb7 pdb15s"}>
           <div className={"c-contents--inner"}>
-            <h2 className={"c-contents--LpMainTitle -b-btm -c03 mgb10 mgb10s"}>
-              よくある質問
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s">
+              よくある筆問
             </h2>
             <Accordion items={faqItems} />
           </div>
