@@ -2,16 +2,35 @@
 .c-img{
     border-radius: 10px;
     overflow: hidden;
+    &.-center {
+        display: block;
+        margin: 0 auto;
+    }
+    &.-left {
+        display: block;
+        margin-right: auto;
+        margin-left: 0;
+    }
+    &.-right {
+        display: block;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
     &.-logo{
         display: inline-block;
         width: 30%;
         max-width: 130px !important;
         border-radius: inherit;
         filter: drop-shadow(4px 4px 0 $main-color--w);
-        &.-center {
-            display: block;
-            margin: 0 auto;
-        }  
+    }
+    &.-pic{
+        width: 60%;
+        filter: drop-shadow(4px 4px 0 $main-color--w);
+        @include min(768){
+            width: 35%;
+            max-width: 380px !important;    
+        }
     }
     &.-borderBox{
         &.-double{

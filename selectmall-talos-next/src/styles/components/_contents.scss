@@ -390,41 +390,81 @@
   &.-Lp02Cta {
     // LP02 > CTAエリア
     position: relative;
-    background: radial-gradient($lp-color01, $lp-color02);
+    background: $lp-color02;
+    // background: radial-gradient($lp-color01, $lp-color02);
     &::before {
       content: "";
       position: absolute;
-      top: 30%;
+      top: 40%;
       left: 0;
       width: 14%;
       height: 70%;
-      background: url("/images/Lp/ver02/mv-parts-02.png") no-repeat;
+      background: url("/images/icon/pic01.png") no-repeat;
       background-size: contain;
-      opacity: 0.05;
+      opacity: 0.35;
       z-index: 1;
       @include max(768) {
-        top: 50%;
-        left: 0;
-        width: 54%;
+        top: 25%;
+        left: 25px;
+        width: 100px;
         height: 70%;
       }
     }
     &::after {
       content: "";
       position: absolute;
-      top: 0;
-      right: 2%;
+      top: 60%;
+      right: 30%;
       width: 350px;
       height: 30%;
-      background: url("/images/Lp/ver02/mv-parts-03.png") no-repeat;
+      background: url("/images/icon/pic03.png") no-repeat;
       background-size: contain;
-      opacity: 0.05;
+      opacity: 0.25;
       z-index: 1;
       @include max(768) {
-        top: 0;
+        top: 5%;
         right: 2%;
-        width: 250px;
+        width: 100px;
         height: 30%;
+      }
+    }
+    .c-contents--inner {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: -16%;
+        width: 14%;
+        height: 70%;
+        background: url("/images/icon/pic05.png") no-repeat;
+        background-size: contain;
+        opacity: 0.15;
+        z-index: 1;
+        @include max(768) {
+          top: 25%;
+          right: 0;
+          width: 50px;
+          height: 70%;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 75%;
+        left: 10%;
+        width: 350px;
+        height: 30%;
+        background: url("/images/icon/pic06.png") no-repeat;
+        background-size: contain;
+        opacity: 0.15;
+        z-index: 1;
+        @include max(768) {
+          top: 1%;
+          left: 65%;
+          width: 25px;
+          height: 30%;
+        }
       }
     }
   }

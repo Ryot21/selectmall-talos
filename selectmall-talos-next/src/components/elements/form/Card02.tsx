@@ -222,14 +222,14 @@ export default function CardContactForm({ customClass }: FormProps) {
                     <p className="s-SS -s12 -ls-2">{formData.company}</p>
                   </td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <th className="s-S -s16 -b -ls-2">役職・部署</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">
                       {formData.post} {formData.department}
                     </p>
                   </td>
-                </tr>
+                </tr> */}
                 <tr>
                   <th className="s-S -s16 -b -ls-2">ご担当者名</th>
                   <td>
@@ -285,7 +285,7 @@ export default function CardContactForm({ customClass }: FormProps) {
   return (
     <div className="c-card -t05  a-fade -tm05 -sp05">
       <Image
-        src="/images/SVG/Lp/ver02/contact-label.svg"
+        src="/images/SVG/Lp/contact-label.svg"
         alt="3分でわかる資料ダウンロード"
         width={334}
         height={50}
@@ -324,9 +324,8 @@ export default function CardContactForm({ customClass }: FormProps) {
             />
             <span>会社名</span>
           </div>
-          <ul className="c-flex -col2 -jc-sb">
+          {/* <ul className="c-flex -col2 -jc-sb">
             <li className="flexItem">
-              {/* 役職 */}
               <div className="c-form--item">
                 <select
                   id="post"
@@ -346,7 +345,6 @@ export default function CardContactForm({ customClass }: FormProps) {
               </div>
             </li>
             <li className="flexItem">
-              {/* 部署名 */}
               <div className="c-form--item">
                 <select
                   id="department"
@@ -366,7 +364,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                 <span>部署名</span>
               </div>
             </li>
-          </ul>
+          </ul> */}
           {/* ご担当者名 */}
           <div className="c-form--item">
             <input
@@ -415,7 +413,7 @@ export default function CardContactForm({ customClass }: FormProps) {
             )}
           </div>
           {/* 検討段階 */}
-          <div className="c-form--item -radioBtn">
+          {/* <div className="c-form--item -radioBtn">
             <ul className="c-flex -radio">
               <li className="flexItem">
                 <p className="s-SS -b -left -ls-2" style={{ paddingTop: 8 }}>
@@ -466,7 +464,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                 </div>
               </li>
             </ul>
-          </div>
+          </div> */}
           {/* 送信ボタン */}
           <div id="chk_policy" className="c-form--consent">
             <p id="error" className={!isAgreed ? "visible" : "hidden"}>
@@ -499,18 +497,18 @@ export default function CardContactForm({ customClass }: FormProps) {
                 id="submit"
                 disabled={!isFormValid}
               >
-                資料ダウンロード（無料）
+                お問い合わせ
               </button>
             </div>
           </div>
           {/* プライバシーポリシー */}
-          <p className="c-form--consentText -lh-2 -ls-2">
-            ※お客様にお求めのコンテンツを提供するために、上記で送信された個人情報についてインプレームが
+          {/* <p className="c-form--consentText -lh-2 -ls-2">
+            ※お客様にお求めのコンテンツを提供するために、上記で送信された個人情報についてセレクトモールが
             <Link href="/privacy-policy" className="-color03 b-text">
               プライバシーポリシー
             </Link>
             に基づき利用することに同意します。
-          </p>
+          </p> */}
         </form>
       </div>
     </div>
