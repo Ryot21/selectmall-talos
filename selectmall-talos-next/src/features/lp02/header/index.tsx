@@ -19,7 +19,7 @@ export default function LpHeader() {
               <div className={"logo"}>
                 <Link href="#top" className={"c-link -img"}>
                   <Image
-                    src="/images/logo/selectmall-logo.svg"
+                    src="/images/logo/selectmall-logo_old.svg"
                     alt="セレクトモール"
                     width={210}
                     height={60}
