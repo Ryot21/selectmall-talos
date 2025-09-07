@@ -31,7 +31,7 @@ export default function ScrollContainer() {
     <div className="sp-scroll-container" ref={scrollContainerRef}>
       <div className="scroll-hint">
         <Image
-          src="/images/Lp/ver02/scroll-hint.png"
+          src="/images/icon/scroll-hint.png"
           alt="スクロールできます"
           className="sp"
           width={130}
@@ -39,7 +39,7 @@ export default function ScrollContainer() {
         />
       </div>
       <Image
-        src="/images/SVG/Lp/ver02/hikaku-table.svg"
+        src="/images/SVG/Lp/hikaku-table.svg"
         alt="比較表"
         width={2012}
         height={892}
