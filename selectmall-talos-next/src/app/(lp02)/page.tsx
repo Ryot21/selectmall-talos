@@ -449,32 +449,82 @@ export default function Home() {
           </div>
         </div>
         {/* SC05 他者との比較 */}
-        <div id="sc05" className={"c-contents -bg-color01 pdt7 pdt15s pdb5 pdb5s"}>
+        <div id="sc05" className={"c-contents -bg -lp-color03 pdt7 pdt15s pdb5 pdb5s"}>
           <div className="c-contents--inner">
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s">
-              他社<span>との</span>比較
+              従来型<span>との</span>比較
             </h2>
-            <p className="s-ML -b -blue -left -ls-2 mgb2 mgb5s">
-              1.セレクトモールの「旧商社」vs「提案型商社」の比較
+            <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
+              1.「ステンレスケグ」vs「ワンウェイケグ」の比較
             </p>
-            <div className="c-contents mgb10 mgb10s">
-              <Image
-                src="/images/Lp/ver02/sc06-item01.png"
-                alt="従来型の福利厚生サービスとの比較"
-                className="tb-pc"
-                width={2012}
-                height={832}
-              />
-              <Image
-                src="/images/Lp/ver02/sc06-item01s.png"
-                alt="従来型の福利厚生サービスとの比較"
-                className="sp"
-                width={334}
-                height={622}
-              />
+            {/* コスト面 */}
+            <div className="c-card -lp -p03 mgb1 mgb5s">
+              <div className="c-card--inner">
+                <ul className="c-flex -col1_2 -pc3_1 -h-cen">
+                  <li className="flexItem mgb5s">
+                    <div className="c-img -logo -center">
+                      <Image
+                        src="/images/SVG/icon-hikaku.svg"
+                        alt="コスト面の比較アイコン"
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">従来ケグと比べて大幅なコスト削減効果</h3>
+                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">→ 回収・洗浄・メンテナンス費用が不要なので、運用コスト約60%削減＋初期投資大幅軽減</p>
+                  </li>
+                </ul>
+              </div>
+
             </div>
-            <p className="s-ML -b -blue -left -ls-2 mgb5s">
-              2.他の金融リテラシー向上サービスとの比較
+            {/* 導入面 */}
+            <div className="c-card -lp -p03 mgb1 mgb5s">
+              <div className="c-card--inner">
+                <ul className="c-flex -col1_2 -pc3_1 -h-cen">
+                  <li className="flexItem mgb5s">
+                    <div className="c-img -logo -center">
+                      <Image
+                        src="/images/SVG/icon-exchange.svg"
+                        alt="導入面の比較アイコン"
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">すぐに導入可能</h3>
+                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">→ ステンレスケグと同じカプラータイプのため、導入コストを気にせず気軽にお使いいただけます。</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* 輸送面 */}
+            <div className="c-card -lp -p03 mgb10 mgb10s">
+              <div className="c-card--inner">
+                <ul className="c-flex -col1_2 -pc3_1 -h-cen">
+                  <li className="flexItem mgb5s">
+                    <div className="c-img -logo -center">
+                      <Image
+                        src="/images/SVG/icon-car.svg"
+                        alt="輸送アイコン"
+                        width={480}
+                        height={320}
+                      />
+                    </div>
+                  </li>
+                  <li className="flexItem">
+                    <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">国内外問わず対応可能な配送網</h3>
+                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">→ 軽量設計（従来比40%軽量）かつ回収コストが不要なため、離島・遠隔地まで全国どこでも配送対応</p>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
+              2.他社との比較
             </p>
             <div className="c-contents mgb10 mgb10s">
               <ScrollContainer />

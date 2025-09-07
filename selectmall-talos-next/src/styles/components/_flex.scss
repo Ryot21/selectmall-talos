@@ -164,6 +164,18 @@
         }
       }
     }
+    &.-pc3_1 {
+      .flexItem {
+        @include min(768) {
+          &:nth-child(1) {
+            width: 25%;
+          }
+          &:nth-child(2) {
+            width: 70%;
+          }
+        }
+      }
+    }
   }
   // コンテンツカラム（sp:pc 2:2）
   &.-col2 {
