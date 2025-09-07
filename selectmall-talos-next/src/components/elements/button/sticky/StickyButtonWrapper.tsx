@@ -7,9 +7,9 @@ export default function StickyButtonWrapper() {
   return (
     <StickyButton targetId="stickyDisplayTrigger" href="#cta" customClass="">
       <Image
-        src="/images/Lp/ver02/contact-btn.png"
+        src="/images/SVG/Lp/contact-btn.svg"
         className=""
-        alt="お役立ち資料をダウンロード"
+        alt="商品資料を無料ダウンロード"
         width={351}
         height={107}
       />
