@@ -1,23 +1,55 @@
-
-.a{
-    /* ----------------------------
+.a {
+  /* ----------------------------
     ・rotateRightAnime： 右回転
     ----------------------------- */
-    &-rotateRight{// 太陽光を再現
-        animation-name: rotateRightAnime;
-        animation-fill-mode:forwards;
-        img{transition: 1s all;}
+  &-rotateRight {
+    // 太陽光を再現
+    animation-name: rotateRightAnime;
+    animation-fill-mode: forwards;
+    img {
+      transition: 1s all;
     }
-    @keyframes rotateRightAnime{
-        0% {
-            transform:rotate(0deg);
-            transform-origin:20% 20%;// 回転させる対象物の右から20%,上から20%を軸に回転させる。
-            opacity: 0;
-        }
-        100% {
-            transform:rotate(25deg);
-            transform-origin:20% 20%;
-            opacity: .5;
-        }
+  }
+  @keyframes rotateRightAnime {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: 20% 20%; // 回転させる対象物の右から20%,上から20%を軸に回転させる。
+      opacity: 0;
     }
+    100% {
+      transform: rotate(25deg);
+      transform-origin: 20% 20%;
+      opacity: 0.5;
+    }
+  }
+
+  /* ----------------------------
+    ・katakataAnime： カタカタ揺れる（小刻みな左右回転＋微小移動）
+    ----------------------------- */
+  &-katakata {
+    // 物が小刻みに揺れる効果
+    animation-name: katakataAnime; // 速度は -sp* で、回数は -loop で制御
+    animation-timing-function: steps(2, end);
+    // transform-origin: 50% 50%;
+  }
+  @keyframes katakataAnime {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+      transform: translate(0.5px, 0) rotate(4deg);
+    }
+    40% {
+      transform: translate(-0.5px, 0) rotate(-4deg);
+    }
+    60% {
+      transform: translate(0.4px, 0.1px) rotate(2.5deg);
+    }
+    80% {
+      transform: translate(-0.4px, -0.1px) rotate(-2.5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
 }

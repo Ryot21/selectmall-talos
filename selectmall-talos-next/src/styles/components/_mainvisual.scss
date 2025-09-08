@@ -67,23 +67,40 @@
     }
     &--box{// コンテンツ内のボックス
         position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        @include max(500) {max-width: 375px;}
+        @include min(500) {width: 85%;}
+        @include min(768) {width: 90%;}
+        @include min(1600) {max-width: 1380px;}
+        @include min(1800) {max-width: 1500px;}
         &.-center {// 要素の真ん中
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
         }
     }
 
     // ===================== LP関係 =====================
+    &.-box {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
     &.-LP {// LP ベース設定
         position: relative;
         overflow: hidden;
+        margin-top: 20px;
+        @include min(768) {margin-top: 50px;}    
     }
     &.-LP01 {
         background: $lp-color04;
         .imgBox {
+            object-fit: cover;
+
             // margin-top: 60px;
             width: auto;
             height: auto;
@@ -93,14 +110,21 @@
             @include max(500) {
                 max-height: 1080px !important;
             }
-            @include min(768) {
-                min-height: 620px !important;
-            }
-            @include min(2000) {
-                max-height: 960px !important;
-            }
+            // @include min(768) {
+            //     min-height: 620px !important;
+            // }
+            // @include min(2000) {
+            //     max-height: 1280px !important;
+            // }
+            // img {
+                // @include min(768) {
+                //     object-position: 100% 90%;
+                //     object-fit: cover;
+                // }
+            // }
         }
         .c-contentsBox {
+            // ケグ
             &.-tkeg {
                 width: 38%;
                 max-width: 1150px;
@@ -116,21 +140,20 @@
                 }
                 @include min(1000) {
                     width: 30.4%;
-                    top: 39%;
-                    left: 50%;
-                }
-                @include min(1200) {
-                    width: 30.4%;
                     max-width: 400px;
-
                     top: 39%;
                     left: 50%;
                 }
                 @include min(1400) {
-                    top: 44%;
+                    top: 34%;
+                }
+                @include min(1600) {
+                    top: 38%;
                 }
                 @include min(2000) {
                     top: 45%;
+                    width: 33%;
+                    max-width: 450px;
                 }
             }
             &.-bjet {
@@ -147,22 +170,25 @@
                     left: 28.5%;
                 }
                 @include min(1000) {
-                    width: 10%;
+                    width: 9%;
+                    max-width: 170px;
                     top: 74%;
-                    left: 28.5%;
+                    left: 30%;
                 }
                 @include min(1200) {
-                    width: 10%;
-                    max-width: 170px;
-                    top: 70%;
-                    left: 28.5%;
+                    top: 72%;
                 }
                 @include min(1600) {
-                    top: 65%;
+                    top: 72%;
                 }
                 @include min(1800) {
                     top: 70%;
                     left: 33.5%;
+                }
+                @include min(2000) {
+                    top: 76%;
+                    left: 28%;
+                    width: 10%;
                 }
             }
             &.-topper {
@@ -179,28 +205,31 @@
                     left: 72.5%;
                 }
                 @include min(1000) {
-                    width: 9%;
+                    width: 8%;
+                    max-width: 160px;
                     top: 72%;
-                    left: 72.5%;
+                    left: 69.5%;
                 }
                 @include min(1200) {
-                    width: 9%;
-                    max-width: 160px;
-                    top: 68%;
-                    left: 72.5%;
+                    top: 71%;
                 }
-
                 @include min(1600) {
-                    top: 64%;
+                    top: 71%;
                 }
                 @include min(1800) {
                     top: 68.5%;
                     left: 67%;
                 }
+                @include min(2000) {
+                    top: 74%;
+                    left: 72%;
+                    width: 10%;
+                }
             }
+            // ログ&テキスト
             &.-talos {
                 position: absolute;
-                top: 15%;
+                top: 10%;
                 left: 50%;
                 transform: translateX(-50%);
 
@@ -211,39 +240,32 @@
                     width: 13%;
                 }
                 @include min(1000){
-                    top: 20%;
-                    max-width: 180px;
+                    top: 18%;
+                }
+                @include min(2000){
+                    width: 15%;
+                    max-width: 300px;
                 }
             }
             &.-text {
                 position: absolute;
-                top: 20%;
+                top: 17%;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 1;
                 @include min(768) {
                     top: 24%;
                 }
-                @include min(1000){
-                    top: 29%;
-                }
+                @include min(1000){top: 29%;}
+                @include min(1400){top: 28%;}
+                @include min(1800){top: 26%;}
             }
-            &.-title {
-                position: absolute;
-                top: 37%;
-                left: -90px;
-                width: 100%;
-                z-index: 1;
-                @include min(768) {
-                    top: 15%;
-                    left: 50%;
-                }
-            }
+            // 吹き出し
             &.-coment {
                 position: absolute;
-                top: 47%;
+                top: 54%;
                 left: 5px;
-                width: 35%;
+                width: 32%;
                 z-index: 8;
                 @include min(768) {
                     top: 23.5%;
@@ -251,36 +273,67 @@
                     width: 26%;
                 }
                 @include min(1000){
-                    top: 17.5%;
-                    left: 10%;
+                    top: 22.5%;
+                    left: 15%;
                     width: 20%;
                     max-width: 330px;
                 }
             }
-
+            // ビールアイコン 
             &.-icon {
                 position: absolute;
                 &.-icon01 {
                     top: 25%;
                     left: 0;
-                    width: 75px;
+                    width: 85px;
                     @include min(768){
                         top: 12%;
-                        width: 100px;
+                        width: 150px;
                     }
                 }
                 &.-icon02 {
                     top: 50%;
-                    left: 88%;
-                    width: 35px;
+                    left: 75%;
+                    width: 45px;
                     @include min(768){
                         top: auto;
                         bottom: 5%;
-                        left: 90%;
+                        left: 88%;
                         width: 80px;
                     }
+                    @include min(2000){left: 92%;}
                 }
+                &.-icon03 {
+                    top: 50%;
+                    right: 0;
+                    width: 45px;
+                    @include min(768){
+                        top: auto;
+                        bottom: 5%;
+                        width: 80px;
+                    }
+                    @include min(2000){
+                        width: 100px;
+                    }
+                }
+                &.-icon04 {
+                    top: 16%;
+                    right: 40px;
+                    width: 30px;
+                    @include min(768){
+                        top: auto;
+                        right: auto;
+                        left: 100px;
+                        bottom: 5%;
+                        width: 80px;
+                    }
+                    @include min(2000){
+                        width: 100px;
+                    }
+                }
+
             }
+            // お問い合わせフォーム
             &.-cta {
                 width: 90%;
                 max-width: 420px;
@@ -328,15 +381,16 @@
     }
     &.-tateArea {
         position: absolute;
-        top: 28%;
+        top: 24%;
         left: 0;
         width: 100%;
         height: 50%;
         @include min(768) {
             top: 0;
             left: auto;
-            right: 0;
+            right: 0%;
             width: 50%;
+            max-width: 350px;
             height: 100%;
         }
         .imgBox {
@@ -349,45 +403,38 @@
         .c-contentsBox {
             &.-tate {
                 position: absolute;
-                width: 15px;
+                width: 20px;
                 height: auto;
                 z-index: 1;
-                @include max(768){
+                // @include max(768){
                     // transform:rotate(4deg) !important;
-                }
-                @include min(768) {
-                    width: 30px;
-                }
-                @include min(1200){
-                    width: 42px;
-                }
+                // }
+                @include min(768)  {width: 25px;}
+                @include min(1000) {width: 30px;}
+                @include min(1200) {width: 40px;}
                 &.-tate01{
                     @include max(768){
                         top: 0;
-                        left: 40%;
+                        left: 39%;
                         transform: translateX(-50%);
                     }
                     @include min(768) {
-                        top: 15%;
+                        top: 10%;
                         right: 50px;
                     }
-                    @include min(1000){
-                        right: 50px;
-                    }
+                    @include min(1000) {right: 50px;}
                 }
                 &.-tate02{
                     @include max(768){
                         top: 0;
                         left: 50%;
-                        transform: translateX(-50%);
+                        transform: translateX(-50%) !important;
                     }
                     @include min(768) {
-                        top: 15%;
+                        top: 10%;
                         right: 100px;
                     }
-                    @include min(1000){
-                        right: 120px;
-                    }
+                    @include min(1000) {right: 110px;}
                 }
                 &.-tate03{
                     @include max(768){
@@ -396,12 +443,10 @@
                         transform: translateX(-50%);
                     }
                     @include min(768) {
-                        top: 15%;
+                        top: 10%;
                         right: 150px;
                     }
-                    @include min(1000){
-                        right: 190px;
-                    }
+                    @include min(1000) {right: 180px;}
                 }
             }
         }
