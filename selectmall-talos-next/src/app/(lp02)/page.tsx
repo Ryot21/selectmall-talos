@@ -6,7 +6,7 @@ import React from "react";
 import LpMainVisual from "@/features/lp02/mainVisual";
 import ScrollContainer from "@/features/lp02/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
-import LogoMark from "@/components/lottie/LogoMark";
+// import LogoMark from "@/components/lottie/LogoMark";
 
 import Lp02Cta from "@/features/lp02/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
@@ -28,7 +28,8 @@ const faqItems: AccordionItem[] = [
   {
     id: "02",
     question: "品質保持期間はどのくらいですか？輸送距離に制限はありますか？",
-    answer: "内蔵無菌アルミホイル膜袋により、従来のケグより長期保存が可能です。密閉性が高く、ビールの風味を損なわずに保存できます。また、軽量で破損リスクが低いため、国内・海外問わずどこへでも輸送可能です。離島や遠隔地への配送も問題ありません。",
+    answer:
+      "内蔵無菌アルミホイル膜袋により、従来のケグより長期保存が可能です。密閉性が高く、ビールの風味を損なわずに保存できます。また、軽量で破損リスクが低いため、国内・海外問わずどこへでも輸送可能です。離島や遠隔地への配送も問題ありません。",
   },
   {
     id: "03",
@@ -65,10 +66,10 @@ export default function Home() {
             {/* <div className="mgb5 mgb10s">
               <LogoMark />
             </div> */}
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               T-KEG<span>とは</span>
             </h2>
-            <p className="c-contents--LpText -center -lp_c02">
+            <p className="c-contents--LpText -center -lp_c02 a-fadeUp -sc-entry">
               Talos社は1997年に創業し、2003年に樽ビール分配の専門分野に本格参入。<br/>
               ビール分配システムの設計、研究開発、製造、販売、サービスを一体化した高新技術企業です。<br/>
               現在、液体食品包装設計と分配システム研究開発能力を兼ね備えた総合サービス提供企業として、<br/>
@@ -79,11 +80,11 @@ export default function Home() {
         {/* SC02 商品紹介 */}
         <div id="sc02" className="c-contents pdt7 pdt15s">
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               商品紹介
             </h2>
             {/* 単層ケグの紹介 */}
-            <div className="c-card -lp -p01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s a-fadeUp -sc-entry">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -126,7 +127,7 @@ export default function Home() {
               </div>
             </div>
             {/* T-KEGの紹介 */}
-            <div className="c-card -lp -p01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s a-fadeUp -sc-entry">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -173,7 +174,7 @@ export default function Home() {
               </div>
             </div>
             {/* BREWJETの紹介 */}
-            <div className="c-card -lp -p01 mgb5 mgb10s">
+            <div className="c-card -lp -p01 mgb5 mgb10s a-fadeUp -sc-entry">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -218,7 +219,7 @@ export default function Home() {
               </div>
             </div>
             {/* TOPPERの紹介 */}
-            <div className="c-card -lp -p01">
+            <div className="c-card -lp -p01 a-fadeUp -sc-entry">
               <div className="c-card--inner">
                 <div className="c-contents -itemBox">
                   <div className="imgBox">
@@ -267,14 +268,14 @@ export default function Home() {
         {/* SC03 商品の特徴 */}
         <div id="sc03" className="c-contents pdt7 pdt15s">
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               商品特徴
             </h2>
             <div className="c-contents">
               <ul className="c-flex -col1_3">
                 {/* とても軽量 */}
                 <li className="flexItem mgb5 mgb5s">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -289,7 +290,7 @@ export default function Home() {
                 </li>
                 {/* 特別な設備は不要 */}
                 <li className="flexItem mgb5 mgb5s">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02 a-fadeUp -sc-entry">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -304,7 +305,7 @@ export default function Home() {
                 </li>
                 {/* そのまま */}
                 <li className="flexItem mgb5 mgb5s">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02  a-fadeUp -sc-entry-slow">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -319,7 +320,7 @@ export default function Home() {
                 </li>
                 {/* 海外輸出の最適解！！ */}
                 <li className="flexItem mgb5s">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -335,7 +336,7 @@ export default function Home() {
                 </li>
                 {/* 廃棄が簡単 */}
                 <li className="flexItem mgb5s">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02 a-fadeUp -sc-entry">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -350,7 +351,7 @@ export default function Home() {
                 </li>
                 {/* 持ち運びが便利 */}
                 <li className="flexItem">
-                  <div className="c-card -lp -p02">
+                  <div className="c-card -lp -p02 a-fadeUp -sc-entry-slow">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320.png"
@@ -370,12 +371,12 @@ export default function Home() {
         {/* SC04 セレクトモールで出来ること */}
         <div id="sc04" className={"c-contents pdt7 pdt15s"}>
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               セレクトモール<span>で</span>出来<span>ること</span>
             </h2>
             <div className="mgb10 mgb10s">
               {/* 1. お客様に合わせたケグのご提案 */}
-              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s a-fadeLeft -sc-entry">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -398,7 +399,7 @@ export default function Home() {
                 </ul>
               </div>
               {/* 2. Eコマース */}
-              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s">
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s mgb5 mgb10s a-fadeRight -sc-entry">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -422,7 +423,7 @@ export default function Home() {
                 </ul>
               </div>
               {/* 3. イベント企画 */}
-              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s">
+              <div className=" c-contents -bg-white pdt2 pdt5s pdb2 pdb5s pdr2 pdr5s pdl2 pdl5s a-fadeLeft -sc-entry">
                 <ul className={"c-flex -col1_2 -pc2_1 -h-top -jc-sb"}>
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
@@ -436,7 +437,8 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t03 mgb1 mgb3s">
-                      続々イベント企画中！<br />
+                      続々イベント企画中！
+                      <br />
                       地方クラフトさんにフォーカスしたイベントを開催！
                     </h3>
                     <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
@@ -449,16 +451,16 @@ export default function Home() {
           </div>
         </div>
         {/* SC05 他者との比較 */}
-        <div id="sc05" className={"c-contents -bg -lp-color03 pdt7 pdt15s pdb5 pdb5s"}>
+        <div id="sc05" className={"c-contents -bg -lp-color03 pdt7 pdt15s pdb7 pdb15s"}>
           <div className="c-contents--inner">
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               従来型<span>との</span>比較
             </h2>
             <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
-              1.「ステンレスケグ」vs「ワンウェイケグ」の比較
+              1.「ステンレスケグ」<span className="s-M -b">vs</span>「ワンウェイケグ」<span className="s-M -b">の</span>比較
             </p>
             {/* コスト面 */}
-            <div className="c-card -lp -p03 mgb1 mgb5s">
+            <div className="c-card -lp -p03 mgb1 mgb5s a-flipDown -sc-entry-slow">
               <div className="c-card--inner">
                 <ul className="c-flex -col1_2 -pc3_1 -h-cen">
                   <li className="flexItem mgb5s">
@@ -477,10 +479,9 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
             </div>
             {/* 導入面 */}
-            <div className="c-card -lp -p03 mgb1 mgb5s">
+            <div className="c-card -lp -p03 mgb1 mgb5s a-flipDown -sc-entry-slow">
               <div className="c-card--inner">
                 <ul className="c-flex -col1_2 -pc3_1 -h-cen">
                   <li className="flexItem mgb5s">
@@ -501,7 +502,7 @@ export default function Home() {
               </div>
             </div>
             {/* 輸送面 */}
-            <div className="c-card -lp -p03 mgb10 mgb10s">
+            <div className="c-card -lp -p03 mgb10 mgb10s a-flipDown -sc-entry-slow">
               <div className="c-card--inner">
                 <ul className="c-flex -col1_2 -pc3_1 -h-cen">
                   <li className="flexItem mgb5s">
@@ -520,13 +521,12 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
             </div>
 
             <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
-              2.他社との比較
+              2.他社<span className="s-M -b">との</span>比較
             </p>
-            <div className="c-contents mgb10 mgb10s">
+            <div className="c-contents">
               <ScrollContainer />
             </div>
           </div>
@@ -534,409 +534,11 @@ export default function Home() {
 
         {/* cta02 */}
         <Lp02Cta />
-        {/* SC07 課題 */}
-        <div id="sc07" className={"c-contents pdt7 pdt15s pdb10 pdb5s"}>
-          <div className="c-contents--inner">
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
-              経営者・総務・人事の皆さん
-              <br />
-              このような課題はありませんか？
-            </h2>
-            <ul className="c-flex -col1_3 -h-top -jc-sb mgb10 mgb5s">
-              <li className="flexItem pdr5s pdl5s mgb5s">
-                <Image
-                  src="/images/Lp/ver02/sc07-item01.png"
-                  alt="1.「従来型福利厚生の限界」"
-                  width={374}
-                  height={306}
-                />
-              </li>
-              <li className="flexItem pdr5s pdl5s mgb5s">
-                <Image
-                  src="/images/Lp/ver02/sc07-item02.png"
-                  alt="2.「金融不安が離職の原因に」"
-                  width={374}
-                  height={306}
-                />
-              </li>
-              <li className="flexItem pdr5s pdl5s ">
-                <Image
-                  src="/images/Lp/ver02/sc07-item03.png"
-                  alt="3.「費用対効果への懸念」"
-                  width={374}
-                  height={306}
-                />
-              </li>
-            </ul>
-            <h2 className="c-contents--LpMainTitle -b-btm -c03 mgb7 mgb10s">
-              そのお悩みを解決できます！
-            </h2>
-            <p className="s-ML -b -blue -center -ls-2 -lh-2 mgb10 mgb5s">
-              従業員の「金融リテラシー向上」をご支援し、給料を上げずに、
-              <br />
-              税金を適正化することで1人当たりの可処分所得を年間約
-              <span className="-b -marker -kome pdr1 pdr1s">200,000円</span>
-              最適化することが可能です！
-              <span className="s-SS -s10 -blue">*個人差あります</span>
-            </p>
-            <ul className={"c-flex -col3 -flow -h-cen -jc-sb mgb5 mgb5s"}>
-              <li className={"flexItem"}>
-                <div className="c-card -lp_02 -sc07 -item01">
-                  <div className="c-card--inner">
-                    <p className="s-M -s10 -b -blue -center -ls-2 -ls-1_s -lh-2 -ws-n">
-                      社員に対して
-                      <br className="sp" />
-                      金融教育セミナーを実施
-                    </p>
-                    <div className="imgBox">
-                      <Image
-                        src="/images/Lp/ver02/sc07-02-item01.png"
-                        alt="金融セミナーを受けている様子"
-                        width={200}
-                        height={160}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem"}>
-                <div className="c-card -lp_02 -sc07 -item02">
-                  <div className="c-card--inner">
-                    <p className="s-M -s10 -b -blue -center -ls-2 -ls-1_s -lh-2 -ws-n">
-                      従業員満足度が
-                      <br className="sp" />
-                      すごく高まる
-                    </p>
-                    <div className="imgBox">
-                      <Image
-                        src="/images/Lp/ver02/sc07-02-item02.png"
-                        alt="従業員が満足している様子"
-                        width={200}
-                        height={160}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem"}>
-                <div className="c-card -lp_02 -sc07 -item03">
-                  <div className="c-card--inner">
-                    <div className="imgBox">
-                      <Image
-                        src="/images/Lp/ver02/sc07-02-item03.png"
-                        alt="離職率の低下・採用競争力の向上"
-                        width={200}
-                        height={160}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        {/* SC08 選ばれる理由 */}
-        <div
-          id="sc08"
-          className={"c-contents -bg-lp02-sc02 pdt7 pdt15s pdb10 pdb10s"}
-        >
-          <div className={"c-contents--inner"}>
-            <h2 className={"c-contents--LpMainTitle -b-btm -c03 mgb5 mgb10s"}>
-              マネリペの選ばれる理由
-            </h2>
-            <ul className={"c-flex -col1_3 -h-top -jc-st mgb2 mgb5s"}>
-              {/* 1. 金融リテラシーを向上させる福利厚生プログラムです。 */}
-              <li className={"flexItem pdr5s pdl5s mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc08-item01.png"
-                  alt="従業員の可処分所得の増加モチベーションを高める！"
-                  width={640}
-                  height={454}
-                />
-              </li>
-              {/* 2. 個別相談がつくことで精度の高い提案で削減事例多数 */}
-              <li className={"flexItem pdr5s pdl5s mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc08-item02.png"
-                  alt="個別相談で50%以上が税金削減・還付の対象に"
-                  width={640}
-                  height={454}
-                />
-              </li>
-              {/* 3. 従業員の定着率UP、採用率UPにつながります！ */}
-              <li className={"flexItem pdr5s pdl5s"}>
-                <Image
-                  src="/images/Lp/ver02/sc08-item03.png"
-                  alt="会社員500名に金融リテラシー調査を実施、結果を基にサービスを提供"
-                  width={640}
-                  height={454}
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
 
-        {/* 導入実績 */}
-
-        {/* SC09 解決できるあらゆる問題 */}
-        <div
-          id="sc09"
-          className={"c-contents -triangle pdt7 pdt20s pdb7 pdb10s pdb20s"}
-        >
-          <div className={"c-contents--inner"}>
-            <h2 className={"c-contents--LpMainTitle -b-btm -c03 mgb10 mgb10s"}>
-              マネリペで解決できる
-              <br />
-              お金に関するあらゆる問題
-            </h2>
-            <ul className={"c-flex -col2_4 -h-top -jc-st mgb2"}>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      税金の適正化
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      iDeCo
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      生命保険の見直し
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      ふるさと納税
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      資産運用
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2 mgb5s"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      投資信託
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      NISA
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className={"flexItem mgb2"}>
-                <div className="c-card -lp_02 -sc09">
-                  <div className="c-card--inner">
-                    <p className="s-ML -s14 -b -blue -center -ls-2 -lh-1_5">
-                      年金問題
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        {/* 考えられる問題 */}
-        <div className={"c-contents -bg-color01 pdt7 pdt20s pdb7 pdb15s"}>
-          <div className={"c-contents--inner"}>
-            <h2 className={"s-ML -b-btm -c03 -center -ls-2 -lh-2 mgb5 mgb10s"}>
-              「マネリペ」を導入することで
-              <br />
-              社員の満足度や、企業の魅力が向上し、
-              <br className="sp" />
-              <span className="s-L -c03 -b -marker">離職率低下</span>
-              につながります。
-            </h2>
-            <div className="c-contents">
-              <div className="imgBox w20 w75s">
-                <Image
-                  src="/images/Lp/ver02/sc09-item01.png"
-                  alt="喜ぶ女性"
-                  width={140}
-                  height={157}
-                />
-              </div>
-            </div>
-            <ul className={"c-flex -col1_3 -h-top -jc-st mgb2 mgb5s"}>
-              <li className={"flexItem pdr5s pdl5s mgb5s"}>
-                <Image
-                  src="/images/Lp/ver02/sc09-02-item01.png"
-                  alt="1.従業員と家族の金融リテラシーの向上"
-                  width={640}
-                  height={480}
-                />
-              </li>
-              <li className={"flexItem pdr5s pdl5s mgb5s"}>
-                <Image
-                  src="/images/Lp/ver02/sc09-02-item02.png"
-                  alt="2.採用時のアピールポイントとして採用"
-                  width={640}
-                  height={480}
-                />
-              </li>
-              <li className={"flexItem pdr5s pdl5s"}>
-                <Image
-                  src="/images/Lp/ver02/sc09-02-item03.png"
-                  alt="3.社員の満足度の向上、離職率低下に貢献"
-                  width={640}
-                  height={480}
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* cta02 */}
-        <Lp02Cta />
-
-        {/* SC10 申し込みから導入までの流れ */}
-        <div
-          id="sc10"
-          className={"c-contents -bg-img-sc08 -support pdt7 pdt20s pdb7 pdb15s"}
-        >
-          <div className={"c-contents--inner"}>
-            <h2 className={"c-contents--LpMainTitle -b-btm -c03 mgb10 mgb10s"}>
-              申し込みから導入までの流れ
-            </h2>
-            <ul className={"c-flex -h-top -jc-st mgb2 mgb5s -lp-flow"}>
-              {/* 1. WEBサイトからお問い合わせ */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item01.png"
-                  alt="1.WEBサイトから問い合わせ"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item01s.png"
-                  alt="1.WEBサイトから問い合わせ"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-              {/* 2. お見積り */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item02.png"
-                  alt="2.お見積り"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item02s.png"
-                  alt="2.お見積り"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-              {/* 3. お申し込み + 導入後の打ち合わせ */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item03.png"
-                  alt="3.従業員様への導入説明会"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item03s.png"
-                  alt="3.従業員様への導入説明会"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-              {/* 4. 相談予約アプリ */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item04.png"
-                  alt="4.相談予約アプリの導入"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item04s.png"
-                  alt="4.相談予約アプリの導入"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-              {/* 5. コーチングや相談の開始 */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item05.png"
-                  alt="5.コーチングや相談の開始"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item05s.png"
-                  alt="5.コーチングや相談の開始"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-              {/* 6. フィードバック */}
-              <li className={"flexItem pdr5s pdl5s mgb5 mgb10s"}>
-                <Image
-                  src="/images/Lp/ver02/sc10-item06.png"
-                  alt="6.フィードバック"
-                  className="tb-pc"
-                  width={2012}
-                  height={336}
-                />
-                <Image
-                  src="/images/Lp/ver02/sc10-item06s.png"
-                  alt="6.フィードバック"
-                  className="sp"
-                  width={335}
-                  height={387}
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
         {/* Q&A */}
         <div id="Q&A" className={"c-contents pdt7 pdt20s pdb7 pdb15s"}>
           <div className={"c-contents--inner"}>
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s">
+            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある筆問
             </h2>
             <Accordion items={faqItems} />

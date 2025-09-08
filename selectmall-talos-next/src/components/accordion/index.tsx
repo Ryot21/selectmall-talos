@@ -9,7 +9,7 @@ export default function Accordion({ items }: AccordionProps) {
         <div className="c-accordion">
             <ul className="c-accordion--list">
                 {items.map((item) => (
-                    <li key={item.id} className="c-accordion--item mgb2 mgb5s">
+                    <li key={item.id} className="c-accordion--item mgb2 mgb5s a-flipDown -sc-entry-slow">
                         <input id={item.id} type="checkbox" className="toggle" />
                         <label htmlFor={item.id} className="label s-ML -color02 -b -ls-2">
                             {item.question}
