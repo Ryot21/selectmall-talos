@@ -60,7 +60,7 @@ export default function Home() {
       </div>
       <div className="c-contents ">
         {/* SC01 T-KEGとは */}
-        <div id="sc01" className="c-contents pdt7 pdt15s">
+        <div id="sc01" className="c-contents pdt10 pdt15s">
           <div className="c-contents--inner">
             {/* Talosロゴ */}
             {/* <div className="mgb5 mgb10s">
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         {/* SC02 商品紹介 */}
-        <div id="sc02" className="c-contents pdt7 pdt15s">
+        <div id="sc02" className="c-contents pdt10 pdt15s">
           <div className="c-contents--inner">
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               商品紹介
@@ -150,7 +150,7 @@ export default function Home() {
                         <div className="c-img -sh w75s">
                           <Image
                             src="/images/keg/T-Keg_20L30L.png"
-                            alt="T-KEG（2層ケグ）"
+                            alt="T-KEG（2層ケグ）の説明"
                             width={1644}
                             height={1154}
                           />
@@ -313,7 +313,7 @@ export default function Home() {
           </div>
         </div>
         {/* SC03 商品の特徴 */}
-        <div id="sc03" className="c-contents pdt7 pdt15s">
+        <div id="sc03" className="c-contents pdt10 pdt15s">
           <div className="c-contents--inner">
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               商品特徴
@@ -321,12 +321,12 @@ export default function Home() {
             <div className="c-contents">
               <ul className="c-flex -col1_3">
                 {/* とても軽量 */}
-                <li className="flexItem mgb5 mgb5s">
+                <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f01.png"
+                        alt="ワンウェイケグを持ち上げている様子"
                         width={480}
                         height={320}
                       />
@@ -338,12 +338,12 @@ export default function Home() {
                   </div>
                 </li>
                 {/* 特別な設備は不要 */}
-                <li className="flexItem mgb5 mgb5s">
+                <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f02.png"
+                        alt="ビールを充填している様子"
                         width={480}
                         height={320}
                       />
@@ -357,12 +357,12 @@ export default function Home() {
                   </div>
                 </li>
                 {/* そのまま */}
-                <li className="flexItem mgb5 mgb5s">
+                <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02  a-fadeUp -sc-entry-slow">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f03.png"
+                        alt="ワンウェイケグをアルコール洗浄する様子"
                         width={480}
                         height={320}
                       />
@@ -371,17 +371,17 @@ export default function Home() {
                       そのまま使える！！
                     </h3>
                     <p className="c-card--text">
-                      届いたらすぐ充填できるので、作業時間を大幅に短縮可能！！
+                      充填口をアルコール洗浄するだけですぐ充填できるので、作業時間を大幅に短縮可能！！
                     </p>
                   </div>
                 </li>
                 {/* 海外輸出の最適解！！ */}
-                <li className="flexItem mgb5s">
+                <li className="flexItem mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f04.png"
+                        alt="海外に輸入している様子"
                         width={480}
                         height={320}
                       />
@@ -395,12 +395,12 @@ export default function Home() {
                   </div>
                 </li>
                 {/* 廃棄が簡単 */}
-                <li className="flexItem mgb5s">
+                <li className="flexItem mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f05.png"
+                        alt="ワンウェイケグの廃棄方法"
                         width={480}
                         height={320}
                       />
@@ -420,8 +420,8 @@ export default function Home() {
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-slow">
                     <div className="c-img -thumbnail mgb5 mgb5s">
                       <Image
-                        src="/images/pic/480-320.png"
-                        alt=""
+                        src="/images/pic/480-320_f06.png"
+                        alt="ワンウェイケグの説明"
                         width={480}
                         height={320}
                       />
@@ -439,7 +439,7 @@ export default function Home() {
           </div>
         </div>
         {/* SC04 セレクトモールで出来ること */}
-        <div id="sc04" className={"c-contents pdt7 pdt15s"}>
+        <div id="sc04" className={"c-contents pdt10 pdt20s"}>
           <div className="c-contents--inner">
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               セレクトモール<span>で</span>出来<span>ること</span>
@@ -451,7 +451,7 @@ export default function Home() {
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
                       <Image
-                        src="/images/Lp/ver02/sc04-item01.png"
+                        src="/images/pic/480-320_keg.png"
                         alt="お客様とのお打ち合わせの様子"
                         width={480}
                         height={320}
@@ -474,8 +474,8 @@ export default function Home() {
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
                       <Image
-                        src="/images/Lp/ver02/sc04-item02.png"
-                        alt="サイトに訪れたユーザーがネットショッピングしている様子"
+                        src="/images/pic/480-320_ec.png"
+                        alt="集客に悩んでいる様子"
                         width={480}
                         height={320}
                       />
@@ -499,8 +499,8 @@ export default function Home() {
                   <li className={"flexItem mgb5s"}>
                     <div className="imgBox">
                       <Image
-                        src="/images/Lp/ver02/sc04-item03.png"
-                        alt="イベント開催している様子"
+                        src="/images/pic/480-320_mtg.png"
+                        alt="イベント企画している様子"
                         width={480}
                         height={320}
                       />
@@ -524,7 +524,7 @@ export default function Home() {
         {/* SC05 他者との比較 */}
         <div
           id="sc05"
-          className={"c-contents -bg -lp-color03 pdt7 pdt15s pdb7 pdb15s"}
+          className={"c-contents -bg -lp-color03 pdt10 pdt15s pdb10 pdb15s"}
         >
           <div className="c-contents--inner">
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
@@ -613,7 +613,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
+            <p className="s-ML -b -lp_c01 -left -ls-2">
               2.他社<span className="s-M -b">との</span>比較
             </p>
             <div className="c-contents">
@@ -626,7 +626,7 @@ export default function Home() {
         <Lp02Cta />
 
         {/* Q&A */}
-        <div id="Q&A" className={"c-contents pdt7 pdt20s pdb7 pdb15s"}>
+        <div id="Q&A" className={"c-contents pdt10 pdt20s pdb5 pdb15s"}>
           <div className={"c-contents--inner"}>
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある筆問
