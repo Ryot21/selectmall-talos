@@ -8,7 +8,7 @@ type Props = {
 export default function LpOtherMainVisual({
   title,
   mvClass,
-  animationType = "rotate",
+  animationType = "svg",
 }: Props) {
   return (
     <div className={"c-mainVisual -single"}>
