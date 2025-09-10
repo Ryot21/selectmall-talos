@@ -2,7 +2,7 @@
 type Props = {
   title: string;
   mvClass?: string;
-  animationType?: "rotate" | "slide" | "svg"; // SVGタイプを追加
+  animationType?: string;
 };
 
 export default function LpOtherMainVisual({
@@ -14,13 +14,14 @@ export default function LpOtherMainVisual({
     <div className={"c-mainVisual -single"}>
       <div className={`imgBox -${animationType}`}>
         {animationType === "svg" && (
+          // svgの場合は、svgを描画する
           <div className="slash_position">
-            <svg
+              <svg
               viewBox="0 0 1820 1080"
               preserveAspectRatio="xMidYMid slice"
-            >
+              >
               <g id="singleBg">
-                <g id="Lblue" className="line-group">
+                  <g id="Lblue" className="line-group">
                   <line x1="630.8" y1="894.3" x2="476.3" y2="1048.8" />
                   <line x1="858.2" y1="823.9" x2="1012.7" y2="669.4" />
                   {/* <line x1="1066.9" y1="458.2" x2="912.4" y2="612.7" /> */}
@@ -51,8 +52,8 @@ export default function LpOtherMainVisual({
                   <line x1="821" y1="479.4" x2="975.5" y2="324.9" />
                   <line x1="1029.7" y1="113.6" x2="875.2" y2="268.2" />
                   <line x1="1257.1" y1="43.3" x2="1411.6" y2="-111.2" />
-                </g>
-                <g id="gray" className="line-group">
+                  </g>
+                  <g id="gray" className="line-group">
                   <line x1="794.4" y1="883.4" x2="639.8" y2="1037.9" />
                   <line x1="694.6" y1="834.8" x2="849.2" y2="680.3" />
                   {/* <line x1="1230.4" y1="447.3" x2="1075.9" y2="601.8" /> */}
@@ -82,8 +83,8 @@ export default function LpOtherMainVisual({
                   <line x1="657.5" y1="490.3" x2="812" y2="335.8" />
                   <line x1="1193.3" y1="102.7" x2="1038.7" y2="257.3" />
                   {/* <line x1="1093.5" y1="54.2" x2="1248.1" y2="-100.3" /> */}
-                </g>
-                <g id="Dblue" className="line-group">
+                  </g>
+                  <g id="Dblue" className="line-group">
                   <line x1="225.8" y1="1151" x2="534.9" y2="841.9" />
                   {/* <line x1="827.1" y1="1003.3" x2="518" y2="1312.3" /> */}
                   {/* <line x1="661.9" y1="714.9" x2="971" y2="405.9" /> */}
@@ -116,13 +117,13 @@ export default function LpOtherMainVisual({
                   {/* <line x1="624.8" y1="370.4" x2="933.8" y2="61.3" /> */}
                   {/* <line x1="1226" y1="222.7" x2="916.9" y2="531.7" /> */}
                   {/* <line x1="1662.1" y1="-213.4" x2="1353" y2="95.6" /> */}
-                </g>
+                  </g>
               </g>
-            </svg>
+              </svg>
           </div>
         )}
       </div>
-      <div className={"c-contentsBox -center"}>
+      <div className={"c-mainVisual--box -center"}>
         {/* ページタイトル */}
         <h1
           className={`c-page-title s-L -s20 -center -b -ls-2 ${

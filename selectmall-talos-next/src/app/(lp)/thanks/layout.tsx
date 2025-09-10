@@ -1,8 +1,8 @@
 import LpContactSheet from "@/features/lp/sheet/Contact";
 
 export const metadata = {
-  title: "マネリペ | 資料ダウンロード",
-  description: "資料ダウンロードありがとうございました。",
+  title: "お問い合わせいただき誠にありがとうございます。 | セレクトモール",
+  description: "このたびはお問合せいただき、誠にありがとうございます。3営業日を目安にセレクトモールの担当者よりご連絡いたします。",
 };
 
 type Props = {
@@ -13,5 +13,5 @@ type Props = {
 // “rotate" or "slide" or "svg" or "company"
 
 export default function RootLayout({ children }: Props) {
-  return <LpContactSheet animationType="svg" mvClass="-contact">{children}</LpContactSheet>;
+  return <LpContactSheet animationType="company" mvClass="-contact">{children}</LpContactSheet>;
 }

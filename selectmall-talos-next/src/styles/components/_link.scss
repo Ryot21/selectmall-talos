@@ -198,6 +198,32 @@
         &::after{opacity: 1;}
       }
     }
+    // ボタン > サイトカラー
+    &.-site-color {
+      position: relative;
+      background: linear-gradient(180deg, $lp-color01 50%,$lp-color02 100%);
+      border: 1px solid $lp-color01;
+      z-index: 0;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $main-color--w;
+        will-change: transform;
+        transition: all 0.3s;
+        z-index: -1;
+        opacity: 0;
+      }
+      &:hover {
+        color: $lp-color01 !important;
+        background: $main-color--w;
+        &::after{opacity: 1;}
+      }
+    }
 
     // ボタン > アイコンあり
     &.-icon {

@@ -3,7 +3,7 @@ import LpOtherMainVisual from "@/features/lp/mainVisual/Others";
 
 type Props = {
     children: React.ReactNode;
-    animationType?: "rotate" | "slide" | "svg"; // SVGタイプを追加
+    animationType?: "rotate" | "slide" | "svg" | "company" | "contact" | "contact02" ; // SVGタイプを追加
     mvClass?: string;
     contentClass?: string;
 }

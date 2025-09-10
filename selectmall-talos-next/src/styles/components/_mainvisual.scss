@@ -451,4 +451,206 @@
             }
         }
     }
+
+    // ===================== シングルページ関係 =====================
+    &.-single {//下層ページ
+        background: white;
+        border-bottom: 1px solid $lp-color01;
+        .imgBox {
+            width: 100lvw;
+            height: 20vh;
+            max-height: 190px !important;
+            // background: linear-gradient(
+            //     220deg,
+            //     $lp-color03,
+            //     $lp-color02
+            // );
+            overflow: hidden;
+    
+            @include min(500) {
+                height: 20vh;
+                min-height: 340px !important;
+                max-height: 340px !important;
+            }
+            @include min(768) {height: 30vh;}
+            @include min(1200) {height: 35vh;}
+            @include min(1400) {height: 40vh;}
+
+            &.-rotate {// 回転
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    top: -50%;
+                    left: -50%;
+                    z-index: 1;
+                    background: repeating-linear-gradient(
+                        transparent,
+                        transparent 50px,
+                        rgba(255, 255, 255, 0.1) 50px,
+                        rgba(255, 255, 255, 0.1) 51px
+                    );
+                    animation: animate 20s linear infinite;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 200%;
+                    height: 200%;
+                    top: -50%;
+                    left: -50%;
+                    z-index: 2;
+                    background: repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 50px,
+                        rgba(255, 255, 255, 0.1) 50px,
+                        rgba(255, 255, 255, 0.1) 51px
+                    );
+                    animation: animate 20s linear infinite;
+                }
+            }
+            &.-slide {// スライド
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 150%;
+                    height: 150%;
+                    top: -25%;
+                    left: -25%;
+                    z-index: 1;
+                    background: repeating-linear-gradient(
+                        -45deg,
+                        transparent 0,
+                        transparent 2px,
+                        rgba(255, 255, 255, 0.1) 2px,
+                        rgba(255, 255, 255, 0.1) 4px
+                    );
+                    animation: slide 20s linear infinite;
+                }
+            }
+            &.-svg {// svg
+                .slash_position {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    stroke: #666;
+        
+                    svg {
+                        width: 100%;
+                        height: 100%;
+        
+                        .line-group {
+                        transform-origin: center;
+                        transition: transform 0.3s ease;
+                        }
+        
+                        // ブレイクポイントごとの位置調整
+                        @include max(500) {
+                        #Lblue {transform: translateX(-20%);}
+                        #blue {transform: translateX(10%);}
+                        #Dblue {transform: translateX(-10%);}
+                        }
+                        @include min(500) {
+                        #Lblue {transform: translateX(-10%);}
+                        #blue {transform: translateX(5%);}
+                        #Dblue {transform: translateX(-5%);}
+                        }
+                        @include min(768) {
+                        #Lblue {transform: translateX(0);}
+                        #blue {transform: translateX(0);}
+                        #Dblue {transform: translateX(0);}
+                        }
+        
+                        // 既存のスタイル
+                        #Dblue {
+                        fill: none;
+                        opacity: 0.15;
+                        stroke: $site-color03;
+                        stroke-width: 5;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 800;
+                        stroke-dashoffset: 800;
+                        animation: slash_line 10s ease-in-out infinite;
+                        animation-direction: reverse;
+                        }
+        
+                        #gray {
+                        fill: none;
+                        opacity: 0.15;
+                        stroke: $site-color03;
+                        stroke-width: 1;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 800;
+                        stroke-dashoffset: 800;
+                        animation: slash_line 5s ease-in-out infinite;
+                        animation-direction: reverse;
+                        }
+        
+                        #Lblue {
+                        fill: none;
+                        stroke: #5182aa12;
+                        stroke-width: 20;
+                        stroke-miterlimit: 10;
+                        stroke-dasharray: 90;
+                        stroke-dashoffset: 800;
+                        }
+        
+                        @keyframes draw {
+                        to {
+                            stroke-dashoffset: 0;
+                        }
+                        }
+        
+                        @keyframes show {
+                        0% {
+                            opacity: 0;
+                        }
+                        70% {
+                            opacity: 0;
+                        }
+                        80% {
+                            opacity: 0.2;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                        }
+        
+                        // 斜め線のアニメーション
+                        @keyframes slash_line {
+                        90% {
+                            stroke-dashoffset: 0;
+                        }
+                        100% {
+                            stroke-dashoffset: -800;
+                        }
+                        }
+                    }
+                }
+            }
+            &.-company {// 会社
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: url(/images/bg/company-bg.png) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+        }
+        .c-mainVisual--box {
+            &.-title {// h1_タイトル
+                top: 62%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include min(500) {top: 62%;}
+                @include min(768) {top: 58%;}
+            }
+        }
+    }
 }

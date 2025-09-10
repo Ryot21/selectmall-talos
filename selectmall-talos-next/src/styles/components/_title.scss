@@ -277,3 +277,37 @@
     max-width: 100px;
     filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.32)) !important;
 }
+
+// 各ページ > ファーストビュー内のタイトル
+.c-page-title{
+    color: $lp-color01;
+    display: inline-block;
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include min(500){top: 59%;}
+
+    &::before{
+        position: absolute;
+        bottom: -55%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $lp-color01;
+        font-size: 1rem;
+        letter-spacing: .3rem;
+        white-space: nowrap;
+        @include min(500){
+            bottom: -55%;
+        }
+
+    }
+    &.-contact    {&::before{content: "- CONTACT -";}}
+    &.-contact02  {&::before{content: "- REQUEST FOR INFORMATION -"; white-space: nowrap;}}
+    &.-notFound   {&::before{content: "- 404 NOT FOUND -"; white-space: nowrap;}}//エラーページ
+    // 固定ページ
+    &.-company    {&::before{content: "- COMPANY -"; white-space: nowrap;}}// 会社概要
+    &.-rules      {&::before{content: "-TERMS OF RULES -"; white-space: nowrap;}}// 利用規約
+    &.-privacyPolicy{&::before{content: "- PRIVACY POLICY -"; white-space: nowrap;}}// プライバシーポリシー
+    &.-solicitationPolicy{&::before{content: "- SOLICITATION POLICY -"; white-space: nowrap;}}// 勧誘方針
+}
