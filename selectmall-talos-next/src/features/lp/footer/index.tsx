@@ -37,10 +37,10 @@ export default function LpFooter() {
             </li>
             <li className={"LpnavItem"}>
               <Link
-                href="#sc04"
+                href="#sc05"
                 className={`c-fnav--link s-M -b -white -ls-2 -ws-n`}
               >
-                よくある質問
+                比較
               </Link>
             </li>
           </ul>

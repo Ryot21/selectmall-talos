@@ -66,7 +66,7 @@ export default function LpHeader() {
                         {/* #sc04 - よくある質問 */}
                         <li className={"hnavItem"}>
                           <Link
-                            href="/#Q&A"
+                            href="#Q&A"
                             className={`c-hnav--link s-M -s13 -b -ls-1 -ws-n`}
                           >
                             よくある質問
@@ -82,7 +82,7 @@ export default function LpHeader() {
                   </li>
                   {/* 資料ダウンロード */}
                   <li className={"navItem"}>
-                    <Iconbutton href="/lp02#cta" customClass="cvBtn -orange">
+                    <Iconbutton href="#cta" customClass="cvBtn -orange">
                       <span className="pc">資料ダウンロード</span>
                       <Image
                         src="/images/SVG/download.svg"
@@ -95,7 +95,7 @@ export default function LpHeader() {
                   </li>
                   {/* お問い合わせはこちら */}
                   <li className={"navItem"}>
-                    <Iconbutton href="/lp02#cta" customClass="cvBtn -lpColor01">
+                    <Iconbutton href="#cta" customClass="cvBtn -lpColor01">
                       <span className="pc">
                         お問い合わせはこちら
                       </span>
