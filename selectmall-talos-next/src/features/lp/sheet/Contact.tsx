@@ -1,5 +1,5 @@
 // 共通レイアウト
-import LpOtherMainVisual from "@/features/lp02/mainVisual/Others";
+import LpOtherMainVisual from "@/features/lp/mainVisual/Others";
 
 type Props = {
     children: React.ReactNode;

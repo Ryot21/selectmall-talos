@@ -3,12 +3,12 @@ import Image from "next/image";
 import React from "react";
 
 // コンポーネント
-import LpMainVisual from "@/features/lp02/mainVisual";
-import ScrollContainer from "@/features/lp02/scrollContainer";
+import LpMainVisual from "@/features/lp/mainVisual";
+import ScrollContainer from "@/features/lp/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
 // import LogoMark from "@/components/lottie/LogoMark";
 
-import Lp02Cta from "@/features/lp02/cta";
+import Lp02Cta from "@/features/lp/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
 
 // 投稿関係
@@ -460,7 +460,8 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t01 mgb1 mgb3s">
-                      お客様に合わせたワンウェイケグをご提案！
+                      ワンウェイケグ・充填機を含め、<br/>
+                      パッケージでのご提案も可能！！
                     </h3>
                     <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                       お客様のブランドイメージや販売戦略に最適なビールケグをご提案。数量、容量、ラベルデザインを細かくカスタマイズし、コスト削減と品質向上を同時に実現します。

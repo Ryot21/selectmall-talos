@@ -1,5 +1,5 @@
 // import styles from "@/app/not-found.module.scss";
-import LpOtherMainVisual from "@/features/lp02/mainVisual/Others";
+import LpOtherMainVisual from "@/features/lp/mainVisual/Others";
 import Button from "@/components/elements/button";
 
 export default function NotFound() {

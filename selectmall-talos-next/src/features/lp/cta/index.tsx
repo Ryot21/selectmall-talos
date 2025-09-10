@@ -5,7 +5,7 @@ import CardContactForm from "@/components/elements/form/Card02";
 
 export default function Lp02Cta() {
   return (
-    <div id="cta" className="c-contents -Lp02Cta pdt7 pdt15s pdb7 pdb15s">
+    <div id="cta" className="c-contents -Lp02Cta pdt7 pdt15s pdb7 pdb20s">
       <div className="c-contents--inner">
         <ul className="c-flex -col1_2 -pc1_2 -h-top -jc-sb">
           <li className="flexItem mgb10s" style={{ zIndex: 3 }}>

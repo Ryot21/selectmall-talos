@@ -37,7 +37,8 @@ export default function CardContactForm({ customClass }: FormProps) {
     name: "",
     phone: "",
     email: "",
-    considerationStage: "",
+    considerationStage: [],
+    question: "",
   });
 
   // プライバシーポリシーの同意状態
@@ -81,9 +82,32 @@ export default function CardContactForm({ customClass }: FormProps) {
     []
   );
 
+  // マルチセレクト用のハンドラー
+  const handleMultiSelectChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, checked } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        considerationStage: checked
+          ? [...prev.considerationStage, value]
+          : prev.considerationStage.filter((item) => item !== value),
+      }));
+    },
+    []
+  );
+
   // フォームの有効性をメモ化
   const isFormValidMemo = useMemo(() => {
-    const { purpose, company, name, post, department, phone, email } = formData;
+    const {
+      purpose,
+      company,
+      name,
+      post,
+      department,
+      phone,
+      email,
+      considerationStage,
+    } = formData;
     return (
       purpose.trim() !== "" &&
       company.trim() !== "" &&
@@ -92,6 +116,7 @@ export default function CardContactForm({ customClass }: FormProps) {
       department.trim() !== "" &&
       phone.trim() !== "" &&
       email.trim() !== "" &&
+      considerationStage.length > 0 &&
       isAgreed &&
       !errors.phone &&
       !errors.email
@@ -130,7 +155,11 @@ export default function CardContactForm({ customClass }: FormProps) {
     try {
       const formDataToSubmit = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        formDataToSubmit.append(key, value);
+        if (Array.isArray(value)) {
+          formDataToSubmit.append(key, value.join(", "));
+        } else {
+          formDataToSubmit.append(key, value);
+        }
       });
 
       // Newtのフォームエンドポイントに送信
@@ -159,16 +188,17 @@ export default function CardContactForm({ customClass }: FormProps) {
         department: "",
         phone: "",
         email: "",
-        considerationStage: "",
+        considerationStage: [],
+        question: "",
       });
       setIsAgreed(false);
 
       // gclidを取得してサンクスページに引き継ぐ
       const gclid = getGclid();
       if (gclid) {
-        router.push(`/lp02/thanks?gclid=${encodeURIComponent(gclid)}`);
+        router.push(`/thanks?gclid=${encodeURIComponent(gclid)}`);
       } else {
-        router.push("/lp02/thanks");
+        router.push("/thanks");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -200,16 +230,25 @@ export default function CardContactForm({ customClass }: FormProps) {
   if (step === "confirm") {
     return (
       <div className="c-card -t05">
-        <Image
+        {/* <Image
           src="/images/SVG/Lp/ver02/contact-label.svg"
           alt="3分でわかる資料ダウンロード"
           width={334}
           height={50}
-        />
+        /> */}
+        <h3 className="s-ML -b -center -ls-2 -lh-1_5 pdt4 pdb4 pdl3 pdr3 pdt4s pdb4s pdl4s pdr3s">内容確認</h3>
         <div className="c-card--inner">
           <div className={`c-form ${customClass}`}>
             <table className="c-form--inner">
               <tbody>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">気になる商材</th>
+                  <td>
+                    <p className="s-SS -s12 -ls-2">
+                      {formData.considerationStage.join(", ")}
+                    </p>
+                  </td>
+                </tr>
                 <tr>
                   <th className="s-S -s16 -b -ls-2">目的</th>
                   <td>
@@ -222,18 +261,12 @@ export default function CardContactForm({ customClass }: FormProps) {
                     <p className="s-SS -s12 -ls-2">{formData.company}</p>
                   </td>
                 </tr>
-                {/* <tr>
-                  <th className="s-S -s16 -b -ls-2">役職・部署</th>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">役職・部署・ご担当者名</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">
-                      {formData.post} {formData.department}
+                      {formData.post} {formData.department} {formData.name}
                     </p>
-                  </td>
-                </tr> */}
-                <tr>
-                  <th className="s-S -s16 -b -ls-2">ご担当者名</th>
-                  <td>
-                    <p className="s-SS -s12 -ls-2">{formData.name}</p>
                   </td>
                 </tr>
                 <tr>
@@ -248,14 +281,14 @@ export default function CardContactForm({ customClass }: FormProps) {
                     <p className="s-SS -s12 -ls-2">{formData.email}</p>
                   </td>
                 </tr>
-                {/* <tr>
-                  <th className="s-S -s16 -b -ls-2">検討段階</th>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">ご質問</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">
-                      {formData.considerationStage}
+                      {formData.question || "なし"}
                     </p>
                   </td>
-                </tr> */}
+                </tr>
               </tbody>
             </table>
 
@@ -296,6 +329,70 @@ export default function CardContactForm({ customClass }: FormProps) {
           onSubmit={handleConfirm}
           method="POST"
         >
+          {/* 気になる商材 */}
+          <div className="c-form--item -radioBtn">
+            <ul className="c-flex -radio">
+              <li className="flexItem">
+                <p className="s-SS -b -left -ls-2" style={{ paddingTop: 2 }}>
+                  気になる
+                  <br />
+                  ケグ
+                </p>
+              </li>
+              <li className="flexItem">
+                <div className="c-flex -jc-end">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="単層"
+                      checked={formData.considerationStage.includes("単層")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>単層</pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="T-KEG"
+                      checked={formData.considerationStage.includes("T-KEG")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>T-KEG</pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="BREWJET"
+                      checked={formData.considerationStage.includes("BREWJET")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>
+                      BREW
+                      <br />
+                      JET
+                    </pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="TOPPER"
+                      checked={formData.considerationStage.includes("TOPPER")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>
+                      TOP
+                      <br />
+                      PER
+                    </pre>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
           {/* 目的 */}
           <div className="c-form--item">
             <select
@@ -306,6 +403,7 @@ export default function CardContactForm({ customClass }: FormProps) {
               required
             >
               <option value="">選択して下さい</option>
+              <option value="見積請求">見積請求</option>
               <option value="資料ダウンロード">資料ダウンロード</option>
               <option value="お問い合わせ">お問い合わせ</option>
             </select>
@@ -324,7 +422,7 @@ export default function CardContactForm({ customClass }: FormProps) {
             />
             <span>会社名</span>
           </div>
-          {/* <ul className="c-flex -col2 -jc-sb">
+          <ul className="c-flex -col2 -jc-sb">
             <li className="flexItem">
               <div className="c-form--item">
                 <select
@@ -339,7 +437,6 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <option value="部長">部長</option>
                   <option value="課長">課長</option>
                   <option value="担当者">担当者</option>
-                  <option value="その他">その他</option>
                 </select>
                 <span>役職</span>
               </div>
@@ -355,16 +452,16 @@ export default function CardContactForm({ customClass }: FormProps) {
                 >
                   <option value="">選択してください</option>
                   <option value="営業部">営業部</option>
-                  <option value="総務部">総務部</option>
-                  <option value="人事部">人事部</option>
-                  <option value="経理部">経理部</option>
-                  <option value="情報システム部">情報システム部</option>
+                  <option value="醸造部">醸造部</option>
+                  <option value="品質管理部">品質管理部</option>
+                  <option value="マーケティング部">マーケティング部</option>
+                  <option value="店舗スタッフ">店舗運営/スタッフ</option>
                   <option value="その他">その他</option>
                 </select>
                 <span>部署名</span>
               </div>
             </li>
-          </ul> */}
+          </ul>
           {/* ご担当者名 */}
           <div className="c-form--item">
             <input
@@ -412,59 +509,18 @@ export default function CardContactForm({ customClass }: FormProps) {
               <p className="s-SS -error mgt1 mgt1s">{errors.email}</p>
             )}
           </div>
-          {/* 検討段階 */}
-          {/* <div className="c-form--item -radioBtn">
-            <ul className="c-flex -radio">
-              <li className="flexItem">
-                <p className="s-SS -b -left -ls-2" style={{ paddingTop: 8 }}>
-                  検討段階
-                </p>
-              </li>
-              <li className="flexItem">
-                <div className="c-flex -jc-end">
-                  <label>
-                    <input
-                      type="radio"
-                      name="considerationStage"
-                      value="情報収集中"
-                      checked={formData.considerationStage === "情報収集中"}
-                      onChange={handleChange}
-                      required
-                    />{" "}
-                    <pre>調べ中</pre>
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="considerationStage"
-                      value="検討中"
-                      checked={formData.considerationStage === "検討中"}
-                      onChange={handleChange}
-                      required
-                    />{" "}
-                    <pre>検討中</pre>
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="considerationStage"
-                      value="すぐに導入したい"
-                      checked={
-                        formData.considerationStage === "すぐに導入したい"
-                      }
-                      onChange={handleChange}
-                      required
-                    />{" "}
-                    <pre>
-                      すぐに
-                      <br />
-                      導入したい！
-                    </pre>
-                  </label>
-                </div>
-              </li>
-            </ul>
-          </div> */}
+          {/* ご質問 */}
+          <div className="c-form--item">
+            <textarea
+              id="question"
+              name="question"
+              value={formData.question}
+              onChange={handleChange}
+              placeholder=" "
+              rows={4}
+            />
+            <span>ご質問</span>
+          </div>
           {/* 送信ボタン */}
           <div id="chk_policy" className="c-form--consent">
             <p id="error" className={!isAgreed ? "visible" : "hidden"}>
