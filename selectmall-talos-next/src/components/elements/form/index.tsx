@@ -404,7 +404,7 @@ export default function ContactForm({ customClass }: FormProps) {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="株式会社インプレーム"
+                      placeholder="セレクトモール株式会社"
                     />
                   </td>
                 </tr>
@@ -458,7 +458,7 @@ export default function ContactForm({ customClass }: FormProps) {
                       name="firstname"
                       value={formData.firstname}
                       onChange={handleChange}
-                      placeholder="インプレーム 太郎"
+                      placeholder="セレクトモール 太郎"
                     />
                   </td>
                 </tr>

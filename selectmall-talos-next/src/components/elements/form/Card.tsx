@@ -17,7 +17,7 @@ import type {
 export default function CardContactForm({ customClass }: FormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const type = searchParams.get("type");
+  const type = searchParams.get("type") as "download" | "contact" | null;
   // フォームの状態管理
   const [step, setStep] = useState<FormStep>("input");
   // 送信状態の管理
@@ -27,8 +27,11 @@ export default function CardContactForm({ customClass }: FormProps) {
   const [formData, setFormData] = useState<LpHubspotFormData>({
     keg: [],
     mokuteki:
-      type === "download" ? "資料ダウンロード" : 
-      type === "contact" ? "お問い合わせ" : "",
+      type === "download"
+        ? "資料ダウンロード"
+        : type === "contact"
+        ? "お問い合わせ"
+        : "",
     name: "",
     post: "",
     department: "",
@@ -152,27 +155,55 @@ export default function CardContactForm({ customClass }: FormProps) {
     if (!isFormValid) return;
 
     try {
-      const formDataToSubmit = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          formDataToSubmit.append(key, value.join(", "));
-        } else {
-          formDataToSubmit.append(key, value);
-        }
-      });
+      // HubSpot APIに合わせてJSONで送信
+      const fields = [
+        { objectTypeId: "0-1", name: "email", value: formData.email },
+        { objectTypeId: "0-1", name: "firstname", value: formData.firstname },
+        // 会社名はCompanyオブジェクトのname
+        { objectTypeId: "0-2", name: "name", value: formData.name },
+        { objectTypeId: "0-1", name: "phone", value: formData.phone },
+        { objectTypeId: "0-1", name: "post", value: formData.post },
+        { objectTypeId: "0-1", name: "department", value: formData.department },
+        { objectTypeId: "0-1", name: "mokuteki", value: formData.mokuteki },
+        { objectTypeId: "0-1", name: "keg", value: formData.keg.join(", ") },
+        // HubSpot側必須に合わせて常時送信
+        { objectTypeId: "0-1", name: "content", value: formData.content },
+      ];
 
-      // Newtのフォームエンドポイントに送信
+      const hubspotPayload = {
+        fields,
+        context: {
+          pageUri: typeof window !== "undefined" ? window.location.href : "",
+          pageName: typeof document !== "undefined" ? document.title : "",
+        },
+      };
+
+      // クライアントから参照するためNEXT_PUBLIC_* を使用
+      const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
+      const formId = process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID;
+
+      if (!portalId || !formId) {
+        console.warn(
+          "HubSpotの環境変数が未設定です。NEXT_PUBLIC_HUBSPOT_PORTAL_ID / NEXT_PUBLIC_HUBSPOT_FORM_GUID を.env.localに設定してください。"
+        );
+      }
+
       const response = await fetch(
-        "https://money-repair.form.newt.so/v1/9v5NPwe1M",
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
         {
           method: "POST",
-          body: formDataToSubmit,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(hubspotPayload),
         }
       );
 
       if (!response.ok) {
-        throw new Error("送信に失敗しました");
+        const err = await response.json().catch(() => ({}));
+        console.error("HubSpot API Error:", err);
+        throw new Error(`送信に失敗しました: ${response.status}`);
       }
+
+      await response.json().catch(() => ({}));
 
       setSubmitStatus({
         status: "success",
@@ -181,7 +212,12 @@ export default function CardContactForm({ customClass }: FormProps) {
 
       setFormData({
         keg: [],
-        mokuteki: "",
+        mokuteki:
+          type === "download"
+            ? "資料ダウンロード"
+            : type === "contact"
+            ? "お問い合わせ"
+            : "",
         name: "",
         post: "",
         department: "",
@@ -245,9 +281,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                 <tr>
                   <th className="s-S -s16 -b -ls-2">気になる商材</th>
                   <td>
-                    <p className="s-SS -s12 -ls-2">
-                      {formData.keg.join(", ")}
-                    </p>
+                    <p className="s-SS -s12 -ls-2">{formData.keg.join(", ")}</p>
                   </td>
                 </tr>
                 <tr>
@@ -398,7 +432,7 @@ export default function CardContactForm({ customClass }: FormProps) {
           <div className="c-form--item">
             <select
               id="purpose"
-              name="purpose"
+              name="mokuteki"
               value={formData.mokuteki}
               onChange={handleChange}
               required
@@ -415,7 +449,7 @@ export default function CardContactForm({ customClass }: FormProps) {
             <input
               id="company"
               type="text"
-              name="company"
+              name="name"
               value={formData.name}
               onChange={handleChange}
               placeholder=" "
@@ -468,7 +502,7 @@ export default function CardContactForm({ customClass }: FormProps) {
             <input
               id="name"
               type="text"
-              name="name"
+              name="firstname"
               value={formData.firstname}
               onChange={handleChange}
               placeholder=" "
@@ -514,7 +548,7 @@ export default function CardContactForm({ customClass }: FormProps) {
           <div className="c-form--item">
             <textarea
               id="question"
-              name="question"
+              name="content"
               value={formData.content}
               onChange={handleChange}
               placeholder=" "

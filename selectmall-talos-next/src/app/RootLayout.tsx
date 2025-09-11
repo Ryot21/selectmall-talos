@@ -19,7 +19,7 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           type="image/png"
-          href="images/sns/apple-touch-icon-impreme.jpg"
+          href="images/sns/ogp_1200_630.png"
         />
       </head>
       <body suppressHydrationWarning>{children}</body>

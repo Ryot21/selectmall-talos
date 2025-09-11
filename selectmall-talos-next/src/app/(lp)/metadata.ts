@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://selectmall-talos.jp/"),
   title: {
-    template: "TALOS | ワンウェイケグ - %s",
-    default: "TALOS | ワンウェイケグ",
+    template: "TALOS（タロス） | ワンウェイケグ - %s",
+    default: "TALOS（タロス） | ワンウェイケグ",
   },
   description:
     "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     siteName: "セレクトモール",
-    title: "TALOS | ワンウェイケグ",
+    title: "TALOS（タロス） | ワンウェイケグ",
     description:
       "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
     images: ["/images/sns/ogp_1200_630.png"],
