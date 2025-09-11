@@ -288,12 +288,22 @@
         border: none;
       }
       th {
+        position: relative;
         width: 100%;
-        background-image: linear-gradient(325deg, #e4ebf445, #e4ebf480);
+        background-image: linear-gradient(325deg, #ffffff, $lp-color03);
         font-size: 1.2rem;
         text-align: left;
         letter-spacing: 0.2rem;
-        padding: 10px 6px 5px;
+        padding: 5px 6px 5px;
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: $lp-color01;
+        }
       }
       td {
         font-size: 1rem;
@@ -389,11 +399,12 @@
             padding: 0 0.5em;
           }
         }
-        &.-radioBtn {
+        &.-radioBtn,
+        &.-selectBtn {
           label {
             position: relative;
             display: block;
-            width: calc(33.333% - 1rem);
+            width: calc(25% - 1rem);
             height: 33px;
             text-align: center;
             cursor: pointer;
@@ -403,8 +414,9 @@
             border-radius: 3px;
             transition: all .3s;
             &:nth-child(1){margin-right: 1rem;}
-            &:nth-child(2){margin: 0 .5rem;}
-            &:nth-child(3){margin-left: 1rem;}
+            &:nth-child(2){margin-right: .5rem;}
+            &:nth-child(3){margin-left: .5rem;}
+            &:nth-child(4){margin-left: 1rem;}
             pre {
               position: absolute;
               top: 50%;
@@ -417,7 +429,8 @@
               font-weight: bold;
               letter-spacing: 0.1rem;
             }
-            input[type="radio"] {
+            input[type="radio"],
+            input[type="checkbox"] {
               display: none;
             }
             // ホバー時

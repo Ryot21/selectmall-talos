@@ -558,13 +558,13 @@
   &.-t05 {// LP_お問い合わせなどに使用
     width: 100%;
     background: $lp-color03;
-    border: 2px solid $lp-color03;
+    border: 2px solid $lp-color01;
     border-radius: 15px;
     .c-card--inner {
       background: white;
       padding: 15px;
-      @include min(768) {padding: 10px;}
-      @include min(1280) {padding: 20px;}
+      @include min(768) {padding: 15px 10px 10px 10px;}
+      @include min(1280) {padding: 25px 20px 20px 20px;}
     }
     .c-card--label{
       margin-bottom: 15px;
