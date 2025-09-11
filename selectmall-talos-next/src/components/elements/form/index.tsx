@@ -17,7 +17,6 @@ import type {
   Props as FormProps,
 } from "@/types/form";
 
-
 export default function ContactForm({ customClass }: FormProps) {
   const router = useRouter();
   // フォームの状態管理（入力・確認・完了の3ステップ）
@@ -33,8 +32,11 @@ export default function ContactForm({ customClass }: FormProps) {
   const [formData, setFormData] = useState<LpHubspotFormData>({
     keg: [],
     mokuteki:
-      type === "download" ? "資料ダウンロード" : 
-      type === "contact" ? "お問い合わせ" : "",
+      type === "download"
+        ? "資料ダウンロード"
+        : type === "contact"
+        ? "お問い合わせ"
+        : "",
     name: "",
     post: "",
     department: "",
@@ -81,19 +83,19 @@ export default function ContactForm({ customClass }: FormProps) {
     setErrors((prev) => ({ ...prev, [name]: error }));
   }, []);
 
-    // マルチセレクト用のハンドラー
-    const handleMultiSelectChange = useCallback(
-      (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { value, checked } = e.target;
-        setFormData((prev) => ({
-          ...prev,
-          keg: checked
-            ? [...prev.keg, value]
-            : prev.keg.filter((item) => item !== value),
-        }));
-      },
-      []
-    );
+  // マルチセレクト用のハンドラー
+  const handleMultiSelectChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, checked } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        keg: checked
+          ? [...prev.keg, value]
+          : prev.keg.filter((item) => item !== value),
+      }));
+    },
+    []
+  );
 
   // フォームの有効性をメモ化
   const isFormValidMemo = useMemo(() => {
@@ -223,7 +225,9 @@ export default function ContactForm({ customClass }: FormProps) {
                   <tr>
                     <th className="s-M -s16 -b -ls-2">気になるケグ</th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.keg.join(", ")}</p>
+                      <p className="s-S -s12 -ls-2">
+                        {formData.keg.join(", ")}
+                      </p>
                     </td>
                   </tr>
                   <tr>
@@ -239,9 +243,14 @@ export default function ContactForm({ customClass }: FormProps) {
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">役職・部署・ご担当者名</th>
+                    <th className="s-M -s16 -b -ls-2">
+                      役職・部署・ご担当者名
+                    </th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.post} {formData.department} {formData.firstname}</p>
+                      <p className="s-S -s12 -ls-2">
+                        {formData.post} {formData.department}{" "}
+                        {formData.firstname}
+                      </p>
                     </td>
                   </tr>
                   <tr>
@@ -259,7 +268,9 @@ export default function ContactForm({ customClass }: FormProps) {
                   <tr>
                     <th className="s-M -s16 -b -ls-2">お問い合わせ内容</th>
                     <td style={{ whiteSpace: "pre-wrap" }}>
-                      <p className="s-S -s12 -ls-2">{formData.content || "なし"}</p>
+                      <p className="s-S -s12 -ls-2">
+                        {formData.content || "なし"}
+                      </p>
                     </td>
                   </tr>
                 </tbody>
@@ -317,7 +328,10 @@ export default function ContactForm({ customClass }: FormProps) {
                 <tr>
                   <th className="s-M -s14 -b -ls-2">気になるケグ</th>
                   <td>
-                    <div className="c-flex -jc-start -ai-center" style={{ gap: 16 }}>
+                    <div
+                      className="c-flex -jc-start -ai-center"
+                      style={{ gap: 16 }}
+                    >
                       <label>
                         <input
                           type="checkbox"
@@ -325,7 +339,8 @@ export default function ContactForm({ customClass }: FormProps) {
                           value="単層"
                           checked={formData.keg.includes("単層")}
                           onChange={handleMultiSelectChange}
-                        /> 単層
+                        />{" "}
+                        単層
                       </label>
                       <label>
                         <input
@@ -334,7 +349,8 @@ export default function ContactForm({ customClass }: FormProps) {
                           value="T-KEG"
                           checked={formData.keg.includes("T-KEG")}
                           onChange={handleMultiSelectChange}
-                        /> T-KEG
+                        />{" "}
+                        T-KEG
                       </label>
                       <label>
                         <input
@@ -343,7 +359,8 @@ export default function ContactForm({ customClass }: FormProps) {
                           value="BREWJET"
                           checked={formData.keg.includes("BREWJET")}
                           onChange={handleMultiSelectChange}
-                        /> BREWJET
+                        />{" "}
+                        BREWJET
                       </label>
                       <label>
                         <input
@@ -352,7 +369,8 @@ export default function ContactForm({ customClass }: FormProps) {
                           value="TOPPER"
                           checked={formData.keg.includes("TOPPER")}
                           onChange={handleMultiSelectChange}
-                        /> TOPPER
+                        />{" "}
+                        TOPPER
                       </label>
                     </div>
                   </td>
@@ -529,7 +547,9 @@ export default function ContactForm({ customClass }: FormProps) {
                     onChange={handleCheckboxChange}
                     value="1"
                   />
-                  <label className="required" htmlFor="checkbox"><span>同意する</span></label>
+                  <label className="required" htmlFor="checkbox">
+                    <span>同意する</span>
+                  </label>
                 </div>
               </div>
               <p className="mgb5 mgb10s">
@@ -546,7 +566,9 @@ export default function ContactForm({ customClass }: FormProps) {
                 <button
                   type="submit"
                   value="確認する"
-                  className={`c-link -btn -maru -orange -center s-M -s14 -b -ls-2 ${!isFormValid ? "disabled" : ""}`}
+                  className={`c-link -btn -maru -orange -center s-M -s14 -b -ls-2 ${
+                    !isFormValid ? "disabled" : ""
+                  }`}
                   id="submit"
                   disabled={!isFormValid}
                 >
