@@ -26,7 +26,11 @@ export default function ContactForm({ customClass }: FormProps) {
 
   // URLパラメータから問い合わせ種別を取得（資料ダウンロード or お問い合わせ）
   const searchParams = useSearchParams();
-  const type = searchParams.get("type");
+  const type = searchParams.get("type") as
+    | "download"
+    | "contact"
+    | "request"
+    | null;
 
   // フォームの入力値を管理
   const [formData, setFormData] = useState<LpHubspotFormData>({
@@ -36,10 +40,13 @@ export default function ContactForm({ customClass }: FormProps) {
         ? "資料ダウンロード"
         : type === "contact"
         ? "お問い合わせ"
+        : type === "request"
+        ? "見積請求"
         : "",
-    name: "",
+    company: "",
     post: "",
     department: "",
+    lastname: "",
     firstname: "",
     phone: "",
     email: "",
@@ -112,23 +119,37 @@ export default function ContactForm({ customClass }: FormProps) {
     if (!isFormValid) return;
 
     try {
-      // FormDataオブジェクトの作成
-      const formDataToSubmit = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          formDataToSubmit.append(key, value.join(", "));
-        } else {
-          formDataToSubmit.append(key, value);
-        }
-      });
+      // HubSpot Submissions API へJSONで送信
+      const fields = [
+        { objectTypeId: "0-1", name: "email", value: formData.email },
+        { objectTypeId: "0-1", name: "lastname", value: formData.lastname },
+        { objectTypeId: "0-1", name: "firstname", value: formData.firstname },
+        { objectTypeId: "0-1", name: "phone", value: formData.phone },
+        { objectTypeId: "0-1", name: "company", value: formData.company },
+        { objectTypeId: "0-1", name: "post", value: formData.post },
+        { objectTypeId: "0-1", name: "department", value: formData.department },
+        { objectTypeId: "0-1", name: "keg", value: formData.keg.join(", ") },
+        { objectTypeId: "0-1", name: "mokuteki", value: formData.mokuteki },
+        { objectTypeId: "0-1", name: "content", value: formData.content },
+      ];
 
-      // Newtのフォームエンドポイントに送信
-      // https://app.newt.so/money-repair-media/apps/contact
+      const payload = {
+        fields,
+        context: {
+          pageUri: typeof window !== "undefined" ? window.location.href : "",
+          pageName: typeof document !== "undefined" ? document.title : "",
+        },
+      };
+
+      const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
+      const formId = process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID;
+
       const response = await fetch(
-        "https://money-repair-media.form.newt.so/v1/YktRisGz0",
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
         {
           method: "POST",
-          body: formDataToSubmit,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
         }
       );
 
@@ -144,10 +165,18 @@ export default function ContactForm({ customClass }: FormProps) {
       // フォームの初期化
       setFormData({
         keg: [],
-        mokuteki: "",
-        name: "",
+        mokuteki:
+          type === "download"
+            ? "資料ダウンロード"
+            : type === "contact"
+            ? "お問い合わせ"
+            : type === "request"
+            ? "見積請求"
+            : "",
+        company: "",
         post: "",
         department: "",
+        lastname: "",
         firstname: "",
         phone: "",
         email: "",
@@ -239,7 +268,7 @@ export default function ContactForm({ customClass }: FormProps) {
                   <tr>
                     <th className="s-M -s16 -b -ls-2">会社名</th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.name}</p>
+                      <p className="s-S -s12 -ls-2">{formData.company}</p>
                     </td>
                   </tr>
                   <tr>
@@ -249,6 +278,7 @@ export default function ContactForm({ customClass }: FormProps) {
                     <td>
                       <p className="s-S -s12 -ls-2">
                         {formData.post} {formData.department}{" "}
+                        {formData.lastname}
                         {formData.firstname}
                       </p>
                     </td>
@@ -401,8 +431,8 @@ export default function ContactForm({ customClass }: FormProps) {
                     <input
                       id="company"
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="company"
+                      value={formData.company}
                       onChange={handleChange}
                       placeholder="セレクトモール株式会社"
                     />
@@ -448,18 +478,32 @@ export default function ContactForm({ customClass }: FormProps) {
                     </select>
                   </td>
                 </tr>
-                {/* ご担当者名 */}
+                {/* 姓・名 */}
                 <tr>
                   <th className="required s-M -s14 -b -ls-2">ご担当者名</th>
                   <td>
-                    <input
-                      id="name"
-                      type="text"
-                      name="firstname"
-                      value={formData.firstname}
-                      onChange={handleChange}
-                      placeholder="セレクトモール 太郎"
-                    />
+                    <div className="c-flex -col2 -jc-sb">
+                      <div className="flexItem">
+                        <input
+                          id="lastname"
+                          type="text"
+                          name="lastname"
+                          value={formData.lastname}
+                          onChange={handleChange}
+                          placeholder="山田"
+                        />
+                      </div>
+                      <div className="flexItem">
+                        <input
+                          id="firstname"
+                          type="text"
+                          name="firstname"
+                          value={formData.firstname}
+                          onChange={handleChange}
+                          placeholder="太郎"
+                        />
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 {/* 電話番号 */}

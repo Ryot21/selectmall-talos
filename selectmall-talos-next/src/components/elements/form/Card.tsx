@@ -17,7 +17,12 @@ import type {
 export default function CardContactForm({ customClass }: FormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const type = searchParams.get("type") as "download" | "contact" | null;
+  const type = searchParams.get("type") as
+    | "download"
+    | "contact"
+    | "request"
+    | null;
+
   // フォームの状態管理
   const [step, setStep] = useState<FormStep>("input");
   // 送信状態の管理
@@ -32,9 +37,10 @@ export default function CardContactForm({ customClass }: FormProps) {
         : type === "contact"
         ? "お問い合わせ"
         : "",
-    name: "",
+    company: "",
     post: "",
     department: "",
+    lastname: "",
     firstname: "",
     phone: "",
     email: "",
@@ -101,9 +107,10 @@ export default function CardContactForm({ customClass }: FormProps) {
     const {
       keg,
       mokuteki,
-      name,
+      company,
       post,
       department,
+      lastname,
       firstname,
       phone,
       email,
@@ -112,9 +119,10 @@ export default function CardContactForm({ customClass }: FormProps) {
     return (
       keg.length > 0 &&
       mokuteki.trim() !== "" &&
-      name.trim() !== "" &&
+      company.trim() !== "" &&
       post.trim() !== "" &&
       department.trim() !== "" &&
+      lastname.trim() !== "" &&
       firstname.trim() !== "" &&
       phone.trim() !== "" &&
       email.trim() !== "" &&
@@ -158,14 +166,14 @@ export default function CardContactForm({ customClass }: FormProps) {
       // HubSpot APIに合わせてJSONで送信
       const fields = [
         { objectTypeId: "0-1", name: "email", value: formData.email },
+        { objectTypeId: "0-1", name: "lastname", value: formData.lastname },
         { objectTypeId: "0-1", name: "firstname", value: formData.firstname },
-        // 会社名はCompanyオブジェクトのname
-        { objectTypeId: "0-2", name: "name", value: formData.name },
         { objectTypeId: "0-1", name: "phone", value: formData.phone },
+        { objectTypeId: "0-1", name: "company", value: formData.company },
         { objectTypeId: "0-1", name: "post", value: formData.post },
         { objectTypeId: "0-1", name: "department", value: formData.department },
-        { objectTypeId: "0-1", name: "mokuteki", value: formData.mokuteki },
         { objectTypeId: "0-1", name: "keg", value: formData.keg.join(", ") },
+        { objectTypeId: "0-1", name: "mokuteki", value: formData.mokuteki },
         // HubSpot側必須に合わせて常時送信
         { objectTypeId: "0-1", name: "content", value: formData.content },
       ];
@@ -217,10 +225,13 @@ export default function CardContactForm({ customClass }: FormProps) {
             ? "資料ダウンロード"
             : type === "contact"
             ? "お問い合わせ"
+            : type === "request"
+            ? "見積請求"
             : "",
-        name: "",
+        company: "",
         post: "",
         department: "",
+        lastname: "",
         firstname: "",
         phone: "",
         email: "",
@@ -293,14 +304,14 @@ export default function CardContactForm({ customClass }: FormProps) {
                 <tr>
                   <th className="s-S -s16 -b -ls-2">会社名</th>
                   <td>
-                    <p className="s-SS -s12 -ls-2">{formData.name}</p>
+                    <p className="s-SS -s12 -ls-2">{formData.company}</p>
                   </td>
                 </tr>
                 <tr>
                   <th className="s-S -s16 -b -ls-2">役職・部署・ご担当者名</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">
-                      {formData.post} {formData.department} {formData.firstname}
+                      {formData.post} {formData.department} {formData.lastname}{formData.firstname}
                     </p>
                   </td>
                 </tr>
@@ -317,7 +328,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                   </td>
                 </tr>
                 <tr>
-                  <th className="s-S -s16 -b -ls-2">ご質問</th>
+                  <th className="s-S -s16 -b -ls-2">お問い合わせ内容</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">
                       {formData.content || "なし"}
@@ -379,7 +390,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <label>
                     <input
                       type="checkbox"
-                      name="considerationStage"
+                      name="keg"
                       value="単層"
                       checked={formData.keg.includes("単層")}
                       onChange={handleMultiSelectChange}
@@ -389,7 +400,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <label>
                     <input
                       type="checkbox"
-                      name="considerationStage"
+                      name="keg"
                       value="T-KEG"
                       checked={formData.keg.includes("T-KEG")}
                       onChange={handleMultiSelectChange}
@@ -399,7 +410,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <label>
                     <input
                       type="checkbox"
-                      name="considerationStage"
+                      name="keg"
                       value="BREWJET"
                       checked={formData.keg.includes("BREWJET")}
                       onChange={handleMultiSelectChange}
@@ -413,7 +424,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <label>
                     <input
                       type="checkbox"
-                      name="considerationStage"
+                      name="keg"
                       value="TOPPER"
                       checked={formData.keg.includes("TOPPER")}
                       onChange={handleMultiSelectChange}
@@ -449,14 +460,15 @@ export default function CardContactForm({ customClass }: FormProps) {
             <input
               id="company"
               type="text"
-              name="name"
-              value={formData.name}
+              name="company"
+              value={formData.company}
               onChange={handleChange}
               placeholder=" "
               required
             />
             <span>会社名</span>
           </div>
+          {/* 役職・部署名 */}
           <ul className="c-flex -col2 -jc-sb">
             <li className="flexItem">
               <div className="c-form--item">
@@ -471,7 +483,8 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <option value="代表取締役">代表取締役</option>
                   <option value="部長">部長</option>
                   <option value="課長">課長</option>
-                  <option value="担当者">担当者</option>
+                  <option value="担当者">現場・担当者</option>
+                  <option value="その他">その他</option>
                 </select>
                 <span>役職</span>
               </div>
@@ -490,26 +503,44 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <option value="醸造部">醸造部</option>
                   <option value="品質管理部">品質管理部</option>
                   <option value="マーケティング部">マーケティング部</option>
-                  <option value="店舗スタッフ">店舗運営/スタッフ</option>
+                  <option value="店舗運営・スタッフ">店舗運営・スタッフ</option>
                   <option value="その他">その他</option>
                 </select>
                 <span>部署名</span>
               </div>
             </li>
           </ul>
-          {/* ご担当者名 */}
-          <div className="c-form--item">
-            <input
-              id="name"
-              type="text"
-              name="firstname"
-              value={formData.firstname}
-              onChange={handleChange}
-              placeholder=" "
-              required
-            />
-            <span>ご担当者名</span>
-          </div>
+          {/* 姓・名 */}
+          <ul className="c-flex -col2 -jc-sb">
+            <li className="flexItem">
+              <div className="c-form--item">
+                <input
+                  id="lastname"
+                  type="text"
+                  name="lastname"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  placeholder=" "
+                  required
+                />
+                <span>姓（セイ）</span>
+              </div>
+            </li>
+            <li className="flexItem">
+              <div className="c-form--item">
+                <input
+                  id="firstname"
+                  type="text"
+                  name="firstname"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  placeholder=" "
+                  required
+                />
+                <span>名（メイ）</span>
+              </div>
+            </li>
+          </ul>
           {/* 電話番号 */}
           <div className="c-form--item">
             <input
@@ -544,17 +575,17 @@ export default function CardContactForm({ customClass }: FormProps) {
               <p className="s-SS -error mgt1 mgt1s">{errors.email}</p>
             )}
           </div>
-          {/* ご質問 */}
+          {/* お問い合わせ内容 */}
           <div className="c-form--item">
             <textarea
-              id="question"
+              id="content"
               name="content"
               value={formData.content}
               onChange={handleChange}
               placeholder=" "
               rows={4}
             />
-            <span>ご質問</span>
+            <span>お問い合わせ内容</span>
           </div>
           {/* 送信ボタン */}
           <div id="chk_policy" className="c-form--consent">
