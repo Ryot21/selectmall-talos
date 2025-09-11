@@ -12,7 +12,7 @@ import {
 import type {
   ContactState,
   FormStep,
-  FormData,
+  LpHubspotFormData,
   FormErrors,
   Props as FormProps,
 } from "@/types/form";
@@ -30,18 +30,18 @@ export default function ContactForm({ customClass }: FormProps) {
   const type = searchParams.get("type");
 
   // フォームの入力値を管理
-  const [formData, setFormData] = useState<FormData>({
-    purpose:
-      type === "download"
-        ? "資料ダウンロード"
-        : type === "contact"
-        ? "お問い合わせ"
-        : "",
-    company: "",
+  const [formData, setFormData] = useState<LpHubspotFormData>({
+    keg: [],
+    mokuteki:
+      type === "download" ? "資料ダウンロード" : 
+      type === "contact" ? "お問い合わせ" : "",
     name: "",
+    post: "",
+    department: "",
+    firstname: "",
     phone: "",
     email: "",
-    message: "",
+    content: "",
   });
 
   // プライバシーポリシーの同意状態
@@ -81,6 +81,20 @@ export default function ContactForm({ customClass }: FormProps) {
     setErrors((prev) => ({ ...prev, [name]: error }));
   }, []);
 
+    // マルチセレクト用のハンドラー
+    const handleMultiSelectChange = useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value, checked } = e.target;
+        setFormData((prev) => ({
+          ...prev,
+          keg: checked
+            ? [...prev.keg, value]
+            : prev.keg.filter((item) => item !== value),
+        }));
+      },
+      []
+    );
+
   // フォームの有効性をメモ化
   const isFormValidMemo = useMemo(() => {
     return validateForm(formData, isAgreed, errors);
@@ -99,7 +113,11 @@ export default function ContactForm({ customClass }: FormProps) {
       // FormDataオブジェクトの作成
       const formDataToSubmit = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        formDataToSubmit.append(key, value);
+        if (Array.isArray(value)) {
+          formDataToSubmit.append(key, value.join(", "));
+        } else {
+          formDataToSubmit.append(key, value);
+        }
       });
 
       // Newtのフォームエンドポイントに送信
@@ -123,12 +141,15 @@ export default function ContactForm({ customClass }: FormProps) {
       });
       // フォームの初期化
       setFormData({
-        purpose: "",
-        company: "",
+        keg: [],
+        mokuteki: "",
         name: "",
+        post: "",
+        department: "",
+        firstname: "",
         phone: "",
         email: "",
-        message: "",
+        content: "",
       });
       setIsAgreed(false);
 
@@ -200,21 +221,27 @@ export default function ContactForm({ customClass }: FormProps) {
               <table className="c-form--inner mgb5 mgb5s">
                 <tbody>
                   <tr>
+                    <th className="s-M -s16 -b -ls-2">気になるケグ</th>
+                    <td>
+                      <p className="s-S -s12 -ls-2">{formData.keg.join(", ")}</p>
+                    </td>
+                  </tr>
+                  <tr>
                     <th className="s-M -s16 -b -ls-2">目的</th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.purpose}</p>
+                      <p className="s-S -s12 -ls-2">{formData.mokuteki}</p>
                     </td>
                   </tr>
                   <tr>
                     <th className="s-M -s16 -b -ls-2">会社名</th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.company}</p>
+                      <p className="s-S -s12 -ls-2">{formData.name}</p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">ご担当者名</th>
+                    <th className="s-M -s16 -b -ls-2">役職・部署・ご担当者名</th>
                     <td>
-                      <p className="s-S -s12 -ls-2">{formData.name}</p>
+                      <p className="s-S -s12 -ls-2">{formData.post} {formData.department} {formData.firstname}</p>
                     </td>
                   </tr>
                   <tr>
@@ -232,7 +259,7 @@ export default function ContactForm({ customClass }: FormProps) {
                   <tr>
                     <th className="s-M -s16 -b -ls-2">お問い合わせ内容</th>
                     <td style={{ whiteSpace: "pre-wrap" }}>
-                      <p className="s-S -s12 -ls-2">{formData.message}</p>
+                      <p className="s-S -s12 -ls-2">{formData.content || "なし"}</p>
                     </td>
                   </tr>
                 </tbody>
@@ -286,6 +313,50 @@ export default function ContactForm({ customClass }: FormProps) {
           >
             <table className="mgb5 mgb5s">
               <tbody>
+                {/* 気になるケグ（チェックボックス） */}
+                <tr>
+                  <th className="s-M -s14 -b -ls-2">気になるケグ</th>
+                  <td>
+                    <div className="c-flex -jc-start -ai-center" style={{ gap: 16 }}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="keg"
+                          value="単層"
+                          checked={formData.keg.includes("単層")}
+                          onChange={handleMultiSelectChange}
+                        /> 単層
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="keg"
+                          value="T-KEG"
+                          checked={formData.keg.includes("T-KEG")}
+                          onChange={handleMultiSelectChange}
+                        /> T-KEG
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="keg"
+                          value="BREWJET"
+                          checked={formData.keg.includes("BREWJET")}
+                          onChange={handleMultiSelectChange}
+                        /> BREWJET
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="keg"
+                          value="TOPPER"
+                          checked={formData.keg.includes("TOPPER")}
+                          onChange={handleMultiSelectChange}
+                        /> TOPPER
+                      </label>
+                    </div>
+                  </td>
+                </tr>
                 {/* 目的 */}
                 <tr>
                   <th className="required s-M -s14 -b -ls-2">目的</th>
@@ -293,12 +364,13 @@ export default function ContactForm({ customClass }: FormProps) {
                     <select
                       id="purpose"
                       className="s-S"
-                      name="purpose"
-                      value={formData.purpose}
+                      name="mokuteki"
+                      value={formData.mokuteki}
                       onChange={handleChange}
                       required
                     >
                       <option value="">選択して下さい</option>
+                      <option value="見積請求">見積請求</option>
                       <option value="資料ダウンロード">資料ダウンロード</option>
                       <option value="お問い合わせ">お問い合わせ</option>
                     </select>
@@ -311,11 +383,51 @@ export default function ContactForm({ customClass }: FormProps) {
                     <input
                       id="company"
                       type="text"
-                      name="company"
-                      value={formData.company}
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       placeholder="株式会社インプレーム"
                     />
+                  </td>
+                </tr>
+                {/* 役職 */}
+                <tr>
+                  <th className="required s-M -s14 -b -ls-2">役職</th>
+                  <td>
+                    <select
+                      id="post"
+                      name="post"
+                      value={formData.post}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">選択してください</option>
+                      <option value="代表取締役">代表取締役</option>
+                      <option value="部長">部長</option>
+                      <option value="課長">課長</option>
+                      <option value="担当者">担当者</option>
+                    </select>
+                  </td>
+                </tr>
+                {/* 部署名 */}
+                <tr>
+                  <th className="required s-M -s14 -b -ls-2">部署名</th>
+                  <td>
+                    <select
+                      id="department"
+                      name="department"
+                      value={formData.department}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">選択してください</option>
+                      <option value="営業部">営業部</option>
+                      <option value="醸造部">醸造部</option>
+                      <option value="品質管理部">品質管理部</option>
+                      <option value="マーケティング部">マーケティング部</option>
+                      <option value="店舗スタッフ">店舗運営/スタッフ</option>
+                      <option value="その他">その他</option>
+                    </select>
                   </td>
                 </tr>
                 {/* ご担当者名 */}
@@ -325,8 +437,8 @@ export default function ContactForm({ customClass }: FormProps) {
                     <input
                       id="name"
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="firstname"
+                      value={formData.firstname}
                       onChange={handleChange}
                       placeholder="インプレーム 太郎"
                     />
@@ -380,9 +492,9 @@ export default function ContactForm({ customClass }: FormProps) {
                   </th>
                   <td>
                     <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                      id="content"
+                      name="content"
+                      value={formData.content}
                       onChange={handleChange}
                       cols={30}
                       rows={10}
