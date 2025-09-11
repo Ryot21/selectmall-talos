@@ -34,7 +34,7 @@ export const validatePhoneNumber = (phoneNumber: string) => {
 
   // 市外局番のパターンチェック
   const areaCodePatterns = [
-    "^0[1-9]0",   // 携帯電話など
+    "^0[1-9]0", // 携帯電話など
     "^0[1-9]{2}", // 市外局番2桁
     "^0[1-9]{3}", // 市外局番3桁
     "^0[1-9]{4}", // 市外局番4桁
@@ -69,7 +69,7 @@ export const validateEmail = (email: string) => {
 export const validateForm = (
   formData: LpHubspotFormData,
   isAgreed: boolean,
-  errors:   FormErrors
+  errors: FormErrors
 ) => {
   return (
     formData.keg.length > 0 &&

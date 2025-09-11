@@ -12,17 +12,6 @@ export type ContactState = {
 // フォームステップの型定義（入力・確認・完了）
 export type FormStep = "input" | "confirm" | "thanks";
 
-// フォームデータの型定義
-export type FormData = {
-  // メディアサイト用
-  purpose: string;
-  company: string;
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
-};
-
 export type LpHubspotFormData = {
   // HubSpot > LP用
   keg: string[];      // ケグの種類（マルチセレクト）
