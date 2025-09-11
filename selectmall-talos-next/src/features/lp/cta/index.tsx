@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/elements/button";
-import CardContactForm from "@/components/elements/form/Card02";
+import CardContactForm from "@/components/elements/form/Card";
 
 
 export default function Lp02Cta() {

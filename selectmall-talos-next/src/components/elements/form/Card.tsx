@@ -1,14 +1,15 @@
 "use client";
-// LPに使用するカード型のフォーム（目的なし）
+// LPに使用するカード型のフォーム（目的あり）
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { formatPhoneNumber, validateField } from "@/utils/validation";
 import type {
   ContactState,
   FormStep,
-  LpFormData,
+  LpHubspotFormData,
   FormErrors,
   Props as FormProps,
 } from "@/types/form";
@@ -16,18 +17,25 @@ import type {
 export default function CardContactForm({ customClass }: FormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const type = searchParams.get("type");
   // フォームの状態管理
   const [step, setStep] = useState<FormStep>("input");
   // 送信状態の管理
   const [submitStatus, setSubmitStatus] = useState<ContactState>(null);
 
   // フォームデータの状態管理を簡素化
-  const [formData, setFormData] = useState<LpFormData>({
-    purpose: "",
-    company: "",
+  const [formData, setFormData] = useState<LpHubspotFormData>({
+    keg: [],
+    mokuteki:
+      type === "download" ? "資料ダウンロード" : 
+      type === "contact" ? "お問い合わせ" : "",
     name: "",
+    post: "",
+    department: "",
+    firstname: "",
     phone: "",
     email: "",
+    content: "",
   });
 
   // プライバシーポリシーの同意状態
@@ -37,6 +45,87 @@ export default function CardContactForm({ customClass }: FormProps) {
     phone: "",
     email: "",
   });
+
+  // メモ化されたフォーム変更ハンドラー
+  const handleChange = useCallback(
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => {
+      const { name, value } = e.target;
+      if (name === "phone") {
+        const formattedValue = formatPhoneNumber(value);
+        setFormData((prev) => ({ ...prev, phone: formattedValue }));
+      } else {
+        setFormData((prev) => ({ ...prev, [name]: value }));
+      }
+    },
+    []
+  );
+
+  // メモ化されたバリデーション処理
+  const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
+  }, []);
+
+  // メモ化されたチェックボックス処理
+  const handleCheckboxChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setIsAgreed(e.target.checked);
+    },
+    []
+  );
+
+  // マルチセレクト用のハンドラー
+  const handleMultiSelectChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, checked } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        keg: checked
+          ? [...prev.keg, value]
+          : prev.keg.filter((item) => item !== value),
+      }));
+    },
+    []
+  );
+
+  // フォームの有効性をメモ化
+  const isFormValidMemo = useMemo(() => {
+    const {
+      keg,
+      mokuteki,
+      name,
+      post,
+      department,
+      firstname,
+      phone,
+      email,
+      content,
+    } = formData;
+    return (
+      keg.length > 0 &&
+      mokuteki.trim() !== "" &&
+      name.trim() !== "" &&
+      post.trim() !== "" &&
+      department.trim() !== "" &&
+      firstname.trim() !== "" &&
+      phone.trim() !== "" &&
+      email.trim() !== "" &&
+      content.trim() !== "" &&
+      isAgreed &&
+      !errors.phone &&
+      !errors.email
+    );
+  }, [formData, isAgreed, errors]);
+
+  // フォームの有効性を更新
+  useEffect(() => {
+    setIsFormValid(isFormValidMemo);
+  }, [isFormValidMemo]);
 
   // gclidをlocalStorageに保存（初回マウント時）
   useEffect(() => {
@@ -58,65 +147,23 @@ export default function CardContactForm({ customClass }: FormProps) {
     return "";
   }, [searchParams]);
 
-  // メモ化されたフォーム変更ハンドラー
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    if (name === "phone") {
-      const formattedValue = formatPhoneNumber(value);
-      setFormData((prev) => ({ ...prev, phone: formattedValue }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
-  }, []);
-
-  // メモ化されたバリデーション処理
-  const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const error = validateField(name, value);
-    setErrors((prev) => ({ ...prev, [name]: error }));
-  }, []);
-
-  // メモ化されたチェックボックス処理
-  const handleCheckboxChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setIsAgreed(e.target.checked);
-    },
-    []
-  );
-
-  // フォームの有効性をメモ化
-  const isFormValidMemo = useMemo(() => {
-    const { company, name, phone, email } = formData;
-    return (
-      company.trim() !== "" &&
-      name.trim() !== "" &&
-      phone.trim() !== "" &&
-      email.trim() !== "" &&
-      isAgreed &&
-      !errors.phone &&
-      !errors.email
-    );
-  }, [formData, isAgreed, errors]);
-
-  // フォームの有効性を更新
-  useEffect(() => {
-    setIsFormValid(isFormValidMemo);
-  }, [isFormValidMemo]);
-
   // メモ化された送信処理を簡素化
   const handleSubmit = useCallback(async () => {
     if (!isFormValid) return;
 
     try {
       const formDataToSubmit = new FormData();
-      formDataToSubmit.append("company", formData.company);
-      formDataToSubmit.append("name", formData.name);
-      formDataToSubmit.append("phone", formData.phone);
-      formDataToSubmit.append("email", formData.email);
+      Object.entries(formData).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          formDataToSubmit.append(key, value.join(", "));
+        } else {
+          formDataToSubmit.append(key, value);
+        }
+      });
 
       // Newtのフォームエンドポイントに送信
       const response = await fetch(
-        "https://money-repair.form.newt.so/v1/8rMUtk02T",
+        "https://money-repair.form.newt.so/v1/9v5NPwe1M",
         {
           method: "POST",
           body: formDataToSubmit,
@@ -133,20 +180,24 @@ export default function CardContactForm({ customClass }: FormProps) {
       });
 
       setFormData({
-        purpose: "",
-        company: "",
+        keg: [],
+        mokuteki: "",
         name: "",
+        post: "",
+        department: "",
+        firstname: "",
         phone: "",
         email: "",
+        content: "",
       });
       setIsAgreed(false);
 
       // gclidを取得してサンクスページに引き継ぐ
       const gclid = getGclid();
       if (gclid) {
-        router.push(`/lp/thanks?gclid=${encodeURIComponent(gclid)}`);
+        router.push(`/thanks?gclid=${encodeURIComponent(gclid)}`);
       } else {
-        router.push("/lp/thanks");
+        router.push("/thanks");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -178,20 +229,45 @@ export default function CardContactForm({ customClass }: FormProps) {
   if (step === "confirm") {
     return (
       <div className="c-card -t05">
+        {/* <Image
+          src="/images/SVG/Lp/ver02/contact-label.svg"
+          alt="3分でわかる資料ダウンロード"
+          width={334}
+          height={50}
+        /> */}
+        <h3 className="s-ML -b -center -ls-2 -lh-1_5 pdt4 pdb4 pdl3 pdr3 pdt4s pdb4s pdl4s pdr3s">
+          内容確認
+        </h3>
         <div className="c-card--inner">
           <div className={`c-form ${customClass}`}>
-            <table className="c-form--inner mgb5 mgb5s">
+            <table className="c-form--inner">
               <tbody>
                 <tr>
-                  <th className="s-S -s16 -b -ls-2">会社名</th>
+                  <th className="s-S -s16 -b -ls-2">気になる商材</th>
                   <td>
-                    <p className="s-SS -s12 -ls-2">{formData.company}</p>
+                    <p className="s-SS -s12 -ls-2">
+                      {formData.keg.join(", ")}
+                    </p>
                   </td>
                 </tr>
                 <tr>
-                  <th className="s-S -s16 -b -ls-2">ご担当者名</th>
+                  <th className="s-S -s16 -b -ls-2">目的</th>
+                  <td>
+                    <p className="s-SS -s12 -ls-2">{formData.mokuteki}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">会社名</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">{formData.name}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">役職・部署・ご担当者名</th>
+                  <td>
+                    <p className="s-SS -s12 -ls-2">
+                      {formData.post} {formData.department} {formData.firstname}
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -204,6 +280,14 @@ export default function CardContactForm({ customClass }: FormProps) {
                   <th className="s-S -s16 -b -ls-2">メールアドレス</th>
                   <td>
                     <p className="s-SS -s12 -ls-2">{formData.email}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <th className="s-S -s16 -b -ls-2">ご質問</th>
+                  <td>
+                    <p className="s-SS -s12 -ls-2">
+                      {formData.content || "なし"}
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -233,37 +317,162 @@ export default function CardContactForm({ customClass }: FormProps) {
 
   // 入力画面
   return (
-    <div className="c-card -t05">
+    <div className="c-card -t05  a-fade -tm05 -sp05">
+      <Image
+        src="/images/SVG/Lp/contact-label.svg"
+        alt="3分でわかる資料ダウンロード"
+        width={334}
+        height={50}
+      />
       <div className="c-card--inner">
-        <p className="c-card--label -b -color03 mgb5s">
-          1分でわかる資料ダウンロード
-        </p>
         <form
           className={`c-form ${customClass}`}
           onSubmit={handleConfirm}
           method="POST"
         >
+          {/* 気になる商材 */}
+          <div className="c-form--item -radioBtn">
+            <ul className="c-flex -radio">
+              <li className="flexItem">
+                <p className="s-SS -b -left -ls-2" style={{ paddingTop: 2 }}>
+                  気になる
+                  <br />
+                  ケグ
+                </p>
+              </li>
+              <li className="flexItem">
+                <div className="c-flex -jc-end">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="単層"
+                      checked={formData.keg.includes("単層")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>単層</pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="T-KEG"
+                      checked={formData.keg.includes("T-KEG")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>T-KEG</pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="BREWJET"
+                      checked={formData.keg.includes("BREWJET")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>
+                      BREW
+                      <br />
+                      JET
+                    </pre>
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="considerationStage"
+                      value="TOPPER"
+                      checked={formData.keg.includes("TOPPER")}
+                      onChange={handleMultiSelectChange}
+                    />{" "}
+                    <pre>
+                      TOP
+                      <br />
+                      PER
+                    </pre>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {/* 目的 */}
+          <div className="c-form--item">
+            <select
+              id="purpose"
+              name="purpose"
+              value={formData.mokuteki}
+              onChange={handleChange}
+              required
+            >
+              <option value="">選択して下さい</option>
+              <option value="見積請求">見積請求</option>
+              <option value="資料ダウンロード">資料ダウンロード</option>
+              <option value="お問い合わせ">お問い合わせ</option>
+            </select>
+            <span>目的</span>
+          </div>
           {/* 会社名 */}
           <div className="c-form--item">
             <input
               id="company"
               type="text"
               name="company"
-              value={formData.company}
+              value={formData.name}
               onChange={handleChange}
               placeholder=" "
+              required
             />
             <span>会社名</span>
           </div>
+          <ul className="c-flex -col2 -jc-sb">
+            <li className="flexItem">
+              <div className="c-form--item">
+                <select
+                  id="post"
+                  name="post"
+                  value={formData.post}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">選択してください</option>
+                  <option value="代表取締役">代表取締役</option>
+                  <option value="部長">部長</option>
+                  <option value="課長">課長</option>
+                  <option value="担当者">担当者</option>
+                </select>
+                <span>役職</span>
+              </div>
+            </li>
+            <li className="flexItem">
+              <div className="c-form--item">
+                <select
+                  id="department"
+                  name="department"
+                  value={formData.department}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">選択してください</option>
+                  <option value="営業部">営業部</option>
+                  <option value="醸造部">醸造部</option>
+                  <option value="品質管理部">品質管理部</option>
+                  <option value="マーケティング部">マーケティング部</option>
+                  <option value="店舗スタッフ">店舗運営/スタッフ</option>
+                  <option value="その他">その他</option>
+                </select>
+                <span>部署名</span>
+              </div>
+            </li>
+          </ul>
           {/* ご担当者名 */}
           <div className="c-form--item">
             <input
               id="name"
               type="text"
               name="name"
-              value={formData.name}
+              value={formData.firstname}
               onChange={handleChange}
               placeholder=" "
+              required
             />
             <span>ご担当者名</span>
           </div>
@@ -301,6 +510,18 @@ export default function CardContactForm({ customClass }: FormProps) {
               <p className="s-SS -error mgt1 mgt1s">{errors.email}</p>
             )}
           </div>
+          {/* ご質問 */}
+          <div className="c-form--item">
+            <textarea
+              id="question"
+              name="question"
+              value={formData.content}
+              onChange={handleChange}
+              placeholder=" "
+              rows={4}
+            />
+            <span>ご質問</span>
+          </div>
           {/* 送信ボタン */}
           <div id="chk_policy" className="c-form--consent">
             <p id="error" className={!isAgreed ? "visible" : "hidden"}>
@@ -325,7 +546,7 @@ export default function CardContactForm({ customClass }: FormProps) {
             )}
 
             {/* 送信 */}
-            <div className="c-form--btn mgb5 mgb5s">
+            <div className="c-form--btn">
               <button
                 type="submit"
                 value="確認する"
@@ -333,18 +554,18 @@ export default function CardContactForm({ customClass }: FormProps) {
                 id="submit"
                 disabled={!isFormValid}
               >
-                資料ダウンロード（無料）
+                お問い合わせ
               </button>
             </div>
           </div>
           {/* プライバシーポリシー */}
-          <p className="c-form--consentText -lh-2 -ls-2">
-            ※お客様にお求めのコンテンツを提供するために、上記で送信された個人情報についてインプレームが
+          {/* <p className="c-form--consentText -lh-2 -ls-2">
+            ※お客様にお求めのコンテンツを提供するために、上記で送信された個人情報についてセレクトモールが
             <Link href="/privacy-policy" className="-color03 b-text">
               プライバシーポリシー
             </Link>
             に基づき利用することに同意します。
-          </p>
+          </p> */}
         </form>
       </div>
     </div>

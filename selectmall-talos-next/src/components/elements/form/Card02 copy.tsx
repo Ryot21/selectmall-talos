@@ -17,7 +17,7 @@ import type {
 export default function CardContactForm({ customClass }: FormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const type = searchParams.get("type");
+  const type = searchParams.get("type") as "download" | "contact" | null;
   // フォームの状態管理
   const [step, setStep] = useState<FormStep>("input");
   // 送信状態の管理
@@ -108,7 +108,9 @@ export default function CardContactForm({ customClass }: FormProps) {
       email,
       considerationStage,
     } = formData;
-    return (
+
+    // 必須フィールドのチェック
+    const requiredFieldsValid =
       purpose.trim() !== "" &&
       company.trim() !== "" &&
       name.trim() !== "" &&
@@ -116,11 +118,15 @@ export default function CardContactForm({ customClass }: FormProps) {
       department.trim() !== "" &&
       phone.trim() !== "" &&
       email.trim() !== "" &&
-      considerationStage.length > 0 &&
-      isAgreed &&
-      !errors.phone &&
-      !errors.email
-    );
+      considerationStage.length > 0;
+
+    // バリデーションエラーのチェック
+    const noValidationErrors = !errors.phone && !errors.email;
+
+    // プライバシーポリシーの同意チェック
+    const privacyAgreed = isAgreed;
+
+    return requiredFieldsValid && noValidationErrors && privacyAgreed;
   }, [formData, isAgreed, errors]);
 
   // フォームの有効性を更新
@@ -153,27 +159,101 @@ export default function CardContactForm({ customClass }: FormProps) {
     if (!isFormValid) return;
 
     try {
-      const formDataToSubmit = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          formDataToSubmit.append(key, value.join(", "));
-        } else {
-          formDataToSubmit.append(key, value);
-        }
-      });
+      // HubSpot API用のデータ構造を作成
+      const fields = [
+        {
+          objectTypeId: "0-1",
+          name: "email",
+          value: formData.email,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "firstname",
+          value: formData.name,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "name", // HubSpotの会社名フィールド
+          value: formData.company,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "phone",
+          value: formData.phone,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "post", // HubSpotの役職フィールド
+          value: formData.post,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "department", // HubSpotの部署名フィールド
+          value: formData.department,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "mokuteki", // HubSpotの目的フィールド
+          value: formData.purpose,
+        },
+        {
+          objectTypeId: "0-1",
+          name: "keg", // HubSpotの気になる商材フィールド
+          value: formData.considerationStage.join(", "),
+        },
+      ];
 
-      // Newtのフォームエンドポイントに送信
+      // 質問フィールドがある場合のみ追加
+      if (formData.question && formData.question.trim() !== "") {
+        fields.push({
+          objectTypeId: "0-1",
+          name: "message", // 質問フィールド（HubSpotに存在する場合）
+          value: formData.question,
+        });
+      }
+
+      const hubspotData = {
+        fields,
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      };
+
+      // HubSpot APIエンドポイントに送信
+      // 環境変数から取得（.env.localファイルに設定してください）
+      const portalId =
+        process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "YOUR_PORTAL_ID";
+      const formGuid =
+        process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID || "YOUR_FORM_GUID";
+
+      if (portalId === "YOUR_PORTAL_ID" || formGuid === "YOUR_FORM_GUID") {
+        console.warn(
+          "HubSpotの設定が正しくありません。.env.localファイルでNEXT_PUBLIC_HUBSPOT_PORTAL_IDとNEXT_PUBLIC_HUBSPOT_FORM_GUIDを設定してください。"
+        );
+      }
+
       const response = await fetch(
-        "https://money-repair.form.newt.so/v1/9v5NPwe1M",
+        `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
         {
           method: "POST",
-          body: formDataToSubmit,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(hubspotData),
         }
       );
 
       if (!response.ok) {
-        throw new Error("送信に失敗しました");
+        const errorData = await response.json().catch(() => ({}));
+        console.error("HubSpot API Error:", errorData);
+        throw new Error(
+          `送信に失敗しました: ${response.status} ${response.statusText}`
+        );
       }
+
+      const result = await response.json();
+      console.log("HubSpot response:", result);
 
       setSubmitStatus({
         status: "success",
@@ -181,7 +261,12 @@ export default function CardContactForm({ customClass }: FormProps) {
       });
 
       setFormData({
-        purpose: "",
+        purpose:
+          type === "download"
+            ? "資料ダウンロード"
+            : type === "contact"
+            ? "お問い合わせ"
+            : "",
         company: "",
         name: "",
         post: "",
@@ -236,7 +321,9 @@ export default function CardContactForm({ customClass }: FormProps) {
           width={334}
           height={50}
         /> */}
-        <h3 className="s-ML -b -center -ls-2 -lh-1_5 pdt4 pdb4 pdl3 pdr3 pdt4s pdb4s pdl4s pdr3s">内容確認</h3>
+        <h3 className="s-ML -b -center -ls-2 -lh-1_5 pdt4 pdb4 pdl3 pdr3 pdt4s pdb4s pdl4s pdr3s">
+          内容確認
+        </h3>
         <div className="c-card--inner">
           <div className={`c-form ${customClass}`}>
             <table className="c-form--inner">

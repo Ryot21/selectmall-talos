@@ -23,25 +23,17 @@ export type FormData = {
   message: string;
 };
 
-export type LpFormData = {
-  // LP用
-  purpose: string;
-  company: string;
-  name: string;
-  phone: string;
-  email: string;
-};
-
-export type Lp02FormData = {
-  // LP用
-  purpose: string;
-  company: string;
-  post: string;
-  department: string;
-  name: string;
-  phone: string;
-  email: string;
-  considerationStage: string; // 検討段階
+export type LpHubspotFormData = {
+  // HubSpot > LP用
+  keg: string[];      // ケグの種類（マルチセレクト）
+  mokuteki: string;   // 目的
+  name: string;       // 会社名
+  post: string;       // 役職
+  department: string; // 部署名
+  firstname: string;  // ご担当者名
+  phone: string;      // 電話番号
+  email: string;      // メールアドレス
+  content: string;    // お問い合わせ内容
 };
 
 // フォームエラーの型定義

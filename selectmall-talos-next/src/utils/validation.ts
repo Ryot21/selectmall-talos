@@ -1,4 +1,4 @@
-import type { FormData, FormErrors } from "@/types/form";
+import type { LpHubspotFormData, FormErrors } from "@/types/form";
 
 /**
  * 電話番号のバリデーション関数
@@ -34,7 +34,7 @@ export const validatePhoneNumber = (phoneNumber: string) => {
 
   // 市外局番のパターンチェック
   const areaCodePatterns = [
-    "^0[1-9]0", // 携帯電話など
+    "^0[1-9]0",   // 携帯電話など
     "^0[1-9]{2}", // 市外局番2桁
     "^0[1-9]{3}", // 市外局番3桁
     "^0[1-9]{4}", // 市外局番4桁
@@ -63,23 +63,26 @@ export const validateEmail = (email: string) => {
  *
  * @param formData - フォームの入力データ
  * @param isAgreed - プライバシーポリシーへの同意状態
- * @param errors - 各フィールドのエラー状態
+ * @param errors   - 各フィールドのエラー状態
  * @returns boolean - フォームが有効な場合true、無効な場合false
  */
 export const validateForm = (
-  formData: FormData,
+  formData: LpHubspotFormData,
   isAgreed: boolean,
-  errors: FormErrors
+  errors:   FormErrors
 ) => {
   return (
-    formData.purpose.trim() !== "" &&
-    formData.company.trim() !== "" &&
+    formData.keg.length > 0 &&
+    formData.mokuteki.trim() !== "" &&
     formData.name.trim() !== "" &&
+    formData.post.trim() !== "" &&
+    formData.department.trim() !== "" &&
+    formData.firstname.trim() !== "" &&
     formData.phone.trim() !== "" &&
     validatePhoneNumber(formData.phone) &&
     formData.email.trim() !== "" &&
     validateEmail(formData.email) &&
-    formData.message.trim() !== "" &&
+    formData.content.trim() !== "" &&
     isAgreed &&
     !errors.phone &&
     !errors.email

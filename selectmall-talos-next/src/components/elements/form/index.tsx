@@ -17,10 +17,6 @@ import type {
   Props as FormProps,
 } from "@/types/form";
 
-// ContactStepコンポーネントを動的インポート
-const ContactStep = dynamic(() => import("@/features/media/step"), {
-  ssr: false, // クライアントサイドでのみレンダリング
-});
 
 export default function ContactForm({ customClass }: FormProps) {
   const router = useRouter();
@@ -195,7 +191,6 @@ export default function ContactForm({ customClass }: FormProps) {
               <br />
               担当者より3営業日以内にご連絡いたします。
             </p>
-            <ContactStep currentStep={step} />
           </div>
         </div>
         {/* お問い合わせフォーム */}
@@ -279,7 +274,6 @@ export default function ContactForm({ customClass }: FormProps) {
             <br />
             担当者より3営業日以内にご連絡いたします。
           </p>
-          <ContactStep currentStep={step} />
         </div>
       </div>
       {/* お問い合わせフォーム */}
