@@ -74,9 +74,10 @@ export const validateForm = (
   return (
     formData.keg.length > 0 &&
     formData.mokuteki.trim() !== "" &&
-    formData.name.trim() !== "" &&
+    formData.company.trim() !== "" &&
     formData.post.trim() !== "" &&
     formData.department.trim() !== "" &&
+    formData.lastname.trim() !== "" &&
     formData.firstname.trim() !== "" &&
     formData.phone.trim() !== "" &&
     validatePhoneNumber(formData.phone) &&
