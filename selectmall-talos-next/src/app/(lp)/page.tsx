@@ -460,8 +460,8 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t01 mgb1 mgb3s">
-                      ワンウェイケグ・充填機を含め、<br/>
-                      パッケージでのご提案も可能！！
+                      ワンウェイケグ・充填機を含めた、<br/>
+                      ワンストップ提案も可能！！
                     </h3>
                     <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                       お客様のブランドイメージや販売戦略に最適なケグや充填機をご提案いたします。数量、容量、ラベルデザインを細かくカスタマイズし、コスト削減と品質向上を同時に実現します。
