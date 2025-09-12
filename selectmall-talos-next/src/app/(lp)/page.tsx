@@ -207,7 +207,7 @@ export default function Home() {
                       <li className="flexItem mgb5s">
                         <div className="c-img -sh">
                           <Image
-                            src="/images/keg/BrewJet-descript.png"
+                            src="/images/keg/BREWJET-descript.png"
                             alt="BREWJETの説明"
                             width={1644}
                             height={1154}
