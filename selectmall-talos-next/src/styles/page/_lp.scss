@@ -11,7 +11,7 @@
             margin: auto;
             @include min(500) {width: 85%;}
             @include min(768) {width: 90%;}
-            @include min(1400) {max-width: 1180px;}
+            @include min(1400) {max-width: 1080px;}
 
             &.-bg-color01 {background: $site-color01;}
             &.-bg-color02 {background: $site-color02;}

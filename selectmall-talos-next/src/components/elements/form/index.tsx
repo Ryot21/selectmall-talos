@@ -17,7 +17,8 @@ import type {
   Props as FormProps,
 } from "@/types/form";
 
-export default function ContactForm({ customClass }: FormProps) {
+export default function 
+ContactForm({ customClass }: FormProps) {
   const router = useRouter();
   // フォームの状態管理（入力・確認・完了の3ステップ）
   const [step, setStep] = useState<FormStep>("input");
@@ -185,7 +186,7 @@ export default function ContactForm({ customClass }: FormProps) {
       setIsAgreed(false);
 
       // Thanks ページへリダイレクト
-      router.push("/contact/thanks");
+      router.push("/thanks");
     } catch (error) {
       // エラー時の処理
       console.error("Error:", error);
@@ -233,72 +234,57 @@ export default function ContactForm({ customClass }: FormProps) {
   if (step === "confirm") {
     return (
       <>
-        {/* 導入部分 */}
-        <div className="c-contents pdt5 pdb10 pdb10s">
-          <div className="c-contents--inner">
-            <p className="s-M -s12 -center -ls-2 -lh-2 pdb10 pdb10s">
-              こちらのフォームからご入力ください。
-              <br />
-              お問い合わせの内容を確認後、
-              <br />
-              担当者より3営業日以内にご連絡いたします。
-            </p>
-          </div>
-        </div>
         {/* お問い合わせフォーム */}
-        <div className="c-contents mgb10 mgb10s">
+        <div className="c-contents mgb5">
           <div className="c-contents--inner -bg-white -card">
-            <div className={`c-form ${customClass}`}>
+            <div className={`c-form -page ${customClass}`}>
               <table className="c-form--inner mgb5 mgb5s">
                 <tbody>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">気になるケグ</th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">
+                    <th className="-b -lp_c01 -left"><span>気になるケグ</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">
                         {formData.keg.join(", ")}
                       </p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">目的</th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">{formData.mokuteki}</p>
+                    <th className="-b -lp_c01 -left"><span>目的</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">{formData.mokuteki}</p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">会社名</th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">{formData.company}</p>
+                    <th className="-b -lp_c01 -left"><span>会社名</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">{formData.company}</p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">
-                      役職・部署・ご担当者名
-                    </th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">
-                        {formData.post} {formData.department}{" "}
-                        {formData.lastname}
-                        {formData.firstname}
+                    <th className="-b -lp_c01 -left"><span>役職・部署・ご担当者名</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">
+                        {formData.post}・{formData.department}{" "}<br/>
+                        {formData.lastname}{formData.firstname}様
                       </p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">電話番号</th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">{formData.phone}</p>
+                    <th className="-b -lp_c01 -left"><span>電話番号</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">{formData.phone}</p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">メールアドレス</th>
-                    <td>
-                      <p className="s-S -s12 -ls-2">{formData.email}</p>
+                    <th className="-b -lp_c01 -left"><span>メールアドレス</span></th>
+                    <td className="pdl3s">
+                      <p className="s-M -s12 -left -ls-2">{formData.email}</p>
                     </td>
                   </tr>
                   <tr>
-                    <th className="s-M -s16 -b -ls-2">お問い合わせ内容</th>
-                    <td style={{ whiteSpace: "pre-wrap" }}>
-                      <p className="s-S -s12 -ls-2">
+                    <th className="-b -lp_c01 -left"><span>お問い合わせ内容</span></th>
+                    <td className="pdl3s" style={{ whiteSpace: "pre-wrap" }}>
+                      <p className="s-M -s12 -left -ls-2">
                         {formData.content || "なし"}
                       </p>
                     </td>
@@ -332,36 +318,28 @@ export default function ContactForm({ customClass }: FormProps) {
   // 入力画面（/contact）
   return (
     <>
-      {/* 導入部分 */}
-      <div className="c-contents pdt5 pdb10 pdb10s">
-        <div className="c-contents--inner">
-          <p className="s-M -s12 -center -ls-2 -lh-2 pdb10 pdb10s">
-            こちらのフォームからご入力ください。
-            <br />
-            お問い合わせの内容を確認後、
-            <br />
-            担当者より3営業日以内にご連絡いたします。
-          </p>
-        </div>
-      </div>
       {/* お問い合わせフォーム */}
-      <div className="c-contents mgb10 mgb10s">
-        <div className="c-contents--inner -bg-white -card">
-          <form
-            className={`c-form ${customClass}`}
-            onSubmit={handleConfirm}
-            method="POST"
-          >
+      <div className="c-contents">
+        <p className="s-M -lp_c01 -center -ls-2 -lh-2 mgb5 mgb10s">
+          「ステンレスケグと迷っている」<br/>
+          「他社のワンウェイケグと比較したい」<br/>
+          という方も遠慮なくご相談をお待ちしております。<br/>
+          お客様に本当に最適な選択肢を<br />
+          メリット・デメリットも含めて正直にお伝えします。
+        </p>
+        <form
+          className={`c-form -page ${customClass}`}
+          onSubmit={handleConfirm}
+          method="POST"
+        >
+          <div className="c-form--inner">
             <table className="mgb5 mgb5s">
               <tbody>
                 {/* 気になるケグ（チェックボックス） */}
                 <tr>
-                  <th className="s-M -s14 -b -ls-2">気になるケグ</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2"><span>気になるケグ</span></th>
                   <td>
-                    <div
-                      className="c-flex -jc-start -ai-center"
-                      style={{ gap: 16 }}
-                    >
+                    <div className="c-flex -jc-start -ai-center">
                       <label>
                         <input
                           type="checkbox"
@@ -407,7 +385,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 目的 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">目的</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>目的</span></th>
                   <td>
                     <select
                       id="purpose"
@@ -426,7 +404,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 会社名 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">会社名</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>会社名</span></th>
                   <td>
                     <input
                       id="company"
@@ -440,7 +418,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 役職 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">役職</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>役職</span></th>
                   <td>
                     <select
                       id="post"
@@ -459,7 +437,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 部署名 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">部署名</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>部署名</span></th>
                   <td>
                     <select
                       id="department"
@@ -480,9 +458,9 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 姓・名 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">ご担当者名</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>ご担当者名</span></th>
                   <td>
-                    <div className="c-flex -col2 -jc-sb">
+                    <div className="c-flex -col2 -jc-st">
                       <div className="flexItem">
                         <input
                           id="lastname"
@@ -508,7 +486,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 電話番号 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">電話番号</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>電話番号</span></th>
                   <td>
                     <input
                       id="phone"
@@ -527,7 +505,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* メールアドレス */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2">メールアドレス</th>
+                  <th className="s-ML -s14 -b -lp_c01 -ls-2 required"><span>メールアドレス</span></th>
                   <td>
                     <input
                       id="email"
@@ -547,10 +525,12 @@ export default function ContactForm({ customClass }: FormProps) {
                 </tr>
                 {/* 内容 */}
                 <tr>
-                  <th className="required s-M -s14 -b -ls-2 -lh-1_5">
-                    お問い合わせや
-                    <br />
-                    ご質問など
+                  <th className="s-ML -s14 -lp_c01 -ls-2 -lh-1_5 required">
+                    <span>
+                      お問い合わせや
+                      <br />
+                      ご質問など
+                    </span>
                   </th>
                   <td>
                     <textarea
@@ -559,24 +539,24 @@ export default function ContactForm({ customClass }: FormProps) {
                       value={formData.content}
                       onChange={handleChange}
                       cols={30}
-                      rows={10}
+                      rows={5}
                       placeholder="お問い合わせ内容を入力してください。"
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
-            {/* プライバシーポリシー */}
-            <p className="-center -lh-2 -ls-2 mgb5 mgb5s">
-              ※
-              <Link href="/privacy-policy" className="-color03 b-text ">
-                プライバシーポリシー
-              </Link>
-              をお読みいただき、同意の上お問い合わせください。
-            </p>
 
             {/* 送信ボタン */}
             <div id="chk_policy" className="c-form--consent">
+              {/* プライバシーポリシー */}
+              <p className="-center -lh-2 -ls-2 mgb5s">
+                ※
+                <Link href="/privacy-policy" className="-color03 b-text ">
+                  プライバシーポリシー
+                </Link>
+                をお読みいただき、同意の上お問い合わせください。
+              </p>
               <p id="error" className={!isAgreed ? "visible" : "hidden"}>
                 同意するにチェックを入れてください。
               </p>
@@ -610,9 +590,7 @@ export default function ContactForm({ customClass }: FormProps) {
                 <button
                   type="submit"
                   value="確認する"
-                  className={`c-link -btn -maru -orange -center s-M -s14 -b -ls-2 ${
-                    !isFormValid ? "disabled" : ""
-                  }`}
+                  className={`c-link -btn -maru -orange -center s-M -s14 -b -ls-2 ${!isFormValid ? "disabled" : ""}`}
                   id="submit"
                   disabled={!isFormValid}
                 >
@@ -620,8 +598,8 @@ export default function ContactForm({ customClass }: FormProps) {
                 </button>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </>
   );

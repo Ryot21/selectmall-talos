@@ -390,46 +390,17 @@
   &.-Lp02Cta {
     // LP02 > CTAエリア
     position: relative;
-    background: $lp-color02;
+    background: $lp-color04;
     // background: radial-gradient($lp-color01, $lp-color02);
-    &::before {
-      content: "";
-      position: absolute;
-      top: 40%;
-      left: 0;
-      width: 14%;
-      height: 70%;
-      background: url("/images/icon/pic01.png") no-repeat;
-      background-size: contain;
-      opacity: 0.35;
-      z-index: 1;
-      @include max(768) {
-        top: 25%;
-        left: 25px;
-        width: 100px;
-        height: 70%;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 60%;
-      right: 30%;
-      width: 350px;
-      height: 30%;
-      background: url("/images/icon/pic03.png") no-repeat;
-      background-size: contain;
-      opacity: 0.25;
-      z-index: 1;
-      @include max(768) {
-        top: 5%;
-        right: 2%;
-        width: 100px;
-        height: 30%;
-      }
-    }
+
     .c-contents--inner {
       position: relative;
+      // コンテンツ幅
+      width: 95%;
+      margin: auto;
+      @include max(500) {max-width: 355px;}
+      @include min(500) {width: 85%;}
+      @include min(768) {width: 80%;}
       &::before {
         content: "";
         position: absolute;
@@ -440,7 +411,7 @@
         background: url("/images/icon/pic05.png") no-repeat;
         background-size: contain;
         opacity: 0.15;
-        z-index: 1;
+        z-index: -1;
         @include max(768) {
           top: 25%;
           right: 0;
@@ -458,7 +429,7 @@
         background: url("/images/icon/pic06.png") no-repeat;
         background-size: contain;
         opacity: 0.15;
-        z-index: 1;
+        z-index: -1;
         @include max(768) {
           top: 1%;
           left: 65%;

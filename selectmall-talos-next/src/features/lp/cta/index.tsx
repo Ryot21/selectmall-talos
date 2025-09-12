@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Button from "@/components/elements/button";
-import CardContactForm from "@/components/elements/form/Card";
-
+// import CardContactForm from "@/components/elements/form/Card";
+import ContactForm from "@/components/elements/form/";
 
 export default function Lp02Cta() {
   return (
     <div id="cta" className="c-contents -Lp02Cta pdt7 pdt15s pdb7 pdb20s">
       <div className="c-contents--inner">
-        <ul className="c-flex -col1_2 -pc1_2 -h-top -jc-sb">
+        {/* <ul className="c-flex -col1_2 -pc1_2 -h-top -jc-sb">
           <li className="flexItem mgb10s" style={{ zIndex: 3 }}>
             <h2 className="c-contents--LpCtaTitle -b-btm -white -left -c03 mgb5 mgb8s">
               もっと詳しく知りたい方へ
@@ -23,21 +23,18 @@ export default function Lp02Cta() {
                 height={320}
               />
             </div>
-            {/* <Button
-              href="/#contact"
-              customAreaClass="-left"
-              customClass="-btn -maru -orange -icon -arrow"
-            >
-              お問い合わせはコチラ
-            </Button> */}
           </li>
           <li className="flexItem" style={{ zIndex: 3 }}>
-            {/* ================= cv ================= */}
             <div className="c-contentsBox -cta">
               <CardContactForm customClass="-card" />
-          </div>
+            </div>
           </li>
-        </ul>
+        </ul> */}
+        <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -contact pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+          お問い合わせ
+        </h2>
+        <ContactForm customClass="" />
+        {/* <CardContactForm customClass="-card" /> */}
       </div>
     </div>
   );

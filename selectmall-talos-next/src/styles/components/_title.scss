@@ -105,7 +105,7 @@
             &.-lp_c01{&::after{border-bottom: 3px dotted $lp-color01 !important;}}
             &.-lp_c02{&::after{border-bottom: 3px dotted $lp-color02 !important;}}
             &.-lp_c03{&::after{border-bottom: 3px dotted $lp-color03 !important;}}
-
+            &.-white {&::after{border-bottom: 3px dotted $main-color--w !important;}}
             
             &.-left{ // テキストが左寄せの場合
                 &::after{
@@ -132,9 +132,7 @@
         &.-what    {&::before{content: "What SelectMall Can Do"; white-space: nowrap;}}// 商品紹介
         &.-QA      {&::before{content: "Q&A"; white-space: nowrap;}}// 商品紹介
         &.-other   {&::before{content: "Comparison With Others"; white-space: nowrap;}}// 商品紹介
-
-        
-        // &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
+        &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
         // &.-contact02   {&::before{content: "Request For Information"; white-space: nowrap;}}//資料ダウンロード
         // &.-point       {&::before{content: "POINT"; white-space: nowrap;}}//特徴
 
