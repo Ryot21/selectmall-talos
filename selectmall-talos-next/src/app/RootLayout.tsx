@@ -19,8 +19,9 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           type="image/png"
-          href="images/sns/ogp_1200_630.png"
+          href="images/sns/apple-touch-icon.png"
         />
+
       </head>
       <body suppressHydrationWarning>{children}</body>
       {/* メディア用 > Google Tag Manager */}
