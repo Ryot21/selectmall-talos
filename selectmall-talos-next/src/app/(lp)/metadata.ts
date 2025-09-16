@@ -11,18 +11,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "セレクトモール ",
-    title: "セレクトモール | TALOS（タロス）ワンウェイケグ ",
+    siteName: "セレクトモール",
+    title: "セレクトモール | TALOS（タロス）ワンウェイケグ",
     description:
       "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
-    images: ["/sns/ogp_1200_630.png"],
+    images: [
+      {
+        url: "/images/sns/ogp_1200_630.png",
+        width: 1200,
+        height: 630,
+        alt: "セレクトモール | TALOS（タロス）ワンウェイケグ",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "セレクトモール | TALOS（タロス）ワンウェイケグ",
     description:
       "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
-    images: ["/sns/ogp_1200_630.png"],
+    images: ["/images/sns/ogp_1200_630.png"],
   },
   alternates: {
     canonical: "https://selectmall-keg.jp/",
