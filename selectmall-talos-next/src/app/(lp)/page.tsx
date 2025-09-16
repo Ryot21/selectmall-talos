@@ -318,7 +318,7 @@ export default function Home() {
                 {/* とても軽量 */}
                 <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f01.png"
                         alt="ワンウェイケグを持ち上げている様子"
@@ -335,7 +335,7 @@ export default function Home() {
                 {/* 特別な設備は不要 */}
                 <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f02.png"
                         alt="ビールを充填している様子"
@@ -354,7 +354,7 @@ export default function Home() {
                 {/* そのまま */}
                 <li className="flexItem mgb5 mgb15s">
                   <div className="c-card -lp -p02  a-fadeUp -sc-entry-slow">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f03.png"
                         alt="ワンウェイケグをアルコール洗浄する様子"
@@ -373,7 +373,7 @@ export default function Home() {
                 {/* 海外輸出の最適解！！ */}
                 <li className="flexItem mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f04.png"
                         alt="海外に輸入している様子"
@@ -392,7 +392,7 @@ export default function Home() {
                 {/* 廃棄が簡単 */}
                 <li className="flexItem mgb15s">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f05.png"
                         alt="ワンウェイケグの廃棄方法"
@@ -411,7 +411,7 @@ export default function Home() {
                 {/* 持ち運びが便利 */}
                 <li className="flexItem">
                   <div className="c-card -lp -p02 a-fadeUp -sc-entry-slow">
-                    <div className="c-img -thumbnail mgb5 mgb5s">
+                    <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                       <Image
                         src="/images/pic/480-320_f06.png"
                         alt="ワンウェイケグの説明"

@@ -1,35 +1,5 @@
 
 /* ---------------------------------
-    画像：ホバー > 画像拡大
---------------------------------- */
-.a-zoomImg{
-    .imgBox{
-        // background: black;
-        overflow: hidden;
-        transition: 3s all;
-        img{
-            transform: scale(1.01);
-            transition: 1s all;
-        }
-    }
-    &:hover{
-        .imgBox{img{transform: scale(1.05);}}
-        a{box-shadow: 0px 3px 6px 1px rgb(0 0 0 / 34%);}
-    }
-    &.-after{
-        img{overflow: hidden;}
-        &::after{
-            transform: scale(1.01);
-            transition: 1s all;
-        }
-        &:hover{
-            &::after{transform: scale(1.05);}
-        }
-    }
-}
-
-
-/* ---------------------------------
     ファーストビュー > 画像縮小
 --------------------------------- */
 .a-fviewOutImg{

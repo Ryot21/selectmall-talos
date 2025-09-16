@@ -116,7 +116,7 @@ export default function LpMainVisual() {
                             <div className={"c-contentsBox -tate -tate02"}>
                                 <Image
                                     src="/images/SVG/_sub02.svg"
-                                    alt="使い切りケグの新定番"
+                                    alt="軽くて強い"
                                     width={42}
                                     height={235}
                                 />
