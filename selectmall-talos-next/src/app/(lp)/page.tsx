@@ -167,7 +167,7 @@ export default function Home() {
                           <br />
                           <span className="-lp_c02">
                             外装とインナーバッグの隙間に空気を注入する事でビールに酸素が触れることなく押し出し可能。
-                            空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。ET素材でリサイクル可能。
+                            空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。PET素材でリサイクル可能。
                           </span>
                         </p>
                         <p className="s-S -ls-2 -lh-1_5">
@@ -402,11 +402,9 @@ export default function Home() {
                     </div>
                     <h3 className="c-card--title mgb5 mgb5s">廃棄が簡単！！</h3>
                     <p className="c-card--text">
-                      主要なパーツは簡単に分解できます。使用後は踏みつぶして圧縮します。(
-                      <Link className="b-text -c01" href="">
-                        処分方法はコチラ
-                      </Link>
-                      ) ※処理方法は自治体により異なります
+                      主要なパーツは簡単に分解できます。使用後は踏みつぶして圧縮します。
+                      {/* (<Link className="b-text -c01" href="">処分方法はコチラ</Link>)  */}
+                      ※処理方法は自治体により異なります
                     </p>
                   </div>
                 </li>
