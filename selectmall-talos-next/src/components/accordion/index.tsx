@@ -14,7 +14,7 @@ export default function Accordion({ items }: AccordionProps) {
                         <label htmlFor={item.id} className="label s-ML -color02 -b -ls-2">
                             {item.question}
                         </label>
-                        <p className="c-accordion--text s-M -b -ls-2 -lh-1_5">
+                        <p className="c-accordion--text s-M -s13 -ls-2 -lh-1_5">
                             {item.answer}
                         </p>
                     </li>

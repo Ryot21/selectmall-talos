@@ -344,7 +344,7 @@ export default function ContactForm({ customClass }: FormProps) {
     <>
       {/* お問い合わせフォーム */}
       <div className="c-contents">
-        <p className="s-M -lp_c01 -center -ls-2 -lh-2 mgb5 mgb10s">
+        <p className="s-M -s13 -lp_c01 -center -ls-2 -lh-2 mgb5 mgb10s">
           「ステンレスケグと迷っている」
           <br />
           「他社のワンウェイケグと比較したい」

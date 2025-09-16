@@ -65,10 +65,10 @@ export default function Home() {
               T-KEG<span>とは</span>
             </h2>
             <p className="c-contents--LpText -center -lp_c02 a-fadeUp -sc-entry">
-              Talos社は1997年に創業し、2003年に樽ビール分配の専門分野に本格参入。
+              Talos社は1997年に創業し、<br className="sp"/>2003年に樽ビール分配の専門分野に本格参入。
               <br />
               ビール分配システムの設計、研究開発、製造、販売、サービスを一体化した高新技術企業です。
-              <br />
+              <br /><br className="sp"/>
               現在、液体食品包装設計と分配システム研究開発能力を兼ね備えた総合サービス提供企業として、
               <br />
               ビールサーバー、分配器、ビールタップシリーズを90以上の国に輸出しています。
@@ -100,23 +100,23 @@ export default function Home() {
                       <li className="flexItem">
                         <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                           <span className="-lp_c01 -b -shadow">
-                            単層ワンウェイケグ
+                            単層ケグ
                           </span>
-                          <span className="s-S -lp_c02 -b">
+                          <span className="s-S -s13 -lp_c02 -b">
                             （S/A/G/Tタイプ規格対応）
                           </span>
                         </h3>
-                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                           ステンレスケグの革新的代替ソリューション
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
                           <span className="-lp_c01 -b">【主な特徴】</span>
                           <br />
                           <span className="-lp_c02">
                             従来のステンレスケグに比べて軽量で取り扱いやすく、返却不要のワンウェイシステムにより、配送コストの削減と効率化を実現します。日本の飲食業界に革新をもたらす次世代ビールケグシステムです。
                           </span>
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5">
+                        <p className="s-S -s13 -ls-2 -lh-1_5">
                           <span className="-lp_c01 -b">【製品スペック】</span>
                           <br />
                           <span className="-lp_c02">
@@ -154,15 +154,15 @@ export default function Home() {
                       <li className="flexItem">
                         <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                           <span className="-lp_c01 -b -shadow">T-KEG</span>
-                          <span className="s-S -lp_c02 -b">
-                            （2層ケグ - S/A/G/Tタイプ規格対応）
+                          <span className="s-S -s13 -lp_c02 -b">
+                            （S/A/G/Tタイプ規格対応）
                           </span>
                         </h3>
-                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                          次世代使い捨てビールケグ -
+                        <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          次世代使い捨てビールケグ -<br className="sp"/>
                           革新的な多層フレキシブルバッグシステム
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
                           <span className="-lp_c01 -b">【主な特徴】</span>
                           <br />
                           <span className="-lp_c02">
@@ -170,7 +170,7 @@ export default function Home() {
                             空ケグの返却が不要で、ケグ入り飲料の販売半径を拡大可能。PET素材でリサイクル可能。
                           </span>
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5">
+                        <p className="s-S -s13 -ls-2 -lh-1_5">
                           <span className="-lp_c01 -b">【製品スペック】</span>
                           <br />
                           <span className="-lp_c02">
@@ -212,29 +212,29 @@ export default function Home() {
                       <li className="flexItem">
                         <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                           <span className="-lp_c01 -b -shadow">BREWJET</span>
-                          <span className="s-S -lp_c02 -b">
+                          <span className="s-S -s13 -lp_c02 -b">
                             （革新的ビールディスペンシングシステム）
                           </span>
                         </h3>
-                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                          ケグとディスペンサーが一体化した次世代ビールサーバー
+                        <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          ケグとディスペンサーが一体化した<br className="sp"/>次世代ビールサーバー
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
                           <span className="-lp_c01 -b">【主な特徴】</span>
                           <br />
                           <span className="-lp_c02">
                             BrewJetは特別な消費シーンに最適化されており、パーティー、アウトドアイベント、バーベキュー、キャンプなど、従来のビールサーバーでは対応困難な場所でも、プロ品質のドラフトビール体験を実現します。ポータブル設計により、どこでも新鮮で美味しいビールをお楽しみいただけます。
                           </span>
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5">
+                        <p className="s-S -s13 -ls-2 -lh-1_5">
                           <span className="-lp_c01 -b">【製品スペック】</span>
                           <br />
                           <span className="-lp_c02">
                             材質 ： PET（本体）、PP（ハンドル）
                             <br />
                             容量 ： 5L
-                            <br />
-                            高さ ： ???mm
+                            {/* <br />
+                            高さ ： ???mm */}
                             <br />
                             重量 ： 0.5kg±0.1
                             <br />
@@ -268,29 +268,29 @@ export default function Home() {
                       <li className="flexItem">
                         <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                           <span className="-lp_c01 -b -shadow">TOPPER</span>
-                          <span className="s-S -lp_c02 -b">
+                          <span className="s-S -s13 -lp_c02 -b">
                             （ポータブルディスペンシングシステム）
                           </span>
                         </h3>
-                        <p className="s-S -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                           コンパクト設計で持ち運び自由
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5 mgb4 mgb5s">
+                        <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
                           <span className="-lp_c01 -b">【主な特徴】</span>
                           <br />
                           <span className="-lp_c02">
                             従来のビアサーバーの概念を覆す軽量・コンパクト設計により、家庭でのエンターテイメントから商業用途まで幅広く対応。アウトドアイベント、バーベキュー、キャンプ、パーティー、レストラン、カフェ、バーなど、あらゆる場面でプロフェッショナルなビール体験を実現します。
                           </span>
                         </p>
-                        <p className="s-S -ls-2 -lh-1_5">
+                        <p className="s-S -s13 -ls-2 -lh-1_5">
                           <span className="-lp_c01 -b">【製品スペック】</span>
                           <br />
                           <span className="-lp_c02">
                             材質 ： PET（本体）、PP（ハンドル）
                             <br />
                             容量 ： 3L
-                            <br />
-                            高さ ： ???mm
+                            {/* <br />
+                            高さ ： ???mm */}
                             <br />
                             重量 ： 0.25kg±0.05
                             <br />
@@ -453,10 +453,10 @@ export default function Home() {
                   </li>
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t01 mgb1 mgb3s">
-                      ワンウェイケグ・充填機を含めた、<br/>
+                      ワンウェイケグ・充填機を含めた、<br className="tb-pc"/>
                       ワンストップ提案も可能！！
                     </h3>
-                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                    <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                       お客様のブランドイメージや販売戦略に最適なケグや充填機をご提案いたします。数量、容量、ラベルデザインを細かくカスタマイズし、コスト削減と品質向上を同時に実現します。
                     </p>
                   </li>
@@ -478,10 +478,10 @@ export default function Home() {
                   <li className={"flexItem"}>
                     <h3 className="c-contents--LpListTitle -t02 mgb1 mgb3s">
                       現在開発中の越境ECモールに出品できる！
-                      <br />
-                      丹精こめたビールの広告としてもお使い下さい！！
+                      <br className="tb-pc" />
+                      丹精こめたビールの広告としてもお使い下さい！
                     </h3>
-                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                    <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                       越境ECプラットフォームで、あなたのクラフトビールを世界中に発信！！革新的なパッケージングが商品の魅力を最大限に引き出し、海外市場での認知度向上と売上拡大をサポートします。
                     </p>
                   </li>
@@ -506,7 +506,7 @@ export default function Home() {
                       <br />
                       地方クラフトさんにフォーカスしたイベントを開催！
                     </h3>
-                    <p className="s-M -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                    <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                       全国各地のクラフトビール醸造家様を少しでも知っていただけるように交流イベントを企画中！地域の特色を活かした商品展示会や試飲会を通じて、新たなビジネスチャンスの創出と業界ネットワークの拡大をお手伝いします。
                     </p>
                   </li>
@@ -546,7 +546,7 @@ export default function Home() {
                     <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                       従来ケグと比べて大幅なコスト削減効果
                     </h3>
-                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">
+                    <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
                       →
                       回収・洗浄・メンテナンス費用が不要なので、運用コスト約60%削減＋初期投資大幅軽減
                     </p>
@@ -572,7 +572,7 @@ export default function Home() {
                     <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                       すぐに導入可能
                     </h3>
-                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">
+                    <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
                       →
                       ステンレスケグと同じカプラータイプのため、導入コストを気にせず気軽にお使いいただけます。
                     </p>
@@ -598,7 +598,7 @@ export default function Home() {
                     <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                       国内外問わず対応可能な配送網
                     </h3>
-                    <p className="s-S -lp_c02 -left -ls-2 -lh-1_5">
+                    <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
                       →
                       軽量設計（従来比40%軽量）かつ回収コストが不要なため、離島・遠隔地まで全国どこでも配送対応
                     </p>

@@ -62,7 +62,7 @@ td {
   font-style: normal;
   line-height: 1.3;
   @include max(500) {
-    font-family: $f-gothic02;
+    // font-family: $f-gothic02;
   }
 
   // ※
@@ -321,7 +321,7 @@ td {
   &.s-M {
     font-size: 1.2rem;
     @include min(768) {
-      font-size: clamp(1.2rem, 1.5vw, 1.6rem) !important;
+      font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
     }
   }
   &.s-ML {
@@ -396,6 +396,11 @@ td {
   &.-s12 {
     @include max(768) {
       font-size: 1.2rem;
+    }
+  }
+  &.-s13 {
+    @include max(768) {
+      font-size: 1.3rem;
     }
   }
   &.-s14 {

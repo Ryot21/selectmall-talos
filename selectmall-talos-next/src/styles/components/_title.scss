@@ -139,7 +139,7 @@
     }
 
     &--ItemTitle{// コンテンツ > セクション > タイトル
-        font-size: 1.8rem;
+        font-size: 2rem;
         letter-spacing: .2rem;
         line-height: 1.7;
         @include min(500){
@@ -232,11 +232,14 @@
         &::before{
             position: absolute;
             top: 50%;
-            left: 1.5rem;
+            left: 1rem;
             transform: translate(0, -50%);
             font-size: clamp(2.8rem, 2.5vw, 4rem);
             font-weight: bold;
             letter-spacing: -.1rem;
+            @include min(768){
+                left: 1.5rem;
+            }
         }
         &.-t01{
             background: $lp-color01;
@@ -255,6 +258,10 @@
 
     // コンテンツ内のテキスト
     &--LpText {
+        font-size: 1.3rem;
+        @include min(768) {
+            font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+        }
         letter-spacing: .1rem;
         line-height: 2;
 
