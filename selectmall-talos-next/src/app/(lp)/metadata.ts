@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://selectmall-talos.jp/"),
+  metadataBase: new URL("https://selectmall-keg.jp/"),
   title: {
     template: "セレクトモール | TALOS（タロス）ワンウェイケグ - %s",
     default: "セレクトモール | TALOS（タロス）ワンウェイケグ",
@@ -18,6 +18,6 @@ export const metadata: Metadata = {
     images: ["/images/sns/ogp_1200_630.png"],
   },
   alternates: {
-    canonical: "https://selectmall-talos.jp/",
+    canonical: "https://selectmall-keg.jp/",
   },
 };
