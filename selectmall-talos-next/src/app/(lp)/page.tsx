@@ -619,7 +619,7 @@ export default function Home() {
         <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb5 pdb15s"}>
           <div className={"c-contents--inner"}>
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
-              よくある筆問
+              よくある質問
             </h2>
             <Accordion items={faqItems} />
           </div>
