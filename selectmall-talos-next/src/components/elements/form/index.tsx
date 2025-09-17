@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import { sendGTMEvent } from "@next/third-parties/google";
 import {
   validateForm,
   formatPhoneNumber,
@@ -162,6 +163,15 @@ export default function ContactForm({ customClass }: FormProps) {
         status: "success",
         message: "お問い合わせを受け付けました。",
       });
+
+      // GTM: フォーム送信成功イベント
+      try {
+        sendGTMEvent({
+          event: "form_submission",
+          formType: formData.mokuteki || "contact",
+          status: "success",
+        });
+      } catch (_) {}
       // フォームの初期化
       setFormData({
         keg: [],
@@ -194,6 +204,15 @@ export default function ContactForm({ customClass }: FormProps) {
         message:
           "エラーが発生しました。しばらく時間をおいて再度お試しください。",
       });
+
+      // GTM: フォーム送信失敗イベント
+      try {
+        sendGTMEvent({
+          event: "form_submission",
+          formType: formData.mokuteki || "contact",
+          status: "error",
+        });
+      } catch (_) {}
     }
   }, [formData, isFormValid, router]);
 

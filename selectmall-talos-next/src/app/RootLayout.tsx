@@ -23,9 +23,11 @@ export default function RootLayout({
         />
 
       </head>
-      <body suppressHydrationWarning>{children}</body>
-      {/* メディア用 > Google Tag Manager */}
-      <GoogleTagManager gtmId="GTM-5LJJMDDN" />
+      <body suppressHydrationWarning>
+        {/* Google Tag Manager は <body> の直後に配置 */}
+        <GoogleTagManager gtmId="GTM-5LJJMDDN" />
+        {children}
+      </body>
     </html>
   );
 }
