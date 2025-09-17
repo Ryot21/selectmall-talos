@@ -97,7 +97,7 @@
         @include min(768) {margin-top: 50px;}    
     }
     &.-LP01 {
-        background: $lp-color04;
+        // background: $lp-color04;
         .imgBox {
             object-fit: cover;
 
@@ -106,22 +106,10 @@
             height: auto;
             max-width: none !important;
             max-height: none !important;
-
             @include max(500) {
                 max-height: 1080px !important;
             }
-            // @include min(768) {
-            //     min-height: 620px !important;
-            // }
-            // @include min(2000) {
-            //     max-height: 1280px !important;
-            // }
-            // img {
-                // @include min(768) {
-                //     object-position: 100% 90%;
-                //     object-fit: cover;
-                // }
-            // }
+
         }
         .c-contentsBox {
             // ケグ

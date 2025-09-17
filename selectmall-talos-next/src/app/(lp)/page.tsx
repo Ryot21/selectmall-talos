@@ -6,7 +6,6 @@ import React from "react";
 import LpMainVisual from "@/features/lp/mainVisual";
 import ScrollContainer from "@/features/lp/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
-// import LogoMark from "@/components/lottie/LogoMark";
 
 import Lp02Cta from "@/features/lp/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
@@ -53,14 +52,10 @@ export default function Home() {
       <div id="stickyDisplayTrigger">
         <LpMainVisual />
       </div>
-      <div className="c-contents ">
+      <div className="c-contents -bg_dot">
         {/* SC01 T-KEGとは */}
         <div id="sc01" className="c-contents pdt10 pdt15s">
           <div className="c-contents--inner">
-            {/* Talosロゴ */}
-            {/* <div className="mgb5 mgb10s">
-              <LogoMark />
-            </div> */}
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               T-KEG<span>とは</span>
             </h2>
@@ -615,12 +610,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
 
         {/* cta02 */}
         <Lp02Cta />
 
         {/* Q&A */}
-        <div id="Q&A" className={"c-contents pdt10 pdt20s pdb5 pdb15s"}>
+        <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb5 pdb15s"}>
           <div className={"c-contents--inner"}>
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある筆問
@@ -628,7 +624,6 @@ export default function Home() {
             <Accordion items={faqItems} />
           </div>
         </div>
-      </div>
       <StickyButtonWrapper />
     </main>
   );
