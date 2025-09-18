@@ -3,32 +3,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://selectmall-keg.jp/"),
   title: {
-    template: "セレクトモール | TALOS（タロス）ワンウェイケグ - %s",
-    default: "セレクトモール | TALOS（タロス）ワンウェイケグ",
+    template: "TALOS（タロス）ワンウェイケグ - %s",
+    default:  "TALOS（タロス）ワンウェイケグ - セレクトモール株式会社",
   },
   description:
-    "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
+    "タロス製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
   openGraph: {
-    type: "website",
-    locale: "ja_JP",
-    siteName: "セレクトモール",
-    title: "セレクトモール | TALOS（タロス）ワンウェイケグ",
+    type:     "website",
+    locale:   "ja_JP",
+    siteName: "TALOS（タロス）ワンウェイケグ - セレクトモール株式会社",
+    title:    "TALOS（タロス）ワンウェイケグ - セレクトモール株式会社",
     description:
-      "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
+              "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
     images: [
       {
         url: "/images/sns/ogp_1200_630.png",
         width: 1200,
         height: 630,
-        alt: "セレクトモール | TALOS（タロス）ワンウェイケグ",
+        alt: "TALOS（タロス）ワンウェイケグ - セレクトモール株式会社",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "セレクトモール | TALOS（タロス）ワンウェイケグ",
+    card:  "summary_large_image",
+    title: "TALOS（タロス）ワンウェイケグ - セレクトモール株式会社",
     description:
-      "Talos製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
+          "タロス製のワンウェイケグ。ステンレスケグに代わるワンウェイケグでブルワリー様の負担軽減をサポートします。",
     images: ["/images/sns/ogp_1200_630.png"],
   },
   alternates: {
