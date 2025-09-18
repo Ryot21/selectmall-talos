@@ -20,7 +20,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/images/sns/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
-        purpose: "any maskable",
+        purpose: "maskable",
       },
       {
         src: "/favicon.ico",
