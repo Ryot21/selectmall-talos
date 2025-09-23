@@ -99,6 +99,9 @@ export const productStructuredData = {
   name: "TALOS ワンウェイケグ",
   description:
     "使い捨てタイプのビールケグ。運用コスト60%削減、軽量1.3kg設計でブルワリーの課題を解決",
+  image: [
+    "https://selectmall-keg.jp/images/sns/ogp_1200_630.png",
+  ],
   brand: {
     "@type": "Brand",
     name: "TALOS",
@@ -109,15 +112,6 @@ export const productStructuredData = {
     url: "https://selectmall-keg.jp/",
   },
   category: "ビールケグ",
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/InStock",
-    priceValidUntil: "2024-12-31",
-    seller: {
-      "@type": "Organization",
-      name: "セレクトモール株式会社",
-    },
-  },
   additionalProperty: [
     {
       "@type": "PropertyValue",

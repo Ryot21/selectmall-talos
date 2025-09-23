@@ -116,6 +116,11 @@ export const metadata: Metadata = {
         name: "セレクトモール株式会社",
         url: "https://selectmall-keg.jp/",
       },
+      image: [
+        "https://selectmall-keg.jp/images/sns/ogp_1200_630.png",
+        "https://selectmall-keg.jp/images/keg/T-Keg_20L30L.png",
+        "https://selectmall-keg.jp/images/keg/BREWJET-descript.png",
+      ],
     }),
   },
 };
