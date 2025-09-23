@@ -20,15 +20,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // 優先度：最高（メインページのため）
       priority: 1.0,
     },
-    {
-      // サンクスページ（お問い合わせ完了ページ）
-      url: `${baseUrl}/thanks`,
-      // 最終更新日時（現在時刻を自動設定）
-      lastModified: new Date(),
-      // 更新頻度：月次（静的なページのため）
-      changeFrequency: "monthly",
-      // 優先度：中程度（サブページのため）
-      priority: 0.5,
-    },
   ];
 }

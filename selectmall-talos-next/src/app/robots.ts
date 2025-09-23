@@ -13,7 +13,7 @@ export default function robots(): MetadataRoute.Robots {
       // ルートディレクトリ以下すべてをクロール許可
       allow: "/",
       // プライベートページと管理ページはクロール禁止
-      disallow: ["/private/", "/admin/"],
+      disallow: ["/private/", "/admin/", "/thanks"],
     },
     // サイトマップの場所を指定（SEO最適化）
     sitemap: "https://selectmall-keg.jp/sitemap.xml",
