@@ -127,7 +127,7 @@ export const metadata: Metadata = {
         "@type": "Offer", // 商品の販売オファー情報
         url: "https://selectmall-keg.jp/", // 商品ページのURL
         priceCurrency: "JPY", // 価格の通貨（日本円）
-        price: "お問い合わせください", // 価格（問い合わせ価格のため固定値）
+        // price: "", // 価格（問い合わせ価格のため固定値）
         priceValidUntil: "2025-12-31", // 価格の有効期限
         availability: "https://schema.org/InStock", // 在庫状況（在庫あり）
         seller: {
