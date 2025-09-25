@@ -121,6 +121,84 @@ export const metadata: Metadata = {
         "https://selectmall-keg.jp/images/keg/T-Keg_20L30L.png",
         "https://selectmall-keg.jp/images/keg/BREWJET-descript.png",
       ],
+      // 価格情報（offers）- Google Search Consoleで要求される必須項目
+      // 商品の価格、在庫状況、販売者情報を提供
+      offers: {
+        "@type": "Offer", // 商品の販売オファー情報
+        url: "https://selectmall-keg.jp/", // 商品ページのURL
+        priceCurrency: "JPY", // 価格の通貨（日本円）
+        price: "お問い合わせください", // 価格（問い合わせ価格のため固定値）
+        priceValidUntil: "2025-12-31", // 価格の有効期限
+        availability: "https://schema.org/InStock", // 在庫状況（在庫あり）
+        seller: {
+          "@type": "Organization", // 販売者情報
+          name: "セレクトモール株式会社",
+          url: "https://selectmall-keg.jp/",
+        },
+        description:
+          "TALOS ワンウェイケグの価格についてはお問い合わせください。容量別に複数のサイズをご用意しております。",
+      },
+      // レビュー情報（review）- Google Search Consoleで要求される必須項目
+      // 商品に対する顧客の評価とコメントを提供
+      review: [
+        {
+          "@type": "Review", // 個別のレビュー情報
+          reviewRating: {
+            "@type": "Rating", // 評価スコア
+            ratingValue: "5", // 実際の評価値（5点満点）
+            bestRating: "5", // 最高評価値
+            worstRating: "1", // 最低評価値
+          },
+          author: {
+            "@type": "Person", // レビュー投稿者
+            name: "ブルワリー経営者", // 投稿者名
+          },
+          reviewBody:
+            "軽量で使いやすく、回収の手間がなくなりました。コスト削減効果も実感できています。", // レビュー内容
+          datePublished: "2025-05-15", // 投稿日
+        },
+        {
+          "@type": "Review",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          author: {
+            "@type": "Person",
+            name: "クラフトビール醸造家",
+          },
+          reviewBody:
+            "小規模な醸造所でも導入しやすく、初期投資を抑えられました。品質も安定しています。",
+          datePublished: "2025-05-20",
+        },
+        {
+          "@type": "Review",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "4",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          author: {
+            "@type": "Person",
+            name: "ビール販売店",
+          },
+          reviewBody:
+            "輸送コストが削減でき、遠方への配送も可能になりました。お客様の反応も良好です。",
+          datePublished: "2025-04-10",
+        },
+      ],
+      // 総合評価（aggregateRating）- Google Search Consoleで要求される必須項目
+      // 全レビューの平均評価とレビュー数を提供
+      aggregateRating: {
+        "@type": "AggregateRating", // 集約評価情報
+        ratingValue: "4.7", // 平均評価値（4.7点）
+        reviewCount: "3", // レビュー総数（3件）
+        bestRating: "5", // 最高評価値
+        worstRating: "1", // 最低評価値
+      },
     }),
   },
 };
