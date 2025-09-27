@@ -12,73 +12,57 @@ import type { NextRequest } from "next/server";
  * 4. 重複スラッシュの除去
  */
 export function middleware(request: NextRequest) {
-  const { pathname, search } = request.nextUrl;
+  const { pathname } = request.nextUrl;
   const hostname = request.headers.get("host") || "";
   const userAgent = request.headers.get("user-agent") || "";
 
-  // リダイレクトチェーンを避けるため、一度に一つのリダイレクトのみ実行
+  // デバッグ用ログ（本番環境では削除）
+  console.log(`[Middleware] ${hostname}${pathname} - UserAgent: ${userAgent}`);
+
+  // リダイレクトチェーンを完全に避けるため、最小限の設定のみ
 
   // 1. wwwなしからwwwありへのリダイレクト（SEO最適化）
   if (hostname === "www.selectmall-keg.jp") {
+    console.log(
+      `[Middleware] Redirecting www to non-www: ${hostname}${pathname}`
+    );
     const url = request.nextUrl.clone();
     url.hostname = "selectmall-keg.jp";
     return NextResponse.redirect(url, 301);
   }
 
-  // 2. 特定のパターンに対するリダイレクト（/lp/ パスをルートにリダイレクト）
-  if (pathname.startsWith("/lp/") && pathname !== "/lp/") {
-    const url = request.nextUrl.clone();
-    url.pathname = pathname.replace("/lp", "");
-    return NextResponse.redirect(url, 301);
-  }
-
-  // 3. 重複スラッシュの除去
+  // 2. 重複スラッシュの除去（基本的なURL正規化のみ）
   if (pathname.includes("//")) {
+    console.log(`[Middleware] Removing duplicate slashes: ${pathname}`);
     const url = request.nextUrl.clone();
     url.pathname = pathname.replace(/\/+/g, "/");
     return NextResponse.redirect(url, 301);
   }
 
-  // 4. 大文字小文字の統一（URLの正規化）
-  if (pathname !== pathname.toLowerCase()) {
-    const url = request.nextUrl.clone();
-    url.pathname = pathname.toLowerCase();
-    return NextResponse.redirect(url, 301);
-  }
-
-  // 5. 末尾スラッシュの統一（Googlebot用、最後に実行）
-  const isGooglebot = /Googlebot/i.test(userAgent);
-  if (isGooglebot && pathname.endsWith("/") && pathname !== "/") {
-    const url = request.nextUrl.clone();
-    url.pathname = pathname.slice(0, -1);
-    return NextResponse.redirect(url, 301);
-  }
-
+  // その他のリダイレクトは削除して、シンプルに保つ
+  console.log(`[Middleware] No redirect needed for: ${hostname}${pathname}`);
   return NextResponse.next();
 }
 
 /**
  * ミドルウェアの適用範囲
- * 以下のパスにミドルウェアを適用：
- * - すべてのパス（'/(.*)'）
- * 除外パス：
- * - _next/static（静的ファイル）
- * - _next/image（画像最適化）
- * - favicon.ico（ファビコン）
- * - robots.txt（ロボットファイル）
- * - sitemap.xml（サイトマップ）
+ * リダイレクトエラーを避けるため、最小限のパスにのみ適用
  */
 export const config = {
   matcher: [
     /*
-     * 以下のパターンにマッチするすべてのリクエストパスを除外：
+     * 以下のパスにのみミドルウェアを適用：
+     * - ルートパス（/）
+     * - ページパス（/page）
+     * 除外パス：
      * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - robots.txt (robots file)
      * - sitemap.xml (sitemap file)
+     * - その他の静的ファイル
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.).*)?",
   ],
 };
