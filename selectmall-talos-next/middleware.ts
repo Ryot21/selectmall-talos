@@ -16,16 +16,10 @@ export function middleware(request: NextRequest) {
   const hostname = request.headers.get("host") || "";
   const userAgent = request.headers.get("user-agent") || "";
 
-  // デバッグ用ログ（本番環境では削除）
-  console.log(`[Middleware] ${hostname}${pathname} - UserAgent: ${userAgent}`);
-
   // リダイレクトチェーンを完全に避けるため、最小限の設定のみ
 
   // 1. wwwなしからwwwありへのリダイレクト（SEO最適化）
   if (hostname === "www.selectmall-keg.jp") {
-    console.log(
-      `[Middleware] Redirecting www to non-www: ${hostname}${pathname}`
-    );
     const url = request.nextUrl.clone();
     url.hostname = "selectmall-keg.jp";
     return NextResponse.redirect(url, 301);
@@ -33,14 +27,12 @@ export function middleware(request: NextRequest) {
 
   // 2. 重複スラッシュの除去（基本的なURL正規化のみ）
   if (pathname.includes("//")) {
-    console.log(`[Middleware] Removing duplicate slashes: ${pathname}`);
     const url = request.nextUrl.clone();
     url.pathname = pathname.replace(/\/+/g, "/");
     return NextResponse.redirect(url, 301);
   }
 
   // その他のリダイレクトは削除して、シンプルに保つ
-  console.log(`[Middleware] No redirect needed for: ${hostname}${pathname}`);
   return NextResponse.next();
 }
 

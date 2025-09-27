@@ -127,9 +127,42 @@ export const metadata: Metadata = {
         "@type": "Offer", // 商品の販売オファー情報
         url: "https://selectmall-keg.jp/", // 商品ページのURL
         priceCurrency: "JPY", // 価格の通貨（日本円）
-        price: 2000, // 価格（問い合わせ価格のため固定値）
+        price: "2000", // 価格（文字列として設定、問い合わせ価格のため固定値）
         priceValidUntil: "2025-12-31", // 価格の有効期限
         availability: "https://schema.org/InStock", // 在庫状況（在庫あり）
+        // 配送情報を追加（Google Search Consoleの警告対応）
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            currency: "JPY",
+            value: "0",
+          },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            businessDays: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+              ],
+            },
+            cutoffTime: "14:00",
+          },
+        },
+        // 返品ポリシーを追加（Google Search Consoleの警告対応）
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "JP",
+          returnPolicyCategory:
+            "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 30,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
         seller: {
           "@type": "Organization", // 販売者情報
           name: "セレクトモール株式会社",
