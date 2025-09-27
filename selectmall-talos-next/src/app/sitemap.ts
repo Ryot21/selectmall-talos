@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      // メインページ（ランディングページ）
+      // メインページ（ランディングページ）- 正規URL
       url: baseUrl,
       // 最終更新日時（現在時刻を自動設定）
       lastModified: new Date(),

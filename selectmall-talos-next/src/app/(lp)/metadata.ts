@@ -81,9 +81,9 @@ export const metadata: Metadata = {
     images: ["/images/sns/ogp_1200_630.png"],
   },
 
-  // 正規URL
+  // 正規URL（末尾スラッシュなしで統一）
   alternates: {
-    canonical: "https://selectmall-keg.jp/",
+    canonical: "https://selectmall-keg.jp",
   },
 
   // robots設定（必要に応じて）
