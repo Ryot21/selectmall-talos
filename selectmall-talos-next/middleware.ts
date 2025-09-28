@@ -18,12 +18,13 @@ export function middleware(request: NextRequest) {
 
   // リダイレクトチェーンを完全に避けるため、最小限の設定のみ
 
-  // 1. wwwなしからwwwありへのリダイレクト（SEO最適化）
+  // 1. wwwありからwwwなしへのリダイレクト（SEO最適化）
   if (hostname === "www.selectmall-keg.jp") {
     const url = request.nextUrl.clone();
     url.hostname = "selectmall-keg.jp";
     return NextResponse.redirect(url, 301);
   }
+  
 
   // 2. 重複スラッシュの除去（基本的なURL正規化のみ）
   if (pathname.includes("//")) {

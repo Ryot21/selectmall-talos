@@ -37,6 +37,6 @@ export default function robots(): MetadataRoute.Robots {
     // サイトマップの場所を指定（SEO最適化）
     sitemap: "https://selectmall-keg.jp/sitemap.xml",
     // ホストの指定（wwwなしを正規URLとして指定）
-    host: "https://selectmall-keg.jp",
+    host: "selectmall-keg.jp",
   };
 }

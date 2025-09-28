@@ -22,7 +22,6 @@ import {
   faqStructuredData,
   organizationStructuredData,
   breadcrumbStructuredData,
-  productStructuredData,
 } from "@/components/StructuredData";
 
 const faqItems: AccordionItem[] = [
@@ -110,12 +109,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbStructuredData),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productStructuredData),
         }}
       />
 
