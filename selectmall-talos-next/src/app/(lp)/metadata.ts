@@ -86,6 +86,16 @@ export const metadata: Metadata = {
     canonical: "https://selectmall-keg.jp",
   },
 
+  // ファビコン設定
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/images/logo/selectmall-logo_old.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/images/sns/apple-touch-icon.png",
+  },
+
   // robots設定（必要に応じて）
   robots: {
     index: true,
@@ -101,136 +111,159 @@ export const metadata: Metadata = {
 
   // 構造化データ（JSON-LD）- 別途追加推奨
   other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: "TALOS ワンウェイケグ",
-      description:
-        "使い捨てタイプのビールケグ。運用コスト削減、軽量1.3kg設計",
-      brand: {
-        "@type": "Brand",
-        name: "TALOS",
-      },
-      manufacturer: {
-        "@type": "Organization",
-        name: "セレクトモール株式会社",
-        url: "https://selectmall-keg.jp/",
-      },
-      image: [
-        "https://selectmall-keg.jp/images/sns/ogp_1200_630.png",
-        "https://selectmall-keg.jp/images/keg/T-Keg_20L30L.png",
-        "https://selectmall-keg.jp/images/keg/BREWJET-descript.png",
-      ],
-      // 価格情報（offers）- Google Search Consoleで要求される必須項目
-      // 商品の価格、在庫状況、販売者情報を提供
-      offers: {
-        "@type": "Offer", // 商品の販売オファー情報
-        url: "https://selectmall-keg.jp/", // 商品ページのURL
-        priceCurrency: "JPY", // 価格の通貨（日本円）
-        price: "2000", // 価格（文字列として設定、問い合わせ価格のため固定値）
-        priceValidUntil: "2025-12-31", // 価格の有効期限
-        availability: "https://schema.org/InStock", // 在庫状況（在庫あり）
-        // 配送情報を追加（Google Search Consoleの警告対応）
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: {
-            "@type": "MonetaryAmount",
-            currency: "JPY",
-            value: "0",
-          },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            businessDays: {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-              ],
-            },
-            cutoffTime: "14:00",
+    "application/ld+json": JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "TALOS ワンウェイケグ - セレクトモール",
+        url: "https://selectmall-keg.jp",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://selectmall-keg.jp/images/logo/selectmall-logo_old.svg",
+          width: 200,
+          height: 60,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "セレクトモール株式会社",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://selectmall-keg.jp/images/logo/selectmall-logo_old.svg",
+            width: 200,
+            height: 60,
           },
         },
-        // 返品ポリシーを追加（Google Search Consoleの警告対応）
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "JP",
-          returnPolicyCategory:
-            "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 30,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: "TALOS ワンウェイケグ",
+        description:
+          "使い捨てタイプのビールケグ。運用コスト削減、軽量1.3kg設計",
+        brand: {
+          "@type": "Brand",
+          name: "TALOS",
         },
-        seller: {
-          "@type": "Organization", // 販売者情報
+        manufacturer: {
+          "@type": "Organization",
           name: "セレクトモール株式会社",
           url: "https://selectmall-keg.jp/",
         },
-
+        image: [
+          "https://selectmall-keg.jp/images/sns/ogp_1200_630.png",
+          "https://selectmall-keg.jp/images/keg/T-Keg_20L30L.png",
+          "https://selectmall-keg.jp/images/keg/BREWJET-descript.png",
+        ],
+        // 価格情報（offers）- Google Search Consoleで要求される必須項目
+        // 商品の価格、在庫状況、販売者情報を提供
+        offers: {
+          "@type": "Offer", // 商品の販売オファー情報
+          url: "https://selectmall-keg.jp/", // 商品ページのURL
+          priceCurrency: "JPY", // 価格の通貨（日本円）
+          price: "2000", // 価格（文字列として設定、問い合わせ価格のため固定値）
+          priceValidUntil: "2025-12-31", // 価格の有効期限
+          availability: "https://schema.org/InStock", // 在庫状況（在庫あり）
+          // 配送情報を追加（Google Search Consoleの警告対応）
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              currency: "JPY",
+              value: "0",
+            },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              businessDays: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+              },
+              cutoffTime: "14:00",
+            },
+          },
+          // 返品ポリシーを追加（Google Search Consoleの警告対応）
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "JP",
+            returnPolicyCategory:
+              "https://schema.org/MerchantReturnFiniteReturnWindow",
+            merchantReturnDays: 30,
+            returnMethod: "https://schema.org/ReturnByMail",
+            returnFees: "https://schema.org/FreeReturn",
+          },
+          seller: {
+            "@type": "Organization", // 販売者情報
+            name: "セレクトモール株式会社",
+            url: "https://selectmall-keg.jp/",
+          },
+        },
+        // レビュー情報（review）- Google Search Consoleで要求される必須項目
+        // 商品に対する顧客の評価とコメントを提供
+        review: [
+          {
+            "@type": "Review", // 個別のレビュー情報
+            reviewRating: {
+              "@type": "Rating", // 評価スコア
+              ratingValue: "5", // 実際の評価値（5点満点）
+              bestRating: "5", // 最高評価値
+              worstRating: "1", // 最低評価値
+            },
+            author: {
+              "@type": "Person", // レビュー投稿者
+              name: "ブルワリー経営者", // 投稿者名
+            },
+            reviewBody:
+              "軽量で使いやすく、回収の手間がなくなりました。コスト削減効果も実感できています。", // レビュー内容
+            datePublished: "2025-05-15", // 投稿日
+          },
+          {
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            author: {
+              "@type": "Person",
+              name: "クラフトビール醸造家",
+            },
+            reviewBody:
+              "小規模な醸造所でも導入しやすく、初期投資を抑えられました。品質も安定しています。",
+            datePublished: "2025-05-20",
+          },
+          {
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4",
+              bestRating: "5",
+              worstRating: "1",
+            },
+            author: {
+              "@type": "Person",
+              name: "ビール販売店",
+            },
+            reviewBody:
+              "輸送コストが削減でき、遠方への配送も可能になりました。お客様の反応も良好です。",
+            datePublished: "2025-04-10",
+          },
+        ],
+        // 総合評価（aggregateRating）- Google Search Consoleで要求される必須項目
+        // 全レビューの平均評価とレビュー数を提供
+        aggregateRating: {
+          "@type": "AggregateRating", // 集約評価情報
+          ratingValue: "4.7", // 平均評価値（4.7点）
+          reviewCount: "3", // レビュー総数（3件）
+          bestRating: "5", // 最高評価値
+          worstRating: "1", // 最低評価値
+        },
       },
-      // レビュー情報（review）- Google Search Consoleで要求される必須項目
-      // 商品に対する顧客の評価とコメントを提供
-      review: [
-        {
-          "@type": "Review", // 個別のレビュー情報
-          reviewRating: {
-            "@type": "Rating", // 評価スコア
-            ratingValue: "5", // 実際の評価値（5点満点）
-            bestRating: "5", // 最高評価値
-            worstRating: "1", // 最低評価値
-          },
-          author: {
-            "@type": "Person", // レビュー投稿者
-            name: "ブルワリー経営者", // 投稿者名
-          },
-          reviewBody:
-            "軽量で使いやすく、回収の手間がなくなりました。コスト削減効果も実感できています。", // レビュー内容
-          datePublished: "2025-05-15", // 投稿日
-        },
-        {
-          "@type": "Review",
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-          },
-          author: {
-            "@type": "Person",
-            name: "クラフトビール醸造家",
-          },
-          reviewBody:
-            "小規模な醸造所でも導入しやすく、初期投資を抑えられました。品質も安定しています。",
-          datePublished: "2025-05-20",
-        },
-        {
-          "@type": "Review",
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: "4",
-            bestRating: "5",
-            worstRating: "1",
-          },
-          author: {
-            "@type": "Person",
-            name: "ビール販売店",
-          },
-          reviewBody:
-            "輸送コストが削減でき、遠方への配送も可能になりました。お客様の反応も良好です。",
-          datePublished: "2025-04-10",
-        },
-      ],
-      // 総合評価（aggregateRating）- Google Search Consoleで要求される必須項目
-      // 全レビューの平均評価とレビュー数を提供
-      aggregateRating: {
-        "@type": "AggregateRating", // 集約評価情報
-        ratingValue: "4.7", // 平均評価値（4.7点）
-        reviewCount: "3", // レビュー総数（3件）
-        bestRating: "5", // 最高評価値
-        worstRating: "1", // 最低評価値
-      },
-    }),
+    ]),
   },
 };
