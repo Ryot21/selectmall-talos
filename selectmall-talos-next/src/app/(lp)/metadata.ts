@@ -168,8 +168,7 @@ export const metadata: Metadata = {
           name: "セレクトモール株式会社",
           url: "https://selectmall-keg.jp/",
         },
-        description:
-          "TALOS ワンウェイケグの価格についてはお問い合わせください。容量別に複数のサイズをご用意しております。",
+
       },
       // レビュー情報（review）- Google Search Consoleで要求される必須項目
       // 商品に対する顧客の評価とコメントを提供
