@@ -65,6 +65,12 @@ export default function LpNavigation() {
               <span className={"s-ML -s18 -b -ls-2 pdr5"}>ワンウェイケグの特徴</span>
             </Link>
           </li>
+          {/* 比較 */}
+          <li className={"hbNavItem -center"}>
+            <Link href="/#sc05" onClick={handleLinkClick}>
+              <span className={"s-ML -s18 -b -ls-2 pdr5"}>比較</span>
+            </Link>
+          </li>
           {/* よくある質問 */}
           <li className={"hbNavItem -center"}>
             <Link href="/#Q&A" onClick={handleLinkClick}>
