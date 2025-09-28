@@ -264,60 +264,86 @@
                     top: 22.5%;
                     left: 15%;
                     width: 20%;
-                    max-width: 330px;
+                    max-width: 450px;
                 }
             }
             // ビールアイコン 
             &.-icon {
                 position: absolute;
                 &.-icon01 {
-                    top: 25%;
+                    top: 15%;
                     left: 0;
                     width: 85px;
+                    @include min(500){width: 160px;}
                     @include min(768){
                         top: 12%;
-                        width: 150px;
+                        width: 120px;
                     }
+                    @include min(1000){width: 150px;}
+                    @include min(1600){width: 190px;}
+                    @include min(2000){width: 230px;}
+
                 }
                 &.-icon02 {
                     top: 50%;
                     left: 75%;
                     width: 45px;
+                    @include min(500){
+                        top: 60%;
+                        width: 80px;
+                    }
+
                     @include min(768){
                         top: auto;
                         bottom: 5%;
-                        left: 88%;
+                        left: 80%;
+                        width: 60px;
+                    }
+                    @include min(1000){
+                        left: 83%;
                         width: 80px;
                     }
-                    @include min(2000){left: 92%;}
+                    @include min(1200){left: 86%;}
+                    @include min(1400){
+                        left: 80%;
+                        width: 120px;
+                    }
+                    @include min(1600){left: 86%;}
+                    @include min(1800){left: 86%;}
+                    @include min(2000){left: 87%;}
                 }
                 &.-icon03 {
                     top: 50%;
                     right: 0;
                     width: 45px;
+                    @include min(500){
+                        top: 55%;
+                        width: 80px;
+                    }
+
                     @include min(768){
                         top: auto;
                         bottom: 5%;
-                        width: 80px;
+                        width: 70px;
                     }
-                    @include min(2000){
-                        width: 100px;
-                    }
+                    @include min(1400){width: 110px;}
+                    @include min(2000){width: 140px;}
                 }
                 &.-icon04 {
                     top: 16%;
                     right: 40px;
                     width: 30px;
+                    @include min(500){width: 50px;}
                     @include min(768){
                         top: auto;
                         right: auto;
-                        left: 100px;
-                        bottom: 5%;
-                        width: 80px;
+                        left: 60px;
+                        bottom: 10%;
+                        width: 40px;
                     }
-                    @include min(2000){
-                        width: 100px;
-                    }
+                    @include min(1000){width: 60px;}
+                    @include min(1400){width: 90px;}
+                    @include min(2000){width: 100px;}
                 }
 
             }
@@ -389,52 +415,33 @@
             max-height: none !important;
         }
         .c-contentsBox {
-            &.-tate {
+            &.-h1Tag {
                 position: absolute;
-                width: 20px;
-                height: auto;
-                z-index: 1;
-                // @include max(768){
-                    // transform:rotate(4deg) !important;
-                // }
-                @include min(768)  {width: 25px;}
-                @include min(1000) {width: 30px;}
-                @include min(1200) {width: 40px;}
-                &.-tate01{
-                    @include max(768){
-                        top: 0;
-                        left: 39%;
-                        transform: translateX(-50%);
-                    }
-                    @include min(768) {
-                        top: 10%;
-                        right: 50px;
-                    }
-                    @include min(1000) {right: 50px;}
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center; // 中央揃え
+                gap: 12px;
+                @include max(768){
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
-                &.-tate02{
-                    @include max(768){
-                        top: 0;
-                        left: 50%;
-                        transform: translateX(-50%) !important;
-                    }
-                    @include min(768) {
-                        top: 10%;
-                        right: 100px;
-                    }
-                    @include min(1000) {right: 110px;}
+                @include min(768) {
+                    top: 10%;
+                    right: 50px;
                 }
-                &.-tate03{
-                    @include max(768){
-                        top: 0;
-                        left: 60%;
-                        transform: translateX(-50%);
-                    }
-                    @include min(768) {
-                        top: 10%;
-                        right: 150px;
-                    }
-                    @include min(1000) {right: 180px;}
+                @include min(1000) {right: 50px;}
+                
+                img {
+                    flex: 0 0 auto; // 固定サイズ
+                    width: 24px; // レスポンシブ対応
+                    height: auto;
+                    // 各画像の幅を個別指定
+                    @include min(500)  {width: 34px;}
+                    @include min(768)  {width: 25px;}
+                    @include min(1000) {width: 30px;}
+                    @include min(1200) {width: 40px;}
                 }
             }
         }

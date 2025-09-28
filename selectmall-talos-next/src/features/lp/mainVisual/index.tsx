@@ -105,30 +105,30 @@ export default function LpMainVisual() {
                         {/* ================= 縦組 ================= */}
                         <div className="c-mainVisual -tateArea a-fade -tm15 -sp15">
                             <div className="imgBox"></div>
-                            <div className={"c-contentsBox -tate -tate01"}>
+                            <h1 className={"c-contentsBox -h1Tag sr-only"}>
+                                <span>ワンウェイケグは使い切りケグの新定番！軽くて強い次世代のビールケグ</span>
                                 <Image
                                     src="/images/SVG/sub01.svg"
                                     alt="使い切りケグの新定番"
                                     width={42}
                                     height={489}
+                                    aria-hidden="true"
                                 />
-                            </div>
-                            <div className={"c-contentsBox -tate -tate02"}>
                                 <Image
                                     src="/images/SVG/_sub02.svg"
                                     alt="軽くて強い"
                                     width={42}
                                     height={235}
+                                    aria-hidden="true"
                                 />
-                            </div>
-                            <div className={"c-contentsBox -tate -tate03"}>
                                 <Image
                                     src="/images/SVG/sub03.svg"
                                     alt="次世代のビールケグ"
                                     width={42}
                                     height={439}
+                                    aria-hidden="true"
                                 />
-                            </div>
+                            </h1>
                         </div>
                     </div>
                 </div>

@@ -65,6 +65,22 @@ td {
     // font-family: $f-gothic02;
   }
 
+  // Screen Reader専用（機械用の読み上げ専用）
+  &.sr-only {
+    position: relative;
+    span {
+      position:absolute;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+      clip:rect(1px,1px,1px,1px);
+      white-space:nowrap;
+    }
+    img {
+      padding-bottom: 2%;
+    }
+  }
+
   // ※
   &.-kome{
     position: relative;
