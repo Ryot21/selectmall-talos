@@ -379,7 +379,7 @@ export default function Home() {
               <div className="c-contents">
                 <ul className="c-flex -col1_3">
                   {/* とても軽量 */}
-                  <li className="flexItem mgb5 mgb15s">
+                  <li className="flexItem mgb7 mgb15s">
                     <div className="c-card -lp -p02 a-fadeUp -sc-entry-fast">
                       <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                         <Image
@@ -389,7 +389,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         とても軽量！！
                       </h3>
                       <p className="c-card--text">
@@ -398,7 +398,7 @@ export default function Home() {
                     </div>
                   </li>
                   {/* 特別な設備は不要 */}
-                  <li className="flexItem mgb5 mgb15s">
+                  <li className="flexItem mgb7 mgb15s">
                     <div className="c-card -lp -p02 a-fadeUp -sc-entry">
                       <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                         <Image
@@ -408,7 +408,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         特別な設備は不要！！
                       </h3>
                       <p className="c-card--text">
@@ -417,7 +417,7 @@ export default function Home() {
                     </div>
                   </li>
                   {/* そのまま */}
-                  <li className="flexItem mgb5 mgb15s">
+                  <li className="flexItem mgb7 mgb15s">
                     <div className="c-card -lp -p02  a-fadeUp -sc-entry-slow">
                       <div className="c-img -thumbnail -zoom mgb5 mgb5s">
                         <Image
@@ -427,7 +427,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         そのまま使える！！
                       </h3>
                       <p className="c-card--text">
@@ -446,7 +446,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         海外輸出の最適解！！
                       </h3>
                       <p className="c-card--text">
@@ -465,7 +465,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         廃棄が簡単！！
                       </h3>
                       <p className="c-card--text">
@@ -486,7 +486,7 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb5 mgb5s">
+                      <h3 className="c-card--title mgb4 mgb5s">
                         持ち運びが便利！！
                       </h3>
                       <p className="c-card--text">
@@ -616,7 +616,7 @@ export default function Home() {
                       </h3>
                       <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
                         →
-                        回収・洗浄・メンテナンス費用が不要なので、運用コスト約60%削減＋初期投資大幅軽減
+                        回収・洗浄・メンテナンス費用が不要なので、運用コスト削減＋初期投資大幅軽減
                       </p>
                     </li>
                   </ul>
@@ -668,7 +668,7 @@ export default function Home() {
                       </h3>
                       <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
                         →
-                        軽量設計（従来比40%軽量）かつ回収コストが不要なため、離島・遠隔地まで全国どこでも配送対応
+                        ステンレスケグと比較して約65〜81%の軽量化を実現。さらに回収コストが不要なため、離島や遠隔地を含め全国どこでも配送対応が可能です。
                       </p>
                     </li>
                   </ul>
@@ -689,7 +689,7 @@ export default function Home() {
         <Lp02Cta />
 
         {/* Q&A */}
-        <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb5 pdb15s"}>
+        <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb7 pdb15s"}>
           <div className={"c-contents--inner"}>
             <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある質問
