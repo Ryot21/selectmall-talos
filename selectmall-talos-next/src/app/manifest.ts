@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "TALOS ワンウェイケグ - セレクトモール",
     short_name: "TALOS ケグ",
     description:
-      "TALOS（タロス）ワンウェイケグでビールケグのコスト削減を実現。使い捨てタイプで運用コスト60%削減。",
+      "TALOS（タロス）ワンウェイケグでビールケグのコスト削減を実現。使い捨てタイプで運用コスト削減!!",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
