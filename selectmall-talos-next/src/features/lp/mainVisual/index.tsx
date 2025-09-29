@@ -11,22 +11,22 @@ export default function LpMainVisual() {
         <div id="js-parallaxArea" className={styles.parallaxArea}>
             <div className={`c-mainVisual -LP -LP01`}>
                 {/* ================= 背景 ================= */}
-                <div className={"imgBox"}>
+                <picture className={"imgBox"}>
+                    <source
+                        media="(max-width: 767px)"
+                        srcSet="/images/bg/mv-bg_s.jpg"
+                        type="image/jpeg"
+                    />
                     <Image
                         src="/images/bg/mv-bg.jpg"
                         alt="Barのカウンター背景"
-                        className="tb-pc"
                         width={1240}
                         height={692}
+                        priority
+                        fetchPriority="high"
+                        sizes="(max-width: 767px) 100vw, 1240px"
                     />
-                    <Image
-                        src="/images/bg/mv-bg_s.jpg"
-                        alt="Barのカウンター背景"
-                        className="sp"
-                        width={375}
-                        height={964}
-                    />
-                </div>
+                </picture>
                 {/* ================= アイコン ================= */}
                 {/* 左上 */}
                 <div className={"c-contentsBox -icon -icon01 a-fade -tm15 -sp1"}>
