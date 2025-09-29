@@ -43,8 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "TALOS ワンウェイケグ - セレクトモール",
-
+    siteName: "セレクトモール株式会社",
     // OGタイトルをより簡潔に
     title: "TALOS ワンウェイケグ｜運用コスト削減の使い捨てビールケグ",
 
