@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./index.module.scss";
 // import CardContactForm from "@/components/elements/form/Card";

@@ -1,7 +1,8 @@
 import { metadata } from "./metadata";
 import { headers } from "next/headers";
 import PageTypeWrapper from "@/components/PageTypeWrapper";
-import ScrollToTop from "@/components/ScrollToTop";
+// ページ遷移がないので不要
+// import ScrollToTop from "@/components/ScrollToTop";
 import LpHeader from "@/features/lp/header";
 import LpNavigation from "@/features/lp/navigation";
 import LpFooter from "@/features/lp/footer";
@@ -33,7 +34,7 @@ export default async function LpLayout({
 
   return (
     <PageTypeWrapper initialPageType={initialPageType}>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <LpHeader />
       <LpNavigation />
       {children}

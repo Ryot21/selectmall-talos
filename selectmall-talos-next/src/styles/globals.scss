@@ -8,8 +8,8 @@
 @import "./setting/typography"; // テキスト変数
 @import "./setting/gap"; // 間隔
 
-// 導入
-@import "./introduction/swiper.min"; // スライダー関係
+// 導入（不要なので読み込み禁止）
+// @import "./introduction/swiper.min"; // スライダー関係
 @import "./introduction/luminous-basic.min"; // ポップアップ+スライダー機能付き
 
 // サイト内（基本パーツ）
@@ -76,6 +76,3 @@
 @import "./animation/underline";
 @import "./animation/loading";
 @import "./animation/original";
-
-// Lottie
-@import "./animation/lottie";
