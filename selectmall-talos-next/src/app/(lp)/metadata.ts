@@ -87,9 +87,7 @@ export const metadata: Metadata = {
 
   // ファビコン設定
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }],
     shortcut: "/favicon.ico",
     apple: "/images/sns/apple-touch-icon.png",
   },
@@ -113,7 +111,8 @@ export const metadata: Metadata = {
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "TALOS ワンウェイケグ - セレクトモール",
+        name: "セレクトモール株式会社",
+        alternateName: "TALOS ワンウェイケグ",
         url: "https://selectmall-keg.jp",
         logo: {
           "@type": "ImageObject",

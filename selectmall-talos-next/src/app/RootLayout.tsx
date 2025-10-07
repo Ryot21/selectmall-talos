@@ -20,7 +20,7 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           type="image/png"
-          href="images/sns/apple-touch-icon.png"
+          href="/images/sns/apple-touch-icon.png"
         />
 
         {/* PWA対応のメタタグ */}
@@ -32,7 +32,12 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="TALOS ケグ" />
+        {/* サイト名の明示的な指定 */}
+        <meta name="application-name" content="セレクトモール株式会社" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="セレクトモール株式会社"
+        />
 
         {/* セキュリティ関連のメタタグ */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
