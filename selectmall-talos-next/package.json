@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/third-parties": "^15.2.4",
+    "@next/third-parties": "^15.5.21",
     "dayjs": "^1.11.10",
     "microcms-js-sdk": "^3.1.0",
-    "next": "^15.2.4",
+    "next": "^15.5.21",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.83.1"
@@ -23,7 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.2",
+    "eslint-config-next": "^15.5.21",
     "typescript": "^5"
   },
   "nextConfig": {
