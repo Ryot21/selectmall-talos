@@ -6,10 +6,10 @@ import { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "TALOS ワンウェイケグ - セレクトモール",
-    short_name: "TALOS ケグ",
+    name: "Talos ケグ（タロスケグ）- セレクトモール",
+    short_name: "Talos ケグ",
     description:
-      "TALOS（タロス）ワンウェイケグでビールケグのコスト削減を実現。使い捨てタイプで運用コスト削減!!",
+      "Talos ケグ（タロスケグ）の公式情報。TALOS製ワンウェイケグのお見積・導入相談。",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

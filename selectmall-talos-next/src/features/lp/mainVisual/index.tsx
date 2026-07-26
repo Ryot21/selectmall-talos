@@ -17,7 +17,7 @@ export default function LpMainVisual() {
                     />
                     <Image
                         src="/images/bg/mv-bg.jpg"
-                        alt="Barのカウンター背景"
+                        alt="Talos ケグ（タロスケグ）- ワンウェイビールケグ"
                         width={1240}
                         height={692}
                         priority
@@ -91,7 +91,7 @@ export default function LpMainVisual() {
                             <div className="">
                                 <Image
                                     src="/images/logo/talos.svg"
-                                    alt="Talos社"
+                                    alt="Talos ケグ（タロスケグ）- TALOS"
                                     width={846}
                                     height={293}
                                 />
@@ -104,7 +104,7 @@ export default function LpMainVisual() {
                         <div className="c-mainVisual -tateArea a-fade -tm15 -sp15">
                             <div className="imgBox"></div>
                             <h1 className={"c-contentsBox -h1Tag sr-only"}>
-                                <span>ワンウェイケグは使い切りケグの新定番！軽くて強い次世代のビールケグ</span>
+                                <span>Talos ケグ（タロスケグ）｜TALOSワンウェイケグ - 使い切りケグの新定番</span>
                                 <Image
                                     src="/images/SVG/sub01.svg"
                                     alt="使い切りケグの新定番"

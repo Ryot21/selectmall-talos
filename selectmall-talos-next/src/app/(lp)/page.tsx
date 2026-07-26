@@ -16,79 +16,16 @@ import Lp02Cta from "@/features/lp/cta";
 
 // Q&A関係
 import Accordion from "@/components/accordion";
-import type { AccordionItem } from "@/types/accordion";
+import { faqItems } from "@/constants/faqItems";
 
 // 構造化データ
 import {
   faqStructuredData,
   organizationStructuredData,
   breadcrumbStructuredData,
+  websiteStructuredData,
+  productStructuredData,
 } from "@/components/StructuredData";
-
-const faqItems: AccordionItem[] = [
-  {
-    id: "01",
-    question: "ワンウェイケグとはどのような容器ですか？",
-    answer:
-      "ワンウェイケグとは使い捨てタイプのビールケグのことです。Petainer（以下ペタイナー）やKeykeg（以下キーケグ）などの類似製品もありますが、Talos（以下タロス）のワンウェイケグは軽量且つ豊富なラインナップでブルワリーの皆様に合わせたご提案が可能です。",
-  },
-  {
-    id: "02",
-    question: "ワンウェイケグとステンレスケグのコスト面での違いは？",
-    answer:
-      "ステンレスケグは購入時に高額な費用（ケグ洗浄用の設備・ケグ保管用の倉庫スペース・品質管理など）が必要ですが、ワンウェイケグは初期投資コストを大幅に削減できます。タロスケグなら使い捨てタイプのため初期投資を抑えることが出来るので、ビールケグの導入コストでお悩みのブルワリー様にお勧めです！！",
-  },
-  {
-    id: "03",
-    question:
-      "ケグ回収の手間を省きたいのですが、ワンウェイケグで解決できますか？",
-    answer:
-      "タロスのワンウェイケグなら面倒なケグ回収作業が不要です。ステンレスケグの回収システム構築や管理業務から解放され、ブルワリーの本業であるビール製造に集中できます。",
-  },
-  {
-    id: "04",
-    question: "ビールケグの輸送コストを削減する方法はありますか？",
-    answer:
-      "ワンウェイケグなら輸送コストを大幅削減できます。ステンレスケグと比べて軽量なため、物流費を抑制し、遠方への配送や海外展開時のコスト負担を軽減できます。タロスのビールケグで効率的な流通を実現できます。",
-  },
-  {
-    id: "05",
-    question: "ワンウェイケグの在庫管理はステンレスケグより簡単ですか？",
-    answer:
-      "ステンレスケグのような複雑な状況把握（使用中・回収待ち・洗浄中など）が不要で、必要な分だけ調達可能です。タロスのビールケグで在庫管理の効率化を図れます。",
-  },
-  {
-    id: "06",
-    question: "ケグの洗浄・メンテナンスの作業工程を削減できますか？",
-    answer:
-      "タロスのワンウェイケグは、「ケグ洗浄」と「メンテナンス検査」は一切不要です。水光熱費などのランニングコストも削減できるので、運用コストを最適化できます。",
-  },
-  {
-    id: "07",
-    question:
-      "Petainer（以下ペタイナー）およびKeykeg（以下キーケグ）とステンレスケグの充填カプラーまたはディスペンスヘッドは流用できますか？",
-    answer:
-      "はい、もちろん使えます。単層ケグとTケグ（以下2層ケグ）は、S・A・G・Tタイプすべての規格対応可能です！（BREWJETとTOPPERは、専用カプラーが必要です。）",
-  },
-  {
-    id: "08",
-    question: "小規模なクラフトビール醸造所でも導入できますか？",
-    answer:
-      "もちろん可能です！むしろ小規模醸造所様にこそオススメです。従来のステンレスケグのような大きな初期投資や在庫管理が不要で、必要な分だけ発注できます。10L、15L、20Lから幅広く対応可能で、イベント販売や直売所での販売にも最適。資金負担を抑えながら販路拡大が実現できます。",
-  },
-  {
-    id: "09",
-    question: "ワンウェイケグの充填方法には、特別な設備は必要ですか？",
-    answer:
-      "特別なサーバー設備や工具は一切不要。すでにお持ちの充填カプラー（ディスペンスヘッド）に合わせたカプラータイプのワンウェイケグをご用意します。",
-  },
-  {
-    id: "10",
-    question: "品質保持期間はどのくらいですか？輸送距離に制限はありますか？",
-    answer:
-      "内蔵無菌アルミ膜袋により、従来のステンレスケグより長期保存が可能です。密閉性が高く、ビールの風味を損なわずに保存できます。また、軽量で破損リスクが低いため、国内・海外問わずどこへでも輸送可能です。離島や遠隔地への配送も問題ありません。",
-  },
-];
 
 export default function Home() {
   return (
@@ -112,6 +49,18 @@ export default function Home() {
           __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productStructuredData),
+        }}
+      />
 
       <main>
         {/* 追従ボタンの表示・非表示トリガー */}
@@ -123,8 +72,18 @@ export default function Home() {
           <div id="sc01" className="c-contents pdt10 pdt15s">
             <div className="c-contents--inner">
               <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
-                Talos<span>とは</span>
+                Talos ケグ<span>（タロスケグ）とは</span>
               </h2>
+              <p className="s-ML -s16 -lp_c02 -center -left_s -ls-2 -lh-2 mgb5 mgb8s a-fadeUp -sc-entry">
+                <strong className="-lp_c01 -b">Talos ケグ（タロスケグ）</strong>
+                とは、TALOS（タロス）社製ワンウェイビールケグの総称です。
+                <br className="tb-pc" />
+                日本国内ではセレクトモールが正規販売代理店として、
+                <br className="sp" />
+                単層ケグ・T-KEG・BREWJETなどの
+                <strong className="-lp_c01 -b">Talos ケグ</strong>
+                を取り扱っています。
+              </p>
               <p className="s-ML -s16 -lp_c02 -center -left_s -ls-2 -lh-2 a-fadeUp -sc-entry">
                 Talos社は1997年に創業し、
                 <br className="sp" />
@@ -165,7 +124,7 @@ export default function Home() {
                           <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                             <span className="-lp_c01 -b -shadow">単層ケグ</span>
                             <span className="s-S -s13 -lp_c02 -b">
-                              （S/A/G/Tタイプ規格対応）
+                              （Talos ケグ｜S/A/G/Tタイプ規格対応）
                             </span>
                           </h3>
                           <p className="s-ML -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
@@ -217,7 +176,7 @@ export default function Home() {
                           <h3 className="c-contents--ItemTitle mgb2 mgb2s">
                             <span className="-lp_c01 -b -shadow pdr1">T-KEG</span>
                             <span className="s-SS -s13 -lp_c02 -b">
-                              円筒型（S/A/G/Dタイプ規格対応）、卵型（専用タイプ規格対応）
+                              （Talos ケグ｜円筒型 S/A/G/Dタイプ、卵型専用タイプ対応）
                             </span>
                           </h3>
                           <p className="s-ML -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
@@ -538,7 +497,7 @@ export default function Home() {
                 従来型<span>との</span>比較
               </h2>
               <p className="s-L -s24 -b -lp_c01 -left -ls-2 mgb2 mgb5s">
-                1.「ステンレスケグ」<span className="s-M -b">vs</span><br />
+                1.「ステンレスケグ」<span className="s-M -b">vs</span><br className="sp"/>
                 「ワンウェイケグ」<span className="s-M -b">の</span>比較
               </p>
               {/* コスト面 */}

@@ -12,7 +12,7 @@ export default function LpEstimate() {
           お見積依頼
         </h2>
         <p className="s-M -s13 -lp_c01 -center -left_s -ls-2 -lh-2 mgb5 mgb10s">
-          サイズ・数量・納品先がお決まりの方は、商品をお選びの上でお見積フォームよりご依頼ください。
+          Talos ケグ（タロスケグ）のサイズ・数量・納品先がお決まりの方は、商品をお選びの上でお見積フォームよりご依頼ください。
         </p>
         <ul className="c-flex -col1_3 -pc3_1 -jc-cen -ai-stretch">
           {ESTIMATE_PRODUCTS.map((product) => (
