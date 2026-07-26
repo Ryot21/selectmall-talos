@@ -122,7 +122,7 @@ export default function Home() {
           <div id="sc01" className="c-contents pdt10 pdt15s">
             <div className="c-contents--inner">
               <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
-                T-KEG<span>とは</span>
+                Talos<span>とは</span>
               </h2>
               <p className="c-contents--LpText -center -lp_c02 a-fadeUp -sc-entry">
                 Talos社は1997年に創業し、
@@ -167,7 +167,7 @@ export default function Home() {
                               （S/A/G/Tタイプ規格対応）
                             </span>
                           </h3>
-                          <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <p className="s-ML -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                             ステンレスケグの革新的代替ソリューション
                           </p>
                           <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
@@ -205,7 +205,7 @@ export default function Home() {
                         <li className="flexItem mgb5s">
                           <div className="c-img -sh w75s">
                             <Image
-                              src="/images/keg/T-Keg_20L30L.png"
+                              src="/images/keg/TKEG.png"
                               alt="T-KEG（2層ケグ）の説明"
                               width={1644}
                               height={1154}
@@ -214,12 +214,12 @@ export default function Home() {
                         </li>
                         <li className="flexItem">
                           <h3 className="c-contents--ItemTitle mgb2 mgb2s">
-                            <span className="-lp_c01 -b -shadow">T-KEG</span>
-                            <span className="s-S -s13 -lp_c02 -b">
-                              （S/A/G/Tタイプ規格対応）
+                            <span className="-lp_c01 -b -shadow pdr1">T-KEG</span>
+                            <span className="s-SS -s13 -lp_c02 -b">
+                              円筒型（S/A/G/Dタイプ規格対応）、卵型（専用タイプ規格対応）
                             </span>
                           </h3>
-                          <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <p className="s-ML -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                             次世代使い捨てビールケグ -<br className="sp" />
                             革新的な多層フレキシブルバッグシステム
                           </p>
@@ -237,15 +237,15 @@ export default function Home() {
                             <span className="-lp_c02">
                               材質 ： PET（本体）、PP（ハンドル）
                               <br />
-                              容量 ： 20L、30L
+                              容量 ： 卵型（3L、5L、10L）、円筒型（20L）
                               <br />
-                              高さ ： 600mm
+                              高さ ： 卵型（3L：272mm、5L：312mm、10L：389mm）、円筒型（20L：600mm）
                               <br />
-                              重量 ： 1.3kg±0.1
+                              重量 ： 卵型（3L〜10L：0.2〜0.35kg±0.1）、円筒型（20L：2.8kg±0.1）
                               <br />
-                              最大使用圧力 ： 3bar（0.3Mpa）
+                              最大使用圧力 ： 3〜4bar（0.3〜0.4Mpa）
                               <br />
-                              最大耐圧 ： 7bar（0.7Mpa）
+                              最大耐圧 ： 7〜8bar（0.7〜0.8Mpa）
                             </span>
                           </p>
                         </li>
@@ -277,7 +277,7 @@ export default function Home() {
                               （革新的ビールディスペンシングシステム）
                             </span>
                           </h3>
-                          <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
+                          <p className="s-ML -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
                             ケグとディスペンサーが一体化した
                             <br className="sp" />
                             次世代ビールサーバー
@@ -304,62 +304,6 @@ export default function Home() {
                               最大使用圧力 ： 3bar（0.3Mpa）
                               <br />
                               最大耐圧 ： 7bar（0.7Mpa）
-                            </span>
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* TOPPERの紹介 */}
-              <div className="c-card -lp -p01 a-fadeRight -sc-entry-slow">
-                <div className="c-card--inner">
-                  <div className="c-contents -itemBox">
-                    <div className="imgBox">
-                      <ul className="c-flex -col1_2 -pc2_1 -jc-sb -h-cen">
-                        <li className="flexItem mgb5s">
-                          <div className="c-img -sh">
-                            <Image
-                              src="/images/keg/TOPPER-descript.png"
-                              alt="TOPPERの説明"
-                              width={1644}
-                              height={1154}
-                            />
-                          </div>
-                        </li>
-                        <li className="flexItem">
-                          <h3 className="c-contents--ItemTitle mgb2 mgb2s">
-                            <span className="-lp_c01 -b -shadow">TOPPER</span>
-                            <span className="s-S -s13 -lp_c02 -b">
-                              （ポータブルディスペンシングシステム）
-                            </span>
-                          </h3>
-                          <p className="s-S -s13 -lp_c01 -b -left -ls-2 -lh-1_5 mgb4 mgb5s">
-                            コンパクト設計で持ち運び自由
-                          </p>
-                          <p className="s-S -s13 -ls-2 -lh-1_5 mgb4 mgb5s">
-                            <span className="-lp_c01 -b">【主な特徴】</span>
-                            <br />
-                            <span className="-lp_c02">
-                              従来のビアサーバーの概念を覆す軽量・コンパクト設計により、家庭でのエンターテイメントから商業用途まで幅広く対応。アウトドアイベント、バーベキュー、キャンプ、パーティー、レストラン、カフェ、バーなど、あらゆる場面でプロフェッショナルなビール体験を実現します。
-                            </span>
-                          </p>
-                          <p className="s-S -s13 -ls-2 -lh-1_5">
-                            <span className="-lp_c01 -b">【製品スペック】</span>
-                            <br />
-                            <span className="-lp_c02">
-                              材質 ： PET（本体）、PP（ハンドル）
-                              <br />
-                              容量 ： 3L
-                              {/* <br />
-                            高さ ： ???mm */}
-                              <br />
-                              重量 ： 0.25kg±0.05
-                              <br />
-                              最大使用圧力 ： 4bar（0.4Mpa）
-                              <br />
-                              最大耐圧 ： 4bar（0.4Mpa）
                             </span>
                           </p>
                         </li>
