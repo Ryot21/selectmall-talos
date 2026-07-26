@@ -7,6 +7,7 @@ import LpMainVisual from "@/features/lp/mainVisual";
 import ScrollContainer from "@/features/lp/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
 
+import LpEstimate from "@/features/lp/estimate";
 import Lp02Cta from "@/features/lp/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
 
@@ -124,7 +125,7 @@ export default function Home() {
               <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 Talos<span>とは</span>
               </h2>
-              <p className="c-contents--LpText -center -lp_c02 a-fadeUp -sc-entry">
+              <p className="s-ML -s16 -lp_c02 -center -left_s -ls-2 -lh-2 a-fadeUp -sc-entry">
                 Talos社は1997年に創業し、
                 <br className="sp" />
                 2003年に樽ビール分配の専門分野に本格参入。
@@ -333,10 +334,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         とても軽量！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         ケグ重量はなんと1.3kgで樽交換もとても楽ちん！！輸送コストの削減も可能。
                       </p>
                     </div>
@@ -352,10 +353,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         特別な設備は不要！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         既存のディスペンスヘッドをそのまま使用できます。（S/A/T/Gタイプに対応可能）
                       </p>
                     </div>
@@ -371,10 +372,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         そのまま使える！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         充填口をアルコール洗浄するだけですぐ充填できるので、作業時間を大幅に短縮可能！！
                       </p>
                     </div>
@@ -390,10 +391,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         海外輸出の最適解！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         従来のステンレスケグと比較して輸送距離に制限がなく、回収やメンテナンスが不要！！
                       </p>
                     </div>
@@ -409,10 +410,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         廃棄が簡単！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         主要なパーツは簡単に分解できます。使用後は踏みつぶして圧縮します。
                         {/* (<Link className="b-text -c01" href="">処分方法はコチラ</Link>)  */}
                         ※処理方法は自治体により異なります
@@ -430,10 +431,10 @@ export default function Home() {
                           height={320}
                         />
                       </div>
-                      <h3 className="c-card--title mgb4 mgb5s">
+                      <h3 className="c-card--title s-L -s24 -b -lp_c01 -center -ls-2 mgb4 mgb5s">
                         持ち運びが便利！！
                       </h3>
-                      <p className="c-card--text">
+                      <p className="c-card--text s-M -s16 -lp_c02">
                         頑丈なハンドルが付いているので持ち運びしやすい。
                       </p>
                     </div>
@@ -468,7 +469,7 @@ export default function Home() {
                         <br className="tb-pc" />
                         ワンストップ提案も可能！！
                       </h3>
-                      <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                         お客様のブランドイメージや販売戦略に最適なケグや充填機をご提案いたします。数量、容量、ラベルデザインを細かくカスタマイズし、コスト削減と品質向上を同時に実現します。
                       </p>
                     </li>
@@ -493,7 +494,7 @@ export default function Home() {
                         <br className="tb-pc" />
                         丹精こめたビールの広告としてもお使い下さい！
                       </h3>
-                      <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                         越境ECプラットフォームで、あなたのクラフトビールを世界中に発信！！革新的なパッケージングが商品の魅力を最大限に引き出し、海外市場での認知度向上と売上拡大をサポートします。
                       </p>
                     </li>
@@ -518,7 +519,7 @@ export default function Home() {
                         <br />
                         地方クラフトさんにフォーカスしたイベントを開催！
                       </h3>
-                      <p className="s-M -s13 -lp_c02 -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -ls-1_5_s -lh-2 mgb1 mgb3s">
                         全国各地のクラフトビール醸造家様を少しでも知っていただけるように交流イベントを企画中！地域の特色を活かした商品展示会や試飲会を通じて、新たなビジネスチャンスの創出と業界ネットワークの拡大をお手伝いします。
                       </p>
                     </li>
@@ -536,8 +537,8 @@ export default function Home() {
               <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 従来型<span>との</span>比較
               </h2>
-              <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
-                1.「ステンレスケグ」<span className="s-M -b">vs</span>
+              <p className="s-L -s24 -b -lp_c01 -left -ls-2 mgb2 mgb5s">
+                1.「ステンレスケグ」<span className="s-M -b">vs</span><br />
                 「ワンウェイケグ」<span className="s-M -b">の</span>比較
               </p>
               {/* コスト面 */}
@@ -555,10 +556,10 @@ export default function Home() {
                       </div>
                     </li>
                     <li className="flexItem">
-                      <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
+                      <h3 className="s-L -s20 -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                         従来ケグと比べて大幅なコスト削減効果
                       </h3>
-                      <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -lh-1_5">
                         →
                         回収・洗浄・メンテナンス費用が不要なので、運用コスト削減＋初期投資大幅軽減
                       </p>
@@ -581,10 +582,10 @@ export default function Home() {
                       </div>
                     </li>
                     <li className="flexItem">
-                      <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
+                      <h3 className="s-L -s20 -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                         すぐに導入可能
                       </h3>
-                      <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -lh-1_5">
                         →
                         ステンレスケグと同じカプラータイプのため、導入コストを気にせず気軽にお使いいただけます。
                       </p>
@@ -607,10 +608,10 @@ export default function Home() {
                       </div>
                     </li>
                     <li className="flexItem">
-                      <h3 className="s-ML -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
+                      <h3 className="s-L -s20 -b -lp_c01 -left -ls-2 -lh-1_5 mgb1 mgb2s">
                         国内外問わず対応可能な配送網
                       </h3>
-                      <p className="s-S -s13 -lp_c02 -left -ls-2 -lh-1_5">
+                      <p className="s-M -s16 -lp_c02 -left -ls-2 -lh-1_5">
                         →
                         ステンレスケグと比較して約65〜81%の軽量化を実現。さらに回収コストが不要なため、離島や遠隔地を含め全国どこでも配送対応が可能です。
                       </p>
@@ -619,7 +620,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="s-ML -b -lp_c01 -left -ls-2">
+              <p className="s-L -s24 -b -lp_c01 -left -ls-2">
                 2.他社<span className="s-M -b">との</span>比較
               </p>
               <div className="c-contents">
@@ -628,6 +629,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* お見積依頼 */}
+        <LpEstimate />
 
         {/* cta02 */}
         <Lp02Cta />

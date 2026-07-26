@@ -11,10 +11,10 @@ export default function Accordion({ items }: AccordionProps) {
                 {items.map((item) => (
                     <li key={item.id} className="c-accordion--item mgb2 mgb5s a-flipDown -sc-entry-slow">
                         <input id={item.id} type="checkbox" className="toggle" />
-                        <label htmlFor={item.id} className="label s-ML -color02 -b -ls-2">
+                        <label htmlFor={item.id} className="label s-L -s20 -color02 -b -ls-2">
                             {item.question}
                         </label>
-                        <p className="c-accordion--text s-M -s13 -ls-2 -lh-1_5">
+                        <p className="c-accordion--text s-M -s16 -ls-2 -lh-1_5">
                             {item.answer}
                         </p>
                     </li>

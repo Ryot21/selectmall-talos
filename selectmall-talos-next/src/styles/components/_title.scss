@@ -130,6 +130,7 @@
         &.-QA      {&::before{content: "Q&A"; white-space: nowrap;}}// 商品紹介
         &.-other   {&::before{content: "Comparison With Others"; white-space: nowrap;}}// 商品紹介
         &.-contact     {&::before{content: "Contact"; white-space: nowrap;}}//お問い合わせ
+        &.-estimate    {&::before{content: "Estimate"; white-space: nowrap;}}//お見積依頼
         // &.-contact02   {&::before{content: "Request For Information"; white-space: nowrap;}}//資料ダウンロード
         // &.-point       {&::before{content: "POINT"; white-space: nowrap;}}//特徴
 

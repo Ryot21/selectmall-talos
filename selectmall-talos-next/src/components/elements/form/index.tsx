@@ -447,9 +447,8 @@ export default function ContactForm({ customClass }: FormProps) {
                       required
                     >
                       <option value="">選択して下さい</option>
-                      <option value="見積請求">見積請求</option>
-                      <option value="資料ダウンロード">資料ダウンロード</option>
                       <option value="お問い合わせ">お問い合わせ</option>
+                      <option value="資料ダウンロード">資料ダウンロード</option>
                     </select>
                   </td>
                 </tr>
