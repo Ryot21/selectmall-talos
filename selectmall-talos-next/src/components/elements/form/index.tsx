@@ -419,7 +419,7 @@ export default function ContactForm({ customClass }: FormProps) {
                         />{" "}
                         BREWJET
                       </label>
-                      <label>
+                      {/* <label>
                         <input
                           type="checkbox"
                           name="keg"
@@ -428,7 +428,7 @@ export default function ContactForm({ customClass }: FormProps) {
                           onChange={handleMultiSelectChange}
                         />{" "}
                         TOPPER
-                      </label>
+                      </label> */}
                     </div>
                   </td>
                 </tr>

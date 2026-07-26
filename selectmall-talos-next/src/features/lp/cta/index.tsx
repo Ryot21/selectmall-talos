@@ -30,7 +30,7 @@ export default function Lp02Cta() {
             </div>
           </li>
         </ul> */}
-        <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -contact pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+        <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -contact pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
           お問い合わせ
         </h2>
         <ContactForm customClass="" />

@@ -2,13 +2,10 @@
 .c-contents{
     &--LpContentsTitle {// コンテンツ > タイトル
         position: relative;
-        font-size: 2rem !important;
         font-weight: bold;
         letter-spacing: .2rem;
         line-height: 1.5;
         padding: 0 1px;
-        @include min(500){font-size: clamp(2rem, 2vw, 4.75rem) !important;}
-        @include min(1800){font-size: max(3rem, 35px) !important;}
         &::before {
             position: absolute;
             top: -5px;

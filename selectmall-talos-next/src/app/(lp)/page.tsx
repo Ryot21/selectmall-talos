@@ -121,7 +121,7 @@ export default function Home() {
           {/* SC01 T-KEGとは */}
           <div id="sc01" className="c-contents pdt10 pdt15s">
             <div className="c-contents--inner">
-              <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+              <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -about pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 Talos<span>とは</span>
               </h2>
               <p className="c-contents--LpText -center -lp_c02 a-fadeUp -sc-entry">
@@ -141,7 +141,7 @@ export default function Home() {
           {/* SC02 商品紹介 */}
           <div id="sc02" className="c-contents pdt10 pdt15s">
             <div className="c-contents--inner">
-              <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+              <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -product pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 商品紹介
               </h2>
               {/* 単層ケグの紹介 */}
@@ -317,7 +317,7 @@ export default function Home() {
           {/* SC03 商品の特徴 */}
           <div id="sc03" className="c-contents pdt10 pdt15s">
             <div className="c-contents--inner">
-              <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+              <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -features pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 商品特徴
               </h2>
               <div className="c-contents">
@@ -445,7 +445,7 @@ export default function Home() {
           {/* SC04 セレクトモールで出来ること */}
           <div id="sc04" className={"c-contents pdt10 pdt20s"}>
             <div className="c-contents--inner">
-              <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+              <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -what pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 セレクトモール<span>で</span>出来<span>ること</span>
               </h2>
               <div className="mgb10 mgb10s">
@@ -533,7 +533,7 @@ export default function Home() {
             className={"c-contents -bg -lp-color03 pdt10 pdt15s pdb10 pdb15s"}
           >
             <div className="c-contents--inner">
-              <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+              <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -other pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
                 従来型<span>との</span>比較
               </h2>
               <p className="s-ML -b -lp_c01 -left -ls-2 mgb2 mgb5s">
@@ -635,7 +635,7 @@ export default function Home() {
         {/* Q&A */}
         <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb7 pdb15s"}>
           <div className={"c-contents--inner"}>
-            <h2 className="c-contents--LpContentsTitle -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
+            <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある質問
             </h2>
             <Accordion items={faqItems} />
