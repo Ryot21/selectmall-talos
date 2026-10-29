@@ -221,14 +221,14 @@
                 left: 50%;
                 transform: translateX(-50%);
 
-                width: 23%;
+                width: 35%;
                 z-index: 1;
                 @include min(768) {
                     top: 15%;
-                    width: 13%;
+                    width: 17%;
                 }
                 @include min(1000){
-                    top: 18%;
+                    top: 14%;
                 }
                 @include min(2000){
                     width: 15%;
@@ -237,14 +237,12 @@
             }
             &.-text {
                 position: absolute;
-                top: 17%;
+                top: 18%;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 1;
-                @include min(768) {
-                    top: 24%;
-                }
-                @include min(1000){top: 29%;}
+                @include min(768) {top: 29%;}
+                @include min(1000){top: 27%;}
                 @include min(1400){top: 28%;}
                 @include min(1800){top: 26%;}
             }
@@ -253,7 +251,7 @@
                 position: absolute;
                 top: 54%;
                 left: 5px;
-                width: 32%;
+                width: 40%;
                 z-index: 8;
                 @include min(768) {
                     top: 23.5%;
@@ -261,10 +259,10 @@
                     width: 26%;
                 }
                 @include min(1000){
-                    top: 22.5%;
-                    left: 15%;
-                    width: 20%;
-                    max-width: 450px;
+                    top: 29.5%;
+                    left: 16%;            
+                    width: 25%;
+                    max-width: 550px;
                 }
             }
             // ビールアイコン 
@@ -421,7 +419,7 @@
                 flex-direction: row;
                 align-items: flex-start;
                 justify-content: center; // 中央揃え
-                gap: 12px;
+                gap: 25px;
                 @include max(768){
                     top: 0;
                     left: 50%;
@@ -435,7 +433,7 @@
                 
                 img {
                     flex: 0 0 auto; // 固定サイズ
-                    width: 24px; // レスポンシブ対応
+                    width: 30px; // レスポンシブ対応
                     height: auto;
                     // 各画像の幅を個別指定
                     @include min(500)  {width: 34px;}
@@ -455,11 +453,6 @@
             width: 100lvw;
             height: 20vh;
             max-height: 190px !important;
-            // background: linear-gradient(
-            //     220deg,
-            //     $lp-color03,
-            //     $lp-color02
-            // );
             overflow: hidden;
     
             @include min(500) {
