@@ -139,7 +139,7 @@ Product スキーマの画像:
 
 | ファイル | 内容 |
 |----------|------|
-| `src/constants/estimateForms.ts` | 単層ケグ / T-KEG / BREWJET の Google フォーム URL |
+| `src/constants/estimateForms.ts` | 単層ケグ / T-KEG の Google フォーム URL |
 | `src/features/lp/estimate/index.tsx` | `#estimate` セクション新設（商品画像付き） |
 | `src/app/(lp)/page.tsx` | 比較セクション後に `<LpEstimate />` 配置 |
 | `StickyButtonWrapper.tsx` | 追従ボタン `#cta` → `#estimate` |
@@ -152,7 +152,7 @@ Product スキーマの画像:
 |------|-----|
 | 単層ケグ | https://forms.gle/hn1nNSwdXJCmfDbK6 |
 | T-KEG | https://forms.gle/2DedFLwTzbwtFbzU8 |
-| BREWJET | https://forms.gle/LWNdYRhZUrbvB4ga9 |
+<!-- | BREWJET | https://forms.gle/LWNdYRhZUrbvB4ga9 | -->
 
 ---
 

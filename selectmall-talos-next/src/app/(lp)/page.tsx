@@ -80,7 +80,7 @@ export default function Home() {
                 <br className="tb-pc" />
                 日本国内ではセレクトモールが正規販売代理店として、
                 <br className="sp" />
-                単層ケグ・T-KEG・BREWJETなどの
+                単層ケグ・T-KEGなどの
                 <strong className="-lp_c01 -b">Talos ケグ</strong>
                 を取り扱っています。
               </p>
@@ -215,7 +215,7 @@ export default function Home() {
                 </div>
               </div>
               {/* BREWJETの紹介 */}
-              <div className="c-card -lp -p01 mgb5 mgb10s a-fadeLeft -sc-entry-slow">
+              {/* <div className="c-card -lp -p01 mgb5 mgb10s a-fadeLeft -sc-entry-slow">
                 <div className="c-card--inner">
                   <div className="c-contents -itemBox">
                     <div className="imgBox">
@@ -256,8 +256,6 @@ export default function Home() {
                               材質 ： PET（本体）、PP（ハンドル）
                               <br />
                               容量 ： 5L
-                              {/* <br />
-                            高さ ： ???mm */}
                               <br />
                               重量 ： 0.5kg±0.1
                               <br />
@@ -271,7 +269,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* SC03 商品の特徴 */}

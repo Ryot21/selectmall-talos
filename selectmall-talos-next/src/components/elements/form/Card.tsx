@@ -407,7 +407,8 @@ export default function CardContactForm({ customClass }: FormProps) {
                     />{" "}
                     <pre>T-KEG</pre>
                   </label>
-                  <label>
+                  {/* Brewjet（取り扱い一時中止） */}
+                  {/* <label>
                     <input
                       type="checkbox"
                       name="keg"
@@ -420,7 +421,7 @@ export default function CardContactForm({ customClass }: FormProps) {
                       <br />
                       JET
                     </pre>
-                  </label>
+                  </label> */}
                   <label>
                     <input
                       type="checkbox"

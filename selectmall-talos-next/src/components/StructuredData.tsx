@@ -101,7 +101,7 @@ export const productStructuredData = {
     "タロス ワンウェイケグ",
   ],
   description:
-    "Talos ケグ（タロスケグ）は、TALOS（タロス）製の使い捨てワンウェイビールケグ。単層ケグ・T-KEG・BREWJETのラインナップ。回収・洗浄不要で運用コストを削減。",
+    "Talos ケグ（タロスケグ）は、TALOS（タロス）製の使い捨てワンウェイビールケグ。単層ケグ・T-KEGのラインナップ。回収・洗浄不要で運用コストを削減。",
   brand: {
     "@type": "Brand",
     name: "TALOS",
@@ -115,7 +115,7 @@ export const productStructuredData = {
     `${SITE_URL}/images/sns/ogp_1200_630.png`,
     `${SITE_URL}/images/keg/tansou-descript.png`,
     `${SITE_URL}/images/keg/TKEG.png`,
-    `${SITE_URL}/images/keg/BREWJET-descript.png`,
+    // `${SITE_URL}/images/keg/BREWJET-descript.png`, // 取り扱い一時中止
   ],
   offers: {
     "@type": "Offer",

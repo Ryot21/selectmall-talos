@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Talos ケグ（タロスケグ）はTALOS（タロス）製ワンウェイケグの公式情報サイト。単層ケグ・T-KEG・BREWJETのお見積依頼受付中。回収・洗浄不要で運用コスト削減。S/A/G/Tタイプ対応。",
+    "Talos ケグ（タロスケグ）はTALOS（タロス）製ワンウェイケグの公式情報サイト。単層ケグ・T-KEGのお見積依頼受付中。回収・洗浄不要で運用コスト削減。S/A/G/Tタイプ対応。",
 
   keywords: [
     "Talos ケグ",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "使い捨てケグ",
     "単層ケグ",
     "T-KEG",
-    "BREWJET",
+    // "BREWJET", // 取り扱い一時中止
     "ステンレスケグ",
     "ブルワリー",
     "コスト削減",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Talos ケグ（タロスケグ）公式｜セレクトモール",
     title: "Talos ケグ（タロスケグ）｜TALOSワンウェイケグ公式",
     description:
-      "Talos ケグ（タロスケグ）のお見積・導入相談はセレクトモールへ。TALOS製ワンウェイケグで運用コスト削減。単層ケグ・T-KEG・BREWJETに対応。",
+      "Talos ケグ（タロスケグ）のお見積・導入相談はセレクトモールへ。TALOS製ワンウェイケグで運用コスト削減。単層ケグ・T-KEGに対応。",
     url: "https://selectmall-keg.jp/",
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: "@selectmall_keg",
     title: "Talos ケグ（タロスケグ）｜TALOSワンウェイケグ",
     description:
-      "Talos ケグ（タロスケグ）のお見積・導入相談。TALOS製ワンウェイケグで運用コスト削減。単層ケグ・T-KEG・BREWJET。",
+      "Talos ケグ（タロスケグ）のお見積・導入相談。TALOS製ワンウェイケグで運用コスト削減。単層ケグ・T-KEG。",
     images: ["/images/sns/ogp_1200_630.png"],
   },
 
