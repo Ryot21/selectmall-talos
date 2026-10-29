@@ -8,7 +8,7 @@ import ScrollContainer from "@/features/lp/scrollContainer";
 import StickyButtonWrapper from "@/components/elements/button/sticky/StickyButtonWrapper";
 
 import LpEstimate from "@/features/lp/estimate";
-import Lp02Cta from "@/features/lp/cta";
+// import Lp02Cta from "@/features/lp/cta";
 // import LpCtaBottom from "@/features/lp02/cta/LpBottom";
 
 // 投稿関係
@@ -591,10 +591,10 @@ export default function Home() {
         <LpEstimate />
 
         {/* cta02 */}
-        <Lp02Cta />
+        {/* <Lp02Cta /> */}
 
         {/* Q&A */}
-        <div id="Q&A" className={"c-contents -bg_dot pdt7 pdt20s pdb7 pdb15s"}>
+        <div id="Q&A" className={"c-inputArea pdt7 pdt20s pdb7 pdb15s"}>
           <div className={"c-contents--inner"}>
             <h2 className="c-contents--LpContentsTitle s-LL -s30 -b -center -lp_c01 -b-btm -QA pdt1 pdt2s mgb5 mgb10s a-fadeDown -sc-entry">
               よくある質問

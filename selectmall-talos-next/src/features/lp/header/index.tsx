@@ -81,7 +81,7 @@ export default function LpHeader() {
                     </nav>
                   </li>
                   {/* 資料ダウンロード */}
-                  <li className={"navItem"}>
+                  {/* <li className={"navItem"}>
                     <Iconbutton href="#cta" customClass="cvBtn -orange">
                       <span className="pc">資料ダウンロード</span>
                       <Image
@@ -92,9 +92,9 @@ export default function LpHeader() {
                         height={18}
                       />
                     </Iconbutton>
-                  </li>
+                  </li> */}
                   {/* お問い合わせはこちら */}
-                  <li className={"navItem"}>
+                  {/* <li className={"navItem"}>
                     <Iconbutton href="#cta" customClass="cvBtn -lpColor01">
                       <span className="pc">
                         お問い合わせはこちら
@@ -107,7 +107,7 @@ export default function LpHeader() {
                         height={18}
                       />
                     </Iconbutton>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </li>

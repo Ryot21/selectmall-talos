@@ -79,7 +79,7 @@ export default function LpNavigation() {
           </li>
         </ul>
         {/* ctaボタン */}
-        <ul className={"c-hb-nav__contact"}>
+        {/* <ul className={"c-hb-nav__contact"}>
           <li className={"contactItem"}>
             <Link
               href="/#cta"
@@ -108,7 +108,7 @@ export default function LpNavigation() {
               />
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </nav>
   );

@@ -2,7 +2,8 @@
 .c-accordion{
     &--item{
         position: relative;
-        background: $lp-color03;
+        background: white;
+        // background: $lp-color03;
         border: 1px solid $site-color02;
         border-radius: 10px;
         .toggle{display: none;}
